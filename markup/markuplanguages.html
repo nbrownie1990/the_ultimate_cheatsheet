@@ -1,68 +1,158 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>The Call Stack &amp; Event-Loop</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.6">
-  <style type="text/css">
-    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #090a0a; -webkit-text-stroke: #090a0a; background-color: #ffffff}
-    p.p8 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p10 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #090a0a; -webkit-text-stroke: #090a0a}
-    li.li9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    li.li11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000}
-    span.s1 {font-kerning: none}
-    span.s2 {background-color: #ffffff; -webkit-text-stroke: 0px #000000}
-    span.s3 {font-kerning: none; background-color: #ffffff}
-    span.s4 {-webkit-text-stroke: 0px #000000}
-    span.s5 {font: 12.0px Times; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
-    ul.ul1 {list-style-type: disc}
-  </style>
-</head>
-<body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>The Call Stack &amp; Event-Loop</b></span></h1>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>JavaScript ist „single-threaded"</b></span></h2>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Multitasking?</b></span></h3>
-<p class="p4"><span class="s1">Das ermöglicht eine Web-API des Browsers mit „setTimeout“.</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #090a0a; -webkit-text-stroke: #090a0a; background-color: #ffffff"><span class="s1">When to use CSS Grid vs. Flexbox</span></h3>
-<p class="p6"><span class="s1">CSS Grid and Flexbox work together. They are both part of the CSS3 spec, and while they do similar things related to layouts, they were not intended to compete with each other.</span></p>
-<p class="p6"><span class="s1"><b>Use Grid when:</b></span></p>
-<ul class="ul1">
-  <li class="li7"><span class="s2"></span><span class="s3">You need full control of rows AND columns (examples: full page layouts, gallery items)</span></li>
-  <li class="li7"><span class="s2"></span><span class="s3">You want to explicitly define the layout regardless of content size (i.e. if you are using Flexbox and it starts to get really complicated with a bunch of heights and widths, you probably should be using Grid)</span></li>
-</ul>
-<p class="p6"><span class="s1"><b>Use Flexbox when:</b></span></p>
-<ul class="ul1">
-  <li class="li7"><span class="s2"></span><span class="s3">Your content is a row OR column (examples: horizontal navbar, vertical sidebar)</span></li>
-  <li class="li7"><span class="s2"></span><span class="s3">You want the size of items to determine layout</span></li>
-</ul>
-<p class="p6"><span class="s1">We will go through an example of this later in the tutorial so you can see this in action.</span></p>
-<p class="p8"><span class="s1"></span><br></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Der Call Stack - ein Stapel Bücher oder auch Pfannkuchen :)</b></span></h3>
-<p class="p9"><span class="s1">Man könnte sich den Call Stack als Bücherstapel vorstellen, jede Aufgabe ist ein Buch, das wenn es neu dazukommt oben drauf gelegt wird.<span class="Apple-converted-space"> </span></span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Der Call Stack behält den Überblick</b></span></h3>
-<p class="p10"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1">Der Call Stack ist ein Mechanismus, den JavaScript verwendet, um Funktionen zu verfolgen. Wenn wir eine Funktion aufrufen, fügt JavaScript diese Funktion dem sogenannten "Call Stack" (Aufrufstapel) hinzu. Wenn diese Funktion eine andere Funktion aufruft, fügt JavaScript diese Funktion ebenfalls zum Aufrufstapel oberhalb der ersten Funktion hinzu. Wenn eine Funktion einen Wert zurückgibt, wird sie vom Stapel geworfen. Dieser Vorgang wird mit jeder anderen Funktion wiederholt, die von der vorherigen Funktion aufgerufen wird. Wenn eine Funktion beendet ist, entfernt JavaScript diese Funktion aus der Aufrufliste. Der Call Stack wird von oben nach unten ausgeführt: Die zuletzt dem Stack hinzugefügte Funktion wird als erste ausgeführt. Die erste dem Stack hinzugefügte Funktion wird als letzte ausgeführt. Dies wird auch als LIFO-Prinzip (Last-In-First-Out) bezeichnet<span class="Apple-converted-space"> </span></span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Die Web-API</b></span></h3>
-<p class="p10"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1">Mit der Funktion „SetTimeout“, die uns vom Browser bereitgestellt wird, kümmert sich die WebAPI um den Rückruf („Callback“). Die Web-API hat quasi einen Timer, der so lange wie die Millisekunden, die wir im Code angegeben hatten. Der Callback wird nicht sofort zum Call Stack zurückgegeben, sondern zunächst in eine sogenannte Warteschlange („Queue“) übergeben. Dort muss die Funktion warten, bis sie an der Reihe ist.<span class="Apple-converted-space"> </span></span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Die Event-Loop</b></span></h3>
-<p class="p10"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1">Nun kommt die Event-Loop ins Spiel, deren einzige Aufgabe es ist die Warteschlange mit dem Call Stack zu verbinden! Wenn der Call Stack leer ist, also alle zuvor aufgerufenen Funktionen ihre Werte zurückgegeben haben und aus dem Stapel entfernt wurden, wird das erste Element in der Warteschlange der Aufrufliste hinzugefügt. Schließlich wird der Callback dem Call Stack hinzugefügt, aufgerufen, gibt einen Wert zurück und wird aus dem Stack entfernt.<span class="Apple-converted-space"> </span></span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Event-Loop explained by Jake Archibald</b></span></h3>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Questions or comments?</b></span></h2>
-<p class="p4"><span class="s1">Einfach eine Mail schreiben: <br>
-nina@braunger.de<span class="Apple-converted-space"> </span></span></p>
-<ul class="ul1">
-  <li class="li9"><span class="s4"></span><span class="s1">© Untitled. All rights reserved.</span></li>
-  <li class="li9"><span class="s4"></span><span class="s1">Design: <a href="http://html5up.net/"><span class="s5">HTML5 UP</span></a></span></li>
-  <li class="li11"></li>
-  <li class="li11"></li>
-  <li class="li9"><span class="s4"></span><span class="s1">Structure of site is released for free under the <a href="http://html5up.net/license"><span class="s5">Creative Commons license</span></a>.<span class="Apple-converted-space"> </span></span></li>
-</ul>
-</body>
+  <head>
+    <title>The JavaScript-Engine</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../the_ultimate_cheatsheet/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The JavaScript-Engine</h1>
+    </div>
+
+    <!-- Main -->
+    	<div class="box container">
+					<header>
+						<h2>Schauen wir dem Ding mal unter die Haube</h2>
+					</header>
+					<section>
+						<header>
+							<h3>Und es geht direkt los...</h3>
+							<p>...denn es gibt viel zu lernen</p>
+						</header>
+						<p>Der HTML-Parser trifft auf ein script-Tag mit einer Quelle. 
+              Code aus dieser Quelle wird entweder aus dem Netzwerk, Cache oder einem
+               <a href="https://www.heise.de/developer/artikel/Progressive-Web-Apps-Teil-2-Die-Macht-des-Service-Worker-3740464.html">installierten Service Worker</a> geladen.
+                Die Antwort ist das angeforderte Skript als ein Stream of bytes, um den sich im Folgenden der Byte-Stream-Decoder kümmert! 
+            </p>
+					</section>
+					<section>
+						<header>
+							<h3>JS-Engine in one sentence</h3>
+						</header>
+						<blockquote> We take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it :)</blockquote>
+					</section>
+					<section>
+						<header>
+							<h3>Der Byte-Stream-Decoder</h3>
+						</header>
+            <hr />
+						<p> Der Byte-Stream-Decoder decodiert den Byte-Stream, während dieser 
+             heruntergeladen wird.<br>
+             Der Byte-Stream-Decoder erstellt Token aus dem decodierten Bytestrom. 
+             Das reservierte Schlüsselwort „function“ entsteht, ein Token wird erstellt 
+             und an den Parser und den Pre-Parser gesendet. 
+             Die Engine verwendet zwei Parser: den Pre-Parser und den Parser. 
+             Um die Ladezeit einer Website zu verkürzen, versucht die Engine, das parsen, 
+             des nicht sofort benötigen Codes zu vermeiden. Der Preparser verarbeitet Code,
+             der später verwendet werden kann, während der Parser den Code verarbeitet, der 
+             sofort benötigt wird! </p>
+					</section>
+					<section>
+						<header>
+							<h3>Beispiel: decodierten Bytestrom.</h3>
+						</header>
+						<ul class="default">
+							<li>D0066 dekodiert in f</li>
+              <li>0075 in u</li> 
+              <li>006e in n</li> 
+              <li>0063 in c</li> 
+              <li>0074 in t</li> 
+              <li>0069 in i</li> 
+              <li>006f in o</li>
+              <li>006e in n</li>
+						</ul>
+            <p> Der Parser erstellt Knoten basierend auf den Token, die er vom
+              Byte-Stream-Decoder empfängt. Mit diesen Knoten erstellt er einen 
+               „abstract syntax tree“( AST).
+            </p>
+					</section>
+          <section>
+						<header>
+							<h3>Der Interpreter</h3>
+						</header>
+            <hr />
+						<p> Als nächstes ist es Zeit für den Interpreter (Dolmetscher)!  
+            <br>
+              Der Interpreter, der den AST durchläuft und Bytecode basierend 
+              auf den Informationen generiert, die der AST enthält. Sobald der
+              Bytecode vollständig generiert wurde, wird der AST gelöscht, 
+              wodurch Speicherplatz frei wird. Der Bytecode versucht sich
+              mithilfe des optimizing compilers immer weiter zu verbessern/verschnellern. 
+              Dazu werden, während der Bytecode ausgeführt wird, Informationen generiert.
+              Es wird bspw. erkannt, ob ein bestimmtes Verhalten häufig auftritt 
+              und welche Datentypen verwendet werden. Wenn bspw. eine Funktion 
+              schon viele Male aufgerufen wurde wird sie wie folgt optimiert: 
+            </p>
+					</section>
+					<section>
+						<header>
+							<h3>Der "optimizing" Compiler</h3>
+						</header>
+            <hr />
+						<ol class="default">
+              <li> Dieser Compiler nimmt den Bytecode und das „type-feedback und generiert daraus hochoptimierten Maschinencode. </li>
+              <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
+              <li>Der Bytecode wird zusammen mit dem generierten „type-feedback“ an den „optimizing compiler„ gesendet.</li>
+              <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
+              <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „optimizing compiler" nur die Fälle,
+               die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
+               <li>Wenn wir einen bestimmten Codeabschnitt wiederholt verwendet haben, der immer wieder den gleichen Datentyp zurückgegeben hat, kann der optimierte Maschinencode einfach wiederverwendet werden, um die Dinge zu beschleunigen.</li>
+               <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird anstelle des optimierten Maschinencodes wieder der ursprüngliche Bytecode verwendet.</li>
+
+						</ol>
+					</section>
+					<section>
+
+
+      <footer class="major container medium videoWrapper" >     
+        <h3>JS-Engine explained by Lydia Hallie</h3>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/xckH5s3UuX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
