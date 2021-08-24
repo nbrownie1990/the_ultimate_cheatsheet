@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DESTRUCTURING, SPREAD OPERATOR & REST OPERATOR</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>DESTRUCTURING, SPREAD OPERATOR & REST OPERATOR</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was ist Destructuring?</h2>
+      </header>
+      <section>
+        <p>
+          Die destrukturierende Zuweisungssyntax ist ein JavaScript-Ausdruck,
+          der es ermöglicht, Werte aus Arrays oder Eigenschaften aus Objekten in
+          unterschiedliche Variablen zu destrukturieren/zu entpacken.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Gute Quelle für Destructing Assignments</h3>
+        </header>
+        <blockquote>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+            >   /////////////////////////MDN Web Docs/////////////////////////</a
+          >
+        </blockquote>
+      </section>
+      <section>
+        <header>
+          <h3>1. Destructing</h3>
+        </header>
+        <hr />
+        <p>
+          Das Destructing ("Zerstören") eines Objekts oder Arrays bedeutet
+          nicht, dass wir es aus dem Programm löschen und nie wieder verwenden
+          können, sondern dass wir einen bestimmten Teil davon erhalten.
+          Destrukturieren extrahiert einfach Array-Elemente oder
+          Objekteigenschaften und speichert sie in Variablen. Beim
+          Destrukturieren des Arrays wird der Wert des Index gemäß der
+          Indexierung mit dem linken Key zurückgegeben.<br>
+          <br>
+          https://dev.to/thekrprince/spread-operator-rest-operator-destructuring-in-js-4nbg
+          <br>
+          Aber es gibt noch einen anderen Trick, den wir mit destruktiven
+          Zuweisungen machen können, das "Spreading" oder das "Rest Pattern".
+          Dies gibt uns die Möglichkeit, die verbleibenden unzerstörten
+          Eigenschaften/Indizes in eine neue Variable zu übernehmen.
+        </p>
+        <br />
+        <footer class="major container medium videoWrapper">
+          <h3>Destructuring explained by firebase</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/UgEaJBz3bjY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <br />
+        <br />
+        <br />
+        <br />
+      </footer>
+      </section>
+
+      <section>
+        <header>
+          <h3>2.The Spread Operator(...)</h3>
+        </header>
+        <hr />
+        <p>
+          Der Spread-Operator wird verwendet, um Array-Elemente oder
+          Objekteigenschaften aufzuteilen. Es führt eine deep copy der
+          Array-Elemente oder des Objekts durch, sodass die ursprünglichen Werte
+          nicht beeinflusst werden. Achtung: Die deep copy gilt nur für eine Leveltiefe - z.B. nicht bei Objekte innerhalb eines Objekts.
+          Denn dort werden die nested Objects wieder als Referenz-Typ übertragen. Um eine vollständige deep Copy (inkl. nested Objects) durchzuführen, muss
+          JSON.parse/stringify. "JSON.parse(JSON.stringify(object))" durchgeführt werden.
+          Oder man kann auch andere Libraries nehmen.
+          <br />
+          <br />
+          Nehmen wir das Array als Flasche. Der Spread-Operator ermöglicht es
+          Ihnen, den gesamten Inhalt der Flasche zu greifen, ohne die Flasche
+          selbst zu greifen und diesen Inhalt an einer beliebigen Stelle zu
+          platzieren. Der Spread-Operator kann verwendet werden, um den Inhalt
+          eines Arrays oder mehrerer Arrays in ein anderes Array zu kopieren.
+        </p>
+     
+        <ul>
+          <strong>Beispiel</strong>
+          <li>let arr= [1,2,3]</li>
+          <li>let arr1= [...arr,4,5,6]</li>
+          <li>console.log(arr1) /// [1,2,3,4,5,6]</li>
+        </ul>
+        <footer class="major container medium videoWrapper">
+          <h3>Spread-Operator explained by Colt Steele</h3>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pYI-UuZVtHI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br />
+        <br />
+        <br />
+        <br />
+      </footer>
+      </section>
+
+      <section>
+        <header>
+          <h3>3. The Rest Operator (...)</h3>
+        </header>
+        <hr />
+        <p>
+          Der Rest Operator ist das Gegenteil vom Spread-Operator.
+          Denn im Gegensatz zum Spread-Operator, der die Elemente in einem Array
+          verteilt, ist es beim Rest-Operator(auch Gather-Operator genannt) so,
+          dass er mehrere Elemente in einem Array gruppiert/sammelt.
+          Der Rest-Operator wird in einer Funktion immer dann verwendet, wenn
+          mehrere Arguments erwartet werden. 
+        </p>
+        <ul>
+          <strong>Beispiel</strong>
+          <li>function multiply(multiplier, <strong>...</strong>theArgs){</li>
+          <li>return theArgs.map(function(element){</li>
+          <li>return multiplier * element;</li>
+          <li>});</li>
+          <li>}</li>
+          <br>
+          <li>var arr = multiply (2,1,2,3)</li>
+          <li>console.log(arr)</li>
+          <li></li><strong>Result:</strong> [2,4,6]</li>
+
+
+        </ul>
+        <br />
+        <footer class="major container medium videoWrapper">
+          <h3>Rest Parameters explained by freeCodeCamp.org </h3>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iLx4ma8ZqvQ?start=272" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br />
+        <br />
+        <br />
+        <br />
+      </footer>
+      </section>
+
+     
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

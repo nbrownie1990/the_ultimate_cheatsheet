@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>The Call Stack & Event-Loop</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The Call Stack & Event-Loop</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>JavaScript ist „single-threaded"</h2>
+      </header>
+      <section>
+        <header>
+          <h3>Multitasking?</h3>
+          <p>Das ermöglicht eine Web-API des Browsers mit „setTimeout“.</p>
+        </header>
+        <p>
+          Da JavaScript „single-threaded“ ist, kann sie immer nur eine Aufgabe
+          ausführen und nicht gleichzeitig mehrere Tasks lösen. JavaScript läuft
+          standardmäßig im Hauptthread des Browsers. Damit verhindert wird, dass
+          die gesamte Benutzeroberfläche einfriert, während man auf das Lösen
+          einer Aufgabe wartet, die etwas länger dauert, bietet uns der Browser
+          eine Web-API mit der Funktion „setTimeout“. Damit können wir Aufgaben
+          verzögert ausführen, ohne den Hauptthread zu blockieren.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Der Call Stack - ein Stapel Bücher oder auch Pfannkuchen :)</h3>
+        </header>
+        <blockquote>
+          Man könnte sich den Call Stack als Bücherstapel vorstellen, jede
+          Aufgabe ist ein Buch, das wenn es neu dazukommt oben drauf gelegt
+          wird.
+        </blockquote>
+      </section>
+      <section>
+        <header>
+          <h3>Der Call Stack behält den Überblick</h3>
+        </header>
+        <hr />
+        <p>
+          Der Call Stack ist ein Mechanismus, den JavaScript verwendet, um
+          Funktionen zu verfolgen. Wenn wir eine Funktion aufrufen, fügt
+          JavaScript diese Funktion dem sogenannten "Call Stack" (Aufrufstapel)
+          hinzu. Wenn diese Funktion eine andere Funktion aufruft, fügt
+          JavaScript diese Funktion ebenfalls zum Aufrufstapel oberhalb der
+          ersten Funktion hinzu. Wenn eine Funktion einen Wert zurückgibt, wird
+          sie vom Stapel geworfen. Dieser Vorgang wird mit jeder anderen
+          Funktion wiederholt, die von der vorherigen Funktion aufgerufen wird.
+          Wenn eine Funktion beendet ist, entfernt JavaScript diese Funktion aus
+          der Aufrufliste. Der Call Stack wird von oben nach unten ausgeführt:
+          Die zuletzt dem Stack hinzugefügte Funktion wird als erste ausgeführt.
+          Die erste dem Stack hinzugefügte Funktion wird als letzte ausgeführt.
+          Dies wird auch als LIFO-Prinzip (Last-In-First-Out) bezeichnet
+        </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>Die Web-API</h3>
+        </header>
+        <hr />
+        <p>
+          Mit der Funktion „SetTimeout“, die uns vom Browser bereitgestellt
+          wird, kümmert sich die WebAPI um den Rückruf („Callback“). Die Web-API
+          hat quasi einen Timer, der so lange wie die Millisekunden, die wir im
+          Code angegeben hatten. Der Callback wird nicht sofort zum Call Stack
+          zurückgegeben, sondern zunächst in eine sogenannte Warteschlange
+          („Queue“) übergeben. Dort muss die Funktion warten, bis sie an der
+          Reihe ist.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Die Event-Loop</h3>
+        </header>
+        <hr />
+        <p>
+          Nun kommt die Event-Loop ins Spiel, deren einzige Aufgabe es ist die
+          Warteschlange mit dem Call Stack zu verbinden! Wenn der Call Stack
+          leer ist, also alle zuvor aufgerufenen Funktionen ihre Werte
+          zurückgegeben haben und aus dem Stapel entfernt wurden, wird das erste
+          Element in der Warteschlange der Aufrufliste hinzugefügt. Schließlich
+          wird der Callback dem Call Stack hinzugefügt, aufgerufen, gibt einen
+          Wert zurück und wird aus dem Stack entfernt.
+        </p>
+      </section>
+
+      <footer class="major container medium videoWrapper">
+        <h3>Event-Loop explained by Jake Archibald</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/cCOL7MC4Pl0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

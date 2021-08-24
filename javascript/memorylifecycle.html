@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+  	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Text by https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/
+-->
+<html>
+  <head>
+    <title>Memory Life Cycle</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Memory Life Cycle</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Memory Life Cycle (Speicherlebenszyklus)</h2>
+      </header>
+      <section>
+        <header>
+          <p>
+            Der Speicherlebenszyklus bezieht sich darauf, wie eine
+            Programmiersprache mit dem Speicher arbeitet. Unabhängig von der
+            Sprache ist der Speicherlebenszyklus fast immer gleich. Es besteht
+            aus drei Schritten.
+          </p>
+        </header>
+        <h3>1.Die Speicherzuweisung ("Memory Creation")</h3>
+        <hr />
+        <p>
+          Der erste Schritt ist die Speicherzuweisung ("Memory Creation"). Wenn
+          wir eine Variable zuweisen oder eine Funktion oder ein Objekt
+          erstellen, muss dafür eine gewisse Menge an Speicher reserviert
+          werden. In der ersten Phase, wenn die JS-Engine unser Skript erhält,
+          richtet sie als erstes Speicher für die Daten in unserem Code ein. Der
+          Code wird zunächst Zeile für Zeile durchlaufen und Funktionen und
+          Variablen werden im Memoryspeicher platziert. Zu diesem Zeitpunkt wird
+          noch kein Code ausgeführt, sondern alles für die Ausführung
+          vorbereitet.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Was ist Hoisting?</h3>
+        </header>
+        <blockquote>
+          Die Art und Weise, wie Funktionsdeklarationen und Variablen
+          gespeichert werden, ist unterschiedlich: Funktionen werden mit einem
+          Verweis auf die gesamten Funktionen gespeichert Variablen mit dem
+          Schlüsselwort "var" mit dem Wert undefined und Variablen mit den
+          Schlüsselwörtern "let" oder "const" werden nicht initialisiert
+          gespeichert.
+        </blockquote>
+      </section>
+
+      <section>
+        <header>
+          <h3>2. Die Speichernutzung (Code Execution)</h3>
+        </header>
+        <hr />
+        <p>
+          Da Funktionen mit einer Referenz auf den gesamten Funktionscode
+          gespeichert werden, können wir sie sogar vor der Zeile aufrufen, in
+          der wir sie erstellt haben! Da verhindert werden soll, dass
+          versehentlich auf eine undefined – Variable verwiesen wird, wird ein
+          ReferenceError ausgelöst, wenn wir auf nicht initalisierte Variablen
+          zugreifen wollen.
+          <br /><br />
+          Es gibt da auch noch die sogenannte „Temporal Deadzone“ ist eine
+          zeitlich begrenzte Phase/Zone, in der die Variable keinen Wert hat und
+          die Engine eine Fehlermeldung anstelle von undefined auswirft. Wenn
+          die Engine dann zu der Zeile kommt, in der wir unsere Variablen
+          deklariert haben, werden die Werte im Speicher mit unseren Werten
+          überschrieben.
+          <br /><br />
+          Der zweite Schritt ist also die Speichernutzung (Code Execution). Wenn
+          wir mit Daten in unserem Code arbeiten (lesen oder schreiben),
+          verwenden wir Speicher. Das Lesen von Variablen oder das Ändern von
+          Werten ist das Lesen und Schreiben in den Speicher. Nach Abschluss der
+          ersten Phase wird der Code tatsächlich ausgeführt.
+          <br />
+        </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>3. Die Speicherfreigabe</h3>
+        </header>
+        <hr />
+        <p>
+          Der dritte Schritt ist die Speicherfreigabe. Wenn Sie eine Funktion
+          oder ein Objekt nicht mehr verwenden, kann dieser Speicher freigegeben
+          werden. Sobald es freigegeben ist, kann es wieder verwendet werden.
+          Der Garbage Collector kommt ins Spiel.
+         
+          <hr />
+          Nun kommen wir zu der Frage wo diese Variablen, Funktionen und Objekte
+          eigentlich gespeichert werden? 
+          Die Antwort lautet: Es kommt darauf an. 
+          JavaScript speichert nicht all diese Dinge am selben Ort.
+          Stattdessen verwendet JavaScript zwei Stellen. 
+          Diese Orte sind der "Stack" und  der "Memory Heap". Welche dieser Orte
+          verwendet werden, hängt davon ab, womit wir gerade arbeiten.
+        </p>
+        <hr />
+      </section>
+
+      <section>
+        <header>
+          <h3>Der "Stack" (Der Stapel)</h3>
+        </header>
+        <hr />
+        <p>
+          Der Stack ist ein Ort, an dem JavaScript nur statische Daten speichert. 
+          Dazu gehören Werte von primitiven Datentypen, wie:
+          <ul class="default">
+            <li>Numbers</li>
+            <li>Strings</li>
+            <li>Booleans</li>
+            <li>undefined</li>
+            <li>null</li>
+          </ul> 
+          Diese statischen Daten enthalten auch Referenzen. 
+          Diese Referenzen verweisen auf die von uns erstellte Objekte und Funktionen.
+          <br>
+          <br>
+          Die Größe dieser Daten ist festgelegt und JavaScript kennt 
+          diese Größe zur Compile-Time. Dies bedeutet auch, dass JavaScript weiß, wie viel Speicher es 
+          zuweisen soll, und diese Menge zuweist. Diese Art der Speicherzuweisung wird als 
+          "statische Speicherzuweisung" bezeichnet. 
+          Beim Erstellen von Primitive Types arbeiten wir mit statischen Daten, die JavaScript 
+          im Stack speichert. Dies passiert kurz bevor der Code ausgeführt wird.
+          <br>
+          <br>
+          Wichtig zu wissen ist, dass es eine Grenze gibt, wie groß diese primitiven Werte sein können. 
+          Dies gilt auch für den Stack selbst. Denn auch dieser hat Grenzen. 
+          Wie hoch diese Limits sind, hängt vom jeweiligen Browser und der Engine ab.
+        </p>
+        <hr />
+      <p> <strong>"The Call Stack"</strong> <br>
+          Der "Stack" ist ein Ort, den JavaScript verwendet, um Variablen zu speichern, denen primitive Werte zugewiesen sind.
+          Der "Call Stack" ist etwas anderes als der Stack und wird <a href="callstack.html">hier</a> näher beschrieben.
+      </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>Der "Memory Heap" (Der Speicherhaufen)</h3>
+        </header>
+        <hr />
+        <p>
+        Der zweite Ort, an dem JavaScript Daten speichern kann, ist der "Memory Heap". 
+        Diese Art der Speicherzuweisung wird als "dynamische Speicherzuweisung" bezeichnet.
+        Denn dem "Memory Heap", weist JavaScript keine feste Speichermenge zu. 
+        Stattdessen weist es Speicher nach Bedarf zu. 
+        
+        <br>
+        <br>
+        Während der Stack ein Ort ist, an dem JavaScript statische Daten speichert, 
+        ist der Memory Heap ein Ort, an dem JavaScript Objekte speichert. 
+        Da in JavaScript sogut wie alles ein Objekt ist (Wer kennt das Sprichwort nicht?), trifft es auf 
+        Folgende zu:
+      </p>
+        <ul>
+          <li>- Funktionen</li>
+          <li>- Arrays</li>
+          <li>  ...</li>
+        </ul>   
+        
+      </section>
+
+      <section>
+        <header>
+          <h3>Stack, Heap und References</h3>
+        </header>
+        <hr />
+        <p>
+          Wir wissen nun: 
+          Wenn wir eine Variable erstellen und ihr einen primitiven Wert zuweisen, wird sie im Stack gespeichert.
+          Etwas anderes passiert, wenn Sie dasselbe versuchen, jedoch mit einem Objekt. 
+          Wenn Sie eine Variable deklarieren und ihr ein Objekt zuweisen, passieren zwei Dinge:
+        </p>
+          <ol class="default">
+            <li>Zunächst weist JavaScript für diese Variable Speicher im Stack zu.</li>
+            <li> Wenn es um das Objekt selbst geht, speichert JavaScript es im Speicherheap. 
+              Die im Stack vorhandene Variable zeigt nur auf dieses Objekt im Speicherheap.
+              Diese Variable ist nun eine Referenz, die auf das Objekt zeigt. 
+            </li>
+          </ol>
+        <p>
+        Wir können uns eine Referenz als Verknüpfung oder als Alias für vorhandene Dinge vorstellen.
+        Dieser Verweis ist also nicht das Objekt selbst. Er ist nur ein Link zum "echten" Objekt.
+        Wir können diesen Link verwenden, um auf das Objekt zuzugreifen, auf das er verweist/ mit dem er verlinkt ist.
+        Dadurch können wir dann auch an ihm "herum manipulieren" (z.B. Funktionen anwenden, etwas hinzufügen usw.).
+        </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>Kopieren von Primitive Types (Values) und Reference Types (Objects)</h3>
+        </header>
+        <hr />
+        <p>
+          Dies ist auch der Grund, warum das Erstellen von Kopien von Objekten in JavaScript nicht so einfach ist.
+          Wenn wir versuchen, eine Kopie eines in einer Variablen gespeicherten Objekts zu erstellen,
+         indem wir darauf verweisen, wird keine echte Kopie erstellt. 
+         <strong> Objekt selbst wird nicht kopiert.</strong> Es wird nur die Referenz auf dieses Objekt kopiert. 
+         Dies wird als <strong>flat copy</strong> bezeichnet.
+        <br>
+        <br>
+          Wenn wir dann das Originalobjekt ändern, ändert sich auch die Kopie. <strong> Dies liegt daran, 
+          dass es immer noch nur ein Objekt gibt</strong> .
+          Es gibt jedoch zwei Verweise (Aliasname oder Link) auf dieses eine Objekt. 
+          Wenn wir eine dieser Referenzen verwenden, um das Objekt zu ändern, verweist
+          die andere Referenz immer noch auf dasselbe Objekt, das wir gerade geändert haben.
+          <br>
+          <br>
+          Das passiert nicht, wenn wir stattdessen den primitiven Wert kopieren. 
+          Wenn wir versuchen, den Grundwert zu kopieren, und wir dann das Original ändern, 
+          bleibt die Kopie unverändert.
+          Der Grund: Die Referenzen fehlen. 
+          Wir erstellen also eine echte Kopie und arbeiten dann direkt mit dieser Kopie.  
+          Dies echte Kopie wird als <strong>deep copy</strong> bezeichnet.
+          <br>
+          <br>
+          Wenn man das Object nicht erneut vom Scratch erstellen möchte hat man folgende Möglichkeiten
+          <br>
+          <br>
+          - Object.assign(). 
+          <br>
+          - Kombination aus JSON.parse() and JSON.stringify().
+        </p>
+      </section>
+
+
+      <footer class="major container medium videoWrapper">
+        <h3> Cloning an object with Mosh Hamedani </h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H1NmJIv1A2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

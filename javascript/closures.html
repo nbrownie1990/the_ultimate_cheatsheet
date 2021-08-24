@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closures</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Closures</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was sind Closures?</h2>
+      </header>
+      <section>
+        <header>
+          <h3>Closures sind Funktionen mit unabhängigen,<br>
+             freien Variablen.</h3>
+          <p> Die in der Closure definierte Funktion merkt sich die Umgebung, in der sie erzeugt wurde.</p>
+        </header>
+        <p>
+          In einfachen Worten ist eine Closure nichts anderes als eine Funktion,
+          die in einer anderen Funktion definiert ist. Die Closure hat Zugriff
+          auf alle lokalen Variablen, externen Funktionsvariablen und globalen
+          Variablen. Sie ist eine Funktion, die mit ihrer lexikalischen Umgebung
+          gebündelt ist.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Closures in simple words:</h3>
+        </header>
+        <blockquote>
+          Closures sind Funktionen mit konservierten Werten.
+        </blockquote>
+      </section>
+      <section>
+        <header>
+          <h3>Wie wir Closures einsetzen können</h3>
+        </header>
+        <hr />
+
+        <p>
+          <strong>
+            Closures anstelle von Objekten: Funktionen mit Kontext erstellen
+          </strong>
+          <br />
+          Wir können ganz einfach eine Closure erstellen, bei der alle
+          allgemeinen Felder von der äußeren Funktion festgelegt werden und die
+          innere Funktion nur die eindeutigen Felder verwendet: Dies kann in
+          einigen Fällen sehr nützlich sein z.B. wenn wir mehrere Funktionen
+          benötigen, die in unterschiedlichen Kontexten etwas Ähnliches tun.
+          Anstatt für jede Aktion eine eigene Funktion zu erstellen, erstellen
+          wir eine äußere Funktion und mehrere innere Funktionen. Diese innere
+          Funktionen "returnen" wir dann an die übergeordnete Funktion zurück.
+          <br />
+          <strong>Hinweis: </strong> Return-Funktionen sind nichts anderes als Closures.
+          <br />
+          <br />
+          <strong>Private Attribute erstellen </strong>
+          <br />
+          Sprachen wie Java geben uns die Möglichkeit, bestimmte Attribute
+          (Eigenschaften) als "private" zu deklarieren. Dies ist bei JavaScript
+          (oder Python) nicht der Fall. Aber das wir können dies durch Folgendes
+          erzwingen: z.B. Die Person-Funktion gibt ein Objekt mit Funktionen
+          zurück, die von außerhalb der Person-Funktion zugänglich sind. Dies
+          ist über die Punktnotation (d. h. john.grow())möglich. Neben diesen
+          Funktionen hat das Objekten aber zwei Attribute, die sie nicht über
+          "return" ausgibt - deshalb bleiben diese außerhalb der Funktion Person
+          unzugänglich.
+        </p>
+
+        <ul class="default">
+          <strong>Hier ein paar weitere Use-Cases:</strong>
+          <li>Module design pattern</li>
+          <li>Event handlers</li>
+          <li>Asynchronous Programming</li>
+          <li>
+            Currying (Currying in Javascript ist nichts anderes als das Ändern
+            einer Funktion mit mehreren Argumenten in eine Funktion, die nur ein
+            Argument benötigt.)
+          </li>
+          <li>
+            Memoization (Ist die kurzfristige Speicherung einer bereits
+            erledigten Abfrage und Antwort. Diese Technik wird verwendet, um
+            aufwändige Berechnungen zu vermeiden.)
+          </li>
+        </ul>
+      </section>
+      <section>
+        <header>
+          <h3>Closures haben Zugriff auf:</h3>
+        </header>
+        <hr />
+        <ul class="default">
+          <li>Ihren lokaler Geltungsbereich (Variablen, die in der inneren Funktion definiert sind)</li>
+          <li>den Umfang ihrer äußeren Funktionen</li>
+          <li>Den globale Geltungsbereich</li>
+        
+      </section>
+
+
+
+      <footer class="major container medium videoWrapper">
+        <h3>Closures with Dave Gray</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/1S8SBDhA7HA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

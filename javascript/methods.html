@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Important Methods</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Very important Built-in-Methods in JavaScript</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Da gibt es so einige...</h2>
+      </header>
+      <section>
+        <header>
+          <h3>Paragraph</h3>
+          <p>
+            https://dev.to/elpepebenitez/built-in-methods-in-javascript-4bll
+          </p>
+        </header>
+        <p>
+          Methoden sind Funktionen, die in einem Objekt deklariert wurden.
+          JavaScript hat viele nützliche built-in-Methoden, u.a. in den folgenden
+          Bereichen: Strings, Arrays, Objects, Math, Date. Folgend werden einige von ihnen zusammengefasst.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>Blockquote</h3>
+        </header>
+        <blockquote>
+          Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+          sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+          faucibus.
+        </blockquote>
+      </section>
+
+      <section>
+        <header>
+          <h3>/////////////String Methods/////////////</h3>
+          <p>Hier sind einige wichtige String-Methoden aufgeführt</p>
+        </header>
+      </section>
+
+      
+        <div class="accordion">
+          <div class="accordion-item">
+          <h3 class="accordion-title"> concat() </h3>
+          <p class="accordion-answer">
+           
+              Die concat() Methode
+              vereint den Text von einem oder mehreren
+            Strings und gibt einen neuen String zurück.
+              <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+            <br />
+            <br />
+            <strong>
+              Syntax:<br />
+              str.concat(string2[, string3, ...,]);</strong
+            >
+            <br />
+            <br />
+            Zum Beispiel:
+            <br />
+            var hello = 'Hello, ';
+            <br />
+            console.log(hello.concat('Kevin', ' have a nice day.'));
+            <br />
+            <br />
+            => Dies erzeugt die Ausgabe /* Hello, Kevin have a nice day. */
+        
+          <ul class="default">
+            <li>
+              <a
+                href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/concat"
+              >
+                concat() bei MDN</a
+              >
+            </li>
+          </ul>
+          </p>
+        </div>
+      
+        <div class="accordion-item">
+          <h3 class="accordion-title"> includes() </h3>
+          <p class="accordion-answer">
+ 
+          Die includes()-Methode gibt an, ob ein String innerhalb eines anderen
+          Strings gefunden wird und gibt dabei true oder false wieder. Bei der
+          includes()-Methode muss auf Groß- und Kleinschreibung geachtet werden.
+
+          <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            str.includes(suchWert[, abWelchemIndexWirdGesucht]);</strong
+          >
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          'Blue Whale'.includes('blue');
+          <br />
+          <br />
+          => Dies erzeugt die Ausgabe /* false */
+      
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
+            >
+            includes() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> indexOf() & lastIndexOf()</h3>
+      <p class="accordion-answer">
+
+        Um Primitive Types zu finden.
+        <br>
+          Die indexOf() Methode gibt den Index der Zeichenkette innerhalb des
+          aufrufenden String Objekts des ersten Vorkommnis des angegebenen
+          Wertes beginnend bei fromIndex zurück. Gibt -1 zurück, wenn der Wert
+          nicht gefunden wurde.
+          <strong>Sie sind ebenfalls Array-Methoden.</strong>
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            str.indexOf(Suchwert[, vonWelchemIndexaus]);</strong
+          >
+
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          var anyString = 'Brave new world';
+          <br />
+          <br />
+          anyString.indexOf('w')
+          <br />
+          => Dies erzeugt die Ausgabe "8".
+          <br />
+          <br />
+          anyString.lastIndexOf('w')
+          <br />
+          => Dies erzeugt die Ausgabe "10".
+
+          <br />
+          <br />
+          <strong>Vorkommnisse prüfen</strong>
+          <br />
+          Zu beachten ist, dass '0' nicht zu true und '-1' nicht zu false
+          ausgewertet wird. Deswegen ist der korrekte weg zum überprüfen, ob ein
+          String in einem anderen String existiert, der folgende:
+          <br />
+          <br />
+          'Blue Whale'.indexOf('Blue') != -1; // true
+          <br />
+          'Blue Whale'.indexOf('Bloe') != -1; // false
+          <br />
+          <br />
+          Wenn wir wissen wollen ob ein Element im Array ist:
+          <br />
+          Statt: console.log(numbers.indexOf(1) !== -1)
+          <br />
+          Besser: console.log(numbers.includes(1));
+          <br />
+          => Result: true
+          <br />
+          <br />
+          Tipp: Wir suchen Zahl 1 und beginnen die Suche bei Index 2:
+          <br />
+          console.log(numbers.indexOf(1,2))
+       
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"
+            >
+            indexOf() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> replace() </h3>
+      <p class="accordion-answer">
+
+    
+     
+          Die replace()-Methode gibt einen neuen String zurück, in dem einige
+          oder alle Übereinstimmungen mit einem Muster durch einen Ersatz
+          ausgetauscht wurden.
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            str.replace(Ausdruck/Value Type der ersetzt wird durch,
+            "neuesWort"oder:"Funktion");</strong
+          >
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          var re = /apples/gi;
+          <br />
+          var str = "Apples are round, and apples are juicy.";
+          <br />
+          var newstr = <strong>str.replace(re, "oranges");</strong>
+          <br />
+          print(newstr);
+          <br />
+          <br />
+          => Dies erzeugt die Ausgabe "oranges are round, and oranges are
+          juicy."
+     
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace"
+            >
+            replace() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> slice() </h3>
+      <p class="accordion-answer">
+
+      
+          Die slice() Methode extrahiert einen Teilbereich eines Strings und
+          gibt einen neuen String zurück.
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            str.slice(AnfangIndex[, EndIndex]);</strong
+          >
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          var str1 = 'The morning is upon us.', // the length of str1 is 23.
+          <br />
+          str4 = str1.slice(12);
+          <br />
+          console.log(str4);
+          <br />
+          <br />
+          => Dies erzeugt die Ausgabe "is upon us.""
+
+          <br />
+          <br />
+          <strong>Benutzen von slice() mit negativen Indexen</strong>
+          <br />
+          Das folgende Beispiel benutzt slice() mit negativen Indexen. var str =
+          'The morning is upon us.'; str.slice(-3); // returns 'us.'
+       
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+            >
+            slice() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    
+      <section>
+        <header>
+          <hr />
+          <h3>/////////////Array Methods/////////////</h3>
+          <p>Hier sind einige wichtige Array-Methoden aufgeführt</p>
+        </header>
+      </section>
+
+
+      <div class="accordion-item">
+        <h3 class="accordion-title"> every() </h3>
+
+        <p class="accordion-answer">
+  
+         
+          Die every() Methode testet, ob alle Elemente in einem Array einen Test
+          bestehen, welcher mittels einer implementierten Funktion
+          bereitgestellt wird. <br />Rückgabewert true wenn die
+          callback-Funktion einen truthy Wert für jedes Array-Element
+          zurückgibt, andernfalls false.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.every(callback[, thisArg]);</strong
+          >
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion welche jedes Element testet, mit
+          drei Argumenten:
+          <br />
+          - currentValue= Der aktuelle Wert des Arrays. <br />
+          - index(optional)= Der Index des aktuellen Elementes im Array. <br />
+          - array(optional)= Das Array auf welchem every aufgerufen wurde.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          callback Funktion benutzt wird.
+
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          const numbers =[1,2,3]
+          <br />
+          const allPositive= numbers.every(function(value){
+          <br />
+          return value >=0;
+          <br />
+          });
+          <br />
+          console.log(allPositive)
+          <br />
+          => Result: true
+          <br />
+          <br />
+          Hingegen:
+          <br />
+          const numbers =[1,-1,2,3]
+          <br />
+          console.log(allPositive) <br />=> Result: false
+        
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/every"
+            >
+            every() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> filter() </h3>
+      <p class="accordion-answer">
+
+       
+          Die filter()-Methode erstellt einen neuen Array mit allen Elementen,
+          die den von der bereitgestellten Funktion implementierten Test
+          bestehen.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            let newArray = arr.filter(callback(element[, index[, array]])[,
+            thisArg])
+          </strong>
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion welche jedes Element testet, mit
+          drei Argumenten:
+          <br />
+          - element= Das aktuell zu testende Element aus dem Arrays. <br />
+          - index(optional)= Der Index des aktuell zu testenden Elements aus dem
+          Array. <br />
+          - array(optional)= Das Array auf welchem filter aufgerufen wurde.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          callback Funktion benutzt wird.
+
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          <br />
+          const numbers = [1, -1, 2,3]
+          <br />
+          //const filtered= numbers.filter(n => n >=0);
+          <br />
+          //console.log(filtered)
+          <br />
+          => Result: [1,2,3]
+      
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+            >
+            filter() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> find() & findIndex() </h3>
+
+      <p class="accordion-answer">
+        Um Reference Types zu finden.
+<br>
+          Die Methode find() gibt den Wert des Elements eines Arrays zurück,
+          welches als erstes die Bedingung einer bereitgestellten Testfunktion
+          erfüllt. Andernfalls wird undefined zurückgegeben. <br />
+          Wenn die Position eines Elements ermittelt oder geschaut werden soll ,
+          ob ein Element in einem Array vorhanden ist, bitte indexOf() oder
+          includes() verwenden.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.find(callback[, thisArg])</strong
+          >
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion welche auf jedes Element
+          angewendet wird, mit drei Argumenten:
+          <br />
+          - element= Das aktuelle Element, das im Array verarbeitet wird. <br />
+          - index(optional)= Der Index des aktuellen Elements im Array. <br />
+          - array(optional)= Das Array, welches mit find() durlaufen wird.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert, welcher als this verwendet
+          wird, wenn callback ausgeführt wird.
+
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          <br />
+          const courses = [
+          <br />
+          {id: 1, name: "a"},
+          <br />
+          {id: 2, name: "b"}
+          <br />
+          ];
+          <br />
+          const course = courses.find(function(course){
+          <br />
+          return course.name ==="a";
+          <br />
+          });
+          <br />
+          console.log(course);
+          <br />
+          => Result: true
+          <br />
+          <br />
+          <br />
+          Beispiel mit findIndex():
+          <br />
+          <br />
+          const course = courses.findIndex(function(course){
+          <br />
+          return course.name ==="a";
+          <br />
+          });
+          <br />
+          console.log(course);
+          <br />
+          => Result: 0
+      
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/find"
+            >
+            find() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> for Each() </h3>
+      <p class="accordion-answer">
+
+     
+          Die forEach() Methode führt eine übergebene Funktion für jedes Element
+          eines Arrays aus.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.forEach(function callback(currentValue [, index [, array]]) { //
+            Gewählter Iterator }[, thisArg]);
+          </strong>
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion, die auf jedes Element angewendet
+          wird mit drei Argumenten:
+          <br />
+          - currentValue= Der Wert des aktuellen Elements im Array.<br />
+          - index(optional)= Der Index des aktuellen Elements im Array. <br />
+          - array(optional)= Das Array, welches mit forEach() durlaufen wird.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          callback Funktion benutzt wird.
+
+          <br />
+          <br />
+          Beispiele, um einen Array zu iterieren:
+          <br />
+          <br />
+          <strong>Option 1:</strong> <br />
+          const numbers =[1,2,3]; <br />
+          for (let number of numbers) <br />
+          console.log(number);
+          <br />
+          <br /><strong>Option 2:</strong> <br />
+          numbers.forEach(function(number){ <br />
+          console.log(number); <br />
+          }); <br />
+          <br /><strong>Option 2: (In ARROW-FUNCTION SYNTAX)</strong> <br />
+          numbers.forEach(number => <br />
+          console.log(number)); <br />
+          <strong>mit Index:</strong>
+          <br />numbers.forEach((number,index) => <br />
+          console.log(index, number));
+        
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+            >
+            forEach() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> join() </h3>
+
+      <p class="accordion-answer">
+       Umwandeln eines Arrays in einen String.
+<br>
+          Die join() Methode verkettet alle Elemente eines Arrays (oder
+          Array-ähnlicher Objekte) durch Kommata getrennt oder einem angegebenen
+          Trennzeichen in einem String und gibt diesen zurück. Enthält das Array
+          nur ein Element wird nur dieses ohne Trennzeichen zurückgegeben.
+          Nützlich wenn ein url-slug(whitespace are replaced with "-") gebildet
+          wird.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.join([separator]);
+          </strong>
+          <br />
+          <br />
+
+          <strong>separator</strong> (optional)= <br />
+          Gibt einen String an, um jedes Paar benachbarter Elemente des Arrays
+          voneinander zu trennen. Das Trennzeichen wird bei Bedarf in einen
+          String umgewandelt. Wenn nicht angegeben, werden die Array-Elemente
+          durch ein Komma (",") getrennt. Wenn Separator ein leerer String ist,
+          werden alle Elemente ohne Trennzeichen miteinander verbunden.
+
+          <br />
+          <br />
+          Beispiel:
+          <br />
+          const numbers =[1,2,3] <br />
+          const joined= numbers.join(","); //(Seperator)
+          <br />
+          console.log(joined); <br />
+          => Result: "1,2,3"
+          <br />
+          <br />
+          Anderes Beispiel:
+          <br />
+          const message = "This is my first message"; <br />
+          const parts= message.
+          <a
+            title="Die split() Methode teilt ein String Objekt in ein Array von Strings auf, indem der String in Teilstrings zerteilt wird, wobei ein angegebenes Trennzeichen verwendet wird, um zu bestimmen, wo die Aufteilung erfolgen soll."
+            >split(" ")</a
+          >;
+          <br />
+          const combined = parts.join ("-");
+          <br />
+          console.log(combined);
+          <br />
+          => Result: "This-is-my-first-message"
+      
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+            >
+            join() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> map() </h3>
+      <p class="accordion-answer">
+
+          Die map() (engl. abbilden) Methode wendet auf jedes Element des Arrays
+          die bereitgestellte Funktion an und gibt das Ergebnis in einem neuen
+          Array zurück.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            var new_array = arr.map(function callback(currentValue[, index[,
+            array]]) { // Zurückgegebenes Element für new_array }[, thisArg])
+          </strong>
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion, die ein Element für das neue
+          Array erstellt und drei Argumente entgegennimmt:
+
+          <br />
+          - currentValue= Das aktuelle Element, das im Array verarbeitet
+          wird.<br />
+          - index(optional)= Der Index des aktuellen Elements, das im Array
+          verarbeitet wird. <br />
+          - array(optional)= Das Array, welches mit map() durchlaufen wird.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          callback Funktion benutzt wird.
+
+          <br />
+          <br />
+          Beispiele, um einen Array zu mappen:
+          <br />
+          <br />
+          PRIMITIVE TYPES MAPPEN:<br />
+          const numbers = [1, -1, 2,3]<br />
+          const filtered= numbers.filter(n => n >=0);<br />
+          const items = filtered.map(n => &lt;li&gt; + n+ &lt;/li&gt;);<br />
+          console.log(items)<br />
+          => Result: <br />
+          ['&lt;li&gt;1&lt;/li&gt;','&lt;li&gt;2&lt;/li&gt;','&lt;li&gt;3&lt;/li&gt;']<br />
+          0: "&lt;li&gt;1&lt;/li&gt;"<br />
+          1: "&lt;li&gt;2&lt;/li&gt;"<br />
+          2: "&lt;li&gt;3&lt;/li&gt;"<br />
+          <br />
+          const html = '&lt;ul&gt; + items.join('') + &lt;/ul&gt;'<br />
+          console.log(html)<br />
+          => Result: <br />
+          &lt;li&gt;1&lt;/li&gt; &lt;li&gt;2&lt;/li&gt; &lt;li&gt;3&lt;/li&gt;
+          <br />
+          <br />
+          OBJEKTE MAPPEN:<br />
+          const items = filtered.map(n => ({value: n}));<br />
+          console.log(items)<br />
+          => Result: <br />
+          0: {value: 1}<br />
+          1: {value: 2}<br />
+          2: {value: 3}
+          <br />
+          <br />
+          REFACTORING //CHAINING:<br />
+          const numbers = [1, -1, 2,3]<br />
+          const items = numbers<br />
+          .filter(n => n >=0)<br />
+          .map(n => ({value: n}))<br />
+          .filter(obj => obj.value >1)<br />
+          .map(obj => obj.value);<br />
+          console.log(items)
+        
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+            >
+            map() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> pop() & shift() </h3>
+      <p class="accordion-answer">
+
+          Die pop() Methode entfernt das letzte Element eines Arrays und gibt
+          dieses zurück. Diese Methode ändert die Länge des Arrays. Der
+          Rückgabewert ist das entfernte Element aus dem Array; undefined wenn
+          das Array leer ist.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.pop()</strong
+          >
+
+          <br />
+          <strong>Elemente von einem Array entfernen:</strong>
+          <br />
+          <br />
+          const numbers= [1,2,3,4];<br />
+          <br />
+          <strong>Vom Ende löschen:<br /></strong>
+          const last =numbers.pop()<br /><br />
+          console.log(numbers) <br />
+          => Result: [1,2,3]<br />
+          <br />
+          console.log(last) <br />
+          => Result: 4<br />
+          <br />
+          <strong>Vom Anfang löschen:<br /></strong>
+          const first = numbers.shift();<br /><br />
+          console.log(numbers)
+          <br />
+          => Result: [2,3]<br />
+          <br />
+          console.log(first) <br />
+          => Result: 1<br />
+          <br />
+          <strong>Aus der Mitte löschen:<br /></strong>
+          numbers.splice(2, 1); //bedeutet: (Start from index, how many
+          deletions)<br /><br />
+
+          console.log(numbers) <br />
+          => Result: [1,2,4]
+      
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
+            >
+            pop() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> push() & unshift() </h3>
+      <p class="accordion-answer">
+
+
+          Die push() Methode fügt ein oder mehr Elemente am Ende eines Arrays
+          hinzu und gibt die neue Länge des Arrays zurück.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.push(element1 [, ... [, elementN]])</strong
+          >
+          <br />
+          <br />
+
+          <strong>elementN</strong>= Die Elemente, die am Ende des Arrays
+          eingefügt werden.
+
+          <br />
+          <br />
+          <strong>Einem Array Elemente hinzufügen:</strong>
+          <br />
+          <br />
+          const numbers = [3, 4];<br />
+          <br />
+          <strong>Am Ende hinzufügen:<br /></strong>
+          numbers.push(5,6); <br /><br />
+          console.log(numbers) <br />
+          => Result: [3,4,5,6]<br />
+          <br />
+          <br />
+          <strong>Am Anfang hinzufügen:<br /></strong>
+          numbers.unshift(1,2);<br /><br />
+          console.log(numbers)
+          <br />
+          => Result: [1,2,3,4,5,6]<br />
+          <br />
+          <br />
+          <strong>In die Mitte einfügen:<br /></strong>
+          numbers.splice(2, 0, 'a', 'b') //bedeutet: (Wo(index)?, Wieviele
+          löschen?, Was einsetzen?)
+          <br /><br />
+          console.log(numbers) <br />
+          => Result: [1,2,"a","b",3,4,5,6]
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/push"
+            >
+              push() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> reduce() </h3>
+      <p class="accordion-answer">
+
+          Die reduce()-Methode reduziert ein Array auf einen einzigen Wert,
+          indem es jeweils zwei Elemente (von links nach rechts) durch eine
+          gegebene Funktion reduziert.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.reduce(callback[, initialValue])
+          </strong>
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion, welche auf jeden Wert im Array
+          angewandet wird und vier Argumente hat:
+          <br />
+          - accumulator= Der kumulierte Wert ist der Rückgabewert von callback;
+          der in der zuvor zurückgegebene Wert des letzten Aufrufes von callback
+          oder initialValue werden verwendet. .<br />
+          - currentValue= Das aktuell zu verarbeitende Element des Arrays.
+          <br />
+          - currentIndex(optional)= Der Index des aktuellen Elements des Arrays.
+          Beginnt mit dem Index 0, falls initialValue angegeben wurde, ansonsten
+          mit Index 1.
+          <br />
+          - array(optional)= Das Array, auf dem reduce abgerufen wird.
+          <br />
+          <strong>initialValue</strong> (optional)= Der Wert des ersten
+          Arguments, der bei dem ersten Aufruf in callback zu benutzt wird. Wenn
+          kein Initialwert angegeben wird, wird das erste Element des Arrays
+          benutzt. Das Aufrufen von reduce() auf einem leeren Array ohne
+          Initialwerts führt zu einem Fehler.
+
+          <br />
+          <br />
+          Beispiele, um einen Array zu reducen:
+          <br />
+          <br />
+          const numbers = [1, -1, 2, 3]; (In der Summe wären es 5.)<br />
+          <br />
+          Folgender Ablauf: <br />
+          a = 0, c=1 ==> a = 1<br />
+          a= 1, c = -1 ==> a = 0<br />
+          a= 0, c= 2 ==> a = 2<br />
+          a =2, c= 3 ==> a = 5 <br />
+          /////Gekürzte Version:<br />
+          a =1, c= -1 ==> a=0<br />
+          a= 0, c= 2 ==> a =2<br />
+          a= 2, c=3 ==> a=5<br />
+          <br />
+          <strong>
+            const sum = numbers.reduce((accumulator, currentValue) =><br />
+            accumulator + currentValue<br />
+            );<br />
+          </strong>
+          <br />
+          Also: const sum = numbers.reduce((0,1) => 0 + 1); <br /><br />
+          <strong>Alternativ:</strong> <br />
+          let sum = 0<br />
+          for (let n of numbers)<br />
+          sum +=n;<br />
+          console.log(sum);
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+            >
+              reduce() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> reverse() </h3>
+      <p class="accordion-answer">
+
+          Die reverse() Methode kehrt die Reihenfolge der Arrayelemente in-place
+          um. Das erste Element wird zum letzen und das letzte wird zum ersten.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.reverse()
+          </strong>
+          <br />
+          <br />
+
+          Beispiel:
+          <br />
+          <br />
+          var a = [1, 2, 3];
+          <br />
+
+          console.log(a) // [1, 2, 3]
+          <br />
+          a.reverse();
+          <br />
+          console.log(a) // [3, 2, 1]
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"
+            >
+              reverse() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> slice() </h3>
+      <p class="accordion-answer">
+
+
+          Die slice() Methode schreibt eine flache Kopie von einem Teil des
+          Arrays in ein neues Array-Objekt von begin bis end (end nicht
+          enthalten). Das originale Array wird nicht verändert.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.slice([begin[, end]])
+          </strong>
+          <br />
+          <br />
+
+          <strong>begin (optional)</strong>= <br />
+          Null-basierter Index, an welcher die Extraktion beginnt. Bei einem
+          negativen Index kennzeichnet begin einen Versatz vom Ende der Sequenz.
+          slice(-2) extrahiert die letzten zwei Elemente der Sequenz. Wenn begin
+          undefiniert ist, beginnt slice bei Index 0. Wenn begin größer als die
+          Länge der Sequenz ist, wird ein leeres Array zurückgegeben.
+          <br />
+          <strong>end (optional)</strong>= <br />
+          Null-basierter Index bevor die Extraktion endet. slice extrahiert bis
+          zu, aber nicht inklusive end. slice(1,4) extrahiert vom zweiten bis
+          zum vierten Element (Elemente sind indexiert als 1, 2 und 3). Bei
+          einem negativen Index kennzeichnet end einen Versatz vom Ende der
+          Sequenz. slice(2, -1) extrahiert vom dritten bis zum vorletzten
+          Element der Sequenz. Wenn auf end weggelassen wird, extrahiert slice
+          bis zum Ende der Sequenz (arr.length). Wenn end größer als die Länge
+          der Sequenz ist, extrahiert slice bis zum Ende der Sequenz
+          (arr.length)
+
+          <br />
+          <br />
+          Beispiele, um einen Array zu kombinieren und zu slicen:
+          <br />
+          <br />
+          MIT PRIMITIVE TYPES:<br />
+          const first = [1,2,3];<br />
+          const second = [4,5,6];<br />
+          const combined = first.concat(second);<br />
+          const slice = combined.slice(2,4) (Index Start& End)<br />
+          console.log(combined) //Result [1,2,3,4,5,6]<br />
+          console.log(slice) //Result [3,4]
+
+          <br /><br />
+          MIT REFERENCE TYPES:<br />
+          const first = [{ id: 1}];<br />
+          const second =[4,5,6];<br />
+          const combined = first.concat(second)<br />
+          first[0].id = 10<br />
+          => Result(4) [{...},4,5,6]<br />
+          0: {id: 10} // die Referenz wird kopiert<br />
+          1:4<br />
+          2:5<br />
+          3:6<br />
+          length:4
+          <br />
+          <br />
+          Slice nutzen, um einen neuen Start zu generieren:<br />
+          const sliceStart = combined.slice(2)<br />
+          => Result [3,4,5,6]
+          <br />
+          <br />
+          Slice nutzen, um den gesamten Array zu kopieren:<br />
+          const sliceStart = combined.slice()<br />
+          => Result [1,2,3,4,5,6]
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
+            >
+            slice() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> some() </h3>
+     
+
+      <p class="accordion-answer">
+
+          Die Methode some() überprüft ob mindestens ein Element des Arrays den
+          als Funktion übergebenen Kriterien entspricht. Der Rückgabewert ist
+          true, wenn die callback Methode ein positives (truthy) Ergebnis für
+          eines der Elemente im array ermittelt hat; Andernfalls, false.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.some(callback[, thisArg]);</strong
+          >
+          <br />
+          <br />
+
+          <strong>callback</strong>= Funktion die jedes Element überprüft, nimmt
+          drei Argumente entgegen:
+          <br />
+          - currentValue= Das aktuell zu verarbeitende Element des Arrays.
+          <br />
+          - index(optional)= Der Index des aktuell zu verarbeitenden Elementes
+          im Array.
+          <br />
+          - array(optional)= Die Arrayinstanz auf welcher die some() Methode
+          aufgerufen wurde.
+          <br />
+          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          callback Funktion benutzt wird.
+
+          <br />
+          <br />
+          Zum Beispiel:
+          <br />
+          const numbers =[1,2,3]
+          <br />
+          const atLeastOnePositive= numbers.some(function(value){
+          <br />
+          return value >=0;
+          <br />
+          console.log(atLeastOnePositive);<br />
+          });<br />
+          => Result: true
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
+            >
+              some() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> sort() </h3>
+      
+      <p class="accordion-answer">
+
+            
+          Die sort() Methode sortiert die Elemente eines Arrays in-place (keine
+          Kopie!) und gibt das Array zurück. Standardmäßig werden alle Elemente
+          in Strings umgewandelt und dann anhand ihrer UTF-16 Codepoints
+          miteinander verglichen.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            arr.sort([compareFunction])</strong
+          >
+          <br />
+          <br />
+          compareFunction(optional)= Gibt eine Funktion an, die die
+          Sortierreihenfolge definiert. Wenn nicht angegeben, wird das Array
+          nach dem Unicode (en-US)-Codepoint jedes Zeichens entsprechend der
+          Stringumwandlung jedes Elements sortiert.
+          <br />
+          <strong>firstEl</strong>= Das erste Element zum Vergleich.
+          <br />
+          <strong>secondEl</strong>= Das zweite Element zum Vergleich.
+
+          <br />
+          <br />
+          Ein Beispiel mit Primitive Types:
+          <br />
+          const numbers =[2,3,1]<br />
+          numbers.sort();<br />
+          console.log(numbers) <br />
+          => Result: [1,2,3]<br /><br />
+          numbers.reverse();<br />
+          console.log(numbers) <br />
+          => Result: [3,2,1]
+          <br /><br />
+          Ein Beispiel mit Reference Types:
+          <br />
+          Weil das nicht automatisch mit Objekten funktioniert, müssen wir noch
+          etwas hinzufügen.<br />
+          (Wir wollen die Objekte nach Namen sortieren. Achtung: die Suche ist
+          case-sensitive):
+          <br />
+          const courses= [<br />
+          {id: 1, name: "node"},<br />
+          {id: 2, name: "javascript"},<br />
+          ];<br />
+          courses.sort(function(a, b) {<br />
+          const nameA = a.name.toUpperCase();<br />
+          const nameB = b.name.toUpperCase();<br />
+          if (nameA < nameB) return -1;<br />
+          if (nameA > nameB) return 1;<br />
+          return 0;<br />
+          });<br />
+          console.log(courses)
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+            >
+            sort() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+    <div class="accordion-item">
+      <h3 class="accordion-title"> splice() </h3>          
+      <p class="accordion-answer">
+
+          Die splice() Methode ändert den Inhalt eines Arrays durch das
+          Entfernen vorhandener Elemente und/oder Hinzufügen neuer Elemente.
+
+          <br />
+          <br />
+          <strong>
+            Syntax:<br />
+            array.splice(start[, deleteCount[, item1[, item2[, ...]]]])</strong
+          >
+          <br />
+          <br />
+
+          <strong>start</strong>= Index ab welchem das Array geändert werden
+          soll. <strong>deleteCount</strong>(optional)= Gibt die Anzahl der zu
+          entfernenden alten Array Elemente an. Wenn deleteCount 0 oder negativ
+          ist, werden keine Elemente entfernt. In diesem Fall sollte man
+          mindestens ein neues Element als weiteren Parameter übergeben, da das
+          Array sonst nicht geändert wird.
+          <strong>item1, item2, ...</strong>(optional)= Die Elemente, die dem
+          Array ab dem Index start hinzugefügt werden sollen. Falls keine
+          Elemente angegeben werden, entfernt splice lediglich Elemente des
+          Arrays.
+
+          <br />
+          <br />
+          <strong>Hinzufügen/Entfernen von Elementen eines Arrays:</strong>
+          <br />
+          <br />
+          <strong>AM ENDE DES ARRAYS</strong><br />
+
+          <strong>Am Ende hinzufügen:<br /></strong>
+          numbers.push(5,6); <br />
+          <br />
+          <strong>Vom Ende löschen:<br /></strong>
+          const last =numbers.pop()<br /><br />
+
+          <strong>AM ANFANG DES ARRAYS</strong><br />
+          <strong>Am Anfang hinzufügen:<br /></strong>
+          numbers.unshift(1,2);<br />
+          <br />
+
+          <strong>Vom Anfang löschen:<br /></strong>
+          const first = numbers.shift();<br />
+          <br />
+
+          <strong>IN DER MITTE DES ARRAYS</strong><br />
+          <strong>In die Mitte einfügen:<br /></strong>
+          let numbers = [1,2,3,4,5,6] numbers.splice(2, 0, 'a', 'b') //bedeutet:
+          (Wo(index)?, Wieviele löschen?, Was einsetzen?)
+          <br />
+          console.log(numbers) <br />
+          => Result: [1,2,"a","b",3,4,5,6]<br /><br />
+
+          <strong>Aus der Mitte löschen:<br /></strong>
+          let numbers = [1,2,3,4] numbers.splice(2, 1); //bedeutet: (Start from
+          index, how many deletions)<br />
+          console.log(numbers) <br />
+          => Result: [1,2,4]
+
+        <ul class="default">
+          <li>
+            <a
+              href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
+            >
+            splice() bei MDN</a
+            >
+          </li>
+        </ul>
+      </p>
+    </div>
+  
+
+      <!-- 
+
+
+
+//////////////////
+//EMPTYING AN ARRAY
+//////////////////
+// let numbers = [1,2,3,4];
+// let another = numbers
+
+//Solution 1
+//(bester Weg wenn nur eine Referenz)
+// numbers = [];
+//console.log(numbers)
+<!-- 
+  another zeigt noch auf den alten numbers-Array ([1,2,3,4])
+//während console.log(numbers) =>[] ergibt
+
+//Solution 2 (MOSHS FAVORIT!!!)
+// numbers.length = 0
+//console.log(numbers) =>[]
+//console.log(numbers) =>[]
+
+//Solution 3
+//numbers.splice(0, numbers.lenght);
+
+//Solution 4 (nicht empfehlenswert)
+//while (numbers.length>0)
+//numbers.pop(); -->
+
+      <!-- //SPREAD OPERATOR //////// cleaner& more flexible // const combined
+      =[...first, ...second] // Wenn wir ein Element dazufügen wollen //const
+      combined =[...first, "a", ...second, "b"]; //const copy =
+      combined.slice(); das gleiche wie: //const copy = [...combined] Math:
+      round() floor() ceil() abs() pow() PI() random() parseInt() parseFloat()
+      -->
+
+      <footer class="major container medium">
+        <h3>Get shady with science</h3>
+        <p>
+          Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur
+          tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam
+          vivamus.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine Mail schreiben: <br />
+          nina@braunger.de
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
