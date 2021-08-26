@@ -314,6 +314,16 @@ blockquote {
   width: 38.25em;
 }
 
+/* Cookies */
+.cc-box {
+  color: #6c63ff;
+  border-radius: 2rem;
+}
+
+.cc-btn {
+  border-radius: 1.5rem;
+}
+
 @media screen and (max-width: 1280px) {
   .container {
     width: 48em;
