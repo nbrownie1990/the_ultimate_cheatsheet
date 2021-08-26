@@ -43,6 +43,7 @@ accordionTitles.forEach((accordionTitle) => {
   });
 });
 
+
 //COOKIE CONSENT
 //(Classic)
 const CookieConsent = window.CookieConsent;
@@ -51,10 +52,10 @@ const CookieConsent = window.CookieConsent;
 const cc = new CookieConsent({
   title: "I use cookies 🍪",
   // ... other options
-  description: `Click “Accept” to enable us to use cookies to personalize
+  description: `Click “Accept” to enable me to use cookies to personalize
                 this site. Customize your preferences in your
                 Cookie Settings or click “Reject” if you do not want me
-                to use cookies for this purpose. Learn more in our
+                to use cookies for this purpose. Learn more in my
                 <a href="https://www.ninabraunger.de/datenschutz.html">Cookie Notice</a>.`,
 
   buttons: {
@@ -69,14 +70,14 @@ const cc = new CookieConsent({
     essentials: {
       label: "Essential",
       description: `Essential cookies are necessary for features which
-                    are essential to your use of our site or services,
+                    are essential to your use of my site or services,
                     such as account login, authentication, and site security.`,
       checked: true,
       mandatory: true,
     },
     analytics: {
       label: "Analytics",
-      description: `Analytics cookies allow us to analyze your visits and
+      description: `Analytics cookies allow me to analyze your visits and
                     actions on our websites, and offer you a more relevant
                     experience.`,
     },
