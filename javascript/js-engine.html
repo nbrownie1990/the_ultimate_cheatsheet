@@ -50,7 +50,7 @@
             <hr />
 						<p> Der Byte-Stream-Decoder decodiert den Byte-Stream, während dieser 
              heruntergeladen wird.<br>
-             Der Byte-Stream-Decoder erstellt Token aus dem decodierten Bytestrom. 
+             Der Byte-Stream-Decoder erstellt Token aus dem decodierten Bytestream. 
              Das reservierte Schlüsselwort „function“ entsteht, ein Token wird erstellt 
              und an den Parser und den Pre-Parser gesendet. 
              Die Engine verwendet zwei Parser: den Pre-Parser und den Parser. 
@@ -61,7 +61,7 @@
 					</section>
 					<section>
 						<header>
-							<h3>Beispiel: decodierten Bytestrom.</h3>
+							<h3>Beispiel: decodierter Bytestream</h3>
 						</header>
 						<ul class="default">
 							<li>D0066 dekodiert in f</li>
@@ -85,26 +85,25 @@
             <hr />
 						<p> Als nächstes ist es Zeit für den Interpreter (Dolmetscher)!  
             <br>
-              Der Interpreter, der den AST durchläuft und Bytecode basierend 
-              auf den Informationen generiert, die der AST enthält. Sobald der
+              Der Interpreter, durchläuft den AST und generiert Bytecode basierend auf den Informationen , die der AST enthält. Sobald der
               Bytecode vollständig generiert wurde, wird der AST gelöscht, 
               wodurch Speicherplatz frei wird. Der Bytecode versucht sich
-              mithilfe des optimizing compilers immer weiter zu verbessern/verschnellern. 
+              mithilfe des "optimizing compilers" immer weiter zu verbessern/verschnellern. 
               Dazu werden, während der Bytecode ausgeführt wird, Informationen generiert.
               Es wird bspw. erkannt, ob ein bestimmtes Verhalten häufig auftritt 
               und welche Datentypen verwendet werden. Wenn bspw. eine Funktion 
-              schon viele Male aufgerufen wurde wird sie wie folgt optimiert: 
+              schon viele Male aufgerufen wurde wird sie wie folgt optimiert. 
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>Der "optimizing" Compiler</h3>
+							<h3>Der "optimizing Compiler"</h3>
 						</header>
             <hr />
 						<ol class="default">
-              <li> Dieser Compiler nimmt den Bytecode und das „type-feedback und generiert daraus hochoptimierten Maschinencode. </li>
+              <li> Dieser Compiler nimmt den Bytecode und das „type-feedback" und generiert daraus hochoptimierten Maschinencode. </li>
               <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
-              <li>Der Bytecode wird zusammen mit dem generierten „type-feedback“ an den „optimizing compiler„ gesendet.</li>
+              <li>Der Bytecode wird zusammen mit dem generierten „type-feedback“ an den „optimizing Compiler" gesendet.</li>
               <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
               <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „optimizing compiler" nur die Fälle,
                die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
