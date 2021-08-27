@@ -1,3 +1,4 @@
 {
-  "prettier.vueIndentScriptAndStyle": true
+  "prettier.vueIndentScriptAndStyle": true,
+  "editor.wordWrap": "on"
 }
