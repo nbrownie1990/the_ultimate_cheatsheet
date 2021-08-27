@@ -29,11 +29,13 @@
 // Events for the accordion on the subsites.
 
 const accordionTitles = document.querySelectorAll(".accordion-title");
+const accordionAnswers = document.querySelectorAll(".accordion-answer");
 
 accordionTitles.forEach((accordionTitle) => {
   accordionTitle.addEventListener("click", () => {
     const height = accordionTitle.nextElementSibling.scrollHeight;
     console.log(height);
+
     accordionTitle.classList.toggle("active-header");
     if (accordionTitle.classList.contains("active-header")) {
       accordionTitle.nextElementSibling.style.maxHeight = `${height}px`;
@@ -42,7 +44,6 @@ accordionTitles.forEach((accordionTitle) => {
     }
   });
 });
-
 
 //COOKIE CONSENT
 //(Classic)

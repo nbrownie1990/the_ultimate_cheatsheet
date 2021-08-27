@@ -2100,13 +2100,13 @@ blockquote {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-.accordion-answer < p {
+.accordion-answer {
   max-height: 0px;
   overflow: hidden;
   transition: 0.2s ease max-height;
 }
 
-.accordion-answer < a {
+.accordion-answer a {
   text-decoration: none;
 }
 
