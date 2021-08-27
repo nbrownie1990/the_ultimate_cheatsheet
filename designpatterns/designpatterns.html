@@ -21,8 +21,6 @@
       <h1>Design Patterns</h1>
     </div>
 
- 
-
     <!-- Main -->
     <div class="box container">
       <header>
@@ -37,68 +35,113 @@
           <img src="../assets/css/images/buildingstatus.svg" style="width: 60%" />
         </div>
         </section>
-<!--<section>
-         <header>
-          <h3>JS-Engine in one sentence</h3>
-        </header>
-        <blockquote> We take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it :)</blockquote>
-      </section>
+      </div>
+    <div class="box container">
+      <header>
+        <h2>Elegant solutions for repeating problems</h2>
+      </header>
       <section>
-        <header>
-          <h3>Der Byte-Stream-Decoder</h3>
-        </header>
-        <hr />
-        <p> Der Byte-Stream-Decoder decodiert den Byte-Stream, während dieser 
-         heruntergeladen wird.<br>
-         Der Byte-Stream-Decoder erstellt Token aus dem decodierten Bytestrom. 
-         Das reservierte Schlüsselwort „function“ entsteht, ein Token wird erstellt 
-         und an den Parser und den Pre-Parser gesendet. 
-         Die Engine verwendet zwei Parser: den Pre-Parser und den Parser. 
-         Um die Ladezeit einer Website zu verkürzen, versucht die Engine, das parsen, 
-         des nicht sofort benötigen Codes zu vermeiden. Der Preparser verarbeitet Code,
-         der später verwendet werden kann, während der Parser den Code verarbeitet, der 
-         sofort benötigt wird! </p>
-      </section>
-      <section>
-        <header>
-          <h3>Beispiel: decodierten Bytestrom.</h3>
-        </header>
-        <ul class="default">
-          <li>D0066 dekodiert in f</li>
-          <li>0075 in u</li> 
-          <li>006e in n</li> 
-          <li>0063 in c</li> 
-          <li>0074 in t</li> 
-          <li>0069 in i</li> 
-          <li>006f in o</li>
-          <li>006e in n</li>
-        </ul>
-        <p> Der Parser erstellt Knoten basierend auf den Token, die er vom
-          Byte-Stream-Decoder empfängt. Mit diesen Knoten erstellt er einen 
-           „abstract syntax tree“( AST).
+         <p>
+          Design Patterns, kann man als die Kunst 
+          des Designens von objekt-orientierter Software bezeichnen. Die folgenden Design Patterns stammen aus dem Buch <a href="https://github.com/amilajack/reading/blob/master/Design/GOF%20Design%20Patterns.pdf">"Design Patterns"</a> der Gang of Four.
+
         </p>
       </section>
-      
+    
+
       <section>
         <header>
-          <h3>Der "optimizing" Compiler</h3>
+          <h3>/////////////Creational Design Patterns/////////////</h3>
+          <p>Hier geht es um die verschiedenen Wege, um Objekte zu kreiieren</p>
         </header>
-        <hr />
-        <ol class="default">
-          <li> Dieser Compiler nimmt den Bytecode und das „type-feedback und generiert daraus hochoptimierten Maschinencode. </li>
-          <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
-          <li>Der Bytecode wird zusammen mit dem generierten „type-feedback“ an den „optimizing compiler„ gesendet.</li>
-          <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
-          <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „optimizing compiler" nur die Fälle,
-           die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
-           <li>Wenn wir einen bestimmten Codeabschnitt wiederholt verwendet haben, der immer wieder den gleichen Datentyp zurückgegeben hat, kann der optimierte Maschinencode einfach wiederverwendet werden, um die Dinge zu beschleunigen.</li>
-           <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird anstelle des optimierten Maschinencodes wieder der ursprüngliche Bytecode verwendet.</li>
-
-        </ol>
       </section>
-      <section>
 
-      -->
+      
+        <div class="accordion">
+          <div class="accordion-item">
+          <h3 class="accordion-title"> XXXXXX </h3>
+          <p class="accordion-answer">
+           
+              Die.....
+              <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+          </p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+          <h3 class="accordion-title"> XXXXXX </h3>
+          <p class="accordion-answer">
+           
+              Die.....
+              <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+      <section>
+        <header>
+          <hr />
+          <h3>/////////////Structural Design Patterns/////////////</h3>
+          <p>Hier geht es um die Beziehungen zwischen Objekten</p>
+        </header>
+      </section>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <h3 class="accordion-title"> splice() </h3>          
+          <p class="accordion-answer">
+    
+              Die splice() Methode ändert den Inhalt eines Arrays durch das
+             
+          </p>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-title"> splice() </h3>          
+          <p class="accordion-answer">
+    
+              Die splice() Methode ändert den Inhalt eines Arrays durch das
+             
+          </p>
+        </div>
+      </div>
+   
+
+      <section>
+        <header>
+          <hr />
+          <h3>/////////////Behavioural Design Patterns/////////////</h3>
+          <p>Hier geht es um die Interaktion und Kommunikation zwischen den Objekten</p>
+        </header>
+      </section>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <h3 class="accordion-title"> splice() </h3>          
+          <p class="accordion-answer">
+    
+              Die splice() Methode ändert den Inhalt eines Arrays durch das
+             
+          </p>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-title"> splice() </h3>          
+          <p class="accordion-answer">
+    
+              Die splice() Methode ändert den Inhalt eines Arrays durch das
+             
+          </p>
+        </div>
+      </div>
+    </div>
+    
+
+
+        <footer class="major container medium videoWrapper" >     
+          <h3>...die Liste wird stetig ergänzt :)</h3> 
+          <img src="../images/longlist.gif"/ >
+         </footer>
+        </div> 
 
     <!-- Footer -->
     <div id="footer">
