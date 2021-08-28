@@ -2780,6 +2780,10 @@ input[type="button"].small,
   min-height: auto;
 }
 
+.videoWrapper img {
+  max-width: -webkit-fill-available;
+}
+
 /* Feature */
 
 .feature {
