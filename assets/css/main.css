@@ -2776,7 +2776,7 @@ input[type="button"].small,
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: -webkit-fill-available;
   min-height: auto;
 }
 
