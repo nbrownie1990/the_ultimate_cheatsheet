@@ -3261,6 +3261,10 @@ input[type="button"].small,
   }
 }
 
+.videoWrapper iframe {
+  min-height: 315px;
+}
+
 /* Narrow */
 
 @media screen and (max-width: 980px) {
