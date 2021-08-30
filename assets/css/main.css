@@ -3261,8 +3261,9 @@ input[type="button"].small,
   }
 }
 
-.videoWrapper iframe {
+iframe {
   min-height: 315px;
+  min-width: 560px;
 }
 
 /* Narrow */
