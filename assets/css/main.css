@@ -2772,7 +2772,7 @@ input[type="button"].small,
   max-width: fit-content;
   max-height: fit-content;
 }
-iframe {
+.videoWrapper iframe {
   position: relative;
   top: 0;
   left: 0;
@@ -3262,8 +3262,8 @@ iframe {
 }
 
 iframe {
-  min-height: 315px;
-  min-width: 560px;
+  height: 315px;
+  width: 560px;
 }
 
 /* Narrow */
