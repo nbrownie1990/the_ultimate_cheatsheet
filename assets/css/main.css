@@ -2410,6 +2410,16 @@ span.image.icon {
   cursor: default;
 }
 
+.img-wrapper {
+  text-align: center;
+}
+
+.design-pattern {
+  position: relative;
+  border-radius: 0.5rem;
+  width: 60%;
+  text-align: center;
+}
 /* Icon */
 
 .icon {
@@ -3259,11 +3269,6 @@ input[type="button"].small,
   #main {
     padding: 4em 0 3em 0;
   }
-}
-
-iframe {
-  height: 315px;
-  width: 560px;
 }
 
 /* Narrow */
