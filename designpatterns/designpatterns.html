@@ -73,18 +73,18 @@
           <h3 class="accordion-title"> Memento Pattern </h3>
           <p class="accordion-answer">
            
-            Die Idee des Memento-Pattern: Wir wollen eine systematische Möglichkeit haben, eine Momentaufnahme des internen Zustands eines bestimmten Objekts zu speichern, ohne diesen Zustand offenzulegen, um sie später wiederherstellen zu können.
+            Die Idee dahinter: Wir wollen eine systematische Möglichkeit haben, eine Momentaufnahme des internen Zustands eines bestimmten Objekts zu speichern, ohne diesen Zustand offenzulegen, um sie später wiederherstellen zu können.
             <br>
             Mit dem Memento-Pattern erfassen und externalisieren  wir das Innere eines Objekts, ohne die Hülle zu verletzen.
             Damit kann das Objekt später in diesem Zustand wiederhergestellt werden. Zum Beispiel für den Undo-Mechanismus eines Text-Editors oder Taschenrechners.
             <br><br>
-            Originator:<br>
+            <strong>Originator</strong>:<br>
               - erstellt ein Memento, um den internen Zustand zu              speichern<br>
               - verwendet Mementos, um seinen Zustand               wiederherzustellen.<br>
-              Memento:<br>
+              <strong>Memento</strong>:<br>
               - speichert einen unveränderlichen Snapshot des internen Zustands vom Originator<br>
               - kann nur vom Originator abgerufen werden<br>
-              CareTaker:<br>
+              <strong>CareTaker</strong>:<br>
               - speichert Mementos<br>
               - bearbeitet oder liest nie Mementos.
           </p>
