@@ -2787,7 +2787,9 @@ input[type="button"].small,
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  min-height: auto;
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
 
 .videoWrapper img {
