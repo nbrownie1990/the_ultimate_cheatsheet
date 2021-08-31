@@ -2778,21 +2778,15 @@ input[type="button"].small,
 }
 /*Video*/
 .videoWrapper {
-  position: relative;
-  max-width: fit-content;
-  max-height: fit-content;
+  width: fit-content;
+  height: fit-content;
 }
 .videoWrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  width: -moz-available;
   width: -webkit-fill-available;
-  width: fill-available;
-  height: 100%;
   height: -webkit-fill-available;
-  height: fill-available;
 }
 
 .videoWrapper img {
