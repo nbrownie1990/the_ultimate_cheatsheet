@@ -2779,15 +2779,17 @@ input[type="button"].small,
 /*Video*/
 .videoWrapper {
   position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
+  max-width: fit-content;
+  max-height: fit-content;
 }
 .videoWrapper iframe {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: -webkit-fill-available;
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
 
 .videoWrapper img {
