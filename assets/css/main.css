@@ -2780,7 +2780,7 @@ input[type="button"].small,
 .videoWrapper {
   position: relative;
   overflow: hidden;
-  padding-top: 56, 25%;
+  padding-top: 56.25%;
 }
 .videoWrapper iframe {
   position: absolute;
