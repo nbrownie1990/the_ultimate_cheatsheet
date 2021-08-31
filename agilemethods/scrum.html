@@ -6,339 +6,54 @@
 -->
 <html>
   <head>
-    <title>HTML5 & CSS3</title>
+    <title>DevOps</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="../assets/css/main.css" />
-
-    </head>
+  </head>
   <body class="is-preload">
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>HTML5 & CSS3</h1>
+      <h1>Development Operations (DevOps)</h1>
     </div>
 
     <!-- Main -->
-    	<div class="box container">
-					<header>
-						<h2>Die Basics des Web-Developments</h2>
-			
-            <p>Mit Hilfe von HTML ("„Hypertext Markup Language“"), kann die komplette Struktur einer Website vordefiniert werden. 
-           CSS („Cascade Style Sheet “) ist eine Stylesheet-Sprache, die das Aussehen/Layout von HTML-Dokumenten definiert. </p> 
+    <div class="box container">
+      <header>
+        <h2>Die Vorteile von DevOps</h2>
 
-							<h3>Visual Studio Code Playlist by CodeStackr</h3>
-              <hr>
-            <p> Es ist von Vorteil sich gut mit seiner integrierten Entwicklungsumgebung (IDE, von englisch integrated development environment) auszukennen. 
-              Wie die meisten, bevorzuge ich Visual Studio Code. Hier findest du eine Playlist mit vielen Tipps & Tricks, die dir den Einstieg in die Software erleichtern. </p>
-              <iframe class="videoWrapper" src="https://www.youtube.com/embed/videoseries?list=PLkwxH9e_vrAJshxiMo6gIavTr5kYsjPs7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </header>
-          <section>
-              <br>
-              <br>
-              <div style="text-align: center;">
-							<h3>HTML Character-Enteties</h3>
-              <hr>
-							<p>Hier eine super Seite, mit Informationen zu den HTML-Enteties</p>
-            <a href="https://dev.w3.org/html5/html-author/charref">
-						<img src="../images/enteties.png" style="width: 60%" /></a>
-          </div>
-          <br>
-          <br>
-            </section>
-          
-          <section>
-						<header>
-							<h3>CSS-Selektoren</h3>
-						</header>
-            <hr />
-						<p> Selektoren werden in CSS verwendet, um die HTML-Elemente gezielt auszuwählen, um bestimmte Styles darauf anzuwenden.<br>
-            </p>
-            <ul class="default">
-							<li><strong>Universal Selector</strong> -<br>
-                Wählt alles aus<br>
-                <strong> * </strong>{
-                  color : black ;
-              }<br> <br>
-              </li>
-              <li><strong>Element (Type) Selector </strong>-<br>
-                Wählt alle Instanzen eins Tags oder Elements der Seite.<br>
-                <strong> img </strong> {
-                  width: 400px;
-                  height: 200px ;
-               }<br>  <br>
-              </li>
-             
-              <li><strong>Class Selector</strong> -<br>
-                Wählt alle Klassen, mit dem vergebenen Namen aus<br>
-                <strong>.container </strong> {
-                  background-color: lightgreen ;
-              }<br> <br>
-              </li>
-
-              <li><strong>ID Selector</strong>-<br>
-                Wählt spezifische Elemente, mit dem vergebenen Namen aus<br>
-                <strong>#input-field </strong>{
-                  border: green 2px solid ;
-                  width: 250px;
-                  height: 150px ;
-              }<br> <br>
-              </li>
-
-              <li><strong>Selector List </strong>-<br>
-                Wählt alle Elemente der Liste aus<br>
-                <strong>h1, div, p</strong> {
-                  text-align: left;
-                  color: darkgreen;
-              }<br> <br>
-              </li>
-
-              <li><strong>Descendant Combinator</strong> -<br>
-                Wählt verschachtelte Elemente   aus<br>
-                <strong>p a </strong>{
-                  color: tomato;
-              }<br> <br>
-              </li>
-
-              <li><strong>General Sibling Selector(~)</strong> -<br>
-                Dieser Selektortyp wählt alle Elemente aus, die Geschwister eines bestimmten Elements sind.<br>
-                <strong>div ~ p </strong>{
-                   color: darkgreen;
-                }
-              }<br> <br>
-              </li>
-            
-
-              <li><strong>Adjacent Sibling Combinator</strong> -<br>
-                Wählt nur das Element aus, dem das vorherige Element unmittelbar vorausgeht.<br>
-                <strong>h3 +p </strong>{
-                  color: yellow;
-              }<br> <br>
-              </li>
-
-              <li><strong>(Direct) Child Combinator </strong> -<br>
-                Wählt nur direkte Kinder des übergeordneten Elements aus.<br>
-                <strong>div > h3 </strong>{{
-                  color: tomato;
-              }<br> 
-              </li>
-
-              <br><br>
-              <strong>Attribute Selectors</strong>
-              <br><br>
-              <li><strong>a[href="ninabraunger.de"]</strong> -<br>
-                Wählt nur die Elemente aus, die auf den bestimmten Link zeigen.<br>
-                <strong>a[href="ninabraunger.de"]  </strong>{color: lightblue;
-              }<br> <br>
-              </li>
-              
-              <li><strong>a[href*="brownie"]</strong> -<br>
-                Der Stern-tag gibt an, dass der vorangehende Wert irgendwo im Wert des Attributs erscheinen muss.<br>
-                <strong>a[href*="brownie"] </strong> {
-                  color: brown;
-              }<br> <br>
-              </li>
-
-              <li><strong>a[href^="https"] </strong>-<br>
-                Der Anker-tag gibt an, dass der  Anfang einer Zeichenfolge mit gewähltem Wort beginnen muss.<br>
-                <strong>a[href^="https"]</strong>  {
-                  text-decoration: 2px solid;green;
-                  padding-bottom: 15px;
-              }<br> <br>
-              </li>
-
-              <li><strong>a[href$=".jpg"] </strong>-<br>
-                Der Dollar-tag gibt an, dass der  Ende einer Zeichenfolge mit gewähltem Wort enden muss.<br>
-                <strong>a[href$=".jpg"]</strong> {
-                  text-decoration: 2px solid;
-                  green;
-                  padding-bottom: 15px;
-              }<br> <br>
-              </li>
-
-              <strong>Pseudoklassen</strong><br>
-              CSS-Pseudoklassen sind keine eigenen Selektoren, sondern Schlüsselwörter, die einem CSS-Selektor hinzugefügt werden und es Entwicklern ermöglichen, einen speziellen Zustand (visited, fokus, hover)  des/der ausgewählten Elemente(s) anzugeben.
-              
-              <br><br>
-
-              <li>a<strong>:hover </strong>-<br>
-                Wenn der User mit der Maus, über den (in diesem Falle) Link fährt.<br>
-                a<strong>:hover </strong> {
-                      color: green;
-              }<br> <br>
-              </li>
-
-              <li>a<strong>:focus </strong>-<br>
-                Wenn der User mit etwas fokussiert (z.B. Maus-, Tastatur- oder andere Eingabeevents).<br>
-                a<strong>:focus </strong> {
-                      color: pink;
-              }<br> <br>
-              </li>
-
-              <li>h3<strong>:nth-of-type(2n) </strong>-<br>
-                :nth-of-type() wählt Elemente (Selektoren) eines bestimmten Typs basierend auf ihrer Position/Position innerhalb einer Gruppe von Geschwistern aus.Hier wählt man jedes zweite H3-element aus einer Gruppe von Geschwister-H3 aus.<br>
-                h3<strong>:nth-of-type(2n) </strong>{
-                      background-color: tomato;
-              }<br> <br>
-              </li>
-
-              <li>li<strong>:first-of-type </strong>-<br>
-                :first-of-type() wählt das erste Element eines bestimmten Typs aus.<br>
-                li<strong>:first-of-type </strong>{
-                      color: green;
-              }<br> <br>
-              </li>
-
-              <li>a<strong>:visited </strong>-<br>
-                Wenn der Link bereits besucht wurde<br>
-                a<strong>:visited </strong>{
-                      color: lightgrey;
-              }<br> <br>
-              </li>
-
-              <strong>Pseudo-elements</strong> <br>
-
-              Pseudoelemente sind Schlüsselwörter, die einem Selektor hinzugefügt werden, mit denen wir einen bestimmten Teil der ausgewählten Elemente formatieren können. Bei ihnen werden zwei Doppelpunkte :: anstelle von einem vorangestellt.
-              <br><br>
-              Pseudo-Elemente werden verwendet, um Abschnitte oder einen bestimmten Teil eines Elements zu stylen (der erste Buchstabe in einem Wort, die erste Zeile usw.).
-              <br><br>
-
-              <li>p<strong>::first-letter </strong>-<br>
-                Stellt den ersten Buchstaben in der ersten Zeile eines Block-Level-Elements dar, solange er nicht nach einem Bild oder einer Tabelle kommt.<br>
-                p<strong>::first-letter </strong>{
-                      color: red;
-              }<br> <br>
-              </li>
-
-              <li>li<strong>::selection</strong>-<br>
-                Wenn der User etwas auswählt (z.B. markiert) .<br>
-                li<strong>::selection</strong>{
-                      color: white;
-                      background-color: darkblue;
-              }<br> <br>
-              </li>
-
-              <li>selector<strong>::before</strong> // <strong>::after</strong>-<br>
-                Repräsentiert ein formatierbares untergeordnetes Pseudoelement unmittelbar vor bzw. nach dem eigentlichen Inhalt des Ursprungselements..<br>
-                h1<strong>::after</strong>{
-                      color: black;
-                      text-transform: uppercase;
-              }<br> <br>
-              </li>
-           </ul>
-
-           <strong>Selektorspezifität (Priorität, um andere zu überschreiben)</strong><br>
-
-           Spezifität bedeutet in diesem Sinne, wie der Browser den Stil berechnet und auf HTML-Elemente anwendet. (Welcher Selektortyp hat so eine hohe Priorität, dass er die Eigenschaft eines anderen Selektors überschreiben kann?)
-
-           <ol class="default">
-             <li>ID (#) &nbsp;   X-0-0 (Anzahl der ID-Selektoren im Selektor)</li>
-             <li>Class (.) &nbsp; 0-Y-0 (Anzahl der Klassenselektoren, Attributselektoren und Pseudoklassen)</li>
-             <li>Type Selector(Html Tag name) &nbsp; 0-0-Z (Anzahl der Typselektoren und Pseudoelemente)</li>
-
-           </ol>
-
-           <div style="text-align: center;">
-           Um besser zu verstehen, wie die Berechnung funktioniert, ist wichtig, zu wissen, dass die Priorität links höher ist ist, <br>
-           also X > Y > Z <br> <br>
-           <img src="../images/selectorspecific.png" style="width: 60%" />      <br> <br>
-           Wenn man in Visual Studio Code über die Selectoren hovert, kann man die Selector-Specificity sehen.   
-           <br>
-         
-           Der Universalselektor (*) und die Kombinatoren (+, >, ~, Leerzeichen) haben keinen Einfluss auf die Spezifität.
-           <br>
-           <br>
-           <br>
-           <br>
-        </div>
-      </section>
-
-      <section>
-        <header>
-          <h3>Flexbox and Grid</h3>
-          <hr>
-        </header>
         <p>
-          Wir können, dank der stetigen Weiterentwicklung des Web-Developments zwei CSS-Layout-Systeme nutzen:
-                Flexbox und das CSS-Grid-System.
-                Wenn wir uns am Anfang des Projekts überlegen, welches Layoutsystem am besten geeignet ist, ersparen wir uns eine Menge CSS-"Fummelei".   Es ist also nicht entweder oder: Entgegen vieler Vorstellungen, ist es auch möglich beide System zusammen zu verwenden, aber für unterschiedliche Zwecke. 
-                <br> <br>
-              <strong>                 
-                  Flexbox für die Ausrichtung unserer Elemente &  <br>
-                  CSS-Grid für unser Layout 
-              </strong>
-         
-            <ul>
-              <strong><li>Flexbox</li> </strong>
-                <li>Flexbox (display:flex) ist ein eindimensionales Layoutsystem, mit dem wir ein Zeilen- oder Spaltenachsenlayout erstellen können. Es erleichtert uns das Erstellen von responsive Webseiten.<br>
-                Jedes Element, das wir in einem Flex-Container eingebunden haben, wird zu einem Flex-Element.</li> 
-                  <li>Die Hauptrichtung unserer Flexartikel in unserem Flexcontainer ist eine Reihe.</li> 
-                  <br>
-                  
-                <strong> Wir sollten Flexbox wählen, wenn...</strong><br>
-                 ...wir ein kleines Design umzusetzen<br>
-                 ... wir Elemente ausrichten müssen<br>
-                 ...wir ein "Content-First-Design" haben<br>
-                
-            </ul>
+          Es hilft bei der Automatisierung des gesamten Entwicklungsprozesses,
+          mindert Kosten und steigert die Effizienz
+        </p>
 
-            <ul>
-             <strong> <li>CSS-Grid-System</li> </strong>
-                <li>Grid (display:grid) ist ein zweidimensionales Layoutsystem, wobei sowohl Zeilen als auch Spalten verwendet werden, die uns helfen komplexere und organisiertere Designsysteme zu erstellen. Um einen Grid(Gitter)container zu definieren, müssen wir lediglich eine "display: grid"-Property an unser Blockelement übergeben. Jetzt haben wir ein Raster, in dem wir definieren können, wieviele Spalten und Zeilen wir nutzen möchten.
-             </li>
-          <br>
-          <strong>Wir sollten Grid wählen, wenn...</strong>
-          ...wir ein komplexes Design implementieren <br>
-          ...wir Lücken zwischen den Blockelementen brauchen<br>
-         ... sich Elemente überlappen sollen<br>
-          ...wir ein "Layout-First-Design" haben<br>
-                
-            </ul>
-            
-        
-        
-           </p>
-         
+        <h3>Visual Studio Code Playlist by CodeStackr</h3>
+        <hr />
+      </header>
+      <section>
+        <br />
+        <br />
+        <div style="text-align: center">
+          <h3>HTML Character-Enteties</h3>
+          <hr />
+          <p>Hier eine super Seite, mit Informationen zu den HTML-Enteties</p>
+          <a href="https://dev.w3.org/html5/html-author/charref">
+            <img src="../images/enteties.png" style="width: 60%"
+          /></a>
+        </div>
+        <br />
+        <br />
       </section>
 
-
-
-
-      <section>
-						<header>
-							<h3>Responsive Website-Tipps</h3>
-              <hr>
-						</header>
-            <p>
-              <strong>  
-                <ul>
-                  <li>html{</li> 
-                    <li>font-size: 62.5%</li> 
-                      <li>}</li> 
-                    </strong> 
-                Rem-Tipp: Zu Beginn, die font-size auf 62,5% setzen, 
-                  denn 62,5% von 16px (default), sind 10px. Dadurch multiplizieren wir quasi nun immer mit 10. Wenn wir dann unten etwas aus 15rem setzen, entspricht dies 150px.
-                </ul>
-                <ul>
-             <strong><li>.box{</li> 
-                <li>width: %</li> 
-                <li>height: vh</li> 
-                <li>}</li> 
-              </strong> 
-            Wir verwenden am besten immer vh (viewport Ansicht) bei der height, da block-level-elements als Standard (width: 100% und height: 0 haben) --> 100% von 0 wären demnach 0.
-            </ul>
-          
-            </p>
-					</section>
-         
-      <footer class="major container medium videoWrapper" >     
+      <footer class="major container medium videoWrapper">
         <h3>CSS explained by Peter Griffin</h3>
         <img src="../images/familyguycss.webp"/ >
-       </footer>
-    </div> 
+      </footer>
+    </div>
 
     <!-- Footer -->
     <div id="footer">
@@ -348,7 +63,9 @@
         </header>
 
         <p>
-          Einfach eine <a href="https://www.ninabraunger.de/#contact">Mail</a> schreiben.<br />
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
         </p>
 
         <ul class="copyright">
@@ -373,11 +90,11 @@
       </div>
     </div>
 
-     <!-- Scripts -->
-     <script src="../assets/js/jquery.min.js"></script>
-     <script src="../assets/js/browser.min.js"></script>
-     <script src="../assets/js/breakpoints.min.js"></script>
-     <script src="../assets/js/util.js"></script>
-     <script src="../assets/js/main.js"></script>
-   </body>
- </html>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
