@@ -2787,8 +2787,6 @@ input[type="button"].small,
   position: absolute;
   top: 0;
   left: 0;
-  width: 560px;
-  height: 315px;
   max-width: -webkit-fill-available;
   max-height: -webkit-fill-available;
 }
