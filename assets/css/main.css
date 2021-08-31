@@ -2782,14 +2782,13 @@ input[type="button"].small,
   max-width: fit-content;
   max-height: fit-content;
 }
+
 .videoWrapper iframe {
   position: relative;
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  height: 100vh;
   height: -webkit-fill-available;
-  height: fill-available;
 }
 
 .videoWrapper img {
