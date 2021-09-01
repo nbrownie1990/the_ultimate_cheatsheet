@@ -22,24 +22,46 @@
         <h2>What is the Linked List?</h2>
       </header>
       <section>
-        <p>Das ...</p>
-      </section>
+        <p>
+          Eine Linked List ist, wie der Name schon sagt, eine Liste von
+          verknüpften Elementen. Jedes Element zeigt auf den nächsten Knoten in
+          der Liste. Stell dir eine verlinkte Liste als Schnitzeljagd vor. Du
+          beginnst mit einem Hinweis (dem "Head" der Liste) und jeder Hinweis
+          führt Sie zum nächsten Hinweis (dem nächsten Zeiger), bis du am Ende
+          bist (dem "Tail" der Liste). <br />
+          <br />
+          Einige häufige Gründe für die Verwendung von verknüpften Listen
+          sind:<br />
+          <br />
 
-      <section>
-        <header>
-          <h3>1. "This" in einer Methode</h3>
-        </header>
-        <hr />
-        <p>Eine ....</p>
-        <ul>
-          <strong>const person = {</strong>
-          <li>name: "Nina"</li>
-          <li>birthYear: 1678</li>
-          <li>age: function(){</li>
-          <li>return 2021 - this.birthyear;</li>
-          <li>}</li>
-          <li>}</li>
-        </ul>
+          Einfügen von Elementen in die Mitte der Daten: <br />
+          Wir können überall in der Liste einfügen, solange wir den Knoten vor
+          dem Einfügeindex kennen. O(n) in einem Vektor, O(1) in einer
+          verknüpften Liste.
+          <br />
+          <br />
+
+          Schnelleres Erweitern des Speicherplatzes für unsere Daten:<br />
+          Da sich Linked Lists auf diese Idee der Verwendung von Zeigern
+          konzentrieren, müssen wir unseren Daten keine zusammenhängenden
+          Speicherblöcke zuweisen. Dies spart uns O(n) Zeit im Vergleich zu
+          einer naiven Implementierung eines Vectors.
+          <br />
+          <br />
+
+          Ein großer Nachteil von verknüpften Listen besteht darin, dass wir
+          keinen wahlfreien Zugriff auf ein Element in der Liste über seinen
+          Index haben.
+          <br />
+          <br />
+          Beispiel: Wenn wir das 5. Element in einer Liste abrufen wollten,
+          müssten wir die Liste durchlaufen, bis wir darauf gestoßen sind.
+        </p>
+
+        <div style="text-align: center">
+          <img src="../images/saullinkedlist.jpeg" style="width: 60%" />
+        </div>
+        <br />
       </section>
 
       <footer class="major container medium videoWrapper">
