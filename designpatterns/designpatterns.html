@@ -57,7 +57,7 @@
   <a href="https://www.javatpoint.com/design-patterns-in-java">Hier</a> ein super Link. Und
   <a href="https://www.tutorialspoint.com/design_pattern/">hier</a> noch einer.
   
-
+ <!-- https://dev.to/awwsmm/design-patterns-in-java-58na -->
         <section>
           <header>
             <br>
@@ -140,8 +140,8 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Template Method Pattern </h3>
           <p class="accordion-answer">
-           
-            <!-- https://dev.to/awwsmm/design-patterns-in-java-58na -->
+            Die sogenannte "Schablonenmethode" ruft abstrakte Methoden auf, die erst in den Unterklassen definiert werden. Diese Methoden werden auch als Einschubmethoden bezeichnet. Dadurch besteht die Möglichkeit, einzelne Schritte des Algorithmus zu verändern oder zu überschreiben, ohne dass die zu Grunde liegende Struktur des Algorithmus modifiziert werden muss.<br><br> Zum Beispiel bei einer Buchungskontrolle(Audit-Trail) in einer Banking-App. Wir definieren in der abstrakten Klasse die Methode execute(){ audit.Trail.record();<br>
+            doExecute();<br> und modifizieren über konkrete Klassen(TransferMoney, GenerateReport) die Ausführungen, in der die Buchungskontrolle stattfinden soll.
           </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/templatemethodpattern.png ">
