@@ -212,7 +212,6 @@
         <h3 class="accordion-title"> Chain of Responsibility Pattern </h3>
         <p class="accordion-answer">
          
-           
           Um zu vermeiden den Sender einer Anfrage an den Empfänger zu koppeln, geben wir mehr als einem Objekt die Möglichkeit, die Anfrage zu bearbeiten. Diese Objekte verketten wir, um die Anforderung entlang der Kette zu übergeben, bis ein Objekt sie verarbeitet.
 
           Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn Authentifizierung erfolgreich, wird der Request weitergeben und wenn nicht, dann nicht.
@@ -226,11 +225,14 @@
         <h3 class="accordion-title"> Visitor Pattern </h3>
         <p class="accordion-answer">
          
-            Die.....
-            <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+          
+          Oft ist es schwierig, nicht miteinander verwandte Operationen in die Klassen einer Objektstruktur zu integrieren. Bei der Erweiterung um neue Operationen müssen alle Klassen erweitert werden. Das Visitor-Pattern lagert die Operationen in externe Besucherklassen aus. Dazu müssen die zu besuchenden Klassen eine Schnittstelle zum Empfang eines Besuchers definieren.
+          <br><br>
+          Das Pattern ermöglicht das Hinzufügen neuer Funktionen, ohne vorhandene Klassen zu ändern. Es bietet eine Möglichkeit, einen Algorithmus einfach von einer Objektstruktur zu trennen. 
+          
         </p>
         <div class="img-wrapper">
-          <img class="design-pattern" src="../images/mementopattern.png ">
+          <img class="design-pattern" src="../images/visitorpattern.png ">
         </div>
       </div>
 
