@@ -200,8 +200,8 @@
         <h3 class="accordion-title"> Mediator Pattern </h3>
         <p class="accordion-answer">
          
-            Die.....
-            <strong>Lorem ipsum dolor sit amet.</strong>
+          Dieses Pattern wird verwendet, um die Kommunikationskomplexität zwischen mehreren Objekten zu reduzieren. Anstatt innerhalb jeder Klasse die direkte Kommunikation mit anderen Klassen (starkes Coupling) zu implementieren, wird ein Mediator-Objekt eingesetzt und jede Klasse kann dieses Mediator-Objekt aufrufen, um mit anderen zu kommunizieren. Dies kann das Coupling zwischen den Klassen lockern und die Entwicklung und Erweiterung des Programms erleichtern.
+
         </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/mementopattern.png ">
@@ -212,11 +212,13 @@
         <h3 class="accordion-title"> Chain of Responsibility Pattern </h3>
         <p class="accordion-answer">
          
-            Die.....
-            <strong>Sie ist ebenfalls eine Array-Methode.</strong>
+           
+          Um zu vermeiden den Sender einer Anfrage an den Empfänger zu koppeln, geben wir mehr als einem Objekt die Möglichkeit, die Anfrage zu bearbeiten. Diese Objekte verketten wir, um die Anforderung entlang der Kette zu übergeben, bis ein Objekt sie verarbeitet.
+
+          Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn Authentifizierung erfolgreich, wird der Request weitergeben und wenn nicht, dann nicht.
         </p>
  <div class="img-wrapper">
-          <img class="design-pattern" src="../images/mementopattern.png ">
+          <img class="design-pattern" src="../images/chainpattern.png ">
         </div>
       </div>
       
