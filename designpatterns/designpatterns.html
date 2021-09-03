@@ -31,7 +31,39 @@
          <p>
           Design Patterns, kann man als die Kunst 
           des Designens von objekt-orientierter Software bezeichnen. Die folgenden Design Patterns/ Techniken stammen aus dem Buch <a href="https://github.com/amilajack/reading/blob/master/Design/GOF%20Design%20Patterns.pdf">"Design Patterns"</a> der Gang of Four.
+          <br><br>
+          <hr>
+          <h3>The SOLID-Principle</h3>>
+          <hr>
+          <strong>Single-Responsibility-Prinzip:</strong><br>
+          Das Single-Responsibility-Prinzip besagt, dass jede Klasse nur eine Aufgabe haben sollte.
+          Eine Klasse sollte einen und nur einen Grund haben, sich zu ändern. Der Grund für dieses Prinzip ist die Trennung von Verantwortlichkeiten oder Verhaltensweisen, damit Debugging und Refactoring keine Probleme für andere Teile eines Projekts verursachen.
 
+          <strong>Open-closed-Principle:</strong><br>
+          Unsere Klassen sollen offen gegenüber Erweiterungen sein aber geschlossen für Modifikationen. 
+          <br><br>
+
+
+          <strong>Liskov-substitution-Principle:</strong><br>
+          Das Liskov-Substitutionsprinzip besagt, dass bei einer Vererbung eine Elternklasse problemlos durch ihre Kindklasse ersetzt werden kann.          
+          Dies liegt daran, dass die untergeordnete Klasse bei der Vererbung in der Lage sein sollte, alles zu tun, was die übergeordnete Klasse kann, und die gleichen oder sogar verbesserte Ergebnisse liefern.
+          <br><br>
+
+
+          
+          <strong>Interface Segregation Principle:</strong><br>
+          Unter dem Prinzip der Schnittstellentrennung versteht man, dass ein Client niemals gezwungen werden sollte, eine Schnittstelle zu implementieren, die er nicht verwendet, oder dass Clients nicht gezwungen werden sollten, sich auf Methoden zu verlassen, die sie nicht verwenden. Das Ziel dieses Prinzips ist es, unnötigen Code aus Klassen, um unerwartete Fehler zu reduzieren, wenn die Klasse keine Aktion ausführen kann. Wir teilen Aktionen in kleinere Sets auf, damit eine Klasse nur die Aktionen ausführt, die sie benötigt.
+          <br><br>
+        
+
+          <strong>Dependency Inversion Principle:</strong><br>
+          Das Dependency Inversion Principle besagt, dass Entitäten von Abstraktionen abhängen müssen, nicht von Konkretionen. High-Level-Module(Klassen, die ein Tool/ eine Library implementieren) sollten nicht von Low-Level-Modulen (die Tools oder Librarys, die zum Ausführen einer Aktion benötigt werden) abhängen. Beides sollte von der Abstraktion abhängen. Das Prinzip ermöglicht die Entkopplung. Dies hilft uns, Abhängigkeiten zu reduzieren und in Zukunft eine einfachere Implementierung anderer Tools zu ermöglichen.
+          <br><br>
+          <hr>
+          <strong>Coupling:</strong><br>
+          Unter Coupling versteht man den Grad der gegenseitigen Abhängigkeit zwischen Klassen/Modulen. Coupling zeigt an, wie sehr zwei Klassen verbunden sind. Ein starkes Coupling sollte im Sinne der objektorientierten Programmierung vermieden werden. 
+          <br><br>
++
         </p>
       </section>
       <header>
