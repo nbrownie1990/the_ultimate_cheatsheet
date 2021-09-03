@@ -60,11 +60,30 @@
           Das Dependency Inversion Principle besagt, dass Entitäten von Abstraktionen abhängen müssen, nicht von Konkretionen. High-Level-Module(Klassen, die ein Tool/ eine Library implementieren) sollten nicht von Low-Level-Modulen (die Tools oder Librarys, die zum Ausführen einer Aktion benötigt werden) abhängen. Beides sollte von der Abstraktion abhängen. Das Prinzip ermöglicht die Entkopplung. Dies hilft uns, Abhängigkeiten zu reduzieren und in Zukunft eine einfachere Implementierung anderer Tools zu ermöglichen.
           <br><br>
           <hr>
+          <h2>Principles of Object-Oriented-Programming:</h2>
+          <strong>Inheritance:</strong>
+          <br><br>
+          Keyword: extend
+          <br>          
+          Wenn mehrere Klassen gemeinsame Attribute (variablen) und Verhalten (methods) haben, werden diese gemeinsamen Teile extrahiert und in einer öffentlichen Klasse definiert. Andere Klassen und Klassen können mit dieser öffentlichen Klasse eine Vererbungsbeziehung eingehen, so dass der öffentliche Teil nicht in mehreren Klassen neu definiert werden muss! Diese gemeinsame Klasse ist die übergeordnete Klasse, die auch als Parent/Base/Superclass bezeichnet wird, und die anderen Klassen sind die Unterklassen(Childs/Subclasses). Unterklassen können direkt auf nicht-private Variablen des Parents zugreifen.
+
+          <br> 
+          <br> 
+          <strong>Polymorphism:</strong><br>
+          Polymorphismus (viele Formen) ist die Implementierung eines Objekts mit verschiedenen Manifestationen. Ein Beispiel für Polymorphismus: Dieselbe Taste (z.B. "ENTER") kann in verschiedenen Applikationen, unterschiedliche Aktionen auslösen ("Zeilenvorschub", "Senden", "Öffnen") Das Drücken der "ENTER"-Taste spielt in verschiedenen Anwendungen eine andere Rolle. Polymorphism hilft bei der Skalierbarkeit, Flexibilität und Vereinfachung von Applikationen.  
+          Polymorphism kann als Schnittstelle arbeiten und unterstützt darin die
+          Kopplung zwischen Klassen aufzuheben.
+
+
+          <br> 
+          <br> 
+          <strong>Encapsulation:</strong><br>
+          Wir fassen die Objekte zusammen, die die gleichen Eigenschaften haben oder zur gleichen Klasse gehören, und verpacken Sie gut. Das bedeutet wir versuchen Coupling zu vermeiden.
+
+          <br> 
+          <br> 
           <strong>Coupling:</strong><br>
           Unter Coupling versteht man den Grad der gegenseitigen Abhängigkeit zwischen Klassen/Modulen. Die Kopplung ist ein Maß dafür, wie zwei oder mehr Komponenten voneinander abhängen. Wenn eine Ihrer Komponenten nicht mehr funktioniert, wenn die andere Komponente ausgefallen ist, sind sie fest gekoppelt. Rückblickend gilt: Je weniger diese Komponenten voneinander abhängig sind, desto lockerer sind sie gekoppelt. Ein starkes Coupling sollte im Sinne der objektorientierten Programmierung vermieden werden.  Idealerweise möchten wir, dass unsere Komponenten zu 100 % unabhängig sind.
-
-          <br><br>
-+
         </p>
       </section>
       <header>
