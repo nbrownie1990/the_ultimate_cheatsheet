@@ -383,9 +383,9 @@
           <p class="accordion-answer">
            
             Ein Singleton bedeutet (wie "single" schon sagt) die Beschränkung der Instanziierung einer Klasse auf eine einzelne Instanz.Mit anderen Worten, jedes Mal, wenn wir die Klasse verwenden, ist es jedoch dasselbe Objekt, das wir zuerst erstellt haben. 
-            
+            <br><br>
             Dieses Muster ermöglicht es uns also, von jeder Datei oder Funktion aus auf die Member einer Klasseninstanz zuzugreifen und sie zu bearbeiten. Diese Singletons können Schnittstellen implementieren, Methoden als Argumente übergeben und können polymorph sein.          
-      
+            <br><br>
             Einsatzbeispiel: Eine Klasse, die unsere Konfigurationseinstellungen der Applikation managed.
 
           </p>
@@ -398,10 +398,11 @@
           <h3 class="accordion-title"> Factory Method Pattern </h3>
           <p class="accordion-answer">
             Das Fabrikmethodenmuster ist eine clevere, aber subtile Erweiterung des Konzepts, dass eine Klasse als eine Art "Verkehrspolizist" fungiert und entscheidet, welche Unterklasse einer einzelnen Hierarchie instanziiert wird.
-            
+            <br><br>
             Im Factory-Pattern erstellen wir ein Objekt, ohne die Erstellungslogik offenzulegen. Eine Schnittstelle wird zum Erstellen eines Objekts verwendet, lässt jedoch die Unterklasse entscheiden, welche Klasse instanziiert werden soll. Anstatt jedes Objekt manuell zu definieren, können wir dies programmgesteuert tun.
-          
+            <br><br>
             Kurz gesagt, eine Fabrik ist ein Objekt, das Objekte ohne die Verwendung eines Konstruktors erstellt.
+            Wenn wir z.B. ein eigenes Framework bauen und darin Produkte/Komponenten (Controller) vorbereiten, die später von Usern modifiziert (SonyController) werden können.
           </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/factorymethodpattern.png ">
@@ -412,15 +413,18 @@
           <h3 class="accordion-title"> Abstract Factory Pattern </h3>
           <p class="accordion-answer">
             Das Abstract Factory Pattern stellt eine Schnittstelle zum Erstellen von Klassenfamilien ohne konkrete Implementierungen bereit.
-           
+           <br><br>
             Stellen wir uns vor, wir erstellen ein Shopsystem für ein Möbelhaus. Der Laden verkauft Stühle, Sofas, etc...
-            
             Doch es gibt nicht nur einen Stuhltyp, sondern mehrere Stuhltypen.
             Diese Stuhltypen könnte man auch eine Stuhlfamilie nennen, daher gibt es für jeden Stuhltyp unterschiedliche Klassen.
-            Allerdings muss er auch zu den Möbelstücken ähnlicher Stile zusammengebracht werden können (z.B. Landhaus)
-            
+            Allerdings muss er auch zu den Möbelstücken ähnlicher Stile zusammengebracht werden können (z.B. Landhaus).
+            <br><br>
+            Anderes Beispiel: wir bauen ein GUI-Framework mit Widgets wie Button, TextBox, Drop-Down-List und mit Themes (Material Design-Theme und Ant-Theme). Je nachdem welches Theme ausgewählt ist, sollen die Widgets in diesem Stil angezeigt werden. So wollen wir Material Design-Theme keinen Ant-Button sehen.
+            <br><br>
             Das abstract Factory Pattern verwenden wir, wenn unser Code mit verschiedenen Familien verwandter Produkte arbeiten muss, aber nicht von den konkreten Klassen dieser Produkte abhängig sein soll.
             Achtung: Der Code kann komplizierter werden, als er sein sollte, da mit diesem Muster viele neue Schnittstellen und Klassen eingeführt werden.
+
+
           </p>
           <div class="img-wrapper">
           <img class="design-pattern" src="../images/abstractfactorypattern.png ">
@@ -432,9 +436,11 @@
           <p class="accordion-answer">
            
             Das Builder-Muster wurde eingeführt, um einige der Probleme mit Factory- und Abstract Factory-Entwurfsmustern zu lösen (z.B. wenn das Objekt sehr viele Attribute enthält).Es wird meistens verwendet, wenn ein Objekt nicht in einem Schritt erstellt werden kann.
-            
+            <br><br>
             Das Builder Pattern konstruiert ein komplexes Objekt aus einfachen Objekten mithilfe eines Schritt-für-Schritt-Ansatz.
-            Eine Builder-Klasse erstellt in dem Sinne  schrittweise das endgültige Objekt. Dieser Builder ist unabhängig von anderen Objekten.          
+            Eine Builder-Klasse erstellt in dem Sinne  schrittweise das endgültige Objekt. Dieser Builder ist unabhängig von anderen Objekten.
+            <br><br>
+            Zum Beispiel wenn wir ein Dokument (Powerpoint-Slide) exportieren wollen in verschiedene Formate (PDF, Movie, Image...)          
           </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/builderpattern.png ">
