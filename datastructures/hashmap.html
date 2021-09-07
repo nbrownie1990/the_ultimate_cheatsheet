@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Arrays</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was ist ein Array?</h2>
+      </header>
+      <section>
+        <p>
+          Wir verwenden Arrays als Datenstruktur, um eine Liste von Elementen
+          desselben Datentyps zu speichern. Diese Elemente werden nebeneinander
+          oder zusammen in Folge an zusammenhängenden Speicherorten gespeichert.
+          Das bedeutet, dass wir sehr gut über den Index des Arrays auf das
+          Element zugreifen können. Ein Array mit Integers würde bspw. 4Bytes im
+          Memory benötigen.
+        </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>Working with Arrays</h3>
+        </header>
+        <hr />
+        <p>
+          Arrays sind wahrscheinlich die Datenstruktur, mit der wir am
+          häufigsten arbeiten. Im Code sind Arrays eine Sammlung von Werten, die
+          zwischen eckigen Klammern gespeichert werden. Diese Werte werden im
+          Speicher zugewiesen. Jeder Wert in einem Array enthält einen
+          numerischen Index in aufsteigender Reihenfolge vom ersten zum letzten.
+          Das heißt der Speicher für Arrays wird zugewiesen bzw. vorab
+          festgelegt. Ihre Größe kann ohne entsprechende Algorithmen nicht
+          verändert werden (dazu gleich mehr). Außerdem sind Arrays
+          null-indiziert, was bedeutet, dass der erste Index in einem Array
+          nicht 1 ist, sondern 0. Dies ist ein grundlegender Vorbehalt, aber
+          entscheidend, den wir uns merken sollten. Arrays sind statisch, ihre
+          Größe kann nicht flexibel verändert werden. Deshalb müssen wir
+          schätzen, wieviel Platz wir brauchen, wenn es zu wenig Platz ist
+          müssen wir den Array verändern und das kostet. Wenn man die Zahl der
+          Elemente vorab weiß, sollte man Arrays nutzen. Andernfalls besser
+          andere Datenstrukturen.
+          <br /><br />
+          <strong>Search</strong>
+          by Index: O(1)<br />
+          by Value: O(n)<br />
+          <br /><br />
+          <strong>Insert</strong>
+          Beginning/End: O(n)<br />
+          Middle: O(n)<br />
+          <br /><br />
+          <strong>Delete</strong>
+          Beginning: O(n)<br />
+          Middle: O(n)<br />
+          End: O(n)<br />
+        </p>
+      </section>
+
+      <footer class="major container medium videoWrapper">
+        <h3>Arrays</h3>
+        <iframe
+          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
