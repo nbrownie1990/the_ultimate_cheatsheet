@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hash Tables</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The Hash Table</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was ist eine Hash Table?</h2>
+      </header>
+      <section>
+        <p>
+          Hash Tables werden in verschiedenen Programmiersprachen
+          unterschiedlich bezeichnet, sind aber ein und dieselbe Sache. In Java
+          werden Hash Tables "HashMap" genannt, in JavaScript "Objects" und in
+          Python oder C# "Dictionarys". Die HashTable ordnet einem Schlüssel
+          Werte zu. Jeder Schlüssel ist einzigartig und kann nur einem Wert
+          zugeordnet werden. Sie ist deshalb super schnell in LookUps und wir
+          können sie nutzen, um unsere Algorithmen zu optimieren.
+          <br />
+          Um festzustellen, ob zwei Schlüssel gleich oder verschieden sind,
+          verwendet Map die Methode equals(). <br />
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th><strong>Hash Map</strong></th>
+              <th><strong>Hash Table</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><strong>Definition</strong></th>
+              <td>
+                Die HashMap in Java ist eine Map-basierte Sammlungsklasse, die
+                zum Speichern von Key-Value-Pairs verwendet wird.
+              </td>
+              <td>
+                Eine HashTable ist hingegen ein Array einer Liste, wobei jede
+                Liste als Bucket bezeichnet wird. In einer HashTable enthaltene
+                Values sind eindeutig und hängen von ihrem Key ab.
+              </td>
+            </tr>
+            <tr>
+              <th><strong>Methoden-Synchronisation</strong></th>
+              <td>nein</td>
+              <td>ja</td>
+            </tr>
+            <tr>
+              <th><strong>Thread-Sicherheit</strong></th>
+              <td>nein</td>
+              <td>ja</td>
+            </tr>
+            <tr>
+              <th><strong>Iterieren via</strong></th>
+              <td>Iterator</td>
+              <td>Enumerator</td>
+            </tr>
+            <tr>
+              <th><strong>Null-Toleranz</strong></th>
+              <td>einen null-key und mehrere null-values</td>
+              <td>nein</td>
+            </tr>
+            <tr>
+              <th><strong>Geschwindigkeit</strong></th>
+              <td>schnell</td>
+              <td>langsam</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <header>
+          <h3>Working with Arrays</h3>
+        </header>
+        <hr />
+        <p>
+          <!-- Die Basis einer guten Kartenimplementierung ist ihre Hash-Funktion. Der Zweck dieses Hashs ist:
+
+              Geben Sie eine gehashte oder codierte Ausgabe bei jeder gültigen Eingabe an
+              Bei gleicher Eingabe immer die gleiche Ausgabe zurückgeben
+              Kollisionen minimieren, wenn zwei Eingaben die gleiche Ausgabe zurückgeben.
+            
+            
+
+             -->
+          Es gibt 4 Map-Typen in Java, die wie folgt beschrieben werden:
+          <br /><br />
+          <strong>HashMap</strong> - Es handelt sich um eine ungeordnete und
+          unsortierte Karte und ist daher eine gute Wahl, wenn die Reihenfolge
+          nicht betont wird. Eine HashMap lässt einen NULL-Schlüssel und mehrere
+          NULL-Werte zu und behält keine Einfügereihenfolge bei. <br /><br />
+          <strong>HashTable</strong> – Erlaubt nichts Null und hat Methoden, die
+          synchronisiert werden. Da es die Thread-Sicherheit ermöglicht, ist die
+          Leistung langsam. <br /><br />
+          <strong>LinkedHashMap</strong> – Langsamer als eine HashMap, behält
+          aber die Einfügereihenfolge bei und hat eine schnellere Iteration.
+          <br /><br />
+          <strong>TreeMap</strong>– Eine sortierte Map, die das Erstellen einer
+          Sortierreihenfolge mithilfe eines Konstruktors unterstützt.
+
+          <br /><br />
+          Maps sind unglaublich mächtig, weil Sie sie super schnell sind.
+          <strong>Search</strong>
+          O(1)
+          <br /><br />
+          <strong>Insert</strong>
+          O(1)
+          <br /><br />
+          <strong>Delete</strong>
+          O(1)
+        </p>
+      </section>
+
+      <footer class="major container medium videoWrapper">
+        <h3>Arrays</h3>
+        <iframe
+          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

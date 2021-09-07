@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Linked Lists</title>
+    <title>Queues</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,23 +13,23 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Linked Lists</h1>
+      <h1>The Queue</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>What is the Linked List?</h2>
+        <h2>Was ist eine Queue?</h2>
       </header>
       <section>
         <p>
-          Eine Queue (Warteschlange) organisiert sich first-in-first-out. Wenn
-          wir uns eine Schlange von Menschen vorstellen, die in der Schlange
-          warten, ist das ziemlich simpel. Wenn man an erster Stelle steht, wird
-          einem zuerst geholfen. Ebenso wird einem zuletzt geholfen, wenn man
-          der letzte in der Schlange ist. Eine Warteschlange bietet dieselben
-          Funktionen wie ein Stack, wobei die Implementierung von Push etwas
-          anders ist.
+          Eine Queue (Warteschlange) organisiert sich first-in-first-out
+          (FIFO-Prinzip). Wenn wir uns eine Schlange von Menschen vorstellen,
+          die in der Schlange warten, ist das ziemlich simpel. Wenn man an
+          erster Stelle steht, wird einem zuerst geholfen. Ebenso wird einem
+          zuletzt geholfen, wenn man der letzte in der Schlange ist. Eine
+          Warteschlange bietet dieselben Funktionen wie ein Stack, wobei die
+          Implementierung etwas anders ist, denn Queues sind Interfaces in Java.
           <br /><br />
 
           Ein Stack und eine Queue haben so ziemlich die gleiche Datenstruktur,
@@ -38,30 +38,38 @@
           Reihenfolge basierend auf der Einfügezeit beizubehalten: Verwende
           einen Stack, wenn du das neueste Element verfolgen möchtest. Verwende
           eine Queue, wenn du das älteste Element im Auge behalten möchtest.
+          Beispiele in der Praxis: Drucker, Operating Systems (Processors),
+          WebServers (manage incoming requests), Live support systems
+          (Warteschleife).
+
+          <br /><br />
+          <strong>
+            THE BIG O OF QUEUE<br />
+            Access: O(N)<br />
+            Search: O(N)<br />
+            Insert: O(1)<br />
+            Delete: O(1)<br />
+            <br /><br />
+            OPERATIONS:<br />
+            enqueue () & dequeue ( )<br />
+            peek ( ) & isEmpty ( ) & isFull()<br />
+            Runtime-Complexity = O(1)<br />
+            <br />
+            METHODS:<br />
+            add(Ee) - Wenn Queue voll ist, wirft add eine Exception aus<br />
+            offer(Ee) - offer wirft keine Exception aus<br />
+            pole( ) - wenn Queue leer ist - null<br />
+            remove ( ) - wenn Queue leer ist - Exception<br />
+            peek( ) - wenn Queue leer ist - null<br />
+            element ( ) - wenn Queue leer ist - Exception<br />
+          </strong>
         </p>
       </section>
 
-      <section>
-        <header>
-          <h3>1. "This" in einer Methode</h3>
-        </header>
-        <hr />
-        <p>Eine ....</p>
-        <ul>
-          <strong>const person = {</strong>
-          <li>name: "Nina"</li>
-          <li>birthYear: 1678</li>
-          <li>age: function(){</li>
-          <li>return 2021 - this.birthyear;</li>
-          <li>}</li>
-          <li>}</li>
-        </ul>
-      </section>
-
       <footer class="major container medium videoWrapper">
-        <h3>This explained by codeSTACKr</h3>
+        <h3>Cutie Queue</h3>
         <iframe
-          src="https://www.youtube.com/embed/Pi3QC_fVaD0"
+          src="https://www.youtube.com/embed/ligWuGbhUMY"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
