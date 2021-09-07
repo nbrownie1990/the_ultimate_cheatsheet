@@ -37,24 +37,32 @@
           <h3>The Big O Notation</h3>
           <hr />
           <p>
-            Die Big O Notation ist eine mathematische Notation ( ein beschreibender Ausdruck - Darstellung von Rechenoperationen, Bewegungsverläufen und Reihenfolgen anhand von Formeln), welche das Limit einer Funktion beschreibt, wenn das Argument/der Fall zu einem bestimmten Wert oder Undendlichkeit tendiert.
-            Bestimmte Operationen können mehr oder weniger gut performen, abhängig von ihrer Datenstruktur/Algorithmus.
-            The Big O hilft uns dabei die Performance eines Algorythmus zu beschreiben und zu bestimmen ob er skalierbar ist oder nicht. 
-            <br> <br>
-            Die Big O Notation wird von Entwicklern
-            verwendet, um zu kommunizieren, wie gut ihr Programm mit einer Zunahme der Eingaben umgeht (wichtig bei großen Datenmengen). 
-            Sie kann ein Maß dafür sein, wie
-            schnell ein Programm läuft ("Runtime-Complexity") oder wie viel
-            Speicherplatz(Memory) es verbraucht ("Space-Complexity").
+            Die Big O Notation ist eine mathematische Notation ( ein
+            beschreibender Ausdruck - Darstellung von Rechenoperationen,
+            Bewegungsverläufen und Reihenfolgen anhand von Formeln), welche das
+            Limit einer Funktion beschreibt, wenn das Argument/der Fall zu einem
+            bestimmten Wert oder Undendlichkeit tendiert. Bestimmte Operationen
+            können mehr oder weniger gut performen, abhängig von ihrer
+            Datenstruktur/Algorithmus. The Big O hilft uns dabei die Performance
+            eines Algorythmus zu beschreiben und zu bestimmen ob er skalierbar
+            ist oder nicht.
+            <br />
+            <br />
+            Die Big O Notation wird von Entwicklern verwendet, um zu
+            kommunizieren, wie gut ihr Programm mit einer Zunahme der Eingaben
+            umgeht (wichtig bei großen Datenmengen). Sie kann ein Maß dafür
+            sein, wie schnell ein Programm läuft ("Runtime-Complexity") oder wie
+            viel Speicherplatz(Memory) es verbraucht ("Space-Complexity").
             <br />
             <br />
             Kurz gesagt: wenn ein Programm in der Lage ist, eine immer größere
             Menge an Eingaben in der gleichen Zeit wie eine kleine Menge an
             Eingaben zu verarbeiten, wird es gemäß der Big O Notation gut
-            abschneiden. 
-            <br><br>
-            
-            Mit der Big O Notation können wir die Komplexität unseres Codes ausdrücken. Meist geht es um einen Kompromiss zwischen Speicher und
+            abschneiden.
+            <br /><br />
+
+            Mit der Big O Notation können wir die Komplexität unseres Codes
+            ausdrücken. Meist geht es um einen Kompromiss zwischen Speicher und
             Zeit.
           </p>
           <img src="../images/bigo.webp" style="width: 60%" />
@@ -69,62 +77,95 @@
           <h4>Erläuterung von der schnellsten bis zu langsamsten Laufzeit</h4>
           <hr />
         </header>
-        
+
         <ul class="default">
-          <li><strong>O(1): Constant Time Complexity</strong> <br>
-            Der Algorithmus wird gleich ausgeführt, unabhängig davon, wie viele Elemente sich in der Liste befinden.</li>
-          <li><strong>O(log n): Logarithmic Time Complexity</strong> <br>
-            Die Zeit, die der Algorithmus benötigt, um zu laufen, wird gleich bleiben, egal wie viele Elemente sich in der Liste befinden. Ein Algorithmus mit logarithmic time complexity ist skalierbarer als einer mit linear time complexity.</li>
-          <li><strong>O(n): Linear Time Complexity</strong> <br>
-            Je mehr Elemente in der Liste enthalten sind, desto länger dauert es, bis der Algorithmus ausgeführt wird. Die Inputgröße ist also entscheidend.
+          <li>
+            <strong>O(1): Constant Time Complexity</strong> <br />
+            Der Algorithmus wird gleich ausgeführt, unabhängig davon, wie viele
+            Elemente sich in der Liste befinden. <br />
+            Zum Beispiel: Find element in an array by its index.
           </li>
-          <li><strong>O(n*log n): Log Linear Time Complexity</strong> </li>
-          <li><strong>O(n^2): Quadratic Time Complexity</strong> <br>
-            Wenn die Elemente in der Liste zunehmen, erhöht sich die Zeit, die der Algorithmus benötigt, um exponentiell zu laufen.
+          <li>
+            <strong>O(log n): Logarithmic Time Complexity</strong> <br />
+            Die Zeit, die der Algorithmus benötigt, um zu laufen, wird gleich
+            bleiben, egal wie viele Elemente sich in der Liste befinden. Ein
+            Algorithmus mit logarithmic time complexity ist skalierbarer als
+            einer mit linear time complexity.
+            <br />
+            Zum Beispiel: BinarySearch in sorted array.
+          </li>
+          <li>
+            <strong>O(n): Linear Time Complexity</strong> <br />
+            Je mehr Elemente in der Liste enthalten sind, desto länger dauert
+            es, bis der Algorithmus ausgeführt wird. Die Inputgröße ist also
+            entscheidend. <br />
+            Zum Beispiel: Looping through an array.
+          </li>
+          <li><strong>O(n*log n): Log Linear Time Complexity</strong></li>
+          <li>
+            <strong>O(n^2): Quadratic Time Complexity</strong> <br />
+            Wenn die Elemente in der Liste zunehmen, erhöht sich die Zeit, die
+            der Algorithmus benötigt, um exponentiell zu laufen.<br />
+            Zum Beispiel: A loop within a loop.
           </li>
           <li><strong>O(n^3): Cubic Time Complexity</strong></li>
-          <li><strong>O(2^n): Exponential Time Complexity</strong> </li>
-          <li><strong>O(n!): Factorial Time Complexity</strong> </li>
+          <li>
+            <strong>O(2^n): Exponential Time Complexity</strong> <br />
+            Zum Beispiel: Looping over every possible combination in an array.
+          </li>
+          <li><strong>O(n!): Factorial Time Complexity</strong></li>
         </ul>
-          <br>
-        </p>
+        <h4>
+          Goldene Regel: Mehrere Ausdrücke immer auf einen Ausdruck (worst-case)
+          herunterbrechen.
+        </h4>
+        <br />
+
         <hr />
         <h3>Space-Complexity</h3>
         <hr />
         <p>
-          Die Komplexität steigt, wenn...<br>
-          - Variablen zugewiesen werden<br>
-          - neue Datenstrukturen kreiert werden<br>
-          - Funktionen aufgerufen und zugewiesen werden <br>
-          <br><br>
-          <strong>O(1) space<br>
-          z.B.</strong><br>
-          public void greet (String[  ] names){<br>
-            for (int i= 0; i< names.length; i++)<br>
-            sout("hi"+ names[i]);<br>
-          }<br>
-          <br>
-          <strong>O (n) space<br>
-            z.B.</strong><br>
-          public void greet (String[  ] names){<br>
-            String[  ] copy = new String [names.length];<br>
-            for (int i = 0; i< names.length; i++)<br>
-            sout("hi"+ names[i]);<br>
-          }<br>
-                 <br>
-          Je mehr Items im Array sind, desto mehr Space wird benötigt.
-          Wir betrachten nur den zusätzlichen Space, den wir zuweisen müssen, relativ gesehen zur Inputgröße.
+          Die Komplexität steigt, wenn...<br />
+          - Variablen zugewiesen werden<br />
+          - neue Datenstrukturen kreiert werden<br />
+          - Funktionen aufgerufen und zugewiesen werden <br />
+          <br /><br />
+          <strong
+            >O(1) space<br />
+            z.B.</strong
+          ><br />
+          public void greet (String[ ] names){<br />
+          for (int i= 0; i< names.length; i++)<br />
+          sout("hi"+ names[i]);<br />
+          }<br />
+          <br />
+          <strong
+            >O (n) space<br />
+            z.B.</strong
+          ><br />
+          public void greet (String[ ] names){<br />
+          String[ ] copy = new String [names.length];<br />
+          for (int i = 0; i< names.length; i++)<br />
+          sout("hi"+ names[i]);<br />
+          }<br />
+          <br />
+          Je mehr Items im Array sind, desto mehr Space wird benötigt. Wir
+          betrachten nur den zusätzlichen Space, den wir zuweisen müssen,
+          relativ gesehen zur Inputgröße.
         </p>
-      </section>   
+      </section>
       <footer class="major container medium videoWrapper">
         <h3>The Big O Notation in 100 Seconds</h3>
-        <iframe  src="https://www.youtube.com/embed/g2o22C3CRfU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/g2o22C3CRfU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </footer>
     </div>
 
-
-   
- 
     <!-- Footer -->
     <div id="footer">
       <div class="container medium">
