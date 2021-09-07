@@ -37,11 +37,15 @@
           <h3>The Big O Notation</h3>
           <hr />
           <p>
-            Die Big O Notation ist ein beschreibender Ausdruck, der von Entwicklern
-            verwendet wird, um zu kommunizieren, wie gut ihr Programm mit einer
-            Zunahme der Eingaben umgeht. Sie kann ein Maß dafür sein, wie
-            schnell ein Programm läuft ("Zeitkomplexität") oder wie viel
-            Speicherplatz es verbraucht ("Raumkomplexität").
+            Die Big O Notation ist eine mathematische Notation ( ein beschreibender Ausdruck - Darstellung von Rechenoperationen, Bewegungsverläufen und Reihenfolgen anhand von Formeln), welche das Limit einer Funktion beschreibt, wenn das Argument/der Fall zu einem bestimmten Wert oder Undendlichkeit tendiert.
+            Bestimmte Operationen können mehr oder weniger gut performen, abhängig von ihrer Datenstruktur/Algorithmus.
+            The Big O hilft uns dabei die Performance eines Algorythmus zu beschreiben und zu bestimmen ob er skalierbar ist oder nicht. 
+            <br> <br>
+            Die Big O Notation wird von Entwicklern
+            verwendet, um zu kommunizieren, wie gut ihr Programm mit einer Zunahme der Eingaben umgeht (wichtig bei großen Datenmengen). 
+            Sie kann ein Maß dafür sein, wie
+            schnell ein Programm läuft ("Runtime-Complexity") oder wie viel
+            Speicherplatz(Memory) es verbraucht ("Space-Complexity").
             <br />
             <br />
             Kurz gesagt: wenn ein Programm in der Lage ist, eine immer größere
@@ -59,17 +63,20 @@
       </section>
 
       <section>
-        <header>
-          <h3>Erläuterung von der schnellsten bis zu langsamsten Laufzeit</h3>
-        </header>
         <hr />
+        <header>
+          <h3>(Run)Time-Complexity</h3>
+          <h4>Erläuterung von der schnellsten bis zu langsamsten Laufzeit</h4>
+          <hr />
+        </header>
+        
         <ul class="default">
           <li><strong>O(1): Constant Time Complexity</strong> <br>
             Der Algorithmus wird gleich ausgeführt, unabhängig davon, wie viele Elemente sich in der Liste befinden.</li>
           <li><strong>O(log n): Logarithmic Time Complexity</strong> <br>
-            Die Zeit, die der Algorithmus benötigt, um zu laufen, wird gleich bleiben, egal wie viele Elemente sich in der Liste befinden.</li>
+            Die Zeit, die der Algorithmus benötigt, um zu laufen, wird gleich bleiben, egal wie viele Elemente sich in der Liste befinden. Ein Algorithmus mit logarithmic time complexity ist skalierbarer als einer mit linear time complexity.</li>
           <li><strong>O(n): Linear Time Complexity</strong> <br>
-            Je mehr Elemente in der Liste enthalten sind, desto länger dauert es, bis der Algorithmus ausgeführt wird.
+            Je mehr Elemente in der Liste enthalten sind, desto länger dauert es, bis der Algorithmus ausgeführt wird. Die Inputgröße ist also entscheidend.
           </li>
           <li><strong>O(n*log n): Log Linear Time Complexity</strong> </li>
           <li><strong>O(n^2): Quadratic Time Complexity</strong> <br>
@@ -81,11 +88,36 @@
         </ul>
           <br>
         </p>
-      </section>
-
-     
+        <hr />
+        <h3>Space-Complexity</h3>
+        <hr />
+        <p>
+          Die Komplexität steigt, wenn...<br>
+          - Variablen zugewiesen werden<br>
+          - neue Datenstrukturen kreiert werden<br>
+          - Funktionen aufgerufen und zugewiesen werden <br>
+          <br><br>
+          <strong>O(1) space<br>
+          z.B.</strong><br>
+          public void greet (String[  ] names){<br>
+            for (int i= 0; i< names.length; i++)<br>
+            sout("hi"+ names[i]);<br>
+          }<br>
+          <br>
+          <strong>O (n) space<br>
+            z.B.</strong><br>
+          public void greet (String[  ] names){<br>
+            String[  ] copy = new String [names.length];<br>
+            for (int i = 0; i< names.length; i++)<br>
+            sout("hi"+ names[i]);<br>
+          }<br>
+                 <br>
+          Je mehr Items im Array sind, desto mehr Space wird benötigt.
+          Wir betrachten nur den zusätzlichen Space, den wir zuweisen müssen, relativ gesehen zur Inputgröße.
+        </p>
+      </section>   
     </div>
-
+ 
     <!-- Footer -->
     <div id="footer">
       <div class="container medium">
