@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Linked Lists</title>
+    <title>Stacks</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,53 +13,52 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Linked Lists</h1>
+      <h1>The Stack</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>What is the Linked List?</h2>
+        <h2>Was ist ein Stack?</h2>
       </header>
       <section>
         <p>
-          Ein Stack arbeitet als letztes hinein, zuerst heraus (LIFO). Denk an
-          einen Stapel Pfannkuchen. Den letzten Pfannkuchen, den wir aus der
+          Ein Stack folgt dem LIFO-Prinzip (last in-first out). Ähnlich wie bei
+          einem Stapel Pfannkuchen. Den letzten Pfannkuchen, den wir aus der
           Pfanne auf den Stapel legen, ist der erste, den wir vom Stapel nehmen.
-          Ein Stack bietet drei Hauptfunktionen: eine, um die Spitze zu sehen,
-          eine, um nach oben zu schieben, und eine, um von der Spitze
-          abzuspringen.
-          <br /><br />
+          Ein Stack bietet drei Hauptfunktionen: eine, um die Spitze zu sehen
+          (peek),<br />
+          eine, um nach oben zu schieben (push), und <br />eine, um von der
+          Spitze abzuspringen (pop). <br /><br />
           Ein Stack und eine Queue haben so ziemlich die gleiche Datenstruktur,
           der einzige Unterschied besteht darin, wie sie ihre Informationen
           anordnen. Stacks und Queues eignen sich hervorragend, um die
           Reihenfolge basierend auf der Einfügezeit beizubehalten: Verwende
           einen Stack, wenn du das neueste Element verfolgen möchtest. Verwende
-          eine Queue, wenn du das älteste Element im Auge behalten möchtest.
+          eine Queue, wenn du das älteste Element im Auge behalten möchtest.<br />
+          Beispiele für die Verwendung eines Stacks: Webbrowser-Verlauf,
+          Implementierung von Undo-/Redo-Funktionen.
+
+          <br /><br />
+          <strong>Search</strong>
+          by Index: O(n)<br />
+          by Value: O(n)<br />
+          <br /><br />
+          <strong>Insert</strong>
+          Beginning/End: O(1)<br />
+          Middle: O(n)<br />
+          <br /><br />
+          <strong>Delete</strong>
+          Beginning: O(1)<br />
+          Middle: O(n)<br />
+          End: O(n)<br />
         </p>
       </section>
 
-      <section>
-        <header>
-          <h3>1. "This" in einer Methode</h3>
-        </header>
-        <hr />
-        <p>Eine ....</p>
-        <ul>
-          <strong>const person = {</strong>
-          <li>name: "Nina"</li>
-          <li>birthYear: 1678</li>
-          <li>age: function(){</li>
-          <li>return 2021 - this.birthyear;</li>
-          <li>}</li>
-          <li>}</li>
-        </ul>
-      </section>
-
       <footer class="major container medium videoWrapper">
-        <h3>This explained by codeSTACKr</h3>
+        <h3>Simply Stack</h3>
         <iframe
-          src="https://www.youtube.com/embed/Pi3QC_fVaD0"
+          src="https://www.youtube.com/embed/CgFVgp_VCN8"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
