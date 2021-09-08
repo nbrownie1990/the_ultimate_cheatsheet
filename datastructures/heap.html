@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Arrays</title>
+    <title>Heaps</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,67 +13,59 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Arrays</h1>
+      <h1>The Heap</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>Was ist ein Array?</h2>
+        <h2>Was ist ein Heap?</h2>
       </header>
       <section>
         <p>
-          Wir verwenden Arrays als Datenstruktur, um eine Liste von Elementen
-          desselben Datentyps zu speichern. Diese Elemente werden nebeneinander
-          oder zusammen in Folge an zusammenhängenden Speicherorten gespeichert.
-          Das bedeutet, dass wir sehr gut über den Index des Arrays auf das
-          Element zugreifen können. Ein Array mit Integers würde bspw. 4Bytes im
-          Memory benötigen.
+          Wir verwenden Heaps als Datenstruktur, wenn wir Sortierungsalgorithmen
+          nutzen wollen. Sie sind eine andere Art der Binary Trees, nur mit
+          einigen zusätzlichen Regeln hinsichtlich der Form des Baumes und der
+          Reihenfolge der Baumknoten. Heaps sind komplette Binary Trees, was
+          bedeutet, dass sie in jedem Level alle Knoten haben. Sie gelten als
+          komplett, wenn, von links nach rechts gelesen, kein Loch in einem
+          Level besteht. Jeder Knotenwert eines Heaps ist größer oder gleich des
+          Wertes seiner Kinder. Heaps werden genutzt für das Sortieren von Daten
+          (HeapSort), bei der Implementierung von Graph-Algorithmen (Shortest
+          path), für Priority Queues oder für das Finden des kleinsten/größten
+          K-Wert.
         </p>
       </section>
 
       <section>
         <header>
-          <h3>Working with Arrays</h3>
+          <h3>Working with Heaps</h3>
         </header>
         <hr />
         <p>
-          Arrays sind wahrscheinlich die Datenstruktur, mit der wir am
-          häufigsten arbeiten. Im Code sind Arrays eine Sammlung von Werten, die
-          zwischen eckigen Klammern gespeichert werden. Diese Werte werden im
-          Speicher zugewiesen. Jeder Wert in einem Array enthält einen
-          numerischen Index in aufsteigender Reihenfolge vom ersten zum letzten.
-          Das heißt der Speicher für Arrays wird zugewiesen bzw. vorab
-          festgelegt. Ihre Größe kann ohne entsprechende Algorithmen nicht
-          verändert werden (dazu gleich mehr). Außerdem sind Arrays
-          null-indiziert, was bedeutet, dass der erste Index in einem Array
-          nicht 1 ist, sondern 0. Dies ist ein grundlegender Vorbehalt, aber
-          entscheidend, den wir uns merken sollten. Arrays sind statisch, ihre
-          Größe kann nicht flexibel verändert werden. Deshalb müssen wir
-          schätzen, wieviel Platz wir brauchen, wenn es zu wenig Platz ist
-          müssen wir den Array verändern und das kostet. Wenn man die Zahl der
-          Elemente vorab weiß, sollte man Arrays nutzen. Andernfalls besser
-          andere Datenstrukturen.
-          <br /><br />
-          <strong>Search</strong>
-          by Index: O(1)<br />
-          by Value: O(n)<br />
-          <br /><br />
-          <strong>Insert</strong>
-          Beginning/End: O(n)<br />
-          Middle: O(n)<br />
-          <br /><br />
-          <strong>Delete</strong>
-          Beginning: O(n)<br />
-          Middle: O(n)<br />
-          End: O(n)<br />
+          <strong>Arten von Heaps</strong><br />
+          <strong>MAX HEAP</strong>: Root-Node hat den größten Wert. Der Wert
+          jedes Knoten ist größer als der Wert seiner Kinder. <br /><br />
+          <strong>MIN HEAP</strong> : Root-Node hat den kleinsten Wert.Der Wert
+          jedes Knoten ist kleiner als der Wert seiner Kinder. <br /><br />
+          <strong>BINARY HEAP</strong>: Ist ein Binary Tree <br /><br />
+          Heaps unterstützen aufgrund ihrer Struktur nicht das Nachschlagen von
+          Werten. Nur max/min können wir ausweisen. Mit einem Heap können wir
+          Elemente mit einer O(n*log n)-Time-Complexity sortieren und auch
+          Priority Queues erstellen.
+          <br />
+          <strong
+            >GetMax() = O(1)<br />
+            Insert = O(log n)<br />
+            Remove = O(log n)<br />
+          </strong>
         </p>
       </section>
 
       <footer class="major container medium videoWrapper">
-        <h3>Arrays</h3>
+        <h3>Heaps</h3>
         <iframe
-          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
+          src="https://www.youtube.com/embed/3c-p4zWx5yU"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
