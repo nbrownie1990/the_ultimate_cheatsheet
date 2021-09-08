@@ -30,107 +30,110 @@
           Werte zu. Jeder Schlüssel ist einzigartig und kann nur einem Wert
           zugeordnet werden. Sie ist deshalb super schnell in LookUps und wir
           können sie nutzen, um unsere Algorithmen zu optimieren.
-          
-        </p>
-     </section>
-
-      <section>
-        <header>
-          <h3>Working with Arrays</h3>
-        </header>
-        <hr />
-        <p>
-          <!-- Die Basis einer guten Kartenimplementierung ist ihre Hash-Funktion. Der Zweck dieses Hashs ist:
-
-              Geben Sie eine gehashte oder codierte Ausgabe bei jeder gültigen Eingabe an
-              Bei gleicher Eingabe immer die gleiche Ausgabe zurückgeben
-              Kollisionen minimieren, wenn zwei Eingaben die gleiche Ausgabe zurückgeben.
-            
-            
-
-             -->
-          Es gibt 4 Map-Typen in Java, die wie folgt beschrieben werden:
-          <br /><br />
-          <strong>HashMap</strong> - Es handelt sich um eine ungeordnete und
-          unsortierte Karte und ist daher eine gute Wahl, wenn die Reihenfolge
-          nicht betont wird. Eine HashMap lässt einen NULL-Schlüssel und mehrere
-          NULL-Werte zu und behält keine Einfügereihenfolge bei. <br /><br />
-          <strong>HashTable</strong> – Erlaubt nichts Null und hat Methoden, die
-          synchronisiert werden. Da es die Thread-Sicherheit ermöglicht, ist die
-          Leistung langsam. <br /><br />
-          <strong>LinkedHashMap</strong> – Langsamer als eine HashMap, behält
-          aber die Einfügereihenfolge bei und hat eine schnellere Iteration.
-          <br /><br />
-          <strong>TreeMap</strong>– Eine sortierte Map, die das Erstellen einer
-          Sortierreihenfolge mithilfe eines Konstruktors unterstützt.
-
-          <br /><br />
-
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th><strong>Hash Map</strong></th>
-                <th><strong>Hash Table</strong></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th><strong>Definition</strong></th>
-                <td>
-                  Die HashMap in Java ist eine Map-basierte Sammlungsklasse, die
-                  zum Speichern von Key-Value-Pairs verwendet wird.
-                </td>
-                <td>
-                  Eine HashTable ist hingegen ein Array einer Liste, wobei jede
-                  Liste als Bucket bezeichnet wird. In einer HashTable enthaltene
-                  Values sind eindeutig und hängen von ihrem Key ab.
-                </td>
-              </tr>
-              <tr>
-                <th><strong>Methoden-Synchronisation</strong></th>
-                <td>nein</td>
-                <td>ja</td>
-              </tr>
-              <tr>
-                <th><strong>Thread-Sicherheit</strong></th>
-                <td>nein</td>
-                <td>ja</td>
-              </tr>
-              <tr>
-                <th><strong>Iterieren via</strong></th>
-                <td>Iterator</td>
-                <td>Enumerator</td>
-              </tr>
-              <tr>
-                <th><strong>Null-Toleranz</strong></th>
-                <td>einen null-key und mehrere null-values</td>
-                <td>nein</td>
-              </tr>
-              <tr>
-                <th><strong>Geschwindigkeit</strong></th>
-                <td>schnell</td>
-                <td>langsam</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          Maps sind unglaublich mächtig, weil Sie sie sehr schnelle Einfüge-, Such- und Entfernungszeiten haben.
-          <strong>Search</strong>
-          O(1)
-          <br /><br />
-          <strong>Insert</strong>
-          O(1)
-          <br /><br />
-          <strong>Delete</strong>
-          O(1)
         </p>
       </section>
 
+      <section>
+        <header>
+          <h3>Working with HashTables</h3>
+        </header>
+        <hr />
+        <p>
+          HashTables sind unglaublich mächtig, weil Sie sie sehr schnelle Einfüge-,
+          Such- und Entfernungszeiten haben. 
+          
+          <br /><br />
+          <strong>
+            Search O(1)
+            <br />
+            Insert O(1)
+            <br />
+            Delete O(1)</strong
+          >
+          <br /><br />
+          Deshalb sollte man in der Praxis auf der Suche nach einer Lösung für ein Problem direkt an sie denken. 
+          Sie werden verwendet für Features wie:
+          <ul class="default">
+            <li>SpellCheckers(Rechtschreibprüfung)</li> 
+            <li>Dictionaries(Wörter können in Sekundenschnelle übersetzt oder mit 10.000 anderen Wörtern verglichen werden.)</li>
+            <li>Compilers (können schnell Adressen von Funktionen und Variablen finden)</li>
+            <li>Code Editors (wenn wir ein Element sehr schnell finden wollen)</li>
+          </ul>
+          
+          <strong>Arbeitsschritte</strong><br>
+          Wir nutzen HashTables um Key-Value-Paare zu lagern. Wenn wir z.B. eine Mitarbeiterliste führen und jeden Mitarbeiter über seine Personalnummer finden wollen (Key: Personalnummer & Value: Mitarbeiter). <ol class="default">
+          <li>Die HashTable nimmt die Personalnummer und übergibt sie der HashFunction.</li>
+          <li>Die HashFunction legt eine Adresse für die Personalnummer im Speicher(Memory) fest. Das funktioniert so:<br>
+            Die HashFunction bekommt einen Wert zugespielt, mapped diesen Wert in eine andere Art von Wert (dieser wird "Hash Value"/ "HashCode"/ "Hash" genannt). Im Kontext von Datenstrukturen, mapped eine HashFunction einen key-value in einen index-value eines Arrays.  Eine HashFunction ist "deterministic" das heißt, dass jedes Mal, wenn wir den selben Input eingeben, wird sie denselben Wert zurückgeben. Deswegen können wir sie sehr gut fürs Verstauen und Abrufen nutzen. 
+
+          </li>
+          <li>Die HashTable legt dann das Mitarbeiter-Objekt dort ab.</li>
+          <li>Wenn wir nun einen Mitarbeiter per Personalnummer suchen, kann über genau diesen Weg der Mitarbeiter gefunden werden.</li>
+          </ol>
+        </p>
+      </section>
+
+
+          <section>
+            <header>
+              <h3>Collisions</h3>
+            </header>
+            <hr>
+            <p>
+          Beim mappen kann es zu Kollisionen kommen. Das passiert, wenn zwei Keys denselben hash-value generiert haben. Beide Keys wollen also bspw. ihre Werte bei Adresse 10 lagern und kolldieren deswegen. Es gibt 2 Wege, damit umzugehen: <br><br />
+          <strong>CHAINING:</strong><br>
+           Jede Zelle eines Arrays zeigt auf eine LinkedList. Die Werte werden nicht im Array sondern in der LinkedList gelagert. Wenn eine Kollision aufftritt, wird das neue Element einfach an die LinkedList angehängt.<br><br>
+          <strong>OPEN ADDRESSING:</strong><br>
+           Eine andere Lösung ist es, einen anderen Slot zu finden, um den zweiten Wert zu lagern. Es gibt unterschiedliche Algorithmen dazu.
+          Hier kommt der Begriff "Probing" in Spiel, welcher das Suchen nach freien Slots beschreibt. Es werden unterschiedliche Arten des "Probing" eingesetzt. Linear Probing, Quadratic Probing, Double Hashing.
+          Lineares Probing ist z.B. dass wir mit dem aktuellen (besetzten) Slot starten und uns immer weiter entlang der HashTable nach unten bewegen, bis ein freier Slot gefunden wurde, wo der Wert eingesetzt werden kann. 
+          <br /> <br />
+          Linear Probing: (hash1+ i) % table_size<br>
+          Quadratic Probing: (hash1+ i^2) % table_size<br>
+          Double Hash: (hash1+ i* hash2) % table_size
+        </p>
+        </section>
+
+
+          <section>
+            <header>
+              <h3>HashTables in Java</h3>
+            </header>
+            <hr>
+            <p>
+          Es gibt verschiedene Map-Typen in Java, die wie folgt beschrieben werden:
+          <br /><br />
+          <strong>HashMap</strong><br />
+          Es handelt sich um eine ungeordnete und unsortierte Map-basierte
+          Sammlungsklasse zum Speichern von Key-Value-Pairs. Sie ist eine
+          gute Wahl, wenn keine Reihenfolge benötigt wird, denn sie behält keine
+          Einfügereihenfolge bei. Eine HashMap lässt einen NULL-Schlüssel und mehrere NULL-Werte zu, überschreibt aber gleiche Key-Value-Pairs. Es wird via Iterator über die Werte iteriert.
+          <br /><br />
+          <strong>HashTable</strong><br />
+          Die HashTable ist hingegen ein Array einer Liste, wobei jede Liste als
+          Bucket bezeichnet wird. In einer HashTable enthaltene Values sind
+          eindeutig und hängen von ihrem Key ab. Sie erlaubt keine
+          Null-Schlüssel oder -Werte und hat Methoden, die synchronisiert
+          werden. Da sie die Thread-Sicherheit ermöglicht, ist die Leistung
+          langsam. Es wird via Enumerator über die Werte iteriert.
+          <br /><br />
+          <strong>LinkedHashMap</strong><br />
+          Sie ist langsamer als eine HashMap, behält aber die Einfügereihenfolge
+          bei und hat eine schnellere Iteration. <br /><br />
+          <strong>TreeMap</strong><br />
+          Eine sortierte Map, die das Erstellen einer Sortierreihenfolge
+          mithilfe eines Konstruktors unterstützt.
+          <br /><br />
+          <strong>Sets</strong><br />
+          Ein Set erlaubt keine Key-Duplikate und ist deshalb sehr nützlich. Wenn wir z.B. eine Liste voller Duplikate haben, müssen wir diese einfach in ein Set setzen und erhalten eine Liste ohne Duplikate.
+          <br /><br />
+           </p>
+      </section>
+
       <footer class="major container medium videoWrapper">
-        <h3>Arrays</h3>
+        <h3>HashTables in 6 Minutes</h3>
         <iframe
-          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
+          src="https://www.youtube.com/embed/shs0KM3wKv8"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
