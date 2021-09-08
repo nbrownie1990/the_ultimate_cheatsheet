@@ -24,66 +24,15 @@
       <section>
         <p>
           Hash Tables werden in verschiedenen Programmiersprachen
-          unterschiedlich bezeichnet, sind aber ein und dieselbe Sache. In Java
+          unterschiedlich bezeichnet, sind aber ein und die selbe Sache. In Java
           werden Hash Tables "HashMap" genannt, in JavaScript "Objects" und in
           Python oder C# "Dictionarys". Die HashTable ordnet einem Schlüssel
           Werte zu. Jeder Schlüssel ist einzigartig und kann nur einem Wert
           zugeordnet werden. Sie ist deshalb super schnell in LookUps und wir
           können sie nutzen, um unsere Algorithmen zu optimieren.
-          <br />
-          Um festzustellen, ob zwei Schlüssel gleich oder verschieden sind,
-          verwendet Map die Methode equals(). <br />
+          
         </p>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th><strong>Hash Map</strong></th>
-              <th><strong>Hash Table</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th><strong>Definition</strong></th>
-              <td>
-                Die HashMap in Java ist eine Map-basierte Sammlungsklasse, die
-                zum Speichern von Key-Value-Pairs verwendet wird.
-              </td>
-              <td>
-                Eine HashTable ist hingegen ein Array einer Liste, wobei jede
-                Liste als Bucket bezeichnet wird. In einer HashTable enthaltene
-                Values sind eindeutig und hängen von ihrem Key ab.
-              </td>
-            </tr>
-            <tr>
-              <th><strong>Methoden-Synchronisation</strong></th>
-              <td>nein</td>
-              <td>ja</td>
-            </tr>
-            <tr>
-              <th><strong>Thread-Sicherheit</strong></th>
-              <td>nein</td>
-              <td>ja</td>
-            </tr>
-            <tr>
-              <th><strong>Iterieren via</strong></th>
-              <td>Iterator</td>
-              <td>Enumerator</td>
-            </tr>
-            <tr>
-              <th><strong>Null-Toleranz</strong></th>
-              <td>einen null-key und mehrere null-values</td>
-              <td>nein</td>
-            </tr>
-            <tr>
-              <th><strong>Geschwindigkeit</strong></th>
-              <td>schnell</td>
-              <td>langsam</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+     </section>
 
       <section>
         <header>
@@ -116,6 +65,56 @@
           Sortierreihenfolge mithilfe eines Konstruktors unterstützt.
 
           <br /><br />
+
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th><strong>Hash Map</strong></th>
+                <th><strong>Hash Table</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><strong>Definition</strong></th>
+                <td>
+                  Die HashMap in Java ist eine Map-basierte Sammlungsklasse, die
+                  zum Speichern von Key-Value-Pairs verwendet wird.
+                </td>
+                <td>
+                  Eine HashTable ist hingegen ein Array einer Liste, wobei jede
+                  Liste als Bucket bezeichnet wird. In einer HashTable enthaltene
+                  Values sind eindeutig und hängen von ihrem Key ab.
+                </td>
+              </tr>
+              <tr>
+                <th><strong>Methoden-Synchronisation</strong></th>
+                <td>nein</td>
+                <td>ja</td>
+              </tr>
+              <tr>
+                <th><strong>Thread-Sicherheit</strong></th>
+                <td>nein</td>
+                <td>ja</td>
+              </tr>
+              <tr>
+                <th><strong>Iterieren via</strong></th>
+                <td>Iterator</td>
+                <td>Enumerator</td>
+              </tr>
+              <tr>
+                <th><strong>Null-Toleranz</strong></th>
+                <td>einen null-key und mehrere null-values</td>
+                <td>nein</td>
+              </tr>
+              <tr>
+                <th><strong>Geschwindigkeit</strong></th>
+                <td>schnell</td>
+                <td>langsam</td>
+              </tr>
+            </tbody>
+          </table>
+          
           Maps sind unglaublich mächtig, weil Sie sie super schnell sind.
           <strong>Search</strong>
           O(1)
