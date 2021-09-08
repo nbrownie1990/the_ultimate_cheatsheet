@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Searching Algorithms</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Searching Algorithms</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was sind Searching Algorithms?</h2>
+      </header>
+      <section>
+        <p>
+          Wir verwenden Searching Algorithms, um Elemente in einer Liste zu
+          finden.
+        </p>
+      </section>
+
+      <section>
+        <footer class="major container medium videoWrapper">
+          <h3>Linear Search (Space: O (1) Runtime: O(n))</h3>
+          <iframe
+            src="https://www.youtube.com/embed/TwsgCHYmbbA?start=14"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <br /><br />
+          Wir iterieren über eine Eingabe und vergleichen sie für jedes Element
+          mit dem Zielelement. Wenn das aktuelle Element und das Ziel gleich
+          sind, ist die Suche abgeschlossen. Diese Suche ist etwas ineffizient,
+          da die gesamte Eingabe gescannt wird. O(n) (lineare) Zeitkomplexität,
+          O(1) Raum.
+        </footer>
+        <footer class="major container medium videoWrapper">
+          <h3>Binary Search (Space: O (1) Runtime: O(log n))</h3>
+          <iframe
+            src="https://www.youtube.com/embed/XJUgCSejezQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <br /><br />
+          Funktioniert nur bei sortierten Eingaben. Es ist ein Divide &
+          Conquer-Algorithmus. Funktioniert, indem der Mittelpunkt einer Eingabe
+          ermittelt und das mittlere Element mit dem Zielelement verglichen
+          wird. Wenn das mittlere Element unserem Zielelement entspricht, ist
+          die Suche beendet. Wenn das Zielelement kleiner als das mittlere
+          Element ist, durchsuchen wir die linke Hälfte der Eingabe (und
+          wiederholen den Vorgang des Findens der Mitte und des Vergleichs).
+          Wenn das Zielelement größer als das mittlere Element ist, durchsuchen
+          wir die rechte Hälfte der Eingabe (und wiederholen). Die binäre Suche
+          reduziert die Zeitkomplexität auf O(log n) (logarithmisch) - da wir
+          nicht die gesamte Eingabe scannen müssen (wie bei der linearen Suche).
+          Space ist O(1).
+        </footer>
+        <footer class="major container medium videoWrapper">
+          <h3>Jump Search ((O(√ n))</h3>
+          <br /><br />
+          Anstatt Element für Element zu prüfen, sucht dieser Algorithmus Block
+          für Block, sodass weniger Elemente überprüft werden müssen.
+          <br />
+          Wir beginnen mit der Definition einer Blockgröße Beginnend am Anfang
+          der Liste überprüfen wir das letzte Element jedes Blocks, ist das
+          Element kleiner als der gesuchte Wert, springen wir zum nächsten
+          Block. Wenn jedoch das letzte Element des aktuellen Blocks größer als
+          der gesuchte Wert ist, führen wir eine lineare Suche in diesem Block
+          durch. Die Komplexität der Sprungsuchzeit beträgt im schlimmsten Fall
+          O(√ n).
+        </footer>
+        <footer class="major container medium videoWrapper">
+          <h3>Exponential Search (Runtime: O(log i))</h3>
+          <br /><br />
+          Wir starten mit einer kleinen Such-Range und verdoppeln den Index des
+          Suchbereiches immer, wenn wir unser Zielelement nicht gefunden haben.
+          Wenn wir eine Range gefunden habne, in der unser Ziel sein könnte,
+          starten wir eine Binary Search in dieser Range.
+        </footer>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
