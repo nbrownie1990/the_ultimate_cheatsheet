@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Arrays</title>
+    <title>Graph</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,56 +13,55 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Arrays</h1>
+      <h1>The Graph</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>Was ist ein Array?</h2>
+        <h2>Was ist ein Graph?</h2>
       </header>
       <section>
         <p>
-          Wir verwenden Arrays als Datenstruktur, um eine Liste von Elementen
-          desselben Datentyps zu speichern. Diese Elemente werden nebeneinander
-          oder zusammen in Folge an zusammenhängenden Speicherorten gespeichert.
-          Das bedeutet, dass wir sehr gut über den Index des Arrays auf das
-          Element zugreifen können. Ein Array mit Integers würde bspw. 4Bytes im
-          Memory benötigen.
+          Wir verwenden Graphs als Datenstruktur, um verbundene Objekte zu
+          repräsentieren. Zum Beispiel: Router in einem Netzwerk, Flugrouten,
+          Städte, Menschen auf einer Social-Media-Plattform. Ein Graph zeigt an,
+          wie diese Objekte verbunden sind und wie stark diese Verbindung ist.
+          Graphs bestehen aus Nodes & Edges. Es gibt keine Limitationen, was die
+          Nodes und Edges eines Knoten betrifft. Sie haben allerdings keinen
+          Root-Node. Graphen können entweder directed oder undirected sein,
+          directed Graphen sind wie eine Einbahnstraße. Sind sie undirected,
+          führen sie in beide Richtungen. In ihrer Darstellung Graphs kann man
+          anhand von Pfeilspitzen unterscheiden, ob sie directed (z.B. "folgen"
+          auf Twitter) oder undirected (z.B. "Freund" auf Facebook) sind. Wenn
+          Sie directed sind zeigen sie via Pfeil auf einen oder mehrere
+          Nachbarknoten. Die Edges können gewichtet sein, damit zeigen sie die
+          Stärke der Verbindung an. Wenn zwei Personen auf Facebook häufiger
+          Kontakt haben, dann haben sie ein stärkeres Gewicht.
         </p>
       </section>
 
       <section>
         <header>
-          <h3>Working with Arrays</h3>
+          <h3>Working with Graphs</h3>
         </header>
         <hr />
         <p>
-          <!-- Es ist einer verknüpften Liste am ähnlichsten, aber jeder Knoten kann n Zeiger auf andere Knoten haben. Es wird auch nicht garantiert, dass ein Graph zyklenfrei ist. (Ein Zyklus(Cycle) liegt vor, wenn wir beim Durchlaufen des Graphen am selben Knoten beginnen und enden können.) 
-              
-                Wir können viele Situationen mit Graphen modellieren, wie zum Beispiel: Freundschaften zwischen Benutzern, Flugrouten usw. Graphen können jedes Problem mit komplexen Beziehungen ziemlich einfach machen, und das Wechseln von einem Knoten zum anderen ist so einfach wie das Durchqueren seiner Nachbarn. 
-
-              -->
+          Graphs sind der Linked List am ähnlichsten, aber jeder Knoten kann n
+          Zeiger auf andere Knoten haben. Es wird auch nicht garantiert, dass
+          ein Graph zyklenfrei ist. (Ein Zyklus(Cycle) liegt vor, wenn wir beim
+          Durchlaufen des Graphen am selben Knoten beginnen und enden können.)
           <br /><br />
-          <strong>Search</strong>
-          by Index: O(1)<br />
-          by Value: O(n)<br />
+          Wir können viele Situationen mit Graphen modellieren, und jedes
+          Problem mit komplexen Beziehungen dadurch ziemlich einfach lösen.
           <br /><br />
-          <strong>Insert</strong>
-          Beginning/End: O(n)<br />
-          Middle: O(n)<br />
-          <br /><br />
-          <strong>Delete</strong>
-          Beginning: O(n)<br />
-          Middle: O(n)<br />
-          End: O(n)<br />
         </p>
       </section>
 
       <footer class="major container medium videoWrapper">
-        <h3>Arrays</h3>
+        <h3>Graphs in 5 Minutes</h3>
         <iframe
-          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
+          src="https://www.youtube.com/embed/DBRW8nwZV-g"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
