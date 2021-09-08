@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Arrays</title>
+    <title>AVL Trees</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,72 +13,73 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Arrays</h1>
+      <h1>The AVL Tree</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>Was ist ein Array?</h2>
+        <h2>Was ist ein AVL Tree?</h2>
       </header>
       <section>
         <p>
-          Wir verwenden Arrays als Datenstruktur, um eine Liste von Elementen
-          desselben Datentyps zu speichern. Diese Elemente werden nebeneinander
-          oder zusammen in Folge an zusammenhängenden Speicherorten gespeichert.
-          Das bedeutet, dass wir sehr gut über den Index des Arrays auf das
-          Element zugreifen können. Ein Array mit Integers würde bspw. 4Bytes im
-          Memory benötigen.
+          AVL-Trees sind ein spezieller Typ von Binary Search Trees, welche sich
+          ausbalancieren, wenn die Höhendifferenz des linken und rechten
+          Subtree mehr als 1 wird. Wir nutzen Rotationen, um den Ausgleich zu
+          schaffen. Es gibt verschiedene Algorithmen um Trees auszugleichen.
         </p>
       </section>
 
       <section>
         <header>
-          <h3>Working with Arrays</h3>
+          <h3>Balancing AVL Trees</h3>
         </header>
         <hr />
         <p>
-          Arrays sind wahrscheinlich die Datenstruktur, mit der wir am
-          häufigsten arbeiten. Im Code sind Arrays eine Sammlung von Werten, die
-          zwischen eckigen Klammern gespeichert werden. Diese Werte werden im
-          Speicher zugewiesen. Jeder Wert in einem Array enthält einen
-          numerischen Index in aufsteigender Reihenfolge vom ersten zum letzten.
-          Das heißt der Speicher für Arrays wird zugewiesen bzw. vorab
-          festgelegt. Ihre Größe kann ohne entsprechende Algorithmen nicht
-          verändert werden (dazu gleich mehr). Außerdem sind Arrays
-          null-indiziert, was bedeutet, dass der erste Index in einem Array
-          nicht 1 ist, sondern 0. Dies ist ein grundlegender Vorbehalt, aber
-          entscheidend, den wir uns merken sollten. Arrays sind statisch, ihre
-          Größe kann nicht flexibel verändert werden. Deshalb müssen wir
-          schätzen, wieviel Platz wir brauchen, wenn es zu wenig Platz ist
-          müssen wir den Array verändern und das kostet. Wenn man die Zahl der
-          Elemente vorab weiß, sollte man Arrays nutzen. Andernfalls besser
-          andere Datenstrukturen.
+          BALANCED AND UNBALANCED TREES:
           <br /><br />
-          <strong>Search</strong>
-          by Index: O(1)<br />
-          by Value: O(n)<br />
+          <strong>Perfect Tree</strong><br />
+          Die Knotenstrukur und Leafs des Baumes sind absolut gleichmäßig
+          verteilt
           <br /><br />
-          <strong>Insert</strong>
-          Beginning/End: O(n)<br />
-          Middle: O(n)<br />
+          <strong>Balanced Tree (O (log n))</strong><br />
+          Die Differenz zwischen der Höhe des linken und der Höhe des rechten
+          Subtrees ist kleiner gleich 1. 
+          FORMEL: height(left) - height(reight) <=1
           <br /><br />
-          <strong>Delete</strong>
-          Beginning: O(n)<br />
-          Middle: O(n)<br />
-          End: O(n)<br />
+          <strong>Unbalanced Tree (O (n))</strong><br />
+          Die schlechteste Art des Trees, eher wie eine Linked List. Besteht,
+          wenn die Höhe des linken und die Höhe des rechten Subtrees ist größer
+          als 1.<br />
+          <br />
+         <strong>SELF-BALANCING-TREES:</strong> <br />
+          Diese Bäume gleichen sich automatisch aus, wenn wir einen Knoten/Wert hinzufügen oder entfernen.
+          <ul class="default">
+            <li>AVL-Trees(Adelson-Velsky and Landis)</li>
+            <li>Red-black-Trees</li>
+            <li>B-Trees</li>
+            <li>Splay Trees</li>
+            <li>2-3 Trees</li>
+          </ul>
+
+        <strong>ROTATIONEN:</strong>
+        <br>
+        Es gibt 4 verschiedene Arten von Rotationen. Welche angewandt wird, entscheidet, die Struktur des Baumes (welche Seite schwerer ist).<br>
+        - LEFT-ROTATION(LL)<br>
+        - RIGHT-ROTATION (RR)<br>
+        - LEFT-RIGHT-ROTATION (LR)<br>
+        - RIGHT-LEFT-ROTATION (RL)<br>
+<br>
+        <strong>BALANCE FACTOR:<br>
+        bF= height(L) - height(R)<br></strong>
+        Wenn bF= >1 (left-heavy -->RIGHT-ROTATION)<br>
+        Wenn bF= <-1 (right-heavy -->LEFT-ROTATION)<br>
         </p>
       </section>
 
       <footer class="major container medium videoWrapper">
-        <h3>Arrays</h3>
-        <iframe
-          src="https://www.youtube.com/embed/_di2Vk8ruAQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <h3>Self-Balancing Trees </h3>
+        <iframe src="https://www.youtube.com/embed/Jj9Mit24CWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </footer>
     </div>
 
