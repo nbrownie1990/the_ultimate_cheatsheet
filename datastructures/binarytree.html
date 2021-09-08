@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Linked Lists</title>
+    <title>Binary Tree</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,39 +13,112 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>Linked Lists</h1>
+      <h1>The Binary Tree</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
       <header>
-        <h2>What is the Linked List?</h2>
+        <h2>Was ist ein Binary Tree?</h2>
       </header>
       <section>
-        <p>Das ...</p>
+        <p>
+          Die Bezeichnung "Binary Tree" hängt von der Datenstruktur ab. Er ist
+          aufgebaut wie ein Baum mit Wurzel(Root=Ursprungsknoten), Zweigen
+          (Nodes) und Blättern(Leafs= Nodes ohne Childnodes). Ein guter
+          Vergleich ist ein Familien-Stammbaum. Der "Binary" Tree steht für
+          Trees mit zwei Childnodes und der "Ternary" Tree für Trees mit drei
+          Childnodes. <br />
+          Wir nutzen Trees für die Repräsentation von Daten in hierarchischen/
+          geordneten Strukturen. So beispielsweise für Datenbanken (trees for
+          indexing), für Autocompletion(z.B. in Chrome, vergangene Websuchen),
+          für Compilers (Syntax tree to parse expressions) oder für Compressions
+          (JPEG, MP3).<br /><br />
+          Es wird zwischen "Binary Trees" und "Binary Search Trees"
+          unterschieden. Bei "Binary Search Trees" sind die Knoten wie folgt
+          geordnet:
+          <strong>left< node< right</strong><br />
+          Das bedeutet, der linke Childnode ist in der Struktur immer kleiner
+          als der Parentnode, welcher wiederum kleiner als der rechte Knoten
+          ist.<br /><br />
+          Dadurch eigenen sich Binary Search Trees, wie der Name es schon
+          vermuten lässt, ausgezeichnet für das finden von Werten.<br />
+        </p>
+        <ol class="default">
+          Ablauf:
+          <li>Wir suchen nach dem Wert 1</li>
+          <li>Ist 1 kleiner oder größer als der Root-Node?</li>
+          <li>Ja? -> also schauen wir den linken Subtree an</li>
+          <li>
+            Dort wird der oberste Knoten angeschaut und wider die Frage: ist er
+            der Knoten oder kleiner bzw. größer?
+          </li>
+          <li>
+            Das geht so lange, bis wir den Wert gefunden haben. Wir konnten zu
+            Beginn schon die Hälfte der Suchoptionen ausschließen.
+          </li>
+        </ol>
+
+        <strong>
+          Search O(log n)
+          <br />
+          Insert O(log n)
+          <br />
+          Delete O(log n)</strong
+        >
+        <br /><br />
       </section>
 
       <section>
         <header>
-          <h3>1. "This" in einer Methode</h3>
+          <h3>Durchquerung von Trees</h3>
         </header>
         <hr />
-        <p>Eine ....</p>
-        <ul>
-          <strong>const person = {</strong>
-          <li>name: "Nina"</li>
-          <li>birthYear: 1678</li>
-          <li>age: function(){</li>
-          <li>return 2021 - this.birthyear;</li>
-          <li>}</li>
-          <li>}</li>
+        <p>
+          In linearen Datenstrukturen, wie z.B. der Linked List, gibt es eine
+          klare Richtung zum Durchlaufen der Struktur. Bei Trees gibt es
+          unterschiedliche Wege.
+        </p>
+        <ul class="default">
+          <strong>BREADTH FIRST/ LEVEL ORDER:</strong>
+          <li>Das etagenweise Durchlaufen</li>
+        </ul>
+        <ul class="default">
+          <strong>DEPTH FIRST:</strong>
+          <li>
+            Pre-Order(Root, Left, Right): In die Tiefe gehend. Erst der
+            Elternknoten, dann alle seine linken Kindknoten und erst danach der
+            rechte Subtree.
+          </li>
+          <li>
+            In-Order(Left, Root, Right): Ausgabe der Werte in aufsteigender
+            Reihenfolge. Wenn wir in absteigender Reihenfolge ausgeben wollen:
+            Right, Root, Left
+          </li>
+          <li>
+            Post-Order(Left, Right, Root): Wir gehen von den Blättern hoch zur
+            Wurzel. Praktisch in Usecases, wo wir die Werte berechnen und sie
+            hochspielen müssen bis zur Wurzel. Diese Bäume können mit
+            "Rekursion" sehr einfach im Code nachgebildet werden.
+          </li>
+        </ul>
+        <br />
+        <ul class="default">
+          <strong>TIEFE & HÖHE VON TREES:</strong>
+          <li>Tiefe: Kann durch das Zählen der Edges ausgewiesen werden.</li>
+          <li>
+            Höhe: Kann durch das Zählen, vom untersten Blatt ausgehend,
+            ausgewiesen werden. <br />
+            Height of Root-Node = Height of the Tree<br />
+            Formel: 1+ max(height(L), height(R))
+          </li>
         </ul>
       </section>
 
       <footer class="major container medium videoWrapper">
-        <h3>Die Binäre Suche</h3>
+        <h3>Binary Trees</h3>
         <iframe
-          src="https://www.youtube.com/embed/XJUgCSejezQ"
+          src="https://www.youtube.com/embed/GzJoqJO1zdI"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
