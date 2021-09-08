@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorting Algorithms</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>Sorting Algorithms</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>Was sind Sorting Algorithms?</h2>
+      </header>
+      <section>
+        <p>
+          Wir verwenden Sorting Algorithms, um Elemente in einer Liste in eine
+          Reihenfolge zu sortieren. Neben anderen Anwendungen kann die
+          Sortierung angewendet werden, um einen Datensatz für einen anderen
+          Algorithmus vorzubereiten, zum Beispiel für die Binäre Suche.
+        </p>
+      </section>
+
+      <section>
+        <header>
+          <h3>Working with Arrays</h3>
+        </header>
+        <hr />
+        <p>
+          Arrays .........
+          <br /><br />
+          <h3>Comparision Sort</h3>
+          <footer class="major container medium videoWrapper">
+            <h3>Bubble Sort (Best: O(n) , Worst: O(n^2))</h3>
+            <iframe
+              src="https://www.youtube.com/embed/xli_FI7CuzA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          
+          
+          <br /><br />
+          Bubble Sort beginnt am Anfang der Liste und vergleicht jedes Paar
+          benachbarter Elemente. Wenn das erste größer als das zweite ist,
+          werden sie vertauscht. Dann beginnt es wieder am Anfang der Liste und
+          wiederholt diesen Vorgang, bis beim letzten Durchlauf kein Tausch
+          aufgetreten ist. Da seine Zeitkomplexität im Durchschnitt und im
+          schlimmsten Fall Ο(n^2) beträgt, eignet sich dieser Algorithmus eher
+          für kleine oder nahezu geordnete Datensätze.
+        </footer>
+
+          <footer class="major container medium videoWrapper">
+            <h3>Selection Sort (Best: O(n) , Worst: O(n^2))</h3>
+            <iframe
+              src="https://www.youtube.com/embed/g-PGLbMth_g"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          
+          
+          <br /><br />
+          Die Liste wird bei diesem Algorithmus in einen sortierten Teil links
+          und einen unsortierten rechts geteilt. Anfänglich ist die sortierte
+          Unterliste leer und die unsortierte ist die gesamte Liste. Dann sucht
+          der Algorithmus nach dem kleinsten Element in der unsortierten
+          Unterliste und tauscht es mit dem ganz linken unsortierten Element
+          aus, wobei die Unterlistengrenzen um ein Element nach rechts
+          verschoben werden. Wie Bubble Sort hat dieser Algorithmus eine
+          quadratische Zeitkomplexität Ο(n^2), ist also auch eher für kleine
+          oder nahezu geordnete Datensätze geeignet. Allerdings führt Selection
+          Sort weniger Swaps durch als Bubble Sort.
+          </footer>
+
+         <footer class="major container medium videoWrapper">
+            <h3>Insertion Sort (Best: O(n^2) , Worst: O(n^2))</h3>
+            <iframe
+              
+              src="https://www.youtube.com/embed/JU767SDMDvA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+         
+          <br /><br />
+          Insertion Sort hält eine sortierte Unterliste am Anfang der Liste und
+          sucht für jedes Element aus der Liste nach der richtigen Position in
+          dieser Unterliste, um dieses Element einzufügen. Insertion Sort hat
+          auch eine quadratische Zeitkomplexität für durchschnittliche und
+          schlechteste Fälle, ist jedoch der schnellste Sortieralgorithmus für
+          kleine Listen.
+        </footer>
+          <footer class="major container medium videoWrapper">
+            <h3>Merge Sort ( O(n log n) , SPACE: O(n log n))</h3>
+            <iframe
+              src="https://www.youtube.com/embed/4VqmGXwpLqc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+               
+          <br /><br />
+          Merge-Sort ist ein Sortieralgorithmus, der eine
+          Teile-und-Herrsche-Technik verwendet, um eine gegebene Liste zu
+          sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
+          wird, um es einfacher zu lösen. Merge Sort beginnt mit dem Aufteilen
+          der Liste in Hälften und fährt fort, diese Unterlisten aufzuteilen,
+          bis nur noch Unterlisten mit einem einzigen Element übrig sind. Dann
+          fügen Sie diese Unterlisten zu sortierten Unterlisten zusammen und
+          fahren Sie damit fort, bis Sie eine einzige sortierte Liste erhalten.
+          <br /><br />
+          Merge Sort wird in Bezug auf die Zeitkomplexität in O(n log n)
+          ausgeführt, seine Raumkomplexität beträgt O(n), da es Hilfsarrays
+          verwendet, um die Unterlisten zu speichern. Außerdem können wir
+          Multithreading nutzen, um Merge Sort zu implementieren, indem wir
+          beispielsweise jede Hälfte in getrennte Threads sortieren. Darüber
+          hinaus können wir Merge Sort mit anderen Sortieralgorithmen
+          kombinieren, zum Beispiel, anstatt die Liste in
+          Einzelelement-Unterlisten aufzuteilen, könnten wir in kleine
+          Unterlisten mit wenigen Elementen aufteilen und diese mit Insertion
+          Sort sortieren.
+        </footer>
+          
+          <footer class="major container medium videoWrapper">
+            <h3>Quick Sort <br>(Best: O(n log n), Worst: O 8n^2) , SPACE: Best: O( log n),
+              Worst: O(n))</h3>
+            <iframe
+              src="https://www.youtube.com/embed/Hoixgm4-P4M"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+              
+          <br /><br />
+          Quick Sort ist ein In-Place-Sortieralgorithmus, der eine
+          Teile-und-Herrsche-Technik verwendet, um eine gegebene Liste zu
+          sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
+          wird, um es einfacher zu lösen, und keine zusätzlichen Datenstrukturen
+          verwendet. Quick Sort beginnt mit der Auswahl eines Elements aus der
+          Liste als Pivot-Element, normalerweise das erste oder letzte Element.
+          Als nächstes ordnen Sie die anderen Elemente neu an, sodass alle
+          Elemente, die kleiner als der Pivot sind, nach links und alle
+          Elemente, die größer als der Pivot sind, nach rechts gehen. Der
+          wichtige Teil von Quick Sort ist die Wahl des Pivots, da eine
+          schlechte Wahl zur ungünstigsten Zeitkomplexität führt, wobei die
+          durchschnittliche Fallzeitkomplexität dieses Algorithmus O(n log n)
+          beträgt, während im schlechtesten Fall case ist O(n²), jedoch kann der
+          schlimmste Fall mit einer randomisierten Version dieses Algorithmus
+          vermieden werden. Außerdem ist Quick Sort im Gegensatz zu Merge Sort
+          ein In-Place-Algorithmus, der den Vorteil einer konstanten
+          Raumkomplexität O(1) hat.
+        </footer>
+          <br /><br />
+          <h3>Non-Comparision Sort</h3><br />
+
+          <br /><br />
+          Counting Sort ( O(n + k) , SPACE: O(k))<br />
+          Die Zählsortierung ist ein Algorithmus, mit dem wir in bestimmten
+          Fällen ein Array in linearer Zeit sortieren können. Um die zählende
+          Sortierung zu verwenden, darf unser Array nur Dezimalzahlen enthalten,
+          und es wird davon ausgegangen, dass Sie die Min- und Max-Werte kennen.
+          Es funktioniert, indem es die Anzahl der Objekte zählt, die jeden
+          unterschiedlichen Schlüsselwert aufweisen, und anhand dieser Zählungen
+          arithmetisch verwendet wird, um die Positionen jedes Schlüsselwerts in
+          der Ausgabesequenz zu bestimmen. Seine Laufzeit ist linear in der
+          Anzahl der Elemente und der Differenz zwischen den maximalen und
+          minimalen Schlüsselwerten, sodass es nur für den direkten Einsatz in
+          Situationen geeignet ist, in denen die Variation der Schlüssel nicht
+          wesentlich größer ist als die Anzahl der Elemente. Es wird jedoch oft
+          als Unterprogramm in einem anderen Sortieralgorithmus, Radixsort,
+          verwendet, der größere Schlüssel effizienter handhaben kann.Die
+          Zählsortierung funktioniert am besten, wenn der Zahlenbereich für
+          jedes Arrayelement sehr klein ist.
+
+          <br /><br />
+          Bucket Sort (O(n + k))<br />
+          Bucket Sort kann für viele der gleichen Aufgaben wie Zählsortierung
+          verwendet werden, mit einer ähnlichen Zeitanalyse; Im Vergleich zur
+          Zählungssortierung erfordert die Bucket-Sortierung jedoch verknüpfte
+          Listen, dynamische Arrays oder eine große Menge an vorab zugewiesenem
+          Speicher, um die Sätze von Elementen in jedem Bucket zu speichern,
+          während die Zählungssortierung stattdessen eine einzelne Zahl (die
+          Anzahl der Elemente) pro Bucket speichert.
+          <br /><br />
+          Radix Sort (Best: O(n) , Worst: O(n^2)<br />
+          In der Informatik ist Radixsort ein nicht vergleichender
+          Dezimalzahl-Sortieralgorithmus, der Daten mit ganzzahligen Schlüsseln
+          sortiert, indem Schlüssel nach den einzelnen Ziffern gruppiert werden,
+          die dieselbe signifikante Position und denselben Wert haben. Eine
+          Positionsnotation ist erforderlich, aber da ganze Zahlen Zeichenfolgen
+          (z. B. Namen oder Datumsangaben) und speziell formatierte
+          Gleitkommazahlen darstellen können, ist die Radixsortierung nicht auf
+          ganze Zahlen beschränkt.
+        </p>
+      </section>
+
+            
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
