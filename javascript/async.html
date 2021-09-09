@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>This</title>
+    <title>Asynchronus JavaScript</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -13,93 +13,158 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>The Keyword "this"</h1>
+      <h1>Asynchronus JavaScript</h1>
     </div>
 
     <!-- Main -->
     <div class="box container">
+      <section>
       <header>
-        <h2>What is "this"?</h2>
+        <h2>Asynchronus JavaScript</h2>
       </header>
       <section>
         <p>
-          Das Schlüsselwort "this" in JavaScript kann sehr verwirrend sein, da
-          die Macher von JavaScript diesem Schlüsselwort mehrere Rollen gegeben
-          haben. Diese werden folgend beleuchtet.
+          Mit ES8 haben wir eine andere Möglichkeit, Code, der asynchron ist, lesbarer zu schreiben und der sogenannten callback-hell zu entkommen: Die Rettung lautet Async / Await. 
+          Um Async / Await zu verstehen, müssen wir zuerst Promises verstehen.
+          
+          Wir nutzen diese Techniken, um den asynchronen Code, der sequentiell in Javascript ausgeführt wird, wie bspw. API-Aufrufe von Drittanbietern, mühsame I/O-Operationen und andere CPU-intensive/blockierende Aufgaben zu verarbeiten.
         </p>
       </section>
+ 
       <section>
         <header>
-          <h3>This in simple words:</h3>
-        </header>
-        <blockquote>.this</blockquote>
-      </section>
-      <section>
-        <header>
-          <h3>1. "This" in einer Methode</h3>
+          <h3>Working with Promises</h3>
         </header>
         <hr />
         <p>
-          Eine Methode ist eine normale Funktion, die Teil eines Objekts ist.
-          Jede Verwendung von "this" in einer Methode bezieht sich auf das
-          Objekt, in dem sie sich befindet. Wenn wir z.B. dieses Key-Value-Paar
-          betrachten:
+          Um den Code cleaner zu schreiben und damit lesbarer zu machen gibt es Promises.
+
+          Ein Promise ist ein Objekt, das synchron von einer asynchronen Funktion zurückgegeben werden kann.
+
+          Ein Promise-Konstruktor übernimmt eine Funktion, die zwei Parameter akzeptiert: Reject und Resolve. Es befindet sich in einem von 3 möglichen Zuständen:
+          
+          Behoben (resolved): Ein Promise konnte erfolgreich Daten abrufen oder einen Wert abrufen
+          Abgelehnt (rejected): Ein Promise konnte aufgrund eines Fehlers oder Problems keine Daten abrufen
+          Ausstehend (pending): Ausgangszustand, noch nicht gelöst oder abgelehnt
+          
+          Ein .then wird dann verkettet, um bei Erfolg eine Funktion auszuführen, und ein .catch wird hinzugefügt, um eine Fehlerbehandlung bereitzustellen.
+
         </p>
         <ul>
-          <strong>const person = {</strong>
-          <li>name: "Nina"</li>
-          <li>birthYear: 1678</li>
-          <li>age: function(){</li>
-          <li>return 2021 - this.birthyear;</li>
-          <li>}</li>
-          <li>}</li>
+          <strong>Beispiel</strong>
+          <li>fakeRequestPromise('google.com/api/coffee/page1')</li>
+          <li>.then((data) => {</li>
+          <li>console.log("It worked!!(page1)")</li>
+          <li>console.log(data)</li>
+          <li>return fakeRequestPromise('google.com/api/coffee/page2')</li>
+          <li>})</li>
+          <li>.then((data) => {</li>
+            <li>console.log("It worked!!(page2)")</li>
+            <li>console.log(data)</li>
+            <li>return fakeRequestPromise('google.com/api/coffee/page3')</li>
+            <li>})</li>
+            <li>.then((data) => {</li>
+              <li>console.log("It worked!!(page3)")</li>
+              <li>console.log(data)</li>
+              <li>})</li>
+              <li>.catch((err) => {</li>
+                <li>console.log("Oh no, a request failed!")</li>
+                <li>console.log(err)</li>
+                <li>})</li>
         </ul>
       </section>
+      <section>
+        <header>
+          <h3>Writing Promises</h3>
+        </header>
+        <hr />
+        <p>
+          Wenn wir in einer Funktion "return new Promise((resolve, reject) => {" einbringen, gibt uns dies ein Promise zurück. 
+        </p>
+        <ul>
+          <strong>Beispiel</strong>
+          <li>const fakeRequest = (url) => {</li>
+          <li>return new Promise ((resolve, reject) => {</li>
+          <li>const rand =Math.random();</li>
+          <li>setTimeout(() =>{ </li>
+          <li>if (rand < 0.7){</li>
+          <li>resolve ('Your fake data here');</li>
+          <li>}</li>
+            <li>reject('Request Error!')</li>
+            <li>}, 1000)</li>
+            <li>})</li>
+            <li>}</li>
+            <br><br>
+              <li>fakeRequest('/dogs/1'</li>
+              <li>.then((data) => {</li>
+                <li>console.log("Done with request!")</li>
+                <li>console.log('here is your data:', data)</li>
+                <li>})</li>
+                
+              <li>.catch((err) => {</li>
+                <li>console.log("Oh no", err)</li>
+                <li>console.log(err)</li>
+                <li>})</li>
+        </ul>
+
+        <ul>
+          <strong>Anderes Beispiel</strong>
+          <li>const delayedColorChange = (color,delay) => {</li>
+          <li>return new Promise ((resolve, reject) => {</li>
+          <li>setTimeout(() =>{ </li>
+          <li>document.body.style.backgroundColor = color;</li>
+          <li>resolve ();</li>
+          <li>}, delay)</li>
+            <li>})</li>
+            <li>}</li>
+            <br><br>
+              <li>delayedColorChange('red', 1000)</li>
+              <li>.then(() => delayedColorChange('orange', 1000))</li>
+              <li>.then(() => delayedColorChange('yellow', 1000))</li>
+              <li>.then(() => delayedColorChange('green', 1000))</li>
+              <li>.then(() => delayedColorChange('blue', 1000))</li>
+              <li>.then(() => delayedColorChange('indigo', 1000))</li>
+              <li>.then(() => delayedColorChange('violet', 1000))</li>
+        </ul>
+
+
+        <ul>
+          <strong>Anderes Beispiel mit Promise.all()</strong>
+        <li>async function usePromiseAll() {</li>
+          <li>try {</li>
+             <li> await Promise.all([axios.get("https://api.github.com/users/sudarshansb143"),<br>axios.get("https://api.github.com/users/sudarshansb143")])</li>
+              <li>console.log("\n done with then \n")</li>
+          <li>} catch (error) {</li>
+             <li> console.log("error ", error.message)</li>
+          <li>}</li>
+     <li> }</li>
+      
+     <li>usePromiseAll()</li>
+     </ul>
+      </section>
+
 
       <section>
         <header>
-          <h3>2. "This" als eigenständiges Schlüsselwort</h3>
+          <h2>Async & Await</h2>
         </header>
-        <hr />
-        <p>
-          Wenn wir in unserer JavaScript-Datei ein "this" Keyword finden,
-          bezieht es sich auf das globale Objekt (window im Browser und global
-          in Node).
-        </p>
-        <ul>
-          <li>this.isALineOfCode;</li>
-        </ul>
-      </section>
-
+        <section>
+          <p>
+            Async-Await ist eine weitere Möglichkeit, Promises in JavaScript zu handhaben. Async / Await ist allerdings kein vollständiger Ersatz für Promises. 
+             
+          </p>
+        </section>
+      
       <section>
         <header>
-          <h3>3. "This" in einer Funktion</h3>
+          <h3>Async-Functions</h3>
         </header>
         <hr />
         <p>
-          Während Methoden Funktionen sind, die Teil eines Objekts sind, ist
-          eine Funktion ein eigenständiger Code. Da es an kein Objekt/Parent
-          angehängt ist, bezieht sich "this" in einer Funktion auf ein globales
-          Objekt (window im Browser und global im Node).
-        </p>
-        <ul>
-          <li>function doSomething(){</li>
-          <li>return this;</li>
-          <li>}</li>
-        </ul>
-      </section>
+          Das Schlüsselwort async kann vor einer Funktion wie "async function test()"" oder "const test = async() =>{}"" platziert werden. Die Verwendung des Wortes async vor einer Funktion bedeutet, dass diese Funktion ein Promise zurückgibt. Die von dieser Funktion zurückgegebenen Werte werden automatisch in ein aufgelöstes Promise eingeschlossen.
 
-      <section>
-        <header>
-          <h3>4. "This" in einer Funktion im Strict Modus</h3>
-        </header>
-        <hr />
-        <p>
-          Während man es normalerweise vorziehen würden, TypeScript zu
-          verwenden, ist es für den Anfang eine gute Option, den strict Modus in
-          JavaScript zu benutzten. Wenn wir im strikten Modus "this" in eine
-          Funktion schreiben, erhalten wir undefined zurück.
-        </p>
+          Wenn wir das Schlüsselwort async vor der Funktionsdefinition verwenden, können wir dann innerhalb der Funktion auch "await" verwenden. Await gibt uns die Möglichkeit, die Funktion nicht blockierend zu unterbrechen, bis das Promise abgewickelt ist. 
+                </p>
         <ul>
           <strong>"use strict";</strong>
           <li>function doSomething(){</li>
@@ -108,15 +173,81 @@
         </ul>
       </section>
 
+      <section>
+        <header>
+          <h3>Await-Keyword</h3>
+        </header>
+        <hr />
+        <p>
+           Await kann nur innerhalb einer asynchronen Funktion verwendet werden. Wir können Async ohne Async verwenden, aber wir können Async nicht ohne Async verwenden.
+           
+           Await weist Javascript an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Versprechen abgelehnt oder aufgelöst wird. 
+
+           Wir können jedem einzelnen Await ein catch() hinzufügen, da es sich nur um normale Promises handelt!
+           
+        </p>
+        
+        <ul>
+          <strong>Await</strong>
+          <li>const delayedColorChange = (color,delay) => {</li>
+          <li>return new Promise ((resolve, reject) => {</li>
+          <li>setTimeout(() =>{ </li>
+          <li>document.body.style.backgroundColor = color;</li>
+          <li>resolve ();</li>
+          <li>}, delay)</li>
+            <li>})</li>
+            <li>}</li>
+            <br><br>
+              <li>async function rainbow(){</li>
+              <li>await delayedColorChange('red', 1000))</li>
+              <li>await delayedColorChange('orange', 1000))</li>
+              <li>await delayedColorChange('yellow', 1000))</li>
+              <li>await delayedColorChange('green', 1000))</li>
+              <li>await delayedColorChange('blue', 1000))</li>
+              <li>await delayedColorChange('indigo', 1000))</li>
+              <li>await delayedColorChange('violet', 1000))</li>
+              <li>return "All done!"</li>
+              <li>}</li>
+              <br><br>
+              <li>async function printRainbow(){</li>
+              <li>await rainbow();</li>
+              <li> console.log("End of rainbow!")</li>
+        </ul>
+
+        <ul>
+          <strong>Anderes Beispiel</strong>
+          <li>const fakeRequest = (url) => {</li>
+          <li>return new Promise ((resolve, reject) => {</li>
+          <li>const delay =Math.floor(Math.random()*(4500)) +500;</li>
+          <li>setTimeout(() =>{ </li>
+          <li>if (delay > 4000){</li>
+            <li>reject('Connection Timeout!')</li>
+            <li>} else { </li>
+            <li>resolve (`Here is your fake data from ${url}` );</li>
+          <li>}</li>
+          <li>}, delay)</li>
+            <li>})</li>
+            <li>}</li>
+            <br><br>
+            <li>async makeTwoRequests(){</li>
+              <li>try{</li>
+              <li>let data1 = await fakeRequest ('/page1');</li>
+              <li>console.log(data1);</li>
+              <li>let data2 = await fakeRequest ('/page2');</li>
+              <li>console.log(data1);</li>
+              <li>} catch (e){</li>
+                <li>console.log("Caught an error!");</li>
+                <li>console.log("error is", e);</li>
+                <li>}</li>
+
+              <li>}</li>
+
+        </ul>
+      </section>
+
       <footer class="major container medium videoWrapper">
-        <h3>This explained by codeSTACKr</h3>
-        <iframe
-          src="https://www.youtube.com/embed/Pi3QC_fVaD0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <h3>Async & Await explained by Fireship</h3>
+        <iframe src="https://www.youtube.com/embed/vn3tm0quoqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </footer>
     </div>
 
