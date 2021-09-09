@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The Keyword "this"</h1>
+    </div>
+
+    <!-- Main -->
+    <div class="box container">
+      <header>
+        <h2>What is "this"?</h2>
+      </header>
+      <section>
+        <p>
+          Das Schlüsselwort "this" in JavaScript kann sehr verwirrend sein, da
+          die Macher von JavaScript diesem Schlüsselwort mehrere Rollen gegeben
+          haben. Diese werden folgend beleuchtet.
+        </p>
+      </section>
+      <section>
+        <header>
+          <h3>This in simple words:</h3>
+        </header>
+        <blockquote>.this</blockquote>
+      </section>
+      <section>
+        <header>
+          <h3>1. "This" in einer Methode</h3>
+        </header>
+        <hr />
+        <p>
+          Eine Methode ist eine normale Funktion, die Teil eines Objekts ist.
+          Jede Verwendung von "this" in einer Methode bezieht sich auf das
+          Objekt, in dem sie sich befindet. Wenn wir z.B. dieses Key-Value-Paar
+          betrachten:
+        </p>
+        <ul>
+          <strong>const person = {</strong>
+          <li>name: "Nina"</li>
+          <li>birthYear: 1678</li>
+          <li>age: function(){</li>
+          <li>return 2021 - this.birthyear;</li>
+          <li>}</li>
+          <li>}</li>
+        </ul>
+      </section>
+
+      <section>
+        <header>
+          <h3>2. "This" als eigenständiges Schlüsselwort</h3>
+        </header>
+        <hr />
+        <p>
+          Wenn wir in unserer JavaScript-Datei ein "this" Keyword finden,
+          bezieht es sich auf das globale Objekt (window im Browser und global
+          in Node).
+        </p>
+        <ul>
+          <li>this.isALineOfCode;</li>
+        </ul>
+      </section>
+
+      <section>
+        <header>
+          <h3>3. "This" in einer Funktion</h3>
+        </header>
+        <hr />
+        <p>
+          Während Methoden Funktionen sind, die Teil eines Objekts sind, ist
+          eine Funktion ein eigenständiger Code. Da es an kein Objekt/Parent
+          angehängt ist, bezieht sich "this" in einer Funktion auf ein globales
+          Objekt (window im Browser und global im Node).
+        </p>
+        <ul>
+          <li>function doSomething(){</li>
+          <li>return this;</li>
+          <li>}</li>
+        </ul>
+      </section>
+
+      <section>
+        <header>
+          <h3>4. "This" in einer Funktion im Strict Modus</h3>
+        </header>
+        <hr />
+        <p>
+          Während man es normalerweise vorziehen würden, TypeScript zu
+          verwenden, ist es für den Anfang eine gute Option, den strict Modus in
+          JavaScript zu benutzten. Wenn wir im strikten Modus "this" in eine
+          Funktion schreiben, erhalten wir undefined zurück.
+        </p>
+        <ul>
+          <strong>"use strict";</strong>
+          <li>function doSomething(){</li>
+          <li>return this;</li>
+          <li>}</li>
+        </ul>
+      </section>
+
+      <footer class="major container medium videoWrapper">
+        <h3>This explained by codeSTACKr</h3>
+        <iframe
+          src="https://www.youtube.com/embed/Pi3QC_fVaD0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine
+          <a href="https://www.ninabraunger.de/#contact">Mail</a>
+          schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
