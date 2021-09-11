@@ -23,14 +23,14 @@
       </header>
       <section>
         <header>
-          <h3>Closures sind Funktionen mit unabhängigen,<br>
-             freien Variablen.</h3>
-          <p> Die in der Closure definierte Funktion merkt sich die Umgebung, in der sie erzeugt wurde.</p>
+          <h3>Closures bestimmen welche Variablen einer inneren Funktion zugänglich sind.</h3>
+          <p> 
+             Die in der Closure definierte Funktion merkt sich die Umgebung, in der sie erzeugt wurde.</p>
         </header>
         <p>
-          In einfachen Worten ist eine Closure nichts anderes als eine Funktion,
+          In einfachen Worten ist eine Closure nichts anderes als eine Funktion (inner function),
           die in einer anderen Funktion definiert ist. Die Closure hat Zugriff
-          auf alle lokalen Variablen, externen Funktionsvariablen und globalen
+          auf alle lokalen Variablen, ihre externen Funktionsvariablen und globalen
           Variablen. Sie ist eine Funktion, die mit ihrer lexikalischen Umgebung
           gebündelt ist.
         </p>
@@ -70,13 +70,16 @@
           <br />
           Sprachen wie Java geben uns die Möglichkeit, bestimmte Attribute
           (Eigenschaften) als "private" zu deklarieren. Dies ist bei JavaScript
-          (oder Python) nicht der Fall. Aber das wir können dies durch Folgendes
-          erzwingen: z.B. Die Person-Funktion gibt ein Objekt mit Funktionen
-          zurück, die von außerhalb der Person-Funktion zugänglich sind. Dies
-          ist über die Punktnotation (d. h. john.grow())möglich. Neben diesen
+          (oder Python) nicht der Fall. Aber wir können dies durch Folgendes
+          erzwingen: <br> <br>
+
+          z.B. Die Pflanzen-Funktion gibt ein Objekt mit Funktionen
+          zurück, die von außerhalb der Pflanzen-Funktion zugänglich sind. Dies
+          ist über die Punktnotation (d. h. plant.grow())möglich. Neben diesen
           Funktionen hat das Objekten aber zwei Attribute, die sie nicht über
           "return" ausgibt - deshalb bleiben diese außerhalb der Funktion Person
-          unzugänglich.
+          unzugänglich.<br> <br>
+          Ebenfalls sind die mit "let" statt "this." gekennzeichnete Variablen nur im lokalen Scope der inneren Funktion und dadurch "private" geworden.
         </p>
 
         <ul class="default">
@@ -102,9 +105,9 @@
         </header>
         <hr />
         <ul class="default">
-          <li>Ihren lokaler Geltungsbereich (Variablen, die in der inneren Funktion definiert sind)</li>
+          <li>Ihren lokaler Geltungsbereich/Scope (Variablen, die in der inneren Funktion definiert sind)</li>
           <li>den Umfang ihrer äußeren Funktionen</li>
-          <li>Den globale Geltungsbereich</li>
+          <li>Den globale Geltungsbereich/Scope</li>
         
       </section>
 
