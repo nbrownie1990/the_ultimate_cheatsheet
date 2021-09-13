@@ -130,19 +130,7 @@
         </ul>
 
 
-        <ul>
-          <strong>Anderes Beispiel mit Promise.all()</strong>
-        <li>async function usePromiseAll() {</li>
-          <li>try {</li>
-             <li> await Promise.all([axios.get("https://api.github.com/users/sudarshansb143"),<br>axios.get("https://api.github.com/users/sudarshansb143")])</li>
-              <li>console.log("\n done with then \n")</li>
-          <li>} catch (error) {</li>
-             <li> console.log("error ", error.message)</li>
-          <li>}</li>
-     <li> }</li>
-      
-     <li>usePromiseAll()</li>
-     </ul>
+        
       </section>
 
 
@@ -152,7 +140,7 @@
         </header>
         <section>
           <p>
-            Async-Await ist eine weitere Möglichkeit, Promises in JavaScript zu handhaben. Async / Await ist allerdings kein vollständiger Ersatz für Promises. 
+            Async-Await ist eine weitere Möglichkeit, Promises in JavaScript zu handhaben. Sie vereinfachen die Anwendung von Promises, sind allerdings kein vollständiger Ersatz für Promises. Sie ermöglichen die kollektive Verarbeitung einer Gruppe von Promises.
              
           </p>
         </section>
@@ -181,9 +169,9 @@
         </header>
         <hr />
         <p>
-           Await kann nur innerhalb einer asynchronen Funktion verwendet werden. Wir können Async ohne Async verwenden, aber wir können Async nicht ohne Async verwenden.
+           Await kann nur innerhalb einer asynchronen Funktion verwendet werden. Wir können Async ohne Await verwenden, aber wir können Await nicht ohne Async verwenden.
            
-           Await weist Javascript an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Versprechen abgelehnt oder aufgelöst wird. 
+           Await weist Javascript an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Versprechen abgelehnt oder aufgelöst wird. Erst dann kann das nächste await verarbeitet werden. Await-Aufrufe laufen also immer nacheinander.
 
            Wir können jedem einzelnen Await ein catch() hinzufügen, da es sich nur um normale Promises handelt!
            
@@ -245,6 +233,20 @@
               <li>}</li>
 
         </ul>
+
+        <ul>
+          <strong>Anderes Beispiel mit Promise.all() <br>(Um zwei oder mehr Jobs gleichzeitig, also parallel auszuführen.)</strong>
+        <li>async function usePromiseAll() {</li>
+          <li>try {</li>
+             <li> await Promise.all([axios.get("https://api.github.com/users/sudarshansb143"),<br>axios.get("https://api.github.com/users/sudarshansb143")])</li>
+              <li>console.log("\n done with then \n")</li>
+          <li>} catch (error) {</li>
+             <li> console.log("error ", error.message)</li>
+          <li>}</li>
+     <li> }</li>
+      
+     <li>usePromiseAll()</li>
+     </ul>
       </section>
 
       <footer class="major container medium videoWrapper">
