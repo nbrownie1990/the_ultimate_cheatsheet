@@ -153,7 +153,7 @@
         <p>
           Das Schlüsselwort async kann vor einer Funktion wie "async function test()"" oder "const test = async() =>{}"" platziert werden. Die Verwendung des Wortes async vor einer Funktion bedeutet, dass diese Funktion ein Promise zurückgibt. Die von dieser Funktion zurückgegebenen Werte werden automatisch in ein aufgelöstes Promise eingeschlossen.
 
-          Wenn wir das Schlüsselwort async vor der Funktionsdefinition verwenden, können wir dann innerhalb der Funktion auch "await" verwenden. Await gibt uns die Möglichkeit, die Funktion nicht blockierend zu unterbrechen, bis das Promise abgewickelt ist. 
+          Wenn wir das Schlüsselwort async vor der Funktionsdefinition verwenden, können wir dann innerhalb der Funktion auch "await" verwenden. 
                 </p>
       
       </section>
@@ -166,7 +166,7 @@
         <p>
            Await kann nur innerhalb einer asynchronen Funktion verwendet werden. Wir können Async ohne Await verwenden, aber wir können Await nicht ohne Async verwenden.
            
-           Await weist Javascript an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Versprechen abgelehnt oder aufgelöst wird. Erst dann kann das nächste await verarbeitet werden. Await-Aufrufe laufen also immer nacheinander.
+           Await weist Javascript an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Promise abgelehnt oder aufgelöst wird. Erst dann kann das nächste await verarbeitet werden. Await-Aufrufe laufen also immer nacheinander.
 
            Wir können jedem einzelnen Await ein catch() hinzufügen, da es sich nur um normale Promises handelt!
            
