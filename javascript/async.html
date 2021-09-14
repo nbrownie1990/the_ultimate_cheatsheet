@@ -182,15 +182,15 @@
           <li>}, delay)</li>
             <li>})</li>
             <li>}</li>
-            <br><br>
+            <br>
               <li>async function rainbow(){</li>
               <li>await delayedColorChange('red', 1000))</li>
-              <li>await delayedColorChange('orange', 1000))</li>
-              <li>await delayedColorChange('yellow', 1000))</li>
-              <li>await delayedColorChange('green', 1000))</li>
-              <li>await delayedColorChange('blue', 1000))</li>
-              <li>await delayedColorChange('indigo', 1000))</li>
-              <li>await delayedColorChange('violet', 1000))</li>
+              <li>await delayedColorChange('orange', 1000)</li>
+              <li>await delayedColorChange('yellow', 1000)</li>
+              <li>await delayedColorChange('green', 1000)</li>
+              <li>await delayedColorChange('blue', 1000)</li>
+              <li>await delayedColorChange('indigo', 1000)</li>
+              <li>await delayedColorChange('violet', 1000)</li>
               <li>return "All done!"</li>
               <li>}</li>
               <br><br>
@@ -219,7 +219,7 @@
               <li>let data1 = await fakeRequest ('/page1');</li>
               <li>console.log(data1);</li>
               <li>let data2 = await fakeRequest ('/page2');</li>
-              <li>console.log(data1);</li>
+              <li>console.log(data2);</li>
               <li>} catch (e){</li>
                 <li>console.log("Caught an error!");</li>
                 <li>console.log("error is", e);</li>
@@ -229,19 +229,6 @@
 
         </ul>
 
-        <ul>
-          <strong>Anderes Beispiel mit Promise.all() <br>(Um zwei oder mehr Jobs gleichzeitig, also parallel auszuführen.)</strong>
-        <li>async function usePromiseAll() {</li>
-          <li>try {</li>
-             <li> await Promise.all([axios.get("https://api.github.com/users/sudarshansb143"),<br>axios.get("https://api.github.com/users/sudarshansb143")])</li>
-              <li>console.log("\n done with then \n")</li>
-          <li>} catch (error) {</li>
-             <li> console.log("error ", error.message)</li>
-          <li>}</li>
-     <li> }</li>
-      
-     <li>usePromiseAll()</li>
-     </ul>
       </section>
 
       <footer class="major container medium videoWrapper">
