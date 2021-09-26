@@ -57,7 +57,7 @@
         <blockquote>
           Die Art und Weise, wie Funktionsdeklarationen und Variablen
           gespeichert werden, ist unterschiedlich: Funktionen werden mit einem
-          Verweis auf die gesamten Funktionen gespeichert Variablen mit dem
+          Verweis auf die gesamten Funktionen gespeichert, Variablen mit dem
           Schlüsselwort "var" mit dem Wert undefined und Variablen mit den
           Schlüsselwörtern "let" oder "const" werden nicht initialisiert
           gespeichert.
@@ -77,9 +77,9 @@
           ReferenceError ausgelöst, wenn wir auf nicht initalisierte Variablen
           zugreifen wollen.
           <br /><br />
-          Es gibt da auch noch die sogenannte „Temporal Deadzone“ ist eine
+          Es gibt da auch noch die sogenannte „Temporal Deadzone“. Sie ist eine
           zeitlich begrenzte Phase/Zone, in der die Variable keinen Wert hat und
-          die Engine eine Fehlermeldung anstelle von undefined auswirft. Wenn
+          die Engine eine Fehlermeldung, anstelle von undefined auswirft. Wenn
           die Engine dann zu der Zeile kommt, in der wir unsere Variablen
           deklariert haben, werden die Werte im Speicher mit unseren Werten
           überschrieben.
@@ -87,7 +87,7 @@
           Der zweite Schritt ist also die Speichernutzung (Code Execution). Wenn
           wir mit Daten in unserem Code arbeiten (lesen oder schreiben),
           verwenden wir Speicher. Das Lesen von Variablen oder das Ändern von
-          Werten ist das Lesen und Schreiben in den Speicher. Nach Abschluss der
+          Werten verursacht das Lesen und Schreiben in den Speicher. Nach Abschluss der
           ersten Phase wird der Code tatsächlich ausgeführt.
           <br />
         </p>
@@ -132,12 +132,12 @@
             <li>null</li>
           </ul> 
           Diese statischen Daten enthalten auch Referenzen. 
-          Diese Referenzen verweisen auf die von uns erstellte Objekte und Funktionen.
+          Diese Referenzen verweisen auf die von uns erstellten Objekte und Funktionen.
           <br>
           <br>
           Die Größe dieser Daten ist festgelegt und JavaScript kennt 
-          diese Größe zur Compile-Time. Dies bedeutet auch, dass JavaScript weiß, wie viel Speicher es 
-          zuweisen soll, und diese Menge zuweist. Diese Art der Speicherzuweisung wird als 
+          diese Größe zur Compile-Time. Dies bedeutet auch, dass JavaScript weiß, wie viel Speicher sie 
+          zuweisen soll, und ordnet diese Menge zu. Diese Art der Speicherzuweisung wird als 
           "statische Speicherzuweisung" bezeichnet. 
           Beim Erstellen von Primitive Types arbeiten wir mit statischen Daten, die JavaScript 
           im Stack speichert. Dies passiert kurz bevor der Code ausgeführt wird.
@@ -149,7 +149,7 @@
         </p>
         <hr />
       <p> <strong>"The Call Stack"</strong> <br>
-          Der "Stack" ist ein Ort, den JavaScript verwendet, um Variablen zu speichern, denen primitive Werte zugewiesen sind.
+          Hinweis: Der "Stack" ist ein Ort, den JavaScript verwendet, um Variablen zu speichern, denen primitive Werte zugewiesen sind.
           Der "Call Stack" ist etwas anderes als der Stack und wird <a href="callstack.html">hier</a> näher beschrieben.
       </p>
       </section>
@@ -170,13 +170,7 @@
         Während der Stack ein Ort ist, an dem JavaScript statische Daten speichert, 
         ist der Memory Heap ein Ort, an dem JavaScript Objekte speichert. 
         Da in JavaScript sogut wie alles ein Objekt ist (Wer kennt das Sprichwort nicht?), trifft es auf 
-        Folgende zu:
-      </p>
-        <ul>
-          <li>- Funktionen</li>
-          <li>- Arrays</li>
-          <li>  ...</li>
-        </ul>   
+        vieles zu (Funktionen, Arrays...).
         
       </section>
 
@@ -188,13 +182,13 @@
         <p>
           Wir wissen nun: 
           Wenn wir eine Variable erstellen und ihr einen primitiven Wert zuweisen, wird sie im Stack gespeichert.
-          Etwas anderes passiert, wenn Sie dasselbe versuchen, jedoch mit einem Objekt. 
-          Wenn Sie eine Variable deklarieren und ihr ein Objekt zuweisen, passieren zwei Dinge:
+          Etwas anderes passiert, wenn wir dasselbe, jedoch mit einem Objekt versuchen. 
+          Wenn wir eine Variable deklarieren und ihr ein Objekt zuweisen, passieren zwei Dinge:
         </p>
           <ol class="default">
             <li>Zunächst weist JavaScript für diese Variable Speicher im Stack zu.</li>
-            <li> Wenn es um das Objekt selbst geht, speichert JavaScript es im Speicherheap. 
-              Die im Stack vorhandene Variable zeigt nur auf dieses Objekt im Speicherheap.
+            <li> Wenn es um das Objekt selbst geht, speichert JavaScript es im Memory Heap. 
+              Die im Stack vorhandene Variable zeigt nur auf dieses Objekt im Memory Heap.
               Diese Variable ist nun eine Referenz, die auf das Objekt zeigt. 
             </li>
           </ol>
@@ -215,7 +209,7 @@
           Dies ist auch der Grund, warum das Erstellen von Kopien von Objekten in JavaScript nicht so einfach ist.
           Wenn wir versuchen, eine Kopie eines in einer Variablen gespeicherten Objekts zu erstellen,
          indem wir darauf verweisen, wird keine echte Kopie erstellt. 
-         <strong> Objekt selbst wird nicht kopiert.</strong> Es wird nur die Referenz auf dieses Objekt kopiert. 
+         <strong> Das Objekt selbst wird nicht kopiert.</strong> Es wird nur die Referenz auf dieses Objekt kopiert. 
          Dies wird als <strong>flat copy</strong> bezeichnet.
         <br>
         <br>
@@ -237,9 +231,9 @@
           Wenn man das Object nicht erneut vom Scratch erstellen möchte hat man folgende Möglichkeiten
           <br>
           <br>
-          - Object.assign(). 
+          - <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign()</a> 
           <br>
-          - Kombination aus JSON.parse() and JSON.stringify().
+          - Kombination aus JSON.parse() and JSON.stringify() (siehe <a href="https://www.amitmerchant.com/deep-copy-objects-using-json-stringify-json-parse/">hier</a>)
         </p>
       </section>
 
