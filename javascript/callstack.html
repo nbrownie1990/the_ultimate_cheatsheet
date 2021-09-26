@@ -28,8 +28,11 @@
       </header>
       <section>
         <header>
-          <h3>Multitasking?</h3>
-          <p>Das ermöglicht eine Web-API des Browsers mit „setTimeout“.</p>
+          <h3>Wir wollen aber Multitasking?</h3>
+          <p>
+            Das ermöglicht eine Web-API des Browsers mit der Funktion
+            „setTimeout“.
+          </p>
         </header>
         <p>
           Da JavaScript „single-threaded“ ist, kann sie immer nur eine Aufgabe
@@ -43,7 +46,9 @@
       </section>
       <section>
         <header>
-          <h3>Der Call Stack - ein Stapel Bücher oder auch Pfannkuchen :)</h3>
+          <h3>
+            Der Call Stack - wie ein Stapel Bücher oder auch Pfannkuchen :)
+          </h3>
         </header>
         <blockquote>
           Man könnte sich den Call Stack als Bücherstapel vorstellen, jede
@@ -61,15 +66,19 @@
           Funktionen zu verfolgen. Wenn wir eine Funktion aufrufen, fügt
           JavaScript diese Funktion dem sogenannten "Call Stack" (Aufrufstapel)
           hinzu. Wenn diese Funktion eine andere Funktion aufruft, fügt
-          JavaScript diese Funktion ebenfalls zum Aufrufstapel oberhalb der
+          JavaScript diese Funktion ebenfalls zum Aufrufstapel, oberhalb der
           ersten Funktion hinzu. Wenn eine Funktion einen Wert zurückgibt, wird
           sie vom Stapel geworfen. Dieser Vorgang wird mit jeder anderen
           Funktion wiederholt, die von der vorherigen Funktion aufgerufen wird.
           Wenn eine Funktion beendet ist, entfernt JavaScript diese Funktion aus
-          der Aufrufliste. Der Call Stack wird von oben nach unten ausgeführt:
-          Die zuletzt dem Stack hinzugefügte Funktion wird als erste ausgeführt.
-          Die erste dem Stack hinzugefügte Funktion wird als letzte ausgeführt.
-          Dies wird auch als LIFO-Prinzip (Last-In-First-Out) bezeichnet
+          der Aufrufliste. (Wer eine Veranschaulichung braucht, schaut
+          <a
+            href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"
+            >hier</a
+          >.) Der Call Stack wird von oben nach unten ausgeführt: Die zuletzt
+          dem Stack hinzugefügte Funktion wird als erste ausgeführt. Die erste
+          dem Stack hinzugefügte Funktion wird als letzte ausgeführt. Dies wird
+          auch als LIFO-Prinzip (Last-In-First-Out) bezeichnet
         </p>
       </section>
 
@@ -79,7 +88,7 @@
         </header>
         <hr />
         <p>
-          Mit der Funktion „SetTimeout“, die uns vom Browser bereitgestellt
+          Mit der Funktion „setTimeout“, die uns vom Browser bereitgestellt
           wird, kümmert sich die WebAPI um den Rückruf („Callback“). Die Web-API
           hat quasi einen Timer, der so lange wie die Millisekunden, die wir im
           Code angegeben hatten. Der Callback wird nicht sofort zum Call Stack
