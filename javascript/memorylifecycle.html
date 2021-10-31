@@ -32,7 +32,7 @@
           <p>
             Der Speicherlebenszyklus bezieht sich darauf, wie eine
             Programmiersprache mit dem Speicher arbeitet. Unabhängig von der
-            Sprache ist der Speicherlebenszyklus fast immer gleich. Es besteht
+            Sprache ist der Speicherlebenszyklus fast immer gleich. Er besteht
             aus drei Schritten.
           </p>
         </header>
@@ -40,7 +40,7 @@
         <hr />
         <p>
           Der erste Schritt ist die Speicherzuweisung ("Memory Creation"). Wenn
-          wir eine Variable zuweisen oder eine Funktion oder ein Objekt
+          wir eine Variable zuweisen, eine Funktion oder ein Objekt
           erstellen, muss dafür eine gewisse Menge an Speicher reserviert
           werden. In der ersten Phase, wenn die JS-Engine unser Skript erhält,
           richtet sie als erstes Speicher für die Daten in unserem Code ein. Der
@@ -55,11 +55,12 @@
           <h3>Was ist Hoisting?</h3>
         </header>
         <blockquote>
+          Unter Hoisting wird eine allgemeine Denkweise verstanden, wie Ausführungskontexte (insbesondere die Erstellungs- und Ausführungsphasen) in JavaScript funktionieren (MDN-Definition).
           Die Art und Weise, wie Funktionsdeklarationen und Variablen
           gespeichert werden, ist unterschiedlich: Funktionen werden mit einem
-          Verweis auf die gesamten Funktionen gespeichert, Variablen mit dem
-          Schlüsselwort "var" mit dem Wert undefined und Variablen mit den
-          Schlüsselwörtern "let" oder "const" werden nicht initialisiert
+          Verweis auf die gesamten Funktionen gespeichert. Variablen mit dem
+          Schlüsselwort "var" werden als undefined gespeichert und mit den
+          Schlüsselwörtern "let" oder "const" nicht initialisiert und
           gespeichert.
         </blockquote>
       </section>
@@ -73,7 +74,7 @@
           Da Funktionen mit einer Referenz auf den gesamten Funktionscode
           gespeichert werden, können wir sie sogar vor der Zeile aufrufen, in
           der wir sie erstellt haben! Da verhindert werden soll, dass
-          versehentlich auf eine undefined – Variable verwiesen wird, wird ein
+          versehentlich auf eine undefined-Variable verwiesen wird, wird ein
           ReferenceError ausgelöst, wenn wir auf nicht initalisierte Variablen
           zugreifen wollen.
           <br /><br />
@@ -99,13 +100,13 @@
         </header>
         <hr />
         <p>
-          Der dritte Schritt ist die Speicherfreigabe. Wenn Sie eine Funktion
-          oder ein Objekt nicht mehr verwenden, kann dieser Speicher freigegeben
-          werden. Sobald es freigegeben ist, kann es wieder verwendet werden.
-          Der Garbage Collector kommt ins Spiel.
+          Der dritte Schritt ist die Speicherfreigabe. Wenn wir eine Funktion
+          oder ein Objekt nicht mehr verwenden, kann dieser Speicher wieder freigegeben
+          werden. In dem Moment, in dem er freigegeben ist, kann er wieder verwendet werden.
+          Der Garbage Collector kommt ins Spiel und schafft Platz.
          
           <hr />
-          Nun kommen wir zu der Frage wo diese Variablen, Funktionen und Objekte
+          Nun kommen wir zu der Frage, wo diese Variablen, Funktionen und Objekte
           eigentlich gespeichert werden? 
           Die Antwort lautet: Es kommt darauf an. 
           JavaScript speichert nicht all diese Dinge am selben Ort.
@@ -128,19 +129,15 @@
             <li>Numbers</li>
             <li>Strings</li>
             <li>Booleans</li>
-            <li>undefined</li>
-            <li>null</li>
+            <li>Undefined</li>
+            <li>Null</li>
           </ul> 
-          Diese statischen Daten enthalten auch Referenzen. 
-          Diese Referenzen verweisen auf die von uns erstellten Objekte und Funktionen.
-          <br>
-          <br>
+         
           Die Größe dieser Daten ist festgelegt und JavaScript kennt 
-          diese Größe zur Compile-Time. Dies bedeutet auch, dass JavaScript weiß, wie viel Speicher sie 
+          diese Größe zur Compile-Time (kurz bevor der Code ausgeführt wird). Dies bedeutet auch, dass JavaScript weiß, wie viel Speicher sie 
           zuweisen soll, und ordnet diese Menge zu. Diese Art der Speicherzuweisung wird als 
           "statische Speicherzuweisung" bezeichnet. 
-          Beim Erstellen von Primitive Types arbeiten wir mit statischen Daten, die JavaScript 
-          im Stack speichert. Dies passiert kurz bevor der Code ausgeführt wird.
+          
           <br>
           <br>
           Wichtig zu wissen ist, dass es eine Grenze gibt, wie groß diese primitiven Werte sein können. 
@@ -148,9 +145,9 @@
           Wie hoch diese Limits sind, hängt vom jeweiligen Browser und der Engine ab.
         </p>
         <hr />
-      <p> <strong>"The Call Stack"</strong> <br>
+      <p> <strong>Abgrenzung zum "Call Stack"</strong> <br>
           Hinweis: Der "Stack" ist ein Ort, den JavaScript verwendet, um Variablen zu speichern, denen primitive Werte zugewiesen sind.
-          Der "Call Stack" ist etwas anderes als der Stack und wird <a href="callstack.html">hier</a> näher beschrieben.
+          Der sogenannte "Call Stack" ist etwas anderes als der "Stack" und wird <a href="callstack.html">hier</a> näher beschrieben.
       </p>
       </section>
 
@@ -168,7 +165,7 @@
         <br>
         <br>
         Während der Stack ein Ort ist, an dem JavaScript statische Daten speichert, 
-        ist der Memory Heap ein Ort, an dem JavaScript Objekte speichert. 
+        ist der Memory Heap ein Ort, an dem JavaScript Objekte (Reference Types) speichert. 
         Da in JavaScript sogut wie alles ein Objekt ist (Wer kennt das Sprichwort nicht?), trifft es auf 
         vieles zu (Funktionen, Arrays...).
         
@@ -193,7 +190,7 @@
             </li>
           </ol>
         <p>
-        Wir können uns eine Referenz als Verknüpfung oder als Alias für vorhandene Dinge vorstellen.
+        Wir können uns eine Referenz als Verknüpfung oder als Alias für vorhandene Dinge vorstellen (denkt an die Symbole und Verknüpfungen auf eurem Desktop).
         Dieser Verweis ist also nicht das Objekt selbst. Er ist nur ein Link zum "echten" Objekt.
         Wir können diesen Link verwenden, um auf das Objekt zuzugreifen, auf das er verweist/ mit dem er verlinkt ist.
         Dadurch können wir dann auch an ihm "herum manipulieren" (z.B. Funktionen anwenden, etwas hinzufügen usw.).
@@ -206,7 +203,7 @@
         </header>
         <hr />
         <p>
-          Dies ist auch der Grund, warum das Erstellen von Kopien von Objekten in JavaScript nicht so einfach ist.
+          Das Erstellen von Kopien von Objekten ist in JavaScript nicht so einfach.
           Wenn wir versuchen, eine Kopie eines in einer Variablen gespeicherten Objekts zu erstellen,
          indem wir darauf verweisen, wird keine echte Kopie erstellt. 
          <strong> Das Objekt selbst wird nicht kopiert.</strong> Es wird nur die Referenz auf dieses Objekt kopiert. 
@@ -228,9 +225,8 @@
           Dies echte Kopie wird als <strong>deep copy</strong> bezeichnet.
           <br>
           <br>
-          Wenn man das Objekt nicht erneut vom Scratch erstellen möchte hat man folgende Möglichkeiten
-          <br>
-          <br>
+          Wenn man das Objekt nicht erneut "from scratch" erstellen möchte, hat man folgende Möglichkeiten:
+          
           - <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign()</a> 
           <br>
           - Kombination aus JSON.parse() and JSON.stringify() (siehe <a href="https://www.amitmerchant.com/deep-copy-objects-using-json-stringify-json-parse/">hier</a>)

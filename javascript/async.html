@@ -24,10 +24,10 @@
       </header>
       <section>
         <p>
-          Mit ES8 haben wir eine andere Möglichkeit, Code, der asynchron ist, lesbarer zu schreiben und der sogenannten callback-hell zu entkommen: Die Rettung lautet Async / Await. 
-          Um Async / Await zu verstehen, müssen wir zuerst Promises verstehen.
+          Mit Ecma-Script8 (ES8) haben wir eine Möglichkeit, Code, der asynchron ist, lesbarer zu schreiben und der sogenannten "Callback-Hell" zu entkommen: Die Rettung lautet Async / Await. 
+          Um Async / Await verstehen zu können, müssen wir jedoch zuerst Promises verstehen.
           
-          Wir nutzen diese Techniken, um den asynchronen Code, der sequentiell in Javascript ausgeführt wird, wie bspw. API-Aufrufe von Drittanbietern, mühsame I/O-Operationen und andere CPU-intensive/blockierende Aufgaben zu verarbeiten.
+          Wir nutzen diese Techniken, um den asynchronen Code, der sequentiell in Javascript ausgeführt wird, wie bspw. API-Aufrufe von Drittanbietern, mühsame I/O-Operationen und andere CPU-intensive/blockierende Aufgaben, zu verarbeiten.
         </p>
       </section>
  
@@ -41,13 +41,13 @@
 
           Ein Promise ist ein Objekt, das synchron von einer asynchronen Funktion zurückgegeben werden kann.
 
-          Das Promise befindet sich in einem von 3 möglichen Zuständen:
+          Das Promise befindet sich in einem von drei möglichen Zuständen:
           <br><br>
-          Behoben (resolved): Ein Promise konnte erfolgreich Daten abrufen oder einen Wert abrufen
+          <strong>Behoben (resolved):</strong> Ein Promise konnte erfolgreich Daten abrufen oder einen Wert abrufen.
           <br><br>
-          Abgelehnt (rejected): Ein Promise konnte aufgrund eines Fehlers oder Problems keine Daten abrufen
+          <strong>Abgelehnt (rejected):</strong> Ein Promise konnte aufgrund eines Fehlers oder Problems keine Daten abrufen.
           <br><br>
-          Ausstehend (pending): Ausgangszustand, noch nicht gelöst oder abgelehnt
+          <strong>Ausstehend (pending):</strong> Ausgangszustand, noch nicht gelöst oder abgelehnt.
           
           In diesem Zuge arbeiten wir mit .then und .catch. Das .then wird dann verkettet, um bei Erfolg eine Funktion auszuführen, und ein .catch wird hinzugefügt, um eine Fehlerbehandlung bereitzustellen.
 
@@ -96,7 +96,7 @@
             <li>}, 1000)</li>
             <li>})</li>
             <li>}</li>
-            <br><br>
+            <br>
               <li>fakeRequest('/dogs/1')</li>
               <li>.then((data) => {</li>
                 <li>console.log("Done with request!")</li>
@@ -151,9 +151,7 @@
         </header>
         <hr />
         <p>
-          Das Schlüsselwort async kann vor einer Funktion wie "async function test()"" oder "const test = async() =>{}"" platziert werden. Die Verwendung des Wortes async vor einer Funktion bedeutet, dass diese Funktion ein Promise zurückgibt. Die von dieser Funktion zurückgegebenen Werte werden automatisch in ein aufgelöstes Promise eingeschlossen.
-
-          Wenn wir das Keyword "async" vor der Funktionsdefinition verwenden, können wir innerhalb der Funktion auch "await" verwenden. 
+          Das Schlüsselwort async kann so "async function test()"" oder so "const test = async() =>{}"" platziert werden. Die Verwendung des Wortes async vor einer Funktion bedeutet, dass diese Funktion ein Promise zurückgibt. Die von dieser Funktion zurückgegebenen Werte werden automatisch in ein aufgelöstes Promise eingeschlossen. Wenn wir das Keyword "async" vor der Funktionsdefinition verwenden, können wir innerhalb der Funktion auch "await" verwenden. 
                 </p>
       
       </section>
@@ -167,8 +165,8 @@
            Await kann nur innerhalb einer asynchronen Funktion verwendet werden. Wir können Async ohne Await verwenden, aber wir können Await nicht ohne Async verwenden.
            
            Await weist die JS-Engine an, zu warten, seine Aktivitäten zu unterbrechen, bis das von der asynchronen Funktion zurückgegebene Promise abgelehnt oder aufgelöst wird. Erst dann kann das nächste await verarbeitet werden. Await-Aufrufe laufen also immer nacheinander.
-
-           Wir können jedem einzelnen Await ein catch() hinzufügen, da es sich nur um ein ganz normales Promise handelt!
+<br>
+           Übrigens: Wir können jedem einzelnen Await ein catch() hinzufügen, da es sich um ein ganz normales Promise handelt.
            
         </p>
         

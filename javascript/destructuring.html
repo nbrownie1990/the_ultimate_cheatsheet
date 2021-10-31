@@ -25,7 +25,7 @@
         <p>
           Die destrukturierende Zuweisungssyntax ist ein JavaScript-Ausdruck,
           der es ermöglicht, Werte aus Arrays oder Eigenschaften aus Objekten in
-          unterschiedliche Variablen zu destrukturieren/zu entpacken.
+          unterschiedliche Variablen zu destrukturieren bzw. zu entpacken.
         </p>
       </section>
      
@@ -40,11 +40,11 @@
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
           >Destructing</a> " ("Zerstören") eines Objekts oder Arrays bedeutet
           nicht, dass wir es aus dem Programm löschen und nie wieder verwenden
-          können, sondern, dass wir einen bestimmten Teil davon erhalten.
-          Destrukturieren extrahiert einfach Array-Elemente oder
+          können. Es ist eher so, dass wir einen bestimmten Teil davon erhalten.
+          Das Destrukturieren extrahiert einfach die Array-Elemente oder
           Objekteigenschaften und speichert sie in Variablen. Beim
           Destrukturieren des Arrays wird der Wert des Index gemäß der
-          Indexierung mit dem linken Key zurückgegeben.<br>
+          Indexierung mit dem Key zurückgegeben.<br>
           Aber es gibt noch einen anderen Nutzen der destruktiven
           Zuweisungen: Das "Spreading" und das "Rest Pattern".
           Dies gibt uns die Möglichkeit, die verbleibenden unzerstörten
@@ -76,29 +76,34 @@
         
         <p>
           Der Spread-Operator wird verwendet, um Array-Elemente oder
-          Objekteigenschaften aufzuteilen. Es führt eine deep copy der
-          Array-Elemente oder des Objekts durch, sodass die ursprünglichen Werte
-          nicht beeinflusst werden. Achtung: Die deep copy gilt nur für eine Leveltiefe - z.B. nicht bei Objekte innerhalb eines Objekts.
-          Denn dort werden die nested Objects wieder als Referenz-Typ übertragen. Um eine vollständige deep Copy (inkl. nested Objects) durchzuführen, muss
+          Objekteigenschaften aufzuteilen. Es führt eine "deep copy" der
+          Array-Elemente oder des Objektes durch, sodass die ursprünglichen Werte
+          nicht beeinflusst werden. Achtung: Die "deep copy" gilt nur für eine Leveltiefe - z.B. nicht bei Objekten innerhalb eines Objekts.
+          Denn dort werden die "nested objects" wieder als Referenz-Typ übertragen. Um eine vollständige "deep copy" (inkl. nested objects) durchzuführen, muss
           JSON.parse/stringify. "JSON.parse(JSON.stringify(object))" durchgeführt werden.
-          Oder man kann auch andere Libraries nehmen.
+          Alternativ können auch Libraries verwendet werden.
           <br />
           <br />
-          Nehmen wir das Array als Kiste. Der Spread-Operator ermöglicht es uns, den gesamten Inhalt der Kiste zu greifen, ohne die Kiste selbst zu greifen und diesen Inhalt an einer beliebigen Stelle zu platzieren. Der Spread-Operator kann verwendet werden, um den Inhalt eines Arrays oder mehrerer Arrays in ein anderes Array zu kopieren.
+          Um es zu vereinfachen, veranschaulichen wir das Array einmal für uns als eine Kiste. Der Spread-Operator ermöglicht es uns, den gesamten Inhalt der Kiste zu greifen, ohne die Kiste selbst zu greifen und diesen Inhalt an einer beliebigen Stelle zu platzieren. Der Spread-Operator kann also verwendet werden, um den Inhalt eines Arrays oder mehrerer Arrays in ein anderes Array zu kopieren.
         </p>
      
         <ul>
           <strong>Beispiel</strong>
           <li>let arr= [1,2,3]</li>
-          <li>let arr1= [...arr,4,5,6]</li>
-          <li>console.log(arr1) /// [1,2,3,4,5,6]</li>
+          <li>let new= [...arr,4,5,6]</li>
+          <li>console.log(new) /// [1,2,3,4,5,6]</li>
         </ul>
 
-<!-- //SPREAD OPERATOR //////// cleaner& more flexible // const combined
-      =[...first, ...second] // Wenn wir ein Element dazufügen wollen //const
-      combined =[...first, "a", ...second, "b"]; //const copy =
-      combined.slice(); das gleiche wie: //const copy = [...combined] 
-      -->
+        <p>oder:</p>
+        
+        <ol>
+          <strong>Beispiele</strong>
+          <li>const combined= [...first, ...second]</li>
+          <li>const combined =[...first, "a", ...second, "b"]; </li>
+          <li>const copy = combined.slice() ist das Gleiche wie
+              const copy = [...combined] </li>
+          </ol>
+
 
         <footer class="major container medium videoWrapper">
           <h3>Spread-Operator explained by Colt Steele</h3>
@@ -121,7 +126,7 @@
         <p>
           Der Rest Operator ist das Gegenteil vom Spread-Operator.
           Denn im Gegensatz zum Spread-Operator, der die Elemente in einem Array
-          verteilt, ist es beim Rest-Operator(auch Gather-Operator genannt) so,
+          verteilt, ist es beim Rest-Operator (auch Gather-Operator genannt) so,
           dass er mehrere Elemente in einem Array gruppiert/sammelt.
           Der Rest-Operator wird in einer Funktion immer dann verwendet, wenn
           mehrere Arguments erwartet werden. 
@@ -137,7 +142,7 @@
           <li>var arr = multiply (2,1,2,3)</li>
           <li>console.log(arr)</li>
           <li></li><strong>Result:</strong> [2,4,6]</li>
-          <li>Erläuterung: 2x1 = 2 , 2x2 = 4, 2x3 = 6</li>
+          <li>(Erläuterung: 2x1 = 2 , 2x2 = 4, 2x3 = 6)</li>
         </ul>
 
 
