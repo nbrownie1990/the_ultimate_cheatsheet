@@ -88,7 +88,7 @@
     <p> Als Grundlage für Design Patterns, ist es von Vorteil die UML zu kennen. </p>
     <iframe src="https://www.youtube.com/embed/ws_KI4Wun4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
      </header>
-  <a href="https://www.javatpoint.com/design-patterns-in-java">Hier</a> ein super Link. Und
+  <a href="https://www.javatpoint.com/design-patterns-in-java">Hier</a> ein super Link zu Design Patterns. Und
   <a href="https://www.tutorialspoint.com/design_pattern/">hier</a> noch einer.
   
  <!-- https://dev.to/awwsmm/design-patterns-in-java-58na -->
@@ -110,10 +110,14 @@
           <h3 class="accordion-title"> Memento Pattern </h3>
           <p class="accordion-answer">
            
+            Wofür verwenden wir es?<br> 
+            Zum Beispiel für den Undo/Redo-Mechanismus eines Text-Editors oder Taschenrechners. Oder für einen Snapshot eines Benutzerprofils, das nach dem Abbruch durch den User wiederhergestellt werden soll.
+            <br><br> 
+            
             Die Idee dahinter: Wir wollen eine systematische Möglichkeit haben, eine Momentaufnahme des internen Zustands eines bestimmten Objekts zu speichern, ohne diesen Zustand offenzulegen, um sie später wiederherstellen zu können.
             <br>
             Mit dem Memento-Pattern erfassen und externalisieren  wir das Innere eines Objekts, ohne die Hülle zu verletzen.
-            Damit kann das Objekt später in diesem Zustand wiederhergestellt werden. Zum Beispiel für den Undo/Redo-Mechanismus eines Text-Editors oder Taschenrechners. Oder für einen Snapshot eines Benutzerprofils, das nach dem Abbruch durch den User wiederhergestellt werden soll.
+            Damit kann das Objekt später in diesem Zustand wiederhergestellt werden. 
             <br><br>
             <strong>Originator</strong>:<br>
               - erstellt ein Memento, um den internen Zustand zu              speichern<br>
@@ -134,7 +138,12 @@
           <h3 class="accordion-title"> State Pattern </h3>
           <p class="accordion-answer">
            
-            Durch das State Pattern ändert sich das Verhalten einer Klasse basierend auf ihrem Zustand. Im State Pattern erstellen wir Objekte, die verschiedene Zustände darstellen, und ein Kontextobjekt, dessen Verhalten sich ändert, wenn sich sein Zustandsobjekt ändert. Zum Beispiel durchläuft ein Eiswürfel in der Hitze verschiedene Zustände(States) von hart, über flüssig bis hin zu verdampft. Ein Beispiel einer Applikation, wäre eine Photoshop-Tool Palette. Der Mauszeiger ändert sich, je nach ausgewähltem Tool (Pipette, Farbeimer, Pinsel).
+            Wofür verwenden wir es?<br> 
+            Ein Beispiel einer Applikation, wäre eine Photoshop-Tool Palette. Der Mauszeiger ändert sich, je nach ausgewähltem Tool (Pipette, Farbeimer, Pinsel).
+            <br><br> 
+            
+            
+            Durch das State Pattern ändert sich das Verhalten einer Klasse basierend auf ihrem Zustand. Im State Pattern erstellen wir Objekte, die verschiedene Zustände darstellen, und ein Kontextobjekt, dessen Verhalten sich ändert, wenn sich sein Zustandsobjekt ändert. Zum Beispiel durchläuft ein Eiswürfel in der Hitze verschiedene Zustände(States) von hart, über flüssig bis hin zu verdampft. 
 
           </p>
           <div class="img-wrapper">
@@ -145,9 +154,13 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Iterator Pattern </h3>
           <p class="accordion-answer">
-           
-            Dieses Muster wird verwendet, um sequenziell auf die Elemente eines Sammlungsobjekts zuzugreifen, ohne die zugrunde liegende Darstellung kennen zu müssen. Wenn wir auf eine Sammlung von Objekten zugreifen möchten, ohne deren interne Darstellung offenzulegen. Wenn mehrere Durchläufe von Objekten in der Sammlung unterstützt werden müssen.<br>
+          
+            Wofür verwenden wir es?<br> 
             Zum Beispiel, wenn man im Webbrowser auf "zurück" geht, um den Verlauf aufzurufen.
+            <br><br> 
+
+            Dieses Muster wird verwendet, um sequenziell auf die Elemente eines Sammlungsobjekts zuzugreifen, ohne die zugrunde liegende Darstellung kennen zu müssen. Wenn wir auf eine Sammlung von Objekten zugreifen möchten, ohne deren interne Darstellung offenzulegen. Wenn mehrere Durchläufe von Objekten in der Sammlung unterstützt werden müssen.<br>
+            
           </p>
           <div class="img-wrapper">
             <img class="design-pattern" src="../images/iteratorpattern.png ">
@@ -157,13 +170,16 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Strategy Pattern </h3>
           <p class="accordion-answer">
-           
+          
+            Wofür verwenden wir es?<br> 
+            Zum Beispiel, wenn ein User Bilder(jpg, png, ...) hochlädt und diese dann filtern möchte(contrast, black&white...).
+            <br><br> 
+
             Im Strategy Pattern erstellen wir Objekte, die verschiedene Strategien darstellen, und ein Kontextobjekt, dessen Verhalten je nach Strategieobjekt variiert. Das Strategieobjekt ändert den Ausführungsalgorithmus des Kontextobjekts.
 
             Ein Strategy Pattern definiert eine Familie von Funktionalitäten,  umschließt jede einzelne davon und macht sie austauschbar.
             Es wird verwendet, wenn wir verschiedene Variationen eines Algorithmus benötigen.
-            Zum Beispiel, wenn ein User Bilder(jpg, png, ...) hochlädt und diese dann filtert(contrast, black&white...)
-
+          
             Der Unterschied zum State Pattern ist, dass wir keinen Single State haben sondern unterschiedliche Strategien verwenden.
           </p>
           <div class="img-wrapper">
@@ -174,8 +190,13 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Template Method Pattern </h3>
           <p class="accordion-answer">
-            Die sogenannte "Schablonenmethode" ruft abstrakte Methoden auf, die erst in den Unterklassen definiert werden. Diese Methoden werden auch als Einschubmethoden bezeichnet. Dadurch besteht die Möglichkeit, einzelne Schritte des Algorithmus zu verändern oder zu überschreiben, ohne dass die zu Grunde liegende Struktur des Algorithmus modifiziert werden muss.<br><br> Zum Beispiel bei einer Buchungskontrolle(Audit-Trail) in einer Banking-App. Wir definieren in der abstrakten Klasse die Methode execute(){ audit.Trail.record();<br>
-            doExecute();<br> und modifizieren über konkrete Klassen(TransferMoney, GenerateReport) die Ausführungen, in der die Buchungskontrolle stattfinden soll.
+
+            Wofür verwenden wir es?<br> 
+            Zum Beispiel bei einer Buchungskontrolle(Audit-Trail) in einer Banking-App. Wir definieren in der abstrakten Klasse die Methode execute(){ audit.Trail.record();<br>
+              doExecute();<br> und modifizieren über konkrete Klassen(TransferMoney, GenerateReport) die Ausführungen, in der die Buchungskontrolle stattfinden soll.
+            <br><br> 
+
+            Die sogenannte "Schablonenmethode" ruft abstrakte Methoden auf, die erst in den Unterklassen definiert werden. Diese Methoden werden auch als Einschubmethoden bezeichnet. Dadurch besteht die Möglichkeit, einzelne Schritte des Algorithmus zu verändern oder zu überschreiben, ohne dass die zu Grunde liegende Struktur des Algorithmus modifiziert werden muss.
           </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/templatemethodpattern.png ">
@@ -186,7 +207,11 @@
           <h3 class="accordion-title"> Command Pattern </h3>
           <p class="accordion-answer">
 
-            Mit dem Command Pattern können wir die "Seperation of Concerns" erzwingen, indem wir jede Aufgabe in eine eigene Klasse abstrahieren. Ein Vorteil dieses Entwurfsmusters besteht darin, dass es einfacher ist, neue Versionen von Aufgaben zu erstellen, z. B. Schaltflächen in einem Graphical User Interface Framework, die verschiedene Aktionen in ihren individuellen Applikationen ausführen sollen. Das Command Pattern stellt die objektorientierte Entsprechung zu Rückruffunktionen (callback functions) dar. Unser GUI-Framework soll für alle App-Entwickler funktionieren. Wir nutzen dieses Pattern, um den Sender vom Empfänger zu entkoppeln.
+            Wofür verwenden wir es?<br> 
+            Wir nutzen dieses Pattern, um den Sender vom Empfänger zu entkoppeln.
+            <br><br> 
+
+            Mit dem Command Pattern können wir die "Seperation of Concerns" erzwingen, indem wir jede Aufgabe in eine eigene Klasse abstrahieren. Ein Vorteil dieses Entwurfsmusters besteht darin, dass es einfacher ist, neue Versionen von Aufgaben zu erstellen, z. B. Schaltflächen in einem Graphical User Interface Framework, die verschiedene Aktionen in ihren individuellen Applikationen ausführen sollen. Das Command Pattern stellt die objektorientierte Entsprechung zu Rückruffunktionen (callback functions) dar. Unser GUI-Framework soll für alle App-Entwickler funktionieren. 
           </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/commandpattern.png ">
@@ -200,6 +225,8 @@
         <h3 class="accordion-title"> Undoable Command </h3>
         <p class="accordion-answer">
 
+          Wofür verwenden wir es?<br> 
+          <br>
           Es gibt Kommandos, die rückgängig gemacht werden können (Schrift: bold) und andere, die nicht rückgängig gemacht werden können (Zoom-in). Deshalb bietet es sich an zwei Interfaces einzuführen. Mit dem Undoable Command Pattern können wir dies tun.
         </p>
 <div class="img-wrapper">
@@ -210,8 +237,12 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Observer Pattern </h3>
           <p class="accordion-answer">
-           
-            Das Observer Pattern(Beobachter) ist ein Entwurfsmuster, bei dem ein Objekt(Subjekt) eine Liste seiner abhängigen Objekte (Observer) verwaltet und sie automatisch über alle Zustandsänderungen benachrichtigt, normalerweise durch Aufrufen einer ihrer Methoden. Wir nutzen es, wenn sich der Status eines Objektes ändert und wir anderen Objekten dazu Bescheid geben müssen. Zum Beispiel in einer Excel mit mehreren Reitern(Werte, Summe) und einem Diagramm. Wenn sich die Werte ändern, muss sowohl die Summe als auch das Diagramm verändert werden. Innerhalb des Observer Patterns gibt es verschiedene Styles (push & pull).
+          
+            Wofür verwenden wir es?<br> 
+            Zum Beispiel in einer Excel mit mehreren Reitern(Werte, Summe) und einem Diagramm. Wenn sich die Werte ändern, muss sowohl die Summe als auch das Diagramm verändert werden.         
+            <br><br> 
+
+            Das Observer Pattern(Beobachter) ist ein Entwurfsmuster, bei dem ein Objekt(Subjekt) eine Liste seiner abhängigen Objekte (Observer) verwaltet und sie automatisch über alle Zustandsänderungen benachrichtigt, normalerweise durch Aufrufen einer ihrer Methoden. Wir nutzen es, wenn sich der Status eines Objektes ändert und wir anderen Objekten dazu Bescheid geben müssen. Innerhalb des Observer Patterns gibt es verschiedene Styles (push & pull).
           </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/observerpattern.png ">
@@ -222,7 +253,10 @@
       <div class="accordion-item">
         <h3 class="accordion-title"> Mediator Pattern </h3>
         <p class="accordion-answer">
+        
+          Wofür verwenden wir es?<br> 
          
+
           Dieses Pattern wird verwendet, um die Kommunikationskomplexität zwischen mehreren Objekten zu reduzieren. Anstatt innerhalb jeder Klasse die direkte Kommunikation mit anderen Klassen (starkes Coupling) zu implementieren, wird ein Mediator-Objekt eingesetzt und jede Klasse kann dieses Mediator-Objekt aufrufen, um mit anderen zu kommunizieren. Dies kann das Coupling zwischen den Klassen lockern und die Entwicklung und Erweiterung des Programms erleichtern.
 
         </p>
@@ -235,9 +269,13 @@
         <h3 class="accordion-title"> Chain of Responsibility Pattern </h3>
         <p class="accordion-answer">
          
+          Wofür verwenden wir es?<br> 
+          Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn Authentifizierung erfolgreich, wird der Request weitergeben und wenn nicht, dann nicht.
+                    <br><br> 
+          
           Um zu vermeiden den Sender einer Anfrage an den Empfänger zu koppeln, geben wir mehr als einem Objekt die Möglichkeit, die Anfrage zu bearbeiten. Diese Objekte verketten wir, um die Anforderung entlang der Kette zu übergeben, bis ein Objekt sie verarbeitet.
 
-          Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn Authentifizierung erfolgreich, wird der Request weitergeben und wenn nicht, dann nicht.
+          
         </p>
  <div class="img-wrapper">
           <img class="design-pattern" src="../images/chainpattern.png ">
@@ -248,11 +286,12 @@
         <h3 class="accordion-title"> Visitor Pattern </h3>
         <p class="accordion-answer">
          
-          
-          Oft ist es schwierig, nicht miteinander verwandte Operationen in die Klassen einer Objektstruktur zu integrieren. Bei der Erweiterung um neue Operationen müssen alle Klassen erweitert werden. Das Visitor-Pattern lagert die Operationen in externe Besucherklassen aus. Dazu müssen die zu besuchenden Klassen eine Schnittstelle zum Empfang eines Besuchers definieren.
-          <br><br>
+          Wofür verwenden wir es? <br>
           Das Pattern ermöglicht das Hinzufügen neuer Funktionen, ohne vorhandene Klassen zu ändern. Es bietet eine Möglichkeit, einen Algorithmus einfach von einer Objektstruktur zu trennen. 
-          
+          <br><br> 
+           
+          Oft ist es schwierig, nicht miteinander verwandte Operationen in die Klassen einer Objektstruktur zu integrieren. Bei der Erweiterung um neue Operationen müssen alle Klassen erweitert werden. Das Visitor-Pattern lagert die Operationen in externe Besucherklassen aus. Dazu müssen die zu besuchenden Klassen eine Schnittstelle zum Empfang eines Besuchers definieren.
+         
         </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/visitorpattern.png ">
@@ -275,10 +314,14 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Composite Pattern </h3>
           <p class="accordion-answer">
-  
+ 
+            Wofür verwenden wir es? <br>
+            Mit dem Composite Command Pattern können wir bspw. eine "Save All"-Funktion in einer Applikation für mehrere Tabs  einbringen, um zu ermöglichen, dass nicht jedes Tab einzeln gespeichert werden muss. Ein anderes Beispiel wäre eine Hiearchie in Objekten z.B. in Powerpoint. Wir können Formen gruppieren und sie dann gleichzeitig bewegen, vergrößern usw.
+            <br><br> 
+
             Das Composite Command beschreibt eine Gruppe von Objekten, die genauso behandelt werden wie eine einzelne Instanz desselben Objekttyps. 
   
-            Mit dem Composite Command Pattern können wir bspw. eine "Save All"-Funktion in einer Applikation für mehrere Tabs  einbringen, um zu ermöglichen, dass nicht jedes Tab einzeln gespeichert werden muss. Ein anderes Beispiel wäre eine Hiearchie in Objekten z.B. in Powerpoint. Wir können Formen gruppieren und sie dann gleichzeitig bewegen, vergrößern usw.
+           
           </p>
   <div class="img-wrapper">
           <img class="design-pattern" src="../images/compositepattern.png ">
@@ -288,9 +331,14 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Adapter Pattern </h3>
           <p class="accordion-answer">
+
+            Wofür verwenden wir es? <br>
+            Dieses Pattern wird verwendet, um bspw. ein Interface einer Klasse zu einer anderen Form zu konvertieren. Zum Beispiel, um ein Foto mit Filtern zu versehen. Hinweis: In Java ist eine Composition flexibler, denn in Java gibt es keine multiple Vererbung.
+            <br><br> 
+
             Ein Adapter-Pattern fungiert als Verbindung zwischen zwei inkompatiblen Schnittstellen, die ansonsten nicht direkt verbunden werden können. Ein Adapter umschließt eine vorhandene Klasse mit einer neuen Schnittstelle, damit sie mit der Schnittstelle des Clients kompatibel wird.
-            <br><br>
-              Dieses Pattern wird verwendet, um bspw. ein Interface einer Klasse zu einer anderen Form zu konvertieren. Zum Beispiel, um ein Foto mit Filtern zu versehen. Hinweis: In Java ist eine Composition flexibler, denn in Java gibt es keine multiple Vererbung.
+           
+              
           </p>
           <div class="img-wrapper">
             <img class="design-pattern" src="../images/adapterpattern.png ">
@@ -300,8 +348,12 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Decorator Pattern </h3>
           <p class="accordion-answer">
+
+            Wofür verwenden wir es? <br>
+            Es wird bspw. verwenden, wenn eine "Stream"-Klasse erweitert werden soll, die eigentlich nur Daten in die Cloud hochlädt. In einigen Fällen sollen aber Daten encrypted werden und dazu verhilft uns das Decorator Entwurfsmuster.
+            <br><br> 
            
-            Das Decorator Pattern ist oft nützlich, um das Prinzip der Single Responsibility einzuhalten, da es die Aufteilung der Funktionalität auf Klassen mit eindeutigen Problembereichen ermöglicht. Die Verwendung von Decorator kann effizienter sein als die Unterklassenbildung, da das Verhalten eines Objekts verbessert werden kann, ohne ein völlig neues Objekt zu definieren. Es wird bspw. verwenden, wenn eine "Stream"-Klasse erweitert werden soll, die eigentlich nur Daten in die Cloud hochlädt. In einigen Fällen sollen aber Daten encrypted werden und dazu verhilft uns das Decorator Entwurfsmuster.
+            Das Decorator Pattern ist oft nützlich, um das Prinzip der Single Responsibility einzuhalten, da es die Aufteilung der Funktionalität auf Klassen mit eindeutigen Problembereichen ermöglicht. Die Verwendung von Decorator kann effizienter sein als die Unterklassenbildung, da das Verhalten eines Objekts verbessert werden kann, ohne ein völlig neues Objekt zu definieren. 
              
           </p>
           <div class="img-wrapper">
@@ -313,8 +365,10 @@
           <h3 class="accordion-title"> Facade Pattern </h3>
           <p class="accordion-answer">
            
+            Wofür verwenden wir es? <br>
             "Provide a simple interface to a complex system" - Das Fassadenmuster wird häufig verwendet, wenn eine Interaktion mit einer komplexen externen Bibliothek oder einem Dienst stattfindet. Es wird genutzt, um coupling zu reduzieren.
-
+            <br><br> 
+           
             In diesem Muster erstellen wir eine Klasse, um die Interaktionen mit der Third-Party-Library zu kapseln. Diese Klasse wird Fascade (Fassade) genannt. Dies ermöglicht es uns, dem Rest unserer Anwendung eine einfachere Schnittstelle bereitzustellen. Entwickler, die an anderen Teilen unseres Systems arbeiten, müssen die Bibliothek von Drittanbietern nicht lernen; Stattdessen müssen sie nur mit der von uns erstellten Fassadenklasse verbunden werden. Zum Beispiel bei einer mobilen App - "Send push-notifications to Users".
           </p>
  <div class="img-wrapper">
@@ -325,9 +379,13 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Flyweight Pattern </h3>
           <p class="accordion-answer">
-           
+          
+            Wofür verwenden wir es? <br>
+            Zum Beispiel bei GoogleMaps. Wenn wir zuviel Memory-Space für die Icons der Ortungs-Points verwenden, würde die App crashen. Deshalb bedient man sich dem Flyweight Pattern, das die Daten für die verschiedenen Points aus einer Schablone zieht.
+            <br><br> 
+
             Das Flyweight Pattern(Fliegengewicht) ist eine bewährte, wiederverwendbare Vorlage, sie dient als eine Art Lösungsschablone.
-            Das Entwurfsmuster wird häufig verwendet, wenn wir ähnliche Daten für mehrere Objekte gruppieren möchten. Der Hauptzweck besteht darin, gemeinsame Daten für mehrere Objekte an einem einzigen Ort zu speichern und somit die Speichernutzung zu optimieren. Zum Beispiel bei GoogleMaps. Wenn wir zuviel Memory-Space für die Icons der Ortungs-Points verwenden, würde die App crashen. Deshalb bedient man sich dem Flyweight Pattern, das die Daten für die verschiedenen Points aus einer Schablone zieht.
+            Das Entwurfsmuster wird häufig verwendet, wenn wir ähnliche Daten für mehrere Objekte gruppieren möchten. Der Hauptzweck besteht darin, gemeinsame Daten für mehrere Objekte an einem einzigen Ort zu speichern und somit die Speichernutzung zu optimieren. 
  
           </p>
  <div class="img-wrapper">
@@ -338,8 +396,12 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Bridge Pattern </h3>
           <p class="accordion-answer">
-           
-            Das Bridge Pattern hilft uns, wenn wir verschiedene Datenbanktreiber für unseren Repository verwenden müssen. Um die Verwendung separater Repositorys oder Klassen für verschiedene Datenbanktreiber zu vermeiden, ist das Bridge-Designmuster ein  eleganter Weg. Mit dem Bridge Pattern können wir flexible Hiearchien bilden, die unabhängig voneinander wachsen können. Beispielsweise bei einer Universellen Fernbedienung: Um zu vermeiden, dass wir für jede TV-Marke eine eigene Klasse/Repository bilden müssen, kann das Pattern die Brücke zwischen Feature und Implementation bilden und zwei separate Hierarchien zusammenbringen.
+          
+            Wofür verwenden wir es? <br>
+            Beispielsweise bei einer Universellen Fernbedienung: Um zu vermeiden, dass wir für jede TV-Marke eine eigene Klasse/Repository bilden müssen, kann das Pattern die Brücke zwischen Feature und Implementation bilden und zwei separate Hierarchien zusammenbringen.
+            <br><br> 
+
+            Das Bridge Pattern hilft uns, wenn wir verschiedene Datenbanktreiber für unseren Repository verwenden müssen. Um die Verwendung separater Repositorys oder Klassen für verschiedene Datenbanktreiber zu vermeiden, ist das Bridge-Designmuster ein  eleganter Weg. Mit dem Bridge Pattern können wir flexible Hiearchien bilden, die unabhängig voneinander wachsen können. 
 
           </p>
  <div class="img-wrapper">
@@ -351,7 +413,11 @@
           <h3 class="accordion-title"> Proxy Pattern </h3>
           <p class="accordion-answer">
            
-            Das Proxy Pattern bietet einen Ersatz/ Platzhalter für ein anderes Objekt, um den Zugriff darauf zu steuern. Wir können dieses Muster verwenden, um ein darstellbares Objekt zu erstellen, das den Zugriff auf ein anderes Objekt steuert, das möglicherweise weit entfernt, teuer zu erstellen/ zu sichern ist. Zum Beispiel bei einer EBook-App mit integrierter Bibliothek all unserer Bücher. Wir wollen aber nur eins davon laden und nicht alle gleichzeitig. Um das Ebook nur zu laden, wenn wir es brauchen, initializieren wir das "private field" realEbook absichtlich nicht.
+            Wofür verwenden wir es? <br>
+            Zum Beispiel bei einer EBook-App mit integrierter Bibliothek all unserer Bücher. Wir wollen aber nur eins davon laden und nicht alle gleichzeitig. Um das Ebook nur zu laden, wenn wir es brauchen, initializieren wir das "private field" realEbook absichtlich nicht.
+            <br><br> 
+
+            Das Proxy Pattern bietet einen Ersatz/ Platzhalter für ein anderes Objekt, um den Zugriff darauf zu steuern. Wir können dieses Muster verwenden, um ein darstellbares Objekt zu erstellen, das den Zugriff auf ein anderes Objekt steuert, das möglicherweise weit entfernt, teuer zu erstellen/ zu sichern ist. 
 
           </p>
  <div class="img-wrapper">
@@ -375,7 +441,10 @@
           <h3 class="accordion-title"> Prototype Pattern </h3>
           <p class="accordion-answer">
            
-            Im Prototype Pattern werden neue Instanzen auf Grundlage von prototypischen Instanzen („Vorlagen“) erzeugt. Dabei wird die Vorlage kopiert und an neue Bedürfnisse angepasst. Wenn wir beispielsweise eine Form (z.B. einen Kreis) in Powerpoint kopieren wollen. 
+            Wofür verwenden wir es? <br>
+            Wenn wir beispielsweise eine Form (z.B. einen Kreis) in Powerpoint kopieren wollen. 
+            <br><br> 
+            Im Prototype Pattern werden neue Instanzen auf Grundlage von prototypischen Instanzen („Vorlagen“) erzeugt. Dabei wird die Vorlage kopiert und an neue Bedürfnisse angepasst. 
           </p>
           <div class="img-wrapper">
           <img class="design-pattern" src="../images/prototypepattern.png ">
@@ -386,11 +455,13 @@
           <h3 class="accordion-title"> Singleton Pattern </h3>
           <p class="accordion-answer">
            
+            Wofür verwenden wir es? <br>
+            Einsatzbeispiel: Eine Klasse, die unsere Konfigurationseinstellungen der Applikation managed.            <br><br> 
+
             Ein Singleton bedeutet (wie "single" schon sagt) die Beschränkung der Instanziierung einer Klasse auf eine einzelne Instanz.Mit anderen Worten, jedes Mal, wenn wir die Klasse verwenden, ist es jedoch dasselbe Objekt, das wir zuerst erstellt haben. 
             <br><br>
             Dieses Muster ermöglicht es uns also, von jeder Datei oder Funktion aus auf die Member einer Klasseninstanz zuzugreifen und sie zu bearbeiten. Diese Singletons können Schnittstellen implementieren, Methoden als Argumente übergeben und können polymorph sein.          
-            <br><br>
-            Einsatzbeispiel: Eine Klasse, die unsere Konfigurationseinstellungen der Applikation managed.
+           
 
           </p>
         <div class="img-wrapper">
@@ -401,12 +472,16 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Factory Method Pattern </h3>
           <p class="accordion-answer">
+            Wofür verwenden wir es? <br>
+            Wenn wir z.B. ein eigenes Framework bauen und darin Produkte/Komponenten (Controller) vorbereiten, die später von Usern modifiziert (SonyController) werden können.
+            <br><br> 
+
+           
             Das Fabrikmethodenmuster ist eine clevere, aber subtile Erweiterung des Konzepts, dass eine Klasse als eine Art "Verkehrspolizist" fungiert und entscheidet, welche Unterklasse einer einzelnen Hierarchie instanziiert wird.
             <br><br>
             Im Factory-Pattern erstellen wir ein Objekt, ohne die Erstellungslogik offenzulegen. Eine Schnittstelle wird zum Erstellen eines Objekts verwendet, lässt jedoch die Unterklasse entscheiden, welche Klasse instanziiert werden soll. Anstatt jedes Objekt manuell zu definieren, können wir dies programmgesteuert tun.
             <br><br>
             Kurz gesagt, eine Fabrik ist ein Objekt, das Objekte ohne die Verwendung eines Konstruktors erstellt.
-            Wenn wir z.B. ein eigenes Framework bauen und darin Produkte/Komponenten (Controller) vorbereiten, die später von Usern modifiziert (SonyController) werden können.
           </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/factorymethodpattern.png ">
@@ -416,14 +491,17 @@
         <div class="accordion-item">
           <h3 class="accordion-title"> Abstract Factory Pattern </h3>
           <p class="accordion-answer">
+           
+            Wofür verwenden wir es? <br>
+            Beispiel: wir bauen ein GUI-Framework mit Widgets wie Button, TextBox, Drop-Down-List und mit Themes (Material Design-Theme und Ant-Theme). Je nachdem welches Theme ausgewählt ist, sollen die Widgets in diesem Stil angezeigt werden. So wollen wir Material Design-Theme keinen Ant-Button sehen.            <br><br> 
+
+
             Das Abstract Factory Pattern stellt eine Schnittstelle zum Erstellen von Klassenfamilien ohne konkrete Implementierungen bereit.
            <br><br>
             Stellen wir uns vor, wir erstellen ein Shopsystem für ein Möbelhaus. Der Laden verkauft Stühle, Sofas, etc...
             Doch es gibt nicht nur einen Stuhltyp, sondern mehrere Stuhltypen.
             Diese Stuhltypen könnte man auch eine Stuhlfamilie nennen, daher gibt es für jeden Stuhltyp unterschiedliche Klassen.
             Allerdings muss er auch zu den Möbelstücken ähnlicher Stile zusammengebracht werden können (z.B. Landhaus).
-            <br><br>
-            Anderes Beispiel: wir bauen ein GUI-Framework mit Widgets wie Button, TextBox, Drop-Down-List und mit Themes (Material Design-Theme und Ant-Theme). Je nachdem welches Theme ausgewählt ist, sollen die Widgets in diesem Stil angezeigt werden. So wollen wir Material Design-Theme keinen Ant-Button sehen.
             <br><br>
             Das abstract Factory Pattern verwenden wir, wenn unser Code mit verschiedenen Familien verwandter Produkte arbeiten muss, aber nicht von den konkreten Klassen dieser Produkte abhängig sein soll.
             Achtung: Der Code kann komplizierter werden, als er sein sollte, da mit diesem Muster viele neue Schnittstellen und Klassen eingeführt werden.
@@ -439,12 +517,15 @@
           <h3 class="accordion-title"> Builder Pattern </h3>
           <p class="accordion-answer">
            
+           
+            Wofür verwenden wir es? <br>
+            Zum Beispiel wenn wir ein Dokument (Powerpoint-Slide) exportieren wollen in verschiedene Formate (PDF, Movie, Image...)        <br><br> 
+
             Das Builder-Muster wurde eingeführt, um einige der Probleme mit Factory- und Abstract Factory-Entwurfsmustern zu lösen (z.B. wenn das Objekt sehr viele Attribute enthält).Es wird meistens verwendet, wenn ein Objekt nicht in einem Schritt erstellt werden kann.
             <br><br>
             Das Builder Pattern konstruiert ein komplexes Objekt aus einfachen Objekten mithilfe eines Schritt-für-Schritt-Ansatz.
             Eine Builder-Klasse erstellt in dem Sinne  schrittweise das endgültige Objekt. Dieser Builder ist unabhängig von anderen Objekten.
-            <br><br>
-            Zum Beispiel wenn wir ein Dokument (Powerpoint-Slide) exportieren wollen in verschiedene Formate (PDF, Movie, Image...)          
+               
           </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/builderpattern.png ">
