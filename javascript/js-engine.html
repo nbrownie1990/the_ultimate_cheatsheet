@@ -27,7 +27,7 @@
 						<h2>"Dann schauen wir dem Ding mal unter die Haube..."</h2>
 					</header>
 					<section>
-							<p> Die JS-Engine funktioniert wie folgt: In unserem HTML-Dokument ist ein JS-Script eingebettet. Sobald der HTML-Parser auf diesen &lt;script&gt;-Tag mit einer Quelle trifft, geht es los. 
+							<p> Natürlich ist es spannend, sich einmal genauer anzuschauen, was bei der Ausführung eines Codes eigentlich passiert. Die JS-Engine funktioniert wie folgt: In unserem HTML-Dokument ist ein JS-Script eingebettet. Sobald der HTML-Parser auf diesen &lt;script&gt;-Tag mit einer Quelle trifft, geht es los. 
               Der Code aus der Quelle wird entweder aus dem Netzwerk, Cache oder einem
                <a href="https://www.heise.de/developer/artikel/Progressive-Web-Apps-Teil-2-Die-Macht-des-Service-Worker-3740464.html">installierten Service Worker</a> geladen.
                 Die Antwort ist das angeforderte Script als ein "Stream of bytes"(Byte-Stream), um den sich im Folgenden der Byte-Stream-Decoder kümmert! 
@@ -35,22 +35,20 @@
 					</section>
 					<section>
 						<header>
-							<h3>JS-Engine in one sentence</h3>
+							<h3>Job of JS-Engine in one sentence</h3>
 						</header>
-						<blockquote> We take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it :)</blockquote>
+						<blockquote> I take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it.</blockquote>
 					</section>
 					<section>
 						<header>
 							<h3>Der Byte-Stream-Decoder</h3>
 						</header>
             <hr />
-						<p> Der Byte-Stream-Decoder decodiert den Byte-Stream, während dieser 
-             heruntergeladen wird.<br>
+						<p> Der Byte-Stream-Decoder decodiert (wie der Name es schon vermuten lässt) den Byte-Stream, während dieser heruntergeladen wird.<br>
              Der Byte-Stream-Decoder erstellt sogenannte Token aus dem decodierten Bytestream. 
-             Das reservierte Schlüsselwort „function“ entsteht, ein Token wird erstellt 
-             und an den Parser und den Pre-Parser gesendet. 
-             Die Engine verwendet zwei Parser: den Pre-Parser und den Parser. 
-             Um die Ladezeit einer Website zu verkürzen, versucht die Engine, das "Parsen" 
+             Das reservierte Schlüsselwort „function“ entsteht(siehe Beispiel), ein Token wird erstellt und an den Parser und den Pre-Parser gesendet. 
+             Die Engine verwendet nämlich zwei Parser: den Pre-Parser und den Parser. 
+             Denn, um die Ladezeit einer Website zu verkürzen, versucht die Engine, das "Parsen" 
              des nicht sofort benötigen Codes zu vermeiden. Der Pre-Parser verarbeitet Code,
              der später verwendet werden kann, während der Parser den Code verarbeitet, der 
              sofort benötigt wird. </p>
@@ -71,7 +69,7 @@
 						</ul>
             <p> Der Parser erstellt Knoten basierend auf den Token, die er vom
               Byte-Stream-Decoder empfängt. Mit diesen Knoten erstellt er einen 
-               „abstract syntax tree“( AST).
+               „abstract syntax tree“ (AST).
             </p>
 					</section>
           <section>
@@ -79,12 +77,12 @@
 							<h3>Der Interpreter</h3>
 						</header>
             <hr />
-						<p> Als nächstes ist es Zeit für den Interpreter (Dolmetscher).  
+						<p> Als Nächstes ist es Zeit für den Interpreter (Dolmetscher).  
             <br>
               Der Interpreter, durchläuft den AST und generiert Bytecode basierend auf den Informationen, die der AST enthält. Sobald der
               Bytecode vollständig generiert wurde, wird der AST gelöscht, 
-              wodurch Speicherplatz frei wird. Der Bytecode versucht sich
-              mithilfe des "optimizing compilers" immer weiter zu verbessern/ zu verschnellern. 
+              wodurch Speicherplatz freigegeben wird. Der Bytecode versucht sich
+              mithilfe des "Optimizing Compilers" immer weiter zu verbessern/ zu verschnellern. 
               Dazu werden, während der Bytecode ausgeführt wird, Informationen generiert.
               Es wird bspw. erkannt, ob ein bestimmtes Verhalten häufig auftritt 
               und welche Datentypen verwendet werden. Wenn bspw. eine Funktion 
@@ -98,13 +96,13 @@
             <hr />
 						<ol class="default">
               <li> Dieser Compiler nimmt den Bytecode und das „Type-Feedback" und generiert daraus hochoptimierten Maschinencode. </li>
-              <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
               <li>Der Bytecode wird zusammen mit dem generierten „Type-Feedback“ an den „Optimizing Compiler" gesendet.</li>
+              <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
               <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
               <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „Optimizing Compiler" nur die Fälle,
                die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
                <li>Wenn wir einen bestimmten Codeabschnitt wiederholt verwendet haben, der immer wieder den gleichen Datentyp zurückgegeben hat, kann der optimierte Maschinencode einfach wiederverwendet werden, um die Dinge zu beschleunigen.</li>
-               <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird anstelle des optimierten Maschinencodes wieder der ursprüngliche Bytecode verwendet.</li>
+               <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird, anstelle des optimierten Maschinencodes, wieder der ursprüngliche Bytecode verwendet.</li>
 
 						</ol>
 					</section>
