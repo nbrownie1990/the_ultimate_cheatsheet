@@ -25,21 +25,21 @@
         <p>
           Hash Tables werden in verschiedenen Programmiersprachen
           unterschiedlich bezeichnet, sind aber ein und die selbe Sache. In Java
-          werden Hash Tables "HashMap" genannt, in JavaScript "Objects" und in
-          Python oder C# "Dictionarys". Die HashTable ordnet einem Schlüssel
-          Werte zu. Jeder Schlüssel ist einzigartig und kann nur einem Wert
-          zugeordnet werden. Sie ist deshalb super schnell in LookUps und wir
+          werden Hash Tables "HashMaps" genannt, in JavaScript "Objects" und in
+          Python oder C# "Dictionaries". Die HashTable ordnet einem Schlüssel
+          Werte zu (key-value-pairs). Jeder Key ist einzigartig und kann nur einem Value
+          zugeordnet werden. Deshalb ist sie auch so super schnell in LookUps und wir
           können sie nutzen, um unsere Algorithmen zu optimieren.
         </p>
       </section>
 
       <section>
         <header>
-          <h3>Working with HashTables</h3>
+          <h3>Working with Hash Tables</h3>
         </header>
         <hr />
         <p>
-          HashTables sind unglaublich mächtig, weil Sie sie sehr schnelle Einfüge-,
+          Hash Tables sind unglaublich mächtig, weil sie sehr schnelle Einfüge-,
           Such- und Entfernungszeiten haben. 
           
           <br /><br />
@@ -51,23 +51,23 @@
             Delete O(1)</strong
           >
           <br /><br />
-          Deshalb sollte man in der Praxis auf der Suche nach einer Lösung für ein Problem direkt an sie denken. 
+          Deshalb sollte man in der Praxis auf der Suche nach einer Lösung für ein Problem direkt und als Allererstes an sie denken. 
           Sie werden verwendet für Features wie:
           <ul class="default">
-            <li>SpellCheckers(Rechtschreibprüfung)</li> 
-            <li>Dictionaries(Wörter können in Sekundenschnelle übersetzt oder mit 10.000 anderen Wörtern verglichen werden.)</li>
+            <li>SpellCheckers (Rechtschreibprüfung)</li> 
+            <li>Dictionaries (Wörter können in Sekundenschnelle übersetzt oder mit 10.000 anderen Wörtern verglichen werden.)</li>
             <li>Compilers (können schnell Adressen von Funktionen und Variablen finden)</li>
             <li>Code Editors (wenn wir ein Element sehr schnell finden wollen)</li>
           </ul>
           
           <strong>Arbeitsschritte</strong><br>
-          Wir nutzen HashTables um Key-Value-Paare zu lagern. Wenn wir z.B. eine Mitarbeiterliste führen und jeden Mitarbeiter über seine Personalnummer finden wollen (Key: Personalnummer & Value: Mitarbeiter). <ol class="default">
-          <li>Die HashTable nimmt die Personalnummer und übergibt sie der HashFunction.</li>
-          <li>Die HashFunction legt eine Adresse für die Personalnummer im Speicher(Memory) fest. Das funktioniert so:<br>
-            Die HashFunction bekommt einen Wert zugespielt, mapped diesen Wert in eine andere Art von Wert (dieser wird "Hash Value"/ "HashCode"/ "Hash" genannt). Im Kontext von Datenstrukturen, mapped eine HashFunction einen key-value in einen index-value eines Arrays.  Eine HashFunction ist "deterministic" das heißt, dass jedes Mal, wenn wir den selben Input eingeben, wird sie denselben Wert zurückgeben. Deswegen können wir sie sehr gut fürs Verstauen und Abrufen nutzen. 
+          Wir nutzen Hash Tables um Key-Value-Paare zu lagern. Wenn wir z.B. eine Mitarbeiterliste führen und jeden Mitarbeiter über seine Personalnummer finden wollen (Key: Personalnummer & Value: Mitarbeiter). <ol class="default">
+          <li>Die Hash Table nimmt die Personalnummer und übergibt sie der Hash Function.</li>
+          <li>Die Hash Function legt eine Adresse für die Personalnummer im Speicher (Memory) fest. Das funktioniert so:<br>
+            Die Hash Function bekommt einen Wert zugespielt, mapped diesen Wert in eine andere Art von Wert (dieser wird "Hash Value"/ "Hash Code"/ "Hash" genannt). Im Kontext von Datenstrukturen, mapped eine Hash Function einen key-value in einen index-value eines Arrays. Eine Hash Function ist "deterministic" das heißt, dass jedes Mal, wenn wir den selben Input eingeben, wird sie den selben Wert zurückgeben. Deswegen können wir sie sehr gut fürs Verstauen und Abrufen von Elementen nutzen. 
 
           </li>
-          <li>Die HashTable legt dann das Mitarbeiter-Objekt dort ab.</li>
+          <li>Die Hash Table legt dann das Mitarbeiter-Objekt dort ab.</li>
           <li>Wenn wir nun einen Mitarbeiter per Personalnummer suchen, kann über genau diesen Weg der Mitarbeiter gefunden werden.</li>
           </ol>
         </p>
@@ -80,13 +80,13 @@
             </header>
             <hr>
             <p>
-          Beim mappen kann es zu Kollisionen kommen. Das passiert, wenn zwei Keys denselben hash-value generiert haben. Beide Keys wollen also bspw. ihre Werte bei Adresse 10 lagern und kolldieren deswegen. Es gibt 2 Wege, damit umzugehen: <br><br />
+          Beim Mappen kann es zu Kollisionen kommen. Das passiert, wenn zwei Keys denselben hash-value generiert haben. Beide Keys wollen also bspw. ihre Werte bei Adresse 10 lagern und kolldieren deswegen. Es gibt 2 Wege, damit umzugehen: <br><br />
           <strong>CHAINING:</strong><br>
            Jede Zelle eines Arrays zeigt auf eine LinkedList. Die Werte werden nicht im Array sondern in der LinkedList gelagert. Wenn eine Kollision aufftritt, wird das neue Element einfach an die LinkedList angehängt.<br><br>
           <strong>OPEN ADDRESSING:</strong><br>
            Eine andere Lösung ist es, einen anderen Slot zu finden, um den zweiten Wert zu lagern. Es gibt unterschiedliche Algorithmen dazu.
-          Hier kommt der Begriff "Probing" in Spiel, welcher das Suchen nach freien Slots beschreibt. Es werden unterschiedliche Arten des "Probing" eingesetzt. Linear Probing, Quadratic Probing, Double Hashing.
-          Lineares Probing ist z.B. dass wir mit dem aktuellen (besetzten) Slot starten und uns immer weiter entlang der HashTable nach unten bewegen, bis ein freier Slot gefunden wurde, wo der Wert eingesetzt werden kann. 
+          Hier kommt der Begriff "Probing" in Spiel, welcher das Suchen nach freien Slots beschreibt. Es werden unterschiedliche Arten des "Probing" eingesetzt (Linear Probing, Quadratic Probing, Double Hashing).
+          Lineares Probing ist z.B., wenn wir mit dem aktuellen (besetzten) Slot starten und uns immer weiter entlang der HashTable nach unten bewegen, bis ein freier Slot gefunden wurde, wo der Wert eingesetzt werden kann. 
           <br /> <br />
           Linear Probing: (hash1+ i) % table_size<br>
           Quadratic Probing: (hash1+ i^2) % table_size<br>
@@ -122,7 +122,7 @@
           bei und hat eine schnellere Iteration. <br /><br />
           <strong>TreeMap</strong><br />
           Eine sortierte Map, die das Erstellen einer Sortierreihenfolge
-          mithilfe eines Konstruktors unterstützt.
+          mithilfe eines Constructors unterstützt.
           <br /><br />
           <strong>Sets</strong><br />
           Ein Set erlaubt keine Key-Duplikate und ist deshalb sehr nützlich. Wenn wir z.B. eine Liste voller Duplikate haben, müssen wir diese einfach in ein Set setzen und erhalten eine Liste ohne Duplikate.

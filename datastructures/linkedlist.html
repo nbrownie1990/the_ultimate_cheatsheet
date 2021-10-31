@@ -29,26 +29,28 @@
           schrumpfen automatisch, brauchen aber auch mehr Speicherplatz. Jedes
           Element zeigt auf den nächsten Knoten in der Liste. Stell dir eine
           verlinkte Liste als Schnitzeljagd vor. Du beginnst mit einem Hinweis
-          (dem "Head" der Liste) und jeder Hinweis führt Sie zum nächsten
-          Hinweis (dem nächsten Zeiger), bis du am Ende bist (dem "Tail" der
-          Liste). <br />
+          (dem "Head" der Liste) und jeder Hinweis führt dich zum nächsten
+          Hinweis (dem nächsten Zeiger), bis du am Ende der Liste angelangt bist
+          (dem "Tail"). <br />
           <br />
           Einige häufige Gründe für die Verwendung von verknüpften Listen
           sind:<br />
           <br />
 
-          Einfügen von Elementen in die Mitte der Daten: <br />
+          <strong>Einfügen von Elementen in die Mitte der Daten: </strong>
+          <br />
           Wir können überall in der Liste einfügen, solange wir den Knoten vor
-          dem Einfügeindex kennen. O(n) in einem Vektor, O(1) in einer
-          verknüpften Liste.
+          dem Einfügeindex kennen.<br />
+          O(n) in einem Vektor, O(1) in einer verknüpften Liste.
           <br />
           <br />
 
-          Schnelleres Erweitern des Speicherplatzes für unsere Daten:<br />
+          <strong
+            >Schnelleres Erweitern des Speicherplatzes für unsere Daten:</strong
+          ><br />
           Da sich Linked Lists auf diese Idee der Verwendung von Zeigern
           konzentrieren, müssen wir unseren Daten keine zusammenhängenden
-          Speicherblöcke zuweisen. Dies spart uns O(n) Zeit im Vergleich zu
-          einer naiven Implementierung eines Vectors.
+          Speicherblöcke zuweisen. Dies spart uns O(n) Zeit.
           <br />
           <br />
 
@@ -56,7 +58,7 @@
           keinen wahlfreien Zugriff auf ein Element in der Liste über seinen
           Index haben.
           <br />
-          <br />
+
           Beispiel: Wenn wir das 5. Element in einer Liste abrufen wollten,
           müssten wir die Liste durchlaufen, bis wir darauf gestoßen sind.
 
@@ -64,11 +66,11 @@
           <strong>Search</strong>
           by Index: O(n)<br />
           by Value: O(n)<br />
-          <br /><br />
+          <br />
           <strong>Insert</strong>
           Beginning/End: O(1)<br />
           Middle: O(n)<br />
-          <br /><br />
+          <br />
           <strong>Delete</strong>
           Beginning: O(1)<br />
           Middle: O(n)<br />
@@ -78,10 +80,10 @@
         <h2>Link List - Typen</h2>
         <p>
           <strong>Singly</strong> - Vom Ende löschen (O (n))<br />
-          <strong>Doubly</strong> - Vom Ende löschen (O (1), braucht mehr space,
-          da sie einen Link zum Vorgänger-Knoten haben)<br />
+          <strong>Doubly</strong> - Vom Ende löschen (O (1), brauchen mehr
+          Space, da sie einen Link zum Vorgänger-Knoten haben)<br />
           <strong>Circular</strong> - der letzte Knoten referenziert den ersten
-          Knoten (z.B. bei einer sich wiederholenden Spotify-Playlist<br />
+          Knoten (z.B. bei einer sich wiederholenden Spotify-Playlist)<br />
         </p>
 
         <div style="text-align: center">

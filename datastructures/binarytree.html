@@ -23,17 +23,16 @@
       </header>
       <section>
         <p>
-          Die Bezeichnung "Binary Tree" hängt von der Datenstruktur ab. Er ist
-          aufgebaut wie ein Baum mit Wurzel(Root=Ursprungsknoten), Zweigen
-          (Nodes) und Blättern(Leafs= Nodes ohne Childnodes). Ein guter
+          Die Bezeichnung "Binary Tree" hängt von seiner Datenstruktur ab. Er
+          ist aufgebaut wie ein Baum mit Wurzel (Root=Ursprungsknoten), Zweigen
+          (Nodes) und Blättern (Leafs= Nodes ohne Childnodes). Ein guter
           Vergleich ist ein Familien-Stammbaum. Der "Binary" Tree steht für
           Trees mit zwei Childnodes und der "Ternary" Tree für Trees mit drei
-          Childnodes. <br />
-          Wir nutzen Trees für die Repräsentation von Daten in hierarchischen/
-          geordneten Strukturen. So beispielsweise für Datenbanken (trees for
-          indexing), für Autocompletion(z.B. in Chrome, vergangene Websuchen),
-          für Compilers (Syntax tree to parse expressions) oder für Compressions
-          (JPEG, MP3).<br /><br />
+          Childnodes. Wir nutzen Trees für die Repräsentation von Daten in
+          hierarchischen/ geordneten Strukturen. So beispielsweise für
+          Datenbanken (trees for indexing), für Autocompletion(z.B. in Chrome,
+          vergangene Websuchen), für Compilers (Syntax tree to parse
+          expressions) oder für Compressions (JPEG, MP3).<br /><br />
           Es wird zwischen "Binary Trees" und "Binary Search Trees"
           unterschieden. Bei "Binary Search Trees" sind die Knoten wie folgt
           geordnet:
@@ -50,12 +49,13 @@
           <li>Ist 1 kleiner oder größer als der Root-Node?</li>
           <li>Ja? -> also schauen wir den linken Subtree an</li>
           <li>
-            Dort wird der oberste Knoten angeschaut und wider die Frage: ist er
-            der Knoten oder kleiner bzw. größer?
+            Dort wird der oberste Knoten angeschaut und wieder kommt die Frage:
+            ist er der Knoten kleiner oder größer?
           </li>
           <li>
-            Das geht so lange, bis wir den Wert gefunden haben. Wir konnten zu
-            Beginn schon die Hälfte der Suchoptionen ausschließen.
+            Das geht so lange, bis wir den Wert schließlich gefunden haben.
+            Durch diese Vorgehensweise, konnten wir bereits zu Beginn der Suche
+            die Hälfte der Suchoptionen ausschließen.
           </li>
         </ol>
 
@@ -81,30 +81,29 @@
         </p>
         <ul class="default">
           <strong>BREADTH FIRST/ LEVEL ORDER:</strong>
-          <li>Das etagenweise Durchlaufen</li>
+          <li>Das etagenweise Durchlaufen, Level für Level...</li>
         </ul>
         <ul class="default">
           <strong>DEPTH FIRST:</strong>
           <li>
-            Pre-Order(Root, Left, Right): In die Tiefe gehend. Erst der
+            Pre-Order (Root, Left, Right): In die Tiefe gehend. Erst der
             Elternknoten, dann alle seine linken Kindknoten und erst danach der
             rechte Subtree.
           </li>
           <li>
-            In-Order(Left, Root, Right): Ausgabe der Werte in aufsteigender
-            Reihenfolge. Wenn wir in absteigender Reihenfolge ausgeben wollen:
-            Right, Root, Left
+            In-Order (Left, Root, Right): Ausgabe der Werte in aufsteigender
+            Reihenfolge. Wenn wir in absteigender Reihenfolge ausgeben wollen,
+            dann: Right, Root, Left.
           </li>
           <li>
-            Post-Order(Left, Right, Root): Wir gehen von den Blättern hoch zur
+            Post-Order (Left, Right, Root): Wir gehen von den Blättern hoch zur
             Wurzel. Praktisch in Usecases, wo wir die Werte berechnen und sie
             hochspielen müssen bis zur Wurzel. Diese Bäume können mit
             "Rekursion" sehr einfach im Code nachgebildet werden.
           </li>
         </ul>
-        <br />
         <ul class="default">
-          <strong>TIEFE & HÖHE VON TREES:</strong>
+          <strong>ERMITTELN DER TIEFE & HÖHE VON TREES:</strong>
           <li>Tiefe: Kann durch das Zählen der Edges ausgewiesen werden.</li>
           <li>
             Höhe: Kann durch das Zählen, vom untersten Blatt ausgehend,
