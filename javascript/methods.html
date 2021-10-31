@@ -86,7 +86,7 @@
           <p class="accordion-answer">
  
           Die includes()-Methode gibt an, ob ein String innerhalb eines anderen
-          Strings gefunden wird und gibt dabei true oder false wieder. Bei der
+          Strings gefunden wird und gibt dabei "true" oder "false" wieder. Bei der
           includes()-Methode muss auf Groß- und Kleinschreibung geachtet werden.
 
           <strong>Sie ist ebenfalls eine Array-Methode.</strong>
@@ -158,7 +158,7 @@
           <strong>Vorkommnisse prüfen</strong>
           <br />
           Zu beachten ist, dass '0' nicht zu true und '-1' nicht zu false
-          ausgewertet wird. Deswegen ist der korrekte weg zum überprüfen, ob ein
+          ausgewertet wird. Deswegen ist der korrekte Weg zum Überprüfen, ob ein
           String in einem anderen String existiert, der folgende:
           <br />
           <br />
@@ -167,7 +167,7 @@
           'Blue Whale'.indexOf('Bloe') != -1; // false
           <br />
           <br />
-          Wenn wir wissen wollen ob ein Element im Array ist:
+          Wenn wir wissen wollen, ob ein Element im Array ist:
           <br />
           Statt: console.log(numbers.indexOf(1) !== -1)
           <br />
@@ -267,8 +267,15 @@
           <br />
           <strong>Benutzen von slice() mit negativen Indexen</strong>
           <br />
-          Das folgende Beispiel benutzt slice() mit negativen Indexen. var str =
-          'The morning is upon us.'; str.slice(-3); // returns 'us.'
+          Das folgende Beispiel benutzt slice() mit negativen Indexen. 
+          <br />
+          <br />
+          var str =
+          'The morning is upon us.';
+          <br />
+          <br /> str.slice(-3); 
+          <br />
+          <br />// returns 'us.'
        
         <ul class="default">
           <li>
@@ -298,11 +305,11 @@
         <p class="accordion-answer">
   
          
-          Die every() Methode testet, ob alle Elemente in einem Array einen Test
+          Die every()-Methode testet, ob alle Elemente in einem Array einen Test
           bestehen, welcher mittels einer implementierten Funktion
-          bereitgestellt wird. <br />Rückgabewert true wenn die
-          callback-Funktion einen truthy Wert für jedes Array-Element
-          zurückgibt, andernfalls false.
+          bereitgestellt wird. <br />Rückgabewert "true", wenn die
+          callback-Funktion einen "truthy"-Wert für jedes Array-Element
+          zurückgibt, andernfalls ist der Rückgabewert "false".
 
           <br />
           <br />
@@ -320,13 +327,15 @@
           - index(optional)= Der Index des aktuellen Elementes im Array. <br />
           - array(optional)= Das Array auf welchem every aufgerufen wurde.
           <br />
-          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          <strong>thisArg</strong> (optional)= Wert, welcher als this in der
           callback Funktion benutzt wird.
 
           <br />
           <br />
           Zum Beispiel:
           <br />
+          <pre>
+            <code>
           const numbers =[1,2,3]
           <br />
           const allPositive= numbers.every(function(value){
@@ -338,6 +347,8 @@
           console.log(allPositive)
           <br />
           => Result: true
+        </code>
+        </pre>
           <br />
           <br />
           Hingegen:
