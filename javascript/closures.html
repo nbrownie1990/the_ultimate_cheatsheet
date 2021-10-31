@@ -23,7 +23,7 @@
       </header>
       <section>
         <header>
-          <h3>Closures bestimmen welche Variablen einer inneren Funktion zugänglich sind.</h3>
+          <h3>Closures bestimmen, welche Variablen einer inneren Funktion zugänglich sind.</h3>
           <p> 
              Die in der Closure definierte Funktion merkt sich die Umgebung, in der sie erzeugt wurde.</p>
         </header>
@@ -56,40 +56,41 @@
           <br />
           Wir können ganz einfach eine Closure erstellen, bei der alle
           allgemeinen Felder von der äußeren Funktion festgelegt werden und die
-          innere Funktion nur die eindeutigen Felder verwendet: <br><br>
-          Dies kann in
+          innere Funktion nur die eindeutigen Felder verwendet.
           einigen Fällen sehr nützlich sein, z.B. wenn wir mehrere Funktionen
           benötigen, die in unterschiedlichen Kontexten etwas Ähnliches tun.
+          <br />
+          <br />
           Anstatt für jede Aktion eine eigene Funktion zu erstellen, erstellen
           wir eine äußere Funktion und mehrere innere Funktionen. Diese innere
           Funktionen "returnen" wir dann an die übergeordnete Funktion zurück.
           <br />
-          <strong>Hinweis: </strong> Return-Funktionen sind nichts anderes als Closures.
+          <strong>Hinweis: Return-Funktionen sind nichts anderes als Closures.</strong> 
           <br />
           <br />
-          <strong>Private Attribute erstellen </strong>
+          <strong>Private Attribute erstellen ("let" anstelle von "this") </strong>
           <br />
           Sprachen wie Java geben uns die Möglichkeit, bestimmte Attribute
           (Eigenschaften) als "private" zu deklarieren. Dies ist bei JavaScript
-          (oder Python) nicht der Fall. Aber wir können dies durch Folgendes
+          (oder Python) nicht der Fall. Aber wir können dies, wie im folgenden Beispiel zu sehen ist,
           erzwingen: <br> <br>
 
-          z.B. Eine Pflanzen-Funktion gibt ein Objekt mit Funktionen
+          Eine Pflanzen-Funktion gibt ein Objekt mit Funktionen
           zurück, die von außerhalb der Pflanzen-Funktion zugänglich sind. Dies
-          ist über die Punktnotation ( plant.grow())möglich. Neben diesen
-          Funktionen hat das Objekten aber zwei Attribute, die sie nicht über
-          "return" ausgibt - deshalb bleiben diese außerhalb der Funktion Person
+          ist über die Punktnotation ( plant.grow()) möglich. Neben diesen
+          Funktionen hat das Objekt aber zwei Attribute, die es nicht über
+          "return" ausgibt - deshalb bleiben diese außerhalb der Funktion Pflanze
           unzugänglich.<br> <br>
           Ebenfalls sind die mit "let" statt "this." gekennzeichnete Variablen nur im lokalen Scope der inneren Funktion verfügbar und dadurch "private" geworden.
         </p>
 
         <ul class="default">
           <strong>Hier ein paar weitere Use-Cases:</strong>
-          <li>Module design pattern</li>
-          <li>Event handlers</li>
+          <li>Module Design Pattern</li>
+          <li>Event Handlers</li>
           <li>Asynchronous Programming</li>
           <li>
-            <a href="https://blog.logrocket.com/understanding-javascript-currying/"> Currying </a> (Currying in Javascript ist nichts anderes als das Ändern
+            <a href="https://blog.logrocket.com/understanding-javascript-currying/"> Currying </a>  (Currying in Javascript ist nichts anderes als das Ändern
             einer Funktion mit mehreren Argumenten in eine Funktion, die nur ein
             Argument benötigt.)
           </li>

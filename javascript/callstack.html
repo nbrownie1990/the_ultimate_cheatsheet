@@ -29,12 +29,12 @@
       <section>
         <header>
           <h3>Wir wollen aber Multitasking?</h3>
-          <p>
-            Das ermöglicht eine Web-API des Browsers mit der Funktion
-            „setTimeout“.
-          </p>
         </header>
         <p>
+          <strong
+            >Das ermöglicht eine Web-API des Browsers mit der Funktion
+            „setTimeout“.</strong
+          >
           Da JavaScript „single-threaded“ ist, kann sie immer nur eine Aufgabe
           ausführen und nicht gleichzeitig mehrere Tasks lösen. JavaScript läuft
           standardmäßig im Hauptthread des Browsers. Damit verhindert wird, dass
@@ -46,13 +46,11 @@
       </section>
       <section>
         <header>
-          <h3>
-            Der Call Stack - wie ein Stapel Bücher oder auch Pfannkuchen :)
-          </h3>
+          <h3>Der Call Stack - wie ein Stapel Bücher / Pfannkuchen :)</h3>
         </header>
         <blockquote>
           Man könnte sich den Call Stack als Bücherstapel vorstellen, jede
-          Aufgabe ist ein Buch, das wenn es neu dazukommt oben drauf gelegt
+          Aufgabe ist ein Buch, das, wenn es neu dazukommt, oben drauf gelegt
           wird.
         </blockquote>
       </section>
@@ -63,22 +61,26 @@
         <hr />
         <p>
           Der Call Stack ist ein Mechanismus, den JavaScript verwendet, um
-          Funktionen zu verfolgen. Wenn wir eine Funktion aufrufen, fügt
-          JavaScript diese Funktion dem sogenannten "Call Stack" (Aufrufstapel)
-          hinzu. Wenn diese Funktion eine andere Funktion aufruft, fügt
-          JavaScript diese Funktion ebenfalls zum Aufrufstapel, oberhalb der
-          ersten Funktion hinzu. Wenn eine Funktion einen Wert zurückgibt, wird
-          sie vom Stapel geworfen. Dieser Vorgang wird mit jeder anderen
-          Funktion wiederholt, die von der vorherigen Funktion aufgerufen wird.
-          Wenn eine Funktion beendet ist, entfernt JavaScript diese Funktion aus
-          der Aufrufliste. (Wer eine Veranschaulichung braucht, schaut
+          Funktionsausführungen zu verfolgen. Wenn wir eine Funktion aufrufen,
+          fügt JavaScript diese Funktion dem sogenannten "Call Stack"
+          (Aufrufstapel) hinzu. Wenn diese Funktion eine andere Funktion
+          aufruft, fügt JavaScript diese Funktion ebenfalls zum Aufrufstapel,
+          oberhalb der ersten Funktion hinzu. Wenn eine Funktion einen Wert
+          zurückgibt, wird sie vom Stapel geworfen. Dieser Vorgang wird mit
+          jeder anderen Funktion wiederholt, die von der vorherigen Funktion
+          aufgerufen wird. Wenn eine Funktion beendet ist, entfernt JavaScript
+          diese Funktion aus der Aufrufliste. (Wer eine Veranschaulichung
+          braucht, schaut
           <a
             href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"
             >hier</a
-          >.) Der Call Stack wird von oben nach unten ausgeführt: Die zuletzt
-          dem Stack hinzugefügte Funktion wird als erste ausgeführt. Die erste
-          dem Stack hinzugefügte Funktion wird als letzte ausgeführt. Dies wird
-          auch als LIFO-Prinzip (Last-In-First-Out) bezeichnet
+          >.)
+          <br />
+          <br />
+          Der Call Stack wird von oben nach unten ausgeführt: Die zuletzt dem
+          Stack hinzugefügte Funktion wird als erste ausgeführt. Die erste dem
+          Stack hinzugefügte Funktion wird als letzte ausgeführt. Dies wird auch
+          als LIFO-Prinzip (Last-In-First-Out) bezeichnet
         </p>
       </section>
 
@@ -90,9 +92,9 @@
         <p>
           Mit der Funktion „setTimeout“, die uns vom Browser bereitgestellt
           wird, kümmert sich die WebAPI um den Rückruf („Callback“). Die Web-API
-          hat quasi einen Timer, der so lange wie die Millisekunden, die wir im
-          Code angegeben hatten. Der Callback wird nicht sofort zum Call Stack
-          zurückgegeben, sondern zunächst in eine sogenannte Warteschlange
+          hat quasi einen Timer, der so lange läuft, wie die Millisekunden, die
+          wir im Code angegeben hatten. Der Callback wird nicht sofort zum Call
+          Stack zurückgegeben, sondern zunächst in eine sogenannte Warteschlange
           („Queue“) übergeben. Dort muss die Funktion warten, bis sie an der
           Reihe ist.
         </p>
@@ -103,7 +105,7 @@
         </header>
         <hr />
         <p>
-          Nun kommt die Event-Loop ins Spiel, deren einzige Aufgabe es ist die
+          Nun kommt die Event-Loop ins Spiel, deren einzige Aufgabe es ist, die
           Warteschlange mit dem Call Stack zu verbinden! Wenn der Call Stack
           leer ist, also alle zuvor aufgerufenen Funktionen ihre Werte
           zurückgegeben haben und aus dem Stapel entfernt wurden, wird das erste
