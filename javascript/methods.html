@@ -320,7 +320,7 @@
           <br />
           <br />
 
-          <strong>callback</strong>= Funktion welche jedes Element testet, mit
+          <strong>callback</strong>= Funktion, welche jedes Element testet, mit
           drei Argumenten:
           <br />
           - currentValue= Der aktuelle Wert des Arrays. <br />
@@ -334,8 +334,7 @@
           <br />
           Zum Beispiel:
           <br />
-          <pre>
-            <code>
+        
           const numbers =[1,2,3]
           <br />
           const allPositive= numbers.every(function(value){
@@ -347,8 +346,7 @@
           console.log(allPositive)
           <br />
           => Result: true
-        </code>
-        </pre>
+    
           <br />
           <br />
           Hingegen:
@@ -387,18 +385,16 @@
           </strong>
           <br />
           <br />
-
-          <strong>callback</strong>= Funktion welche jedes Element testet, mit
+          <strong>callback</strong>= Funktion, welche jedes Element testet, mit
           drei Argumenten:
           <br />
-          - element= Das aktuell zu testende Element aus dem Arrays. <br />
+          - element= Das aktuell zu testende Element aus dem Array. <br />
           - index(optional)= Der Index des aktuell zu testenden Elements aus dem
           Array. <br />
-          - array(optional)= Das Array auf welchem filter aufgerufen wurde.
+          - array(optional)= Das Array, auf welchem filter() aufgerufen wurde.
           <br />
-          <strong>thisArg</strong> (optional)= Wert welcher als this in der
-          callback Funktion benutzt wird.
-
+          <strong>thisArg</strong> (optional)= Wert, welcher als this in der
+          callback-Funktion benutzt wird.
           <br />
           <br />
           Zum Beispiel:
@@ -430,11 +426,11 @@
       <p class="accordion-answer">
         Um Reference Types zu finden.
 <br>
-          Die Methode find() gibt den Wert des Elements eines Arrays zurück,
-          welches als erstes die Bedingung einer bereitgestellten Testfunktion
-          erfüllt. Andernfalls wird undefined zurückgegeben. <br />
-          Wenn die Position eines Elements ermittelt oder geschaut werden soll ,
-          ob ein Element in einem Array vorhanden ist, bitte indexOf() oder
+          Die Methode find(), gibt den Wert des Elements eines Arrays zurück,
+          welcher als erstes die Bedingung einer bereitgestellten Testfunktion
+          erfüllt. Andernfalls wird 'undefined' zurückgegeben. <br />
+          Wenn die Position eines Elements ermittelt oder auch geschaut werden soll,
+          ob ein Element in einem Array vorhanden ist, besser indexOf() oder
           includes() verwenden.
 
           <br />
