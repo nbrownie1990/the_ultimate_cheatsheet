@@ -180,7 +180,7 @@
             Ein Strategy Pattern definiert eine Familie von Funktionalitäten,  umschließt jede einzelne davon und macht sie austauschbar.
             Es wird verwendet, wenn wir verschiedene Variationen eines Algorithmus benötigen.
           
-            Der Unterschied zum State Pattern ist, dass wir keinen Single State haben sondern unterschiedliche Strategien verwenden.
+            Der Unterschied zum State Pattern ist, dass wir keinen Single State haben, sondern unterschiedliche Strategien verwenden.
           </p>
           <div class="img-wrapper">
             <img class="design-pattern" src="../images/strategypattern.png ">
@@ -192,7 +192,9 @@
           <p class="accordion-answer">
 
             Wofür verwenden wir es?<br> 
-            Zum Beispiel bei einer Buchungskontrolle(Audit-Trail) in einer Banking-App. Wir definieren in der abstrakten Klasse die Methode execute(){ audit.Trail.record();<br>
+            Zum Beispiel bei einer Buchungskontrolle(Audit-Trail) in einer Banking-App. Wir definieren in der abstrakten Klasse die Methode:
+            <br><br> 
+             execute(){ audit.Trail.record();<br>
               doExecute();<br> und modifizieren über konkrete Klassen(TransferMoney, GenerateReport) die Ausführungen, in der die Buchungskontrolle stattfinden soll.
             <br><br> 
 
@@ -257,7 +259,8 @@
           Wofür verwenden wir es?<br> 
          
 
-          Dieses Pattern wird verwendet, um die Kommunikationskomplexität zwischen mehreren Objekten zu reduzieren. Anstatt innerhalb jeder Klasse die direkte Kommunikation mit anderen Klassen (starkes Coupling) zu implementieren, wird ein Mediator-Objekt eingesetzt und jede Klasse kann dieses Mediator-Objekt aufrufen, um mit anderen zu kommunizieren. Dies kann das Coupling zwischen den Klassen lockern und die Entwicklung und Erweiterung des Programms erleichtern.
+          Dieses Pattern wird verwendet, um die Kommunikationskomplexität zwischen mehreren Objekten zu reduzieren. <br><br> 
+          Anstatt innerhalb jeder Klasse die direkte Kommunikation mit anderen Klassen (starkes Coupling) zu implementieren, wird ein Mediator-Objekt eingesetzt und jede Klasse kann dieses Mediator-Objekt aufrufen, um mit anderen zu kommunizieren. Dies kann das Coupling zwischen den Klassen lockern und die Entwicklung und Erweiterung des Programms erleichtern.
 
         </p>
  <div class="img-wrapper">
@@ -270,7 +273,7 @@
         <p class="accordion-answer">
          
           Wofür verwenden wir es?<br> 
-          Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn Authentifizierung erfolgreich, wird der Request weitergeben und wenn nicht, dann nicht.
+          Wenn wir zum Beispiel einen HTTP-Request über einen Webserver vornehmen und eine Pipeline/Kette an Objekten benötigen, um unsere Anfrage zu prozessuieren. Wenn die Authentifizierung erfolgreich ist, wird der Request weitergeben und wenn nicht, dann nicht.
                     <br><br> 
           
           Um zu vermeiden den Sender einer Anfrage an den Empfänger zu koppeln, geben wir mehr als einem Objekt die Möglichkeit, die Anfrage zu bearbeiten. Diese Objekte verketten wir, um die Anforderung entlang der Kette zu übergeben, bis ein Objekt sie verarbeitet.
@@ -290,7 +293,7 @@
           Das Pattern ermöglicht das Hinzufügen neuer Funktionen, ohne vorhandene Klassen zu ändern. Es bietet eine Möglichkeit, einen Algorithmus einfach von einer Objektstruktur zu trennen. 
           <br><br> 
            
-          Oft ist es schwierig, nicht miteinander verwandte Operationen in die Klassen einer Objektstruktur zu integrieren. Bei der Erweiterung um neue Operationen müssen alle Klassen erweitert werden. Das Visitor-Pattern lagert die Operationen in externe Besucherklassen aus. Dazu müssen die zu besuchenden Klassen eine Schnittstelle zum Empfang eines Besuchers definieren.
+          Oft ist es schwierig, nicht miteinander verwandte Operationen in die Klassen einer Objektstruktur zu integrieren. Bei der Erweiterung um neue Operationen, müssen alle Klassen erweitert werden. Das Visitor-Pattern lagert die Operationen in externe Besucherklassen aus. Dazu müssen die zu besuchenden Klassen eine Schnittstelle zum Empfang eines Besuchers definieren.
          
         </p>
         <div class="img-wrapper">
@@ -316,9 +319,9 @@
           <p class="accordion-answer">
  
             Wofür verwenden wir es? <br>
-            Mit dem Composite Command Pattern können wir bspw. eine "Save All"-Funktion in einer Applikation für mehrere Tabs  einbringen, um zu ermöglichen, dass nicht jedes Tab einzeln gespeichert werden muss. Ein anderes Beispiel wäre eine Hiearchie in Objekten z.B. in Powerpoint. Wir können Formen gruppieren und sie dann gleichzeitig bewegen, vergrößern usw.
+            Mit dem Composite Command Pattern können wir bspw. eine "Save All"-Funktion in einer Applikation für mehrere Tabs  einbringen. Damit ermöglichen wir es, dass nicht jedes Tab einzeln gespeichert werden muss. 
             <br><br> 
-
+            Ein anderes Beispiel wäre eine Hiearchie in Objekten z.B. in Powerpoint. Wir können Formen gruppieren und sie dann gleichzeitig bewegen, vergrößern usw.
             Das Composite Command beschreibt eine Gruppe von Objekten, die genauso behandelt werden wie eine einzelne Instanz desselben Objekttyps. 
   
            
@@ -333,9 +336,9 @@
           <p class="accordion-answer">
 
             Wofür verwenden wir es? <br>
-            Dieses Pattern wird verwendet, um bspw. ein Interface einer Klasse zu einer anderen Form zu konvertieren. Zum Beispiel, um ein Foto mit Filtern zu versehen. Hinweis: In Java ist eine Composition flexibler, denn in Java gibt es keine multiple Vererbung.
+            Zum Beispiel, um ein Foto mit Filtern zu versehen. Hinweis: In Java ist eine Composition flexibler, denn in Java gibt es keine multiple Vererbung.
             <br><br> 
-
+            Dieses Pattern wird verwendet, um bspw. ein Interface einer Klasse zu einer anderen Form zu konvertieren. 
             Ein Adapter-Pattern fungiert als Verbindung zwischen zwei inkompatiblen Schnittstellen, die ansonsten nicht direkt verbunden werden können. Ein Adapter umschließt eine vorhandene Klasse mit einer neuen Schnittstelle, damit sie mit der Schnittstelle des Clients kompatibel wird.
            
               
@@ -350,7 +353,7 @@
           <p class="accordion-answer">
 
             Wofür verwenden wir es? <br>
-            Es wird bspw. verwenden, wenn eine "Stream"-Klasse erweitert werden soll, die eigentlich nur Daten in die Cloud hochlädt. In einigen Fällen sollen aber Daten encrypted werden und dazu verhilft uns das Decorator Entwurfsmuster.
+            Es wird bspw. verwendet, wenn eine "Stream"-Klasse erweitert werden soll, die eigentlich nur Daten in die Cloud hochlädt. In einigen Fällen sollen die Daten aber 'encrypted' werden und dazu verhilft uns das Decorator-Entwurfsmuster.
             <br><br> 
            
             Das Decorator Pattern ist oft nützlich, um das Prinzip der Single Responsibility einzuhalten, da es die Aufteilung der Funktionalität auf Klassen mit eindeutigen Problembereichen ermöglicht. Die Verwendung von Decorator kann effizienter sein als die Unterklassenbildung, da das Verhalten eines Objekts verbessert werden kann, ohne ein völlig neues Objekt zu definieren. 
@@ -366,7 +369,7 @@
           <p class="accordion-answer">
            
             Wofür verwenden wir es? <br>
-            "Provide a simple interface to a complex system" - Das Fassadenmuster wird häufig verwendet, wenn eine Interaktion mit einer komplexen externen Bibliothek oder einem Dienst stattfindet. Es wird genutzt, um coupling zu reduzieren.
+            "Provide a simple interface to a complex system" - Das Fassadenmuster wird häufig verwendet, wenn eine Interaktion mit einer komplexen externen Bibliothek oder einem Dienst stattfindet. Es wird genutzt, um Coupling zu reduzieren.
             <br><br> 
            
             In diesem Muster erstellen wir eine Klasse, um die Interaktionen mit der Third-Party-Library zu kapseln. Diese Klasse wird Fascade (Fassade) genannt. Dies ermöglicht es uns, dem Rest unserer Anwendung eine einfachere Schnittstelle bereitzustellen. Entwickler, die an anderen Teilen unseres Systems arbeiten, müssen die Bibliothek von Drittanbietern nicht lernen; Stattdessen müssen sie nur mit der von uns erstellten Fassadenklasse verbunden werden. Zum Beispiel bei einer mobilen App - "Send push-notifications to Users".
@@ -381,11 +384,11 @@
           <p class="accordion-answer">
           
             Wofür verwenden wir es? <br>
-            Zum Beispiel bei GoogleMaps. Wenn wir zuviel Memory-Space für die Icons der Ortungs-Points verwenden, würde die App crashen. Deshalb bedient man sich dem Flyweight Pattern, das die Daten für die verschiedenen Points aus einer Schablone zieht.
+            Zum Beispiel bei GoogleMaps. Wenn zuviel Memory-Space für die Icons der Ortungs-Points verwendet werden würde, würde die App crashen. Deshalb bedient man sich dem Flyweight Pattern, das die Daten für die verschiedenen Points aus einer Schablone zieht.
             <br><br> 
 
-            Das Flyweight Pattern(Fliegengewicht) ist eine bewährte, wiederverwendbare Vorlage, sie dient als eine Art Lösungsschablone.
-            Das Entwurfsmuster wird häufig verwendet, wenn wir ähnliche Daten für mehrere Objekte gruppieren möchten. Der Hauptzweck besteht darin, gemeinsame Daten für mehrere Objekte an einem einzigen Ort zu speichern und somit die Speichernutzung zu optimieren. 
+            Das Flyweight Pattern(Fliegengewicht) ist eine bewährte, wiederverwendbare Vorlage - es dient als eine Art Lösungsschablone.
+            Dieses Pattern wird häufig verwendet, wenn wir ähnliche Daten für mehrere Objekte gruppieren möchten. Der Hauptzweck besteht darin, gemeinsame Daten für mehrere Objekte an einem einzigen Ort zu speichern und somit die Speichernutzung zu optimieren. 
  
           </p>
  <div class="img-wrapper">
@@ -398,10 +401,10 @@
           <p class="accordion-answer">
           
             Wofür verwenden wir es? <br>
-            Beispielsweise bei einer Universellen Fernbedienung: Um zu vermeiden, dass wir für jede TV-Marke eine eigene Klasse/Repository bilden müssen, kann das Pattern die Brücke zwischen Feature und Implementation bilden und zwei separate Hierarchien zusammenbringen.
+            Beispielsweise bei einer Universal-Fernbedienung: Um zu vermeiden, dass wir für jede TV-Marke eine eigene Klasse/Repository bilden müssen, kann das Pattern die Brücke zwischen Feature und Implementation bilden und zwei separate Hierarchien zusammenbringen.
             <br><br> 
 
-            Das Bridge Pattern hilft uns, wenn wir verschiedene Datenbanktreiber für unseren Repository verwenden müssen. Um die Verwendung separater Repositorys oder Klassen für verschiedene Datenbanktreiber zu vermeiden, ist das Bridge-Designmuster ein  eleganter Weg. Mit dem Bridge Pattern können wir flexible Hiearchien bilden, die unabhängig voneinander wachsen können. 
+            Dieses Pattern hilft uns, wenn wir verschiedene Datenbanktreiber für unseren Repository verwenden müssen. Um die Verwendung separater Repositorys oder Klassen für verschiedene Datenbanktreiber zu vermeiden, ist das Bridge-Pattern ein eleganter Weg. Wir können damit flexible Hiearchien bilden, die unabhängig voneinander wachsen können. 
 
           </p>
  <div class="img-wrapper">
@@ -417,7 +420,7 @@
             Zum Beispiel bei einer EBook-App mit integrierter Bibliothek all unserer Bücher. Wir wollen aber nur eins davon laden und nicht alle gleichzeitig. Um das Ebook nur zu laden, wenn wir es brauchen, initializieren wir das "private field" realEbook absichtlich nicht.
             <br><br> 
 
-            Das Proxy Pattern bietet einen Ersatz/ Platzhalter für ein anderes Objekt, um den Zugriff darauf zu steuern. Wir können dieses Muster verwenden, um ein darstellbares Objekt zu erstellen, das den Zugriff auf ein anderes Objekt steuert, das möglicherweise weit entfernt, teuer zu erstellen/ zu sichern ist. 
+            Das Proxy-Pattern bietet einen Ersatz/ Platzhalter für ein anderes Objekt, um den Zugriff darauf zu steuern. Wir können dieses Muster verwenden, um ein darstellbares Objekt zu erstellen, das den Zugriff auf ein anderes Objekt steuert, das möglicherweise weit entfernt, teuer zu erstellen/ zu sichern ist. 
 
           </p>
  <div class="img-wrapper">
@@ -456,11 +459,11 @@
           <p class="accordion-answer">
            
             Wofür verwenden wir es? <br>
-            Einsatzbeispiel: Eine Klasse, die unsere Konfigurationseinstellungen der Applikation managed.            <br><br> 
+            Beispielsweise für eine Klasse, die die Konfigurationseinstellungen unserr Applikation managed.  <br><br> 
 
-            Ein Singleton bedeutet (wie "single" schon sagt) die Beschränkung der Instanziierung einer Klasse auf eine einzelne Instanz.Mit anderen Worten, jedes Mal, wenn wir die Klasse verwenden, ist es jedoch dasselbe Objekt, das wir zuerst erstellt haben. 
+            Ein Singleton bedeutet (wie "single" schon sagt) die Beschränkung der Instanziierung einer Klasse auf eine einzelne Instanz. Mit anderen Worten, jedes Mal, wenn wir die Klasse verwenden, ist es jedoch dasselbe Objekt, das wir zuerst erstellt haben. 
             <br><br>
-            Dieses Muster ermöglicht es uns also, von jeder Datei oder Funktion aus auf die Member einer Klasseninstanz zuzugreifen und sie zu bearbeiten. Diese Singletons können Schnittstellen implementieren, Methoden als Argumente übergeben und können polymorph sein.          
+            Dieses Muster ermöglicht es uns also, von jeder Datei oder Funktion aus auf die Mitglieder einer Klasseninstanz zuzugreifen und sie zu bearbeiten. Diese Singletons können Schnittstellen implementieren, Methoden als Argumente übergeben und können polymorph sein.          
            
 
           </p>
@@ -477,11 +480,11 @@
             <br><br> 
 
            
-            Das Fabrikmethodenmuster ist eine clevere, aber subtile Erweiterung des Konzepts, dass eine Klasse als eine Art "Verkehrspolizist" fungiert und entscheidet, welche Unterklasse einer einzelnen Hierarchie instanziiert wird.
+            Dieses Pattern ist eine clevere, aber subtile Erweiterung des Konzepts, dass eine Klasse als eine Art "Verkehrspolizist" fungiert und entscheidet, welche Unterklasse einer einzelnen Hierarchie instanziiert wird.
             <br><br>
             Im Factory-Pattern erstellen wir ein Objekt, ohne die Erstellungslogik offenzulegen. Eine Schnittstelle wird zum Erstellen eines Objekts verwendet, lässt jedoch die Unterklasse entscheiden, welche Klasse instanziiert werden soll. Anstatt jedes Objekt manuell zu definieren, können wir dies programmgesteuert tun.
             <br><br>
-            Kurz gesagt, eine Fabrik ist ein Objekt, das Objekte ohne die Verwendung eines Konstruktors erstellt.
+            Kurz gesagt, eine Factory ist ein Objekt, das Objekte ohne die Verwendung eines Constructors erstellen kann.
           </p>
         <div class="img-wrapper">
           <img class="design-pattern" src="../images/factorymethodpattern.png ">
@@ -498,10 +501,11 @@
 
             Das Abstract Factory Pattern stellt eine Schnittstelle zum Erstellen von Klassenfamilien ohne konkrete Implementierungen bereit.
            <br><br>
-            Stellen wir uns vor, wir erstellen ein Shopsystem für ein Möbelhaus. Der Laden verkauft Stühle, Sofas, etc...
-            Doch es gibt nicht nur einen Stuhltyp, sondern mehrere Stuhltypen.
-            Diese Stuhltypen könnte man auch eine Stuhlfamilie nennen, daher gibt es für jeden Stuhltyp unterschiedliche Klassen.
-            Allerdings muss er auch zu den Möbelstücken ähnlicher Stile zusammengebracht werden können (z.B. Landhaus).
+           Anderes Beispiel:<br> 
+            Stellen wir uns vor, wir erstellen ein Shopsystem für ein Möbelhaus. Der Laden verkauft Tische, Sofas, etc...
+            Doch es gibt nicht nur einen Tischtyp, sondern mehrere Tischtypen.
+            Diese Tischtypen könnte man auch eine Tischfamilie nennen, daher gibt es für jeden Tischtyp unterschiedliche Klassen.
+            Allerdings muss er auch zu den Möbelstücken ähnlicher Stile zusammengebracht werden können (z.B. Landhaus-Stil). 
             <br><br>
             Das abstract Factory Pattern verwenden wir, wenn unser Code mit verschiedenen Familien verwandter Produkte arbeiten muss, aber nicht von den konkreten Klassen dieser Produkte abhängig sein soll.
             Achtung: Der Code kann komplizierter werden, als er sein sollte, da mit diesem Muster viele neue Schnittstellen und Klassen eingeführt werden.
@@ -519,12 +523,12 @@
            
            
             Wofür verwenden wir es? <br>
-            Zum Beispiel wenn wir ein Dokument (Powerpoint-Slide) exportieren wollen in verschiedene Formate (PDF, Movie, Image...)        <br><br> 
+            Zum Beispiel wenn wir ein Dokument (Powerpoint-Slide) exportieren wollen in verschiedene Formate (PDF, Movie, Image...).        <br><br> 
 
-            Das Builder-Muster wurde eingeführt, um einige der Probleme mit Factory- und Abstract Factory-Entwurfsmustern zu lösen (z.B. wenn das Objekt sehr viele Attribute enthält).Es wird meistens verwendet, wenn ein Objekt nicht in einem Schritt erstellt werden kann.
+            Das Builder-Muster wurde eingeführt, um einige der Probleme mit Factory- und Abstract Factory-Entwurfsmustern zu lösen (z.B. wenn das Objekt sehr viele Attribute enthält). Es wird meistens verwendet, wenn ein Objekt nicht in einem Schritt erstellt werden kann.
             <br><br>
             Das Builder Pattern konstruiert ein komplexes Objekt aus einfachen Objekten mithilfe eines Schritt-für-Schritt-Ansatz.
-            Eine Builder-Klasse erstellt in dem Sinne  schrittweise das endgültige Objekt. Dieser Builder ist unabhängig von anderen Objekten.
+            Eine Builder-Klasse erstellt in dem Sinne schrittweise das endgültige Objekt. Dieser Builder ist unabhängig von anderen Objekten.
                
           </p>
         <div class="img-wrapper">
