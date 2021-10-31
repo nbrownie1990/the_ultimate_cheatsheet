@@ -29,9 +29,9 @@
           "Tree"-Strukturen zu unterscheiden.
           <br />
           Ein Trie ist eine baumartige Datenstruktur, deren Knoten die
-          Buchstaben eines Alphabets speichern. Durch Strukturieren der Knoten
-          in einer bestimmten Weise können Wörter und Zeichenfolgen aus der
-          Struktur durch Durchlaufen eines Zweigpfads des Baums wiedergewonnen
+          Buchstaben eines Alphabets speichern. Durch das Strukturieren der Knoten
+          in einer bestimmten Weise, können Wörter und Zeichenfolgen aus der
+          Struktur durch das Durchlaufen eines Zweigpfads des Baums wiedergewonnen
           werden. 
           Tries werden genutzt für Autocompletion (z.B. Sucheingaben bei Google). Tries ermöglichen es uns Millionen von Wörtern im minimalen Memoryspeicher zu verstauen und sie super schnell zu finden.
           <br /><br />
@@ -60,7 +60,7 @@
           einem Trie vollständig von der Gesamtzahl der möglichen Werte abhängt.
           Wenn wir beispielsweise das englische Alphabet darstellen, ist die
           Gesamtzahl der untergeordneten Knoten direkt mit der Gesamtzahl der
-          möglichen Buchstaben verbunden. Im englischen Alphabet gibt es 26
+          möglichen Buchstaben verbunden. Im deutschen Alphabet gibt es 26
           Buchstaben, sodass die Gesamtzahl der untergeordneten Knoten 26
           beträgt. Die Größe eines Tries korreliert direkt mit der Größe aller
           möglichen Werte, die der Trie darstellen könnte. In diesem Fall
@@ -82,12 +82,11 @@
           Das Coole daran ist, dass wir die Indizes des Arrays verwenden können,
           um spezifische Verweise auf Knoten zu finden. Unser Root-Knoten
           enthält beispielsweise ein Array von Indizes 0 bis 25, da es 26
-          mögliche Slots für die 26 Buchstaben des Alphabets gibt.Wir wissen
+          mögliche Slots für die 26 Buchstaben des Alphabets gibt. Wir wissen
           also, dass die Referenz auf den Knoten, der den Buchstaben A enthält,
           am Index 0 liegt.
           <br /><br />
-          Wenn wir nun fünf verschiedene Wörter, in diesem Trie repräsentieren (
-          fischers, fritze, fischt, frische, fische), haben wir fünf
+          Wenn wir nun fünf verschiedene Wörter, in diesem Trie repräsentieren (fischers, fritze, fischt, frische, fische), haben wir fünf
           verschiedene „Zweige“ im Trie, einen für jedes dargestellte Wort.
           Einige Wörter teilen sich die Elternknoten. Zum Beispiel teilen sich
           alle Zweige für die Wörter fritze und frische die Knoten für f, r und
@@ -100,11 +99,11 @@
         
           Bei einem leeren Trie, haben wir einen leeren Root-Knoten, der den
           Wert "" hat, und ein Array mit 26 Referenzen darin, die alle auf null
-          zeigend. Nehmen wir an, wir möchten das Wort "Sie" einfügen und ihm
+          zeigend. Nehmen wir an, wir möchten das Wort "See" einfügen und ihm
           den Wert 5 zuweisen (Hash).
           <br /><br />
           Wir suchen zuerst nach dem Zeiger für s, da der erste Buchstabe in
-          unserem Schlüssel "see" s ist. Da dieser Versuch noch nichts enthält,
+          unserem Schlüssel "s" ist. Da dieser Versuch noch nichts enthält,
           ist die Referenz bei s in unserem Wurzelknoten null. Wir erstellen
           also einen neuen Knoten für s, und der Wurzelknoten hat jetzt ein
           Array mit 25 leeren Slots und 1 Slot (bei Index 18), der eine Referenz
@@ -112,28 +111,28 @@
           <br /><br />
 
           Jetzt haben wir einen Knoten bei Index 18, der den Wert für s enthält.
-          Aber unsere Zeichenfolge ist "Sie", also sind wir noch nicht fertig
+          Aber unsere Zeichenfolge ist "See", also sind wir noch nicht fertig
           und machen dasselbe für diesen Knoten. Wir prüfen, ob beim nächsten
           Buchstaben des Schlüssels ein Nullzeiger vorhanden ist: e. Da wir bei
           e auf einen weiteren Null-Link für die Referenz stoßen, erstellen wir
           einen weiteren neuen Knoten. Schließlich sind wir beim letzten Zeichen
-          unserer Tonart: dem zweiten e in "Sie". Wir erstellen keinen neuen
+          unserer Tonart: dem zweiten e in "See". Wir erstellen keinen neuen
           Knoten für die Array-Referenz auf e, und innerhalb dieses dritten
           Knotens, den wir erstellt haben, setzen wir unseren Wert: 5.
           <br /><br />
-          Wenn wir in Zukunft den Wert für den Schlüssel "Sie" abrufen möchten,
+          Wenn wir in Zukunft den Wert für den Schlüssel "See" abrufen möchten,
           werden wir von einem Array zum anderen nach unten traversieren und die
-          Indizes verwenden, um von den Knoten s, zu i, zu e zu gelangen; Wenn
+          Indizes verwenden, um von den Knoten s, zu e, zu e zu gelangen; Wenn
           wir den Knoten am Index für e erreichen, beenden wir die Durchquerung
           und rufen den Wert von diesem Knoten ab, der 5 ist.
        <br><br>
-       Aber was ist, wenn wir nach etwas suchen, das in unserem Trie nicht existiert? Was ist, wenn wir nach dem Wort "si" suchen, das wir nicht als Schlüssel mit einem Wert hinzugefügt haben? Nun, wir gehen vom Wurzelknoten zum Knoten bei Index s und dann vom Knoten bei s zum Knoten bei Index i. Wenn wir an diesem Punkt angelangt sind, sehen wir, ob der Knoten am Verzweigungspfad s-i einen Wert hat. In diesem Fall hat es keinen Wert; es zeigt auf null. Wir können also sicher sein, dass der Schlüssel "si" in unserem Trie nicht als String mit einem Wert existiert. Dies wird oft als "search miss"(Suchfehler) bezeichnet, da wir keinen Wert für den Schlüssel finden konnten.
+       Aber was ist, wenn wir nach etwas suchen, das in unserem Trie nicht existiert? Was ist, wenn wir nach dem Wort "se" suchen, das wir nicht als Schlüssel mit einem Wert hinzugefügt haben? Nun, wir gehen vom Wurzelknoten zum Knoten bei Index s und dann vom Knoten bei s zum Knoten bei Index e. Wenn wir an diesem Punkt angelangt sind, sehen wir, ob der Knoten am Verzweigungspfad s-e einen Wert hat. In diesem Fall hat es keinen Wert; es zeigt auf null. Wir können also sicher sein, dass der Schlüssel "se" in unserem Trie nicht als String mit einem Wert existiert. Dies wird oft als "search miss"(Suchfehler) bezeichnet, da wir keinen Wert für den Schlüssel finden konnten.
        <br><br>
-       Schließlich gibt es noch eine weitere Aktion, die wir mit unserem Versuch durchführen möchten: Dinge löschen! Wie können wir einen Schlüssel und seinen Wert aus unserer Trie-Struktur entfernen? Um dies zu veranschaulichen, habe ich unserem Trie ein weiteres Wort hinzugefügt. Wir haben jetzt die beiden Schlüssel "Sie" und "Sieb" mit jeweils eigenen Werten. Nehmen wir an, wir möchten den Schlüssel "Sieb" aus unserem Trie entfernen.
+       Schließlich gibt es noch eine weitere Aktion, die wir mit unserem Versuch durchführen möchten: Dinge löschen! Wie können wir einen Schlüssel und seinen Wert aus unserer Trie-Struktur entfernen? Um dies zu veranschaulichen, habe ich unserem Trie ein weiteres Wort hinzugefügt. Wir haben jetzt die beiden Schlüssel "See" und "Seele" mit jeweils eigenen Werten. Nehmen wir an, wir möchten den Schlüssel "Seele" aus unserem Trie entfernen.
        <br><br>
        Dazu müssen wir zwei Schritte ausführen:
        <br><br>
-1. Zuerst müssen wir den Knoten finden, der den Wert für diesen Schlüssel enthält, und seinen Wert auf null setzen. Dies bedeutet, nach unten zu traversieren und den letzten Buchstaben des Wortes "Sieb" zu finden und dann den Wert des letzten Knotens von 12 auf null zurückzusetzen.<br><br>
+1. Zuerst müssen wir den Knoten finden, der den Wert für diesen Schlüssel enthält, und seinen Wert auf null setzen. Dies bedeutet, nach unten zu traversieren und den letzten Buchstaben des Wortes "Seele" zu finden und dann den Wert des letzten Knotens auf null zurückzusetzen.<br><br>
 2. Zweitens müssen wir die Referenzen des Knotens überprüfen und sehen, ob alle seine Zeiger auf andere Knoten ebenfalls null sind. Wenn alle leer sind, bedeutet dies, dass es keine anderen Wörter/Zweige darunter gibt und sie alle entfernt werden können. Wenn jedoch Zeiger für andere Knoten mit Werten vorhanden sind, möchten wir den Knoten, den wir gerade auf null gesetzt haben, nicht löschen. Dies ist besonders wichtig, um längere Zeichenfolgen nicht zu entfernen, wenn wir Teilzeichenfolgen eines Wortes entfernen. 
 
          
