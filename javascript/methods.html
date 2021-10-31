@@ -507,7 +507,7 @@
       <p class="accordion-answer">
 
      
-          Die forEach() Methode führt eine übergebene Funktion für jedes Element
+          Die forEach()-Methode führt eine übergebene Funktion für jedes Element
           eines Arrays aus.
 
           <br />
@@ -527,7 +527,7 @@
           - index(optional)= Der Index des aktuellen Elements im Array. <br />
           - array(optional)= Das Array, welches mit forEach() durlaufen wird.
           <br />
-          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          <strong>thisArg</strong> (optional)= Wert, welcher als this in der
           callback Funktion benutzt wird.
 
           <br />
@@ -570,11 +570,11 @@
       <p class="accordion-answer">
        Umwandeln eines Arrays in einen String.
 <br>
-          Die join() Methode verkettet alle Elemente eines Arrays (oder
-          Array-ähnlicher Objekte) durch Kommata getrennt oder einem angegebenen
-          Trennzeichen in einem String und gibt diesen zurück. Enthält das Array
-          nur ein Element wird nur dieses ohne Trennzeichen zurückgegeben.
-          Nützlich wenn ein url-slug(whitespace are replaced with "-") gebildet
+          Die join()-Methode verkettet alle Elemente eines Arrays (oder
+          Array-ähnlicher Objekte), durch Kommata getrennt, 
+          in einem String und gibt diesen zurück. Enthält das Array
+          nur ein Element, wird nur dieses ohne Trennzeichen zurückgegeben.
+          Nützlich, wenn ein url-slug(whitespace are replaced with "-") gebildet
           wird.
 
           <br />
@@ -636,7 +636,7 @@
       <h3 class="accordion-title"> map() </h3>
       <p class="accordion-answer">
 
-          Die map() (engl. abbilden) Methode wendet auf jedes Element des Arrays
+          Die map() (engl. abbilden) -Methode wendet auf jedes Element des Arrays
           die bereitgestellte Funktion an und gibt das Ergebnis in einem neuen
           Array zurück.
 
@@ -660,7 +660,7 @@
           verarbeitet wird. <br />
           - array(optional)= Das Array, welches mit map() durchlaufen wird.
           <br />
-          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          <strong>thisArg</strong> (optional)= Wert, welcher als this in der
           callback Funktion benutzt wird.
 
           <br />
@@ -720,9 +720,9 @@
       <h3 class="accordion-title"> pop() & shift() </h3>
       <p class="accordion-answer">
 
-          Die pop() Methode entfernt das letzte Element eines Arrays und gibt
+          Die pop()-Methode entfernt das letzte Element eines Arrays und gibt
           dieses zurück. Diese Methode ändert die Länge des Arrays. Der
-          Rückgabewert ist das entfernte Element aus dem Array; undefined wenn
+          Rückgabewert ist das entfernte Element aus dem Array. Rückgabewert 'undefined', wenn
           das Array leer ist.
 
           <br />
@@ -779,7 +779,7 @@
       <p class="accordion-answer">
 
 
-          Die push() Methode fügt ein oder mehr Elemente am Ende eines Arrays
+          Die push()-Methode fügt ein oder mehr Elemente am Ende eines Arrays
           hinzu und gibt die neue Länge des Arrays zurück.
 
           <br />
@@ -852,16 +852,16 @@
           <strong>callback</strong>= Funktion, welche auf jeden Wert im Array
           angewandet wird und vier Argumente hat:
           <br />
-          - accumulator= Der kumulierte Wert ist der Rückgabewert von callback;
-          der in der zuvor zurückgegebene Wert des letzten Aufrufes von callback
-          oder initialValue werden verwendet. .<br />
+          - accumulator= Der kumulierte Wert ist der Rückgabewert von callback.
+          Es werden der zuvor zurückgegebene Wert des letzten Aufrufes von callback
+          oder der 'initialValue' verwendet.<br />
           - currentValue= Das aktuell zu verarbeitende Element des Arrays.
           <br />
           - currentIndex(optional)= Der Index des aktuellen Elements des Arrays.
           Beginnt mit dem Index 0, falls initialValue angegeben wurde, ansonsten
           mit Index 1.
           <br />
-          - array(optional)= Das Array, auf dem reduce abgerufen wird.
+          - array(optional)= Das Array, auf dem reduce() abgerufen wird.
           <br />
           <strong>initialValue</strong> (optional)= Der Wert des ersten
           Arguments, der bei dem ersten Aufruf in callback zu benutzt wird. Wenn
@@ -916,7 +916,7 @@
       <p class="accordion-answer">
 
           Die reverse() Methode kehrt die Reihenfolge der Arrayelemente in-place
-          um. Das erste Element wird zum letzen und das letzte wird zum ersten.
+          um. Das erste Element wird zum letzen und das letzte wird zum ersten Element.
 
           <br />
           <br />
@@ -956,9 +956,8 @@
       <p class="accordion-answer">
 
 
-          Die slice() Methode schreibt eine flache Kopie von einem Teil des
-          Arrays in ein neues Array-Objekt von begin bis end (end nicht
-          enthalten). Das originale Array wird nicht verändert.
+          Die slice() Methode schreibt eine "flat copy" von einem Teil des
+          Arrays in ein neues Array-Objekt von 'begin' bis 'end'. Das originale Array wird nicht verändert.
 
           <br />
           <br />
@@ -971,21 +970,21 @@
 
           <strong>begin (optional)</strong>= <br />
           Null-basierter Index, an welcher die Extraktion beginnt. Bei einem
-          negativen Index kennzeichnet begin einen Versatz vom Ende der Sequenz.
-          slice(-2) extrahiert die letzten zwei Elemente der Sequenz. Wenn begin
-          undefiniert ist, beginnt slice bei Index 0. Wenn begin größer als die
+          negativen Index kennzeichnet 'begin' einen Versatz vom Ende der Sequenz.
+          slice(-2) extrahiert die letzten zwei Elemente der Sequenz. Wenn 'begin'
+          nicht definiert ist, beginnt slice bei Index 0. Wenn 'begin' größer als die
           Länge der Sequenz ist, wird ein leeres Array zurückgegeben.
           <br />
           <strong>end (optional)</strong>= <br />
-          Null-basierter Index bevor die Extraktion endet. slice extrahiert bis
-          zu, aber nicht inklusive end. slice(1,4) extrahiert vom zweiten bis
+          Null-basierter Index, bevor die Extraktion endet. Slice() extrahiert bis
+          zu, aber nicht inklusive 'end'. Slice(1,4) extrahiert vom zweiten bis
           zum vierten Element (Elemente sind indexiert als 1, 2 und 3). Bei
-          einem negativen Index kennzeichnet end einen Versatz vom Ende der
-          Sequenz. slice(2, -1) extrahiert vom dritten bis zum vorletzten
-          Element der Sequenz. Wenn auf end weggelassen wird, extrahiert slice
-          bis zum Ende der Sequenz (arr.length). Wenn end größer als die Länge
+          einem negativen Index kennzeichnet 'end' einen Versatz vom Ende der
+          Sequenz. Slice(2, -1) extrahiert vom dritten bis zum vorletzten
+          Element der Sequenz. Wenn 'end' weggelassen wird, extrahiert slice
+          bis zum Ende der Sequenz (arr.length). Wenn 'end' größer als die Länge
           der Sequenz ist, extrahiert slice bis zum Ende der Sequenz
-          (arr.length)
+          (arr.length).
 
           <br />
           <br />
@@ -1041,10 +1040,10 @@
 
       <p class="accordion-answer">
 
-          Die Methode some() überprüft ob mindestens ein Element des Arrays den
+          Die Methode some() überprüft, ob mindestens ein Element des Arrays den
           als Funktion übergebenen Kriterien entspricht. Der Rückgabewert ist
-          true, wenn die callback Methode ein positives (truthy) Ergebnis für
-          eines der Elemente im array ermittelt hat; Andernfalls, false.
+          'true', wenn die callback Methode ein positives ("truthy") Ergebnis für
+          eines der Elemente im Array ermittelt hat; Andernfalls ist der Rückgabewert: "false".
 
           <br />
           <br />
@@ -1055,7 +1054,7 @@
           <br />
           <br />
 
-          <strong>callback</strong>= Funktion die jedes Element überprüft, nimmt
+          <strong>callback</strong>= Funktion, die jedes Element überprüft, nimmt
           drei Argumente entgegen:
           <br />
           - currentValue= Das aktuell zu verarbeitende Element des Arrays.
@@ -1063,10 +1062,10 @@
           - index(optional)= Der Index des aktuell zu verarbeitenden Elementes
           im Array.
           <br />
-          - array(optional)= Die Arrayinstanz auf welcher die some() Methode
+          - array(optional)= Die Arrayinstanz auf welcher die some()-Methode
           aufgerufen wurde.
           <br />
-          <strong>thisArg</strong> (optional)= Wert welcher als this in der
+          <strong>thisArg</strong> (optional)= Wert, welcher als this in der
           callback Funktion benutzt wird.
 
           <br />
@@ -1100,7 +1099,7 @@
       <p class="accordion-answer">
 
             
-          Die sort() Methode sortiert die Elemente eines Arrays in-place (keine
+          Die sort()-Methode sortiert die Elemente eines Arrays in-place (keine
           Kopie!) und gibt das Array zurück. Standardmäßig werden alle Elemente
           in Strings umgewandelt und dann anhand ihrer UTF-16 Codepoints
           miteinander verglichen.
@@ -1169,7 +1168,7 @@
       <h3 class="accordion-title"> splice() </h3>          
       <p class="accordion-answer">
 
-          Die splice() Methode ändert den Inhalt eines Arrays durch das
+          Die splice()-Methode ändert den Inhalt eines Arrays durch das
           Entfernen vorhandener Elemente und/oder Hinzufügen neuer Elemente.
 
           <br />
@@ -1181,15 +1180,17 @@
           <br />
           <br />
 
-          <strong>start</strong>= Index ab welchem das Array geändert werden
+          <strong>start</strong>= Index, ab welchem das Array geändert werden
           soll. <strong>deleteCount</strong>(optional)= Gibt die Anzahl der zu
           entfernenden alten Array Elemente an. Wenn deleteCount 0 oder negativ
           ist, werden keine Elemente entfernt. In diesem Fall sollte man
           mindestens ein neues Element als weiteren Parameter übergeben, da das
           Array sonst nicht geändert wird.
+          <br />
+          <br />
           <strong>item1, item2, ...</strong>(optional)= Die Elemente, die dem
-          Array ab dem Index start hinzugefügt werden sollen. Falls keine
-          Elemente angegeben werden, entfernt splice lediglich Elemente des
+          Array ab dem Indexstart hinzugefügt werden sollen. Falls keine
+          Elemente angegeben werden, entfernt splice() lediglich Elemente des
           Arrays.
 
           <br />
