@@ -64,26 +64,26 @@
 
           <br /><br />
           Funktioniert nur bei sortierten Eingaben. Es ist ein Divide &
-          Conquer-Algorithmus. Funktioniert, indem der Mittelpunkt einer Eingabe
-          ermittelt und das mittlere Element mit dem Zielelement verglichen
-          wird. Wenn das mittlere Element unserem Zielelement entspricht, ist
-          die Suche beendet. Wenn das Zielelement kleiner als das mittlere
-          Element ist, durchsuchen wir die linke Hälfte der Eingabe (und
-          wiederholen den Vorgang des Findens der Mitte und des Vergleichs).
-          Wenn das Zielelement größer als das mittlere Element ist, durchsuchen
-          wir die rechte Hälfte der Eingabe (und wiederholen). Die binäre Suche
-          reduziert die Zeitkomplexität auf O(log n) (logarithmisch) - da wir
-          nicht die gesamte Eingabe scannen müssen (wie bei der linearen Suche).
-          Space ist O(1).
+          Conquer-Algorithmus. Sie funktioniert, indem der Mittelpunkt einer
+          Eingabe ermittelt und das mittlere Element mit dem Zielelement
+          verglichen wird. Wenn das mittlere Element unserem Zielelement
+          entspricht, ist die Suche beendet. Wenn das Zielelement kleiner als
+          das mittlere Element ist, durchsuchen wir die linke Hälfte der Eingabe
+          (und wiederholen den Vorgang des Findens der Mitte und des
+          Vergleichs). Wenn das Zielelement größer als das mittlere Element ist,
+          durchsuchen wir die rechte Hälfte der Eingabe (und wiederholen...).
+          Die binäre Suche reduziert die Zeitkomplexität auf O(log n)
+          (logarithmisch) - da wir nicht die gesamte Eingabe scannen müssen (wie
+          bei der linearen Suche). Space ist O(1).
         </footer>
         <footer class="major container medium videoWrapper">
           <h3>Jump Search ((O(√ n))</h3>
-          <br /><br />
+
           Anstatt Element für Element zu prüfen, sucht dieser Algorithmus Block
           für Block, sodass weniger Elemente überprüft werden müssen.
           <br />
-          Wir beginnen mit der Definition einer Blockgröße Beginnend am Anfang
-          der Liste überprüfen wir das letzte Element jedes Blocks, ist das
+          Wir beginnen mit der Definition einer Blockgröße. Beginnend am Anfang
+          der Liste überprüfen wir das letzte Element jedes Blocks. Ist das
           Element kleiner als der gesuchte Wert, springen wir zum nächsten
           Block. Wenn jedoch das letzte Element des aktuellen Blocks größer als
           der gesuchte Wert ist, führen wir eine lineare Suche in diesem Block

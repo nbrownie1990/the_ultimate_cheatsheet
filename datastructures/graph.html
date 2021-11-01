@@ -23,26 +23,27 @@
       </header>
       <section>
         <p>
-          Wir verwenden Graphs als Datenstruktur, um verbundene Objekte zu
+          Wir verwenden den Graph als Datenstruktur, um verbundene Objekte zu
           repräsentieren. Zum Beispiel: Router in einem Netzwerk, Flugrouten,
           Städte, Menschen auf einer Social-Media-Plattform. Ein Graph zeigt an,
           wie diese Objekte verbunden sind und wie stark diese Verbindung ist.
           Graphen bestehen aus Scheitelpunkten (Nodes) und Kanten (Edges). Es
           gibt keine Limitationen, was die Nodes und Edges eines Knoten
-          betrifft. Sie haben keinen Root-Node. Eine Kante verbindet zwei Ecken.
-          Ein gutes Beispiel für ein miteinander verbundenes Netzwerk von
-          Scheitelpunkten und Kanten sind Städte und die Straßen, die sie
-          miteinander verbinden. Eine Stadt in diesem Beispiel wäre ein
-          Scheitelpunkt, und die Straßen sind die Kanten. Graphen können
-          entweder directed(gerichtet) oder undirected(ungerichtet) sein,
-          directed Graphen sind wie eine Einbahnstraße. Sind sie undirected,
-          führen sie in beide Richtungen. In ihrer Darstellung Graphs kann man
-          anhand von Pfeilspitzen unterscheiden, ob sie directed (z.B. "folgen"
-          auf Twitter) oder undirected (z.B. "Freund" auf Facebook) sind. Wenn
-          Sie directed sind zeigen sie via Pfeil auf einen oder mehrere
-          Nachbarknoten. Die Edges können gewichtet sein, damit zeigen sie die
-          Stärke der Verbindung an. Wenn zwei Personen auf Facebook häufiger
-          Kontakt haben, dann haben sie ein stärkeres Gewicht.
+          betrifft. Ebenfalls haben sie keinen Root-Node. Eine Kante verbindet
+          zwei Ecken. Ein gutes Beispiel für ein miteinander verbundenes
+          Netzwerk von Scheitelpunkten und Kanten sind Städte und die Straßen,
+          die sie miteinander verbinden. Eine Stadt in diesem Beispiel wäre ein
+          Scheitelpunkt, und die Straßen sind die Kanten. <br /><br />
+          Graphen können entweder directed(gerichtet) oder
+          undirected(ungerichtet) sein, directed Graphen sind wie eine
+          Einbahnstraße. Sind sie undirected, führen sie in beide Richtungen. In
+          ihrer Darstellung kann man anhand von Pfeilspitzen unterscheiden, ob
+          sie directed (z.B. "folgen" auf Twitter) oder undirected (z.B.
+          "Freund" auf Facebook) sind. Wenn sie directed sind, zeigen sie via
+          Pfeil auf einen oder mehrere Nachbarknoten. Die Edges können gewichtet
+          sein, damit zeigen sie die Stärke der Verbindung an. Wenn bspw. zwei
+          Personen auf Facebook häufiger Kontakt haben, dann haben sie ein
+          stärkeres Gewicht.
         </p>
       </section>
 
@@ -52,14 +53,13 @@
         </header>
         <hr />
         <p>
-          Gerichtete Graphen sind der Linked List am ähnlichsten, aber jeder
-          Knoten kann n Zeiger auf andere Knoten haben. Es wird auch nicht
+          Gerichtete Graphen sind der LinkedList am ähnlichsten, jedoch kann
+          jeder Knoten einen Zeiger auf andere Knoten haben. Es wird auch nicht
           garantiert, dass ein Graph zyklenfrei ist. Ein Zyklus liegt vor, wenn
           eine Reihe von Kanten mit dem Ursprungsscheitelpunkt verbunden ist.
           Ähnlich einer kreisförmigen verketteten Liste, bei der der Tail mit
           dem Head verbunden ist. So können wir beim Durchlaufen des Graphen am
           selben Knoten beginnen und enden.
-          <br /><br />
         </p>
       </section>
       <section>
@@ -68,8 +68,8 @@
         </header>
         <hr />
         <p>
-          Die zwei gebräuchlichen Methoden um einen Graphen zu implementieren
-          sind: Adjacency Matrix und Adjacency List.
+          Zwei gebräuchliche Methoden, um einen Graphen zu implementieren sind
+          die "Adjacency Matrix" und die "Adjacency List".
           <br /><br />
           <strong>ADJACENCY MATRIX</strong><br />
 
@@ -79,71 +79,75 @@
           gekennzeichnet.
           <br /><br />
           <strong>Add Node: O(V^2)<br /></strong>
-          Dafür wird aber einiges an Platz benötigt (n - Knoten = Space: O
-          (V^2)). Wir nutzen hier Edges/Vertices anstatt "n". Wenn wir einen
-          Knoten hinzufügen, müssen wir eine Extrareihe und -zeile erstellen und
-          dann alle aus der alten Matrix in die neue kopieren.
+          Dafür wird einiges an Platz benötigt (n - Knoten = Space: O (V^2)).
+          Wir nutzen hier Edges/Vertices anstatt "n". Wenn wir einen Knoten
+          hinzufügen, müssen wir eine Extrareihe und -zeile erstellen und dann
+          alle aus der alten Matrix in die neue kopieren.
           <br /><br />
           <strong>Remove Node: O(V^2)<br /></strong>
           Wir müssen eine neue, kleinere Matrix erstellen und die Items aus der
           alten herauskopieren.
           <br /><br />
           <strong>Add Edge: O(1)<br /></strong>
-          Als Erstes müssen wir den Index finden (dafür können wir eine
-          HashTable nutzen). Dann können wir schnell an den entsprechenden
+          Als Erstes müssen wir den Index finden, dafür können wir eine
+          HashTable nutzen. Dann können wir direkt an den entsprechenden
           Platz/zum Item gehen und die Edge hinzufügen.
           <br /><br />
           <strong>Remove Edge: O(1)<br /></strong>
-          Derselbe weg wie beim hinzufügen einer Edge nur, dass der Wert auf
-          "false" bzw. null gesetzt werden muss.
+          Derselbe Weg wie beim Hinzufügen einer Edge mit dem Unterschied, dass
+          der Wert auf "false" bzw. null gesetzt werden muss.
+          <br /><br />
           <strong>Query Edge: O(1)<br /></strong>
-          Sehen ob 2 Knoten verbunden sind läuft ebenfalls über eine HashTable.
+          Um zu checken, ob 2 Knoten verbunden sind, wird ebenfalls die
+          HashTable genutzt.
           <br /><br />
           <strong>Find Neighbours: O(V)<br /></strong>
           Erst nutzt man die HashTable, dann wird jedes Element in der Reihe
-          angesehen, um die verbundenen Knoten aufzuspüren. remove Node:
-          O(V^2)<br />
+          angesehen, um die verbundenen Knoten aufzuspüren.
+          <br /><br />
+          remove Node: O(V^2)<br />
           Add Edge: O (1)
           <br /><br />
           Das Durchqueren eines Graphen ist ähnlich wie das Durchqueren eines
-          Baums, wir verwenden die Breitensuche (Breadth-First-Search: BFS) und
+          Baums - wir verwenden die Breitensuche (Breadth-First-Search: BFS) und
           die Tiefensuche (Depth-First-Search: DFS). Wie bei Trees durchläuft
-          BFS einen Graphen Ebene für Ebene. DFS durchquert die Tiefe eines
-          Graphen - d.h. wir beginnen an einem Scheitelpunkt und durchlaufen
-          ihn, bis er keine Nachfolger/Nachbarn hat, dann verfolgen wir die Bahn
-          zurück, bis wir einen Scheitelpunkt finden, der dies tut. Nun
-          wiederholen wir den Vorgang.
+          die BFS einen Graphen Ebene für Ebene. Die DFS durchquert die Tiefe
+          eines Graphen - d.h. wir beginnen an einem Scheitelpunkt und
+          durchlaufen ihn, bis er keine Nachfolger/Nachbarn hat, dann verfolgen
+          wir die Bahn zurück, bis wir einen Scheitelpunkt finden, der dies tut.
+          Nun wiederholen wir den Vorgang.
           <br /><br />
 
           <strong>ADJACENCY LIST</strong><br />
           Die Adjacency List ist nützlich, wenn wir mit Scheitelpunkten
-          arbeiten, die Zeichenfolgen/Objekte und keine Ganzzahlen sind.
+          arbeiten, die Zeichenfolgen/Objekte und keine Dezimalzahlen sind.
           Adjacency List verwenden wir, wenn der Graph weniger Kanten als
-          Scheitelpunkte hat. Sie ist wie ein Array mit Linked Lists. In jedem
-          Element des Arrays, haben wir eine LinkedList und diese Linked List
-          beinhaltet die Nachbarn des jeweiligen Knoten. Wir verstauen nur die
-          Edges, die existieren. Die Adjacency List ist platzsparender als die
-          Matrix. Das Worst-Case-Szenario ist der DENSE GRAPH - ein Grap bei dem
-          jeder Knoten mit allen anderen Knoten verbunden ist außer sich selbst.
+          Scheitelpunkte hat. Sie ist wie ein Array mit integrierter LinkedList.
+          In jedem Element des Arrays, haben wir eine LinkedList und diese
+          LinkedList beinhaltet die Nachbarn des jeweiligen Knoten. Wir
+          verstauen nur die Edges, die existieren. Die Adjacency List ist
+          platzsparender als die Matrix. Das Worst-Case-Szenario ist der DENSE
+          GRAPH - ein Grap bei dem jeder Knoten mit allen anderen Knoten
+          verbunden ist außer sich selbst.
           <br /><br />
           <strong>Add Node: O(1)<br /></strong>
           Einfach ein neues Element einfügen.
           <br /><br />
           <strong>Remove Node: O(V^2)<br /></strong>
           Element löschen und absichern, dass dort keine Knoten mit einem Link
-          sind. Das macht man indem man über die Liste iteriert und die target
-          Links löscht.
+          sind. (Das Vorgehen: über die Liste iterieren und die Target- Links
+          löschen.)
           <br /><br />
           <strong>Add Edge: O(K)<br /></strong>
           Über die Liste iterieren und absichern, dass der Zielknoten nicht dort
-          ist. Dann mit einer HashTable Knoten hinzufügen.
+          ist. Dann mit einer HashTable den Knoten hinzufügen.
           <br /><br />
           <strong>Remove Edge: O(K)<br /></strong>
-          Über die Liste iterieren um den Zielknoten zu finden. Dann Zielknoten
-          löschen.
+          Über die Liste iterieren, um den Zielknoten zu finden. Dann den
+          Zielknoten löschen.
           <br /><br />
           <strong>Query Edge: O(K)<br /></strong>
-          Über die Liste iterieren, um zu schauen ob der Zielknoten da ist oder
+          Über die Liste iterieren, um zu schauen, ob der Zielknoten da ist oder
           nicht.
           <br /><br />
           <strong>Find Neighbours: O(K)<br /></strong>
@@ -172,9 +176,9 @@
           <strong>Der "Dijkstra's Shortest Path Algorithm"</strong><br />
           Dieser Algorithmus wird verwendet, um den kürzesten Weg zwischen
           Knoten unter Verwendung der in einem Graph angegebenen Gewichte zu
-          berechnen und zu finden. (In einem Netzwerk werden die Gewichtungen
+          berechnen und zu finden (in einem Netzwerk werden die Gewichtungen
           durch Link-State-Pakete angegeben und enthalten Informationen wie den
-          Zustand der Router, Verkehrskosten usw.). Die Strecke beginnt mit dem
+          Zustand der Router, Verkehrskosten...). Die Strecke beginnt mit dem
           Quellknoten. Der Algorithmus von Dijkstra verfolgt die aktuell
           bekannte Entfernung vom Quellknoten zu den restlichen Knoten und
           aktualisiert diese Werte dynamisch, wenn ein kürzerer Pfad gefunden
@@ -192,36 +196,22 @@
           Gewichtungen würden dazu führen, dass der Algorithmus nicht die
           gewünschten Ergebnisse liefert.
           <br /><br />
-          Dieser Algorithmus ist ebenfalls ein Greedy Algorithm, der versucht,
-          eine optimale Lösung eines Problems zu finden, indem er bei jedem
-          Schritt optimale Entscheidungen trifft.
+          Dieser Algorithmus ist ein sogenannter Greedy-Algorithmus, der
+          versucht, eine optimale Lösung eines Problems zu finden, indem er bei
+          jedem Schritt optimale Entscheidungen trifft.
           <br /><br />
           <strong>Der "Prims Algorithm"</strong><br />
           Der Algorithmus von Prim ist auch ein Greedy-Algorithmus. Es geht
           darum die minimale Spannweite (Weg mit günstigster/leichtester
-          Verbindung) eines Graphen zu finden.
+          Verbindung) eines Graphen zu finden: den "Minimum Spanning Tree".
           <br /><br />
-          Der erste Satz enthält die bereits im Minimum Spanning Tree
-          enthaltenen Scheitelpunkte, der andere Satz enthält die noch nicht
-          enthaltenen Scheitelpunkte. Bei jedem Schritt berücksichtigt es alle
-          Kanten(Edges), die die beiden Sätze verbinden, und wählt die Kante mit
-          minimalem Gewicht aus den Kanten aus. Nachdem die Kante ausgewählt
-          wurde, wird der andere Endpunkt der Kante auf den Satz verschoben, der
-          Minimum Spanning Tree enthält.<br />
-          Ablauf
-          <br />1. Wir suchen uns einen Startknoten aus.(A)<br />
-          2. Wir schauen uns die Edges an und wählen den leicht gewichtetsten
-          aus.(1) <br />
-          3. Wir fügen eine Edge und unseren Zielknoten zu unserem Baum
-          hinzu.<br />
-          4. Daraufhin gehen wir zu C - der Knoten gehört nun zu unserem Baum.
-          <br />
-          5. Nun schauen wir uns die Edges von unserem Baum an und fügen die
-          leicht gewichtetsten hinzu (3 & 4). <br />
-          6. Nun geht es von B aus weiter zu A (kennen wir bereits, deshalb Edge
-          4 zu D) <br />
-          7. Nun habem wir alle Knoten besucht und unseren Minimum Spanning Tree
-          gefunden. <br />
+          Der erste Satz enthält die bereits im "Minimum Spanning Tree"
+          enthaltenen Scheitelpunkte. Der andere Satz enthält die noch nicht
+          enthaltenen Scheitelpunkte. Bei jedem Schritt berücksichtigt der
+          Algorithmus alle Kanten(Edges), die die beiden Sätze verbinden und
+          wählt die Kante mit minimalem Gewicht aus den Kanten aus. Nachdem die
+          Kante ausgewählt wurde, wird der andere Endpunkt der Kante auf den
+          Satz verschoben, der den Minimum Spanning Tree enthält.
         </p>
       </section>
 

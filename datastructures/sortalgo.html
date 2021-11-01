@@ -23,7 +23,7 @@
       </header>
       <section>
         <p>
-          Wir verwenden Sorting Algorithms, um Elemente in einer Liste in eine
+          Wir verwenden Sortierungs-Algorithmen, um Elemente in einer Liste in eine
           Reihenfolge zu sortieren. Neben anderen Anwendungen kann die
           Sortierung angewendet werden, um einen Datensatz für einen anderen
           Algorithmus vorzubereiten, zum Beispiel für die Binäre Suche.
@@ -45,7 +45,7 @@
           
           <br /><br />
           Bubble Sort beginnt am Anfang der Liste und vergleicht jedes Paar
-          benachbarter Elemente. Wenn das erste größer als das zweite ist,
+          benachbarter Elemente. Wenn das Erste größer als das Zweite ist,
           werden sie vertauscht. Dann beginnt es wieder am Anfang der Liste und
           wiederholt diesen Vorgang, bis beim letzten Durchlauf kein Tausch
           aufgetreten ist. Da seine Zeitkomplexität im Durchschnitt und im
@@ -65,8 +65,8 @@
           
           
           <br /><br />
-          Die Liste wird bei diesem Algorithmus in einen sortierten Teil links
-          und einen unsortierten rechts geteilt. Anfänglich ist die sortierte
+          Die Liste wird bei diesem Algorithmus in einen sortierten Teil  -links-
+          und einen unsortierten -rechts- geteilt. Anfänglich ist die sortierte
           Unterliste leer und die unsortierte ist die gesamte Liste. Dann sucht
           der Algorithmus nach dem kleinsten Element in der unsortierten
           Unterliste und tauscht es mit dem ganz linken unsortierten Element
@@ -93,7 +93,7 @@
           sucht für jedes Element aus der Liste nach der richtigen Position in
           dieser Unterliste, um dieses Element einzufügen. Insertion Sort hat
           auch eine quadratische Zeitkomplexität für durchschnittliche und
-          schlechteste Fälle, ist jedoch der schnellste Sortieralgorithmus für
+          schlechte Fälle, ist jedoch der schnellste Sortieralgorithmus für
           kleine Listen.
         </footer>
           <footer class="major container medium videoWrapper">
@@ -108,7 +108,7 @@
                
           <br /><br />
           Merge-Sort ist ein Sortieralgorithmus, der eine
-          Teile-und-Herrsche-Technik verwendet, um eine gegebene Liste zu
+          Divide-and-conquer-Technik verwendet, um eine gegebene Liste zu
           sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
           wird, um es einfacher zu lösen. Merge Sort beginnt mit dem Aufteilen
           der Liste in Hälften und fährt fort, diese Unterlisten aufzuteilen,
@@ -141,18 +141,18 @@
               
           <br /><br />
           Quick Sort ist ein In-Place-Sortieralgorithmus, der eine
-          Teile-und-Herrsche-Technik verwendet, um eine gegebene Liste zu
+          Divide-and-conquer-Technik verwendet, um eine gegebene Liste zu
           sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
           wird, um es einfacher zu lösen, und keine zusätzlichen Datenstrukturen
           verwendet. Quick Sort beginnt mit der Auswahl eines Elements aus der
           Liste als Pivot-Element, normalerweise das erste oder letzte Element.
-          Als nächstes ordnen Sie die anderen Elemente neu an, sodass alle
+          Als Nächstes ordnen wir die anderen Elemente neu an, sodass alle
           Elemente, die kleiner als der Pivot sind, nach links und alle
           Elemente, die größer als der Pivot sind, nach rechts gehen. Der
           wichtige Teil von Quick Sort ist die Wahl des Pivots, da eine
-          schlechte Wahl zur ungünstigsten Zeitkomplexität führt, wobei die
+          schlechte Wahl zu einer ungünstigsten Zeitkomplexität führt, wobei die
           durchschnittliche Fallzeitkomplexität dieses Algorithmus O(n log n)
-          beträgt, während im schlechtesten Fall case ist O(n²), jedoch kann der
+          beträgt, während im schlechtesten Fall case ist O(n²). Jedoch kann der
           schlimmste Fall mit einer randomisierten Version dieses Algorithmus
           vermieden werden. Außerdem ist Quick Sort im Gegensatz zu Merge Sort
           ein In-Place-Algorithmus, der den Vorteil einer konstanten
@@ -166,7 +166,7 @@
           Die Zählsortierung ist ein Algorithmus, mit dem wir in bestimmten
           Fällen ein Array in linearer Zeit sortieren können. Um die zählende
           Sortierung zu verwenden, darf unser Array nur Dezimalzahlen enthalten,
-          und es wird davon ausgegangen, dass Sie die Min- und Max-Werte kennen.
+          und es wird davon ausgegangen, dass wir die Min- und Max-Werte kennen.
           Es funktioniert, indem es die Anzahl der Objekte zählt, die jeden
           unterschiedlichen Schlüsselwert aufweisen, und anhand dieser Zählungen
           arithmetisch verwendet wird, um die Positionen jedes Schlüsselwerts in
@@ -175,19 +175,19 @@
           minimalen Schlüsselwerten, sodass es nur für den direkten Einsatz in
           Situationen geeignet ist, in denen die Variation der Schlüssel nicht
           wesentlich größer ist als die Anzahl der Elemente. Es wird jedoch oft
-          als Unterprogramm in einem anderen Sortieralgorithmus, Radixsort,
-          verwendet, der größere Schlüssel effizienter handhaben kann.Die
+          als Unterprogramm in einem anderen Sortieralgorithmus (Radixsort),
+          verwendet, der größere Schlüssel effizienter handhaben kann. Die
           Zählsortierung funktioniert am besten, wenn der Zahlenbereich für
           jedes Arrayelement sehr klein ist.
 
           <br /><br />
           Bucket Sort (O(n + k))<br />
           Bucket Sort kann für viele der gleichen Aufgaben wie Zählsortierung
-          verwendet werden, mit einer ähnlichen Zeitanalyse; Im Vergleich zur
-          Zählungssortierung erfordert die Bucket-Sortierung jedoch verknüpfte
+          verwendet werden, mit einer ähnlichen Zeitanalyse. Im Vergleich zur
+          Counting Sort erfordert die Bucket-Sortierung jedoch verknüpfte
           Listen, dynamische Arrays oder eine große Menge an vorab zugewiesenem
           Speicher, um die Sätze von Elementen in jedem Bucket zu speichern,
-          während die Zählungssortierung stattdessen eine einzelne Zahl (die
+          während die Counting Sort stattdessen eine einzelne Zahl (die
           Anzahl der Elemente) pro Bucket speichert.
           <br /><br />
           Radix Sort (Best: O(n) , Worst: O(n^2)<br />
