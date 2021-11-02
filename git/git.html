@@ -35,7 +35,7 @@
           Das Erlernen von Git ist für jeden Programmierer unerlässlich. Es
           hilft, die Arbeit im Team zu koordinieren und Ziele hinsichtlich der
           Geschwindigkeit und Datenintegrität zu erreichen. Git ist ohne Zweifel
-          das beliebteste Open-Source-Versionskontrollsystem. Sogar einige der
+          das beliebteste Open-Source-Versionskontrollsystem. Viele der
           größten Unternehmen nutzen Git & GitHub für ihre Projekte.
         </p>
 
@@ -62,7 +62,7 @@
         </header>
         <hr />
         <p>
-          Diese Seite fußt vor allem auf den Inhalten dieser Beiträge [<a href="https://dev.to/star_trooper/git-it-right-git-cheatsheet-4o0h
+          Hinweis: Diese Seite fußt vor allem auf den Inhalten dieser Beiträge [<a href="https://dev.to/star_trooper/git-it-right-git-cheatsheet-4o0h
 ">1</a>, <a href="https://dev.to/zinox9/git-github-cheatsheet-22ok
 
 ">2</a>        ] und dieses
@@ -76,10 +76,10 @@
         <ul class="default">
           <strong>Die Essentials:</strong>
           <li><strong>git status</strong> - To remind you of where you left off. See a summary of local changes, remote commits, and untracked files.</li>
-          <li><strong>git diff </strong> - To see the specific local changes to tracked files. Use --name-only to see changed filenames.</li>
-          <li><strong>git add </strong> - To stage changes to your tracked and untracked files. Use -u, -a, and . strategically.</li>
-          <li><strong>git commit</strong> - To create a new commit with changes previously added. Use -m and add a meaningful commit message.</li>
-          <li><strong>git push </strong> -  To send changes to your configured remoterepository, most commonly GitLab or GitHub.</li>
+          <li><strong>git diff </strong> - Um die spezifischen lokalen Änderungen an verfolgten Dateien anzuzeigen. Nutze --name-only , um geänderte Dateinamen anzugeben..</li>
+          <li><strong>git add </strong> - Um Änderungen an verfolgten und nicht verfolgten Dateien bereitzustellen. Nutze -u, -a, und . </li>
+          <li><strong>git commit</strong> - Um einen neuen Commit mit zuvor hinzugefügten Änderungen zu erstellen. Nutze -m und füge eine sinnvolle commit message hinzu.</li>
+          <li><strong>git push </strong> -  Um Änderungen an unser konfiguriertes Remote-Repository zu senden.</li>
       </ul>
       </p>
       <hr />
@@ -90,10 +90,9 @@
           <h3>Installieren & Setup von Git</h3>
         </header>
         <hr />
-        Zunächst bei Google GitHub und das Betriebssystem eingeben und dann Git
+        Zunächst bei Google "GitHub" und dein Betriebssystem eingeben und dann Git
         auf entsprechender Seite herunterladen. Das Video von Mosh (siehe unten)
-        hilft bei der Einrichtung von Git. Vorher sollte der Lieblingsterminal (z.B. iTerm oder der integrierte Terminal in VSCode) und seine Software (Shell) ausgewählt werden. Es gibt viele verschiedene Shells, wie bspw. Bash oder ZSH
-        (mein Favorit). Sie sind bereits integriert bzw. können auf unterschiedliche Weise eingerichtet werden (siehe Video unten zum Einrichten von Oh-my-zsh im
+        hilft bei der Einrichtung von Git. Vorab sollte dein Lieblingsterminal (z.B. iTerm oder der integrierte Terminal in VSCode) und die Shell ausgewählt werden. Es gibt viele verschiedene Shells, wie bspw. Bash oder ZSH. Sie sind bereits integriert bzw. können auf unterschiedliche Weise eingerichtet werden (siehe Video unten zum Einrichten von Oh-my-zsh im
         Terminal).  </p>
         <ul class="default">
           <strong> Git Version: </strong
@@ -112,13 +111,11 @@
             Email global festzusetzen)
           </li>
           <li>
-            git config user.name || git config user.email (um zu sehen, was Git
-            als Nutzername und Email gespeichert hat)
+            git config user.name || git config user.email (um zu sehen, was Git als Nutzername und Email gespeichert hat)
           </li>
           <li>
-            git config --global core.editor "code --wait" (Damit sagen wir dem
-            Terminal, dass er warten soll, bis wir das Editor-Fenster
-            geschlossen haben.)
+            git config --global core.editor "code --wait" (damit sagen wir dem Terminal, dass er warten soll, bis wir das Editor-Fenster
+            geschlossen haben)
           </li>
           <li>
             git config --global -e (gitconfig-file öffnet sich, dort können
@@ -131,11 +128,11 @@
             kann(windows:true, mac:input))
           </li>
           <li>
-            git config --global color.ui auto (Setzt eine bunte
+            git config --global color.ui auto (setzt eine bunte
             GitCommand-Zeile, für den besseren Durchblick)
           </li>
           <li>
-            git config --global alias.lg "log --oneline" (Kreiiert einen Alias)
+            git config --global alias.lg "log --oneline" (kreiiert einen Alias)
           </li>
           
           <br />
@@ -162,20 +159,19 @@
           
         <strong> Initialization & Viewing the Status: </strong><br />
         <li>
-          git init (creates a git repository in the directory currently in
-          Staging- Initialisierung)
+          git init (erstellt ein Git-Repository im aktuellen Verzeichnis in Staging- Initialisierung)
         </li>
-        <li>git status (to check full status , if staged or unstaged)</li>
+        <li>git status (um den vollständigen Status zu überprüfen, ob  staged oder unstaged)</li>
         <li>git status -s(to check short status)</li>
         <br />
         <strong> Adding Files to Staging Area: </strong><br />
-        <li>git add file1.js (to add a single file to staging area)</li>
+        <li>git add file1.js (um eine einzelne Datei zum Staging-Bereich hinzuzufügen)</li>
         <li>
-          git add file1.js file2.js (to add multiple file to staging area)
+          git add file1.js file2.js (um mehrere Dateien zum Staging-Bereich hinzuzufügen)
         </li>
-        <li>git add *.js (to stage with a pattern)</li>
+        <li>git add *.js (stagen nach Muster - hier .js)</li>
         <li>
-          git add . (to add all files of the current directory to staging area)
+          git add . (um alle Dateien des aktuellen Verzeichnisses zum Staging-Bereich hinzuzufügen)
         </li>
 
         <br />
@@ -183,16 +179,15 @@
         <br />
 
         <li>
-          git rm file1.js (to remove a file and stage the removal for commit)
+          git rm file1.js (um eine Datei zu entfernen und die Entfernung für den Commit bereitzustellen)
         </li>
-        <li>git rm --cached file1.js (to remove a file from staging area )</li>
-        <li>git mv [existing-path] [new-path] (to change an existing file path and stage the move )</li>
+        <li>git rm --cached file1.js (um eine Datei aus dem Staging-Bereich zu entfernen)</li>
+        <li>git mv [existing-path] [new-path] (um einen vorhandenen Dateipfad zu ändern und diese Aktion zu stagen)</li>
 
         <br />
         <strong> Commiting the staged files: </strong><br />
         <li>
-          git commit -m "Specific Changes Made" (commits the staging area giving
-          them a specific id)
+          git commit -m "Specific Changes Made" (commits the staging area giving them a specific id)
         </li>
         <li>git commit -m (opens the default editor to type a long message)</li>
         <li>git commit -am "Message" (Skipping the staging area)</li>
@@ -204,8 +199,7 @@
         <li>git show HEAD (Shows the last commit)</li>
         <li>git show HEAD~2 (Two steps before the last commit)</li>
         <li>
-          git show HEAD:file.js (Shows the version of file.js stored in the last
-          commit)
+          git show HEAD:file.js (Shows the version of file.js stored in the last commit)
         </li>
         <br />
 
@@ -403,7 +397,7 @@
           <li>git bisect start</li>
           <li>git bisect bad ( Marks the current commit as a bad commit)</li>
           <li>
-            git bisect good ca49180 ( Marks the given commit as a good commit)
+            git bisect good ca49180 (Marks the given commit as a good commit)
           </li>
           <li>git bisect reset (Terminates the bisect session)</li>
 
@@ -502,17 +496,13 @@
         <hr />
         <p>
           Am besten erstellt man direkt zu Beginn des Projekts eine spezielle Datei 
-          namens .gitignore in der ignorierte Dateien verfolgt werden, 
-          die im Root-Verzeichnis deines Repositorys eingecheckt wird.
+          namens .gitignore in der ignorierte Dateien geführt werden, 
+          die im Root-Verzeichnis deines Repositorys eingecheckt werden.
           Es gibt keinen expliziten "git ignore"-Befehl: Stattdessen 
-          muss die .gitignore-Datei manuell bearbeitet und committet werden, 
-          wenn neue Dateien hinzukommen, die ignoriert werden sollen. Bestimmte Muster
-          sind in .gitignore-Dateien enthalten, die mit den Dateinamen in deinem Repository abgeglichen werden,
-           um zu bestimmen, ob diese ignoriert werden sollen oder nicht.
+          muss die .gitignore-Datei manuell bearbeitet und committet werden, wenn neue Dateien hinzukommen, die ignoriert werden sollen. 
           <br><br>
-          In dieser Datei kann spezifiziert werden, welche Ordner und Dateien 
-          nicht gestaged oder commited werden sollen (z.B. build-Artefakte 
-          und maschinell generierte Dateien).
+          In dieser Datei kann spezifiziert werden, welche Ordner und Dateien, Muster 
+          nicht gestaged oder commited werden sollen (z.B. build-Artefakte und maschinell generierte Dateien).
           Weitere Beispiele:
           <ul class="default">
           <li>Abhängigkeits-Caches wie die Inhalte von /node_modules oder /packages</li>
@@ -542,23 +532,23 @@
         <hr />
        
         <ul class="default">
-          <strong> Creating a new Repository: </strong
+          <strong> Creating a New Repository: </strong
           ><br />
           Create a new repo on Github and copy the URL & then push your code to
           it
           <li>
-            git push [alias]/[branch] ( transmit local branch commits to the remote repository branch)
+            git push [alias]/[branch] (transmit local branch commits to the remote repository branch)
           </li>
           <li>
-            git push [git_url] master ( pushing code of master branch Oder to push
+            git push [git_url] master (pushing code of master branch Oder to push
             all branches replace master with --all)
           </li>
           <li>
-            git remote add origin [git_url] ( creating an alias to not always type
+            git remote add origin [git_url] (creating an alias to not always type
             URL..origin can be name of anything else, but origin is the word
             most commonly used)
           </li>
-          <li>git push origin master (Pushes master to origin)</li>
+          <li>git push origin master (pushes master to origin)</li>
           <li>
             git push -u origin master (pushes and starts tracking the branch -
             you don't need to specify it again , ex. if pulling)
@@ -600,7 +590,7 @@
           <br />
 
           <strong> Managing Remotes: </strong>
-          <li>git remote ( Shows remote repos)</li>
+          <li>git remote (Shows remote repos)</li>
           <li>
             git remote add upstream url (Adds a new remote called upstream)
           </li>
@@ -629,7 +619,7 @@
         <br />
         <br />
 
-        <h3>Customize Iterm 2 with ZSH and Powerlevel10k:</h3>
+        <h3>Customize ITerm2 with ZSH and Powerlevel10k:</h3>
         <iframe
           
           src="https://www.youtube.com/embed/D2PSsnqgBiw"
