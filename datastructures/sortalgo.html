@@ -47,8 +47,7 @@
           Bubble Sort beginnt am Anfang der Liste und vergleicht jedes Paar
           benachbarter Elemente. Wenn das Erste größer als das Zweite ist,
           werden sie vertauscht. Dann beginnt es wieder am Anfang der Liste und
-          wiederholt diesen Vorgang, bis beim letzten Durchlauf kein Tausch
-          aufgetreten ist. Da seine Zeitkomplexität im Durchschnitt und im
+          wiederholt diesen Vorgang, bis zum Ende der Liste. Da seine Zeitkomplexität im Durchschnitt und im
           schlimmsten Fall Ο(n^2) beträgt, eignet sich dieser Algorithmus eher
           für kleine oder nahezu geordnete Datensätze.
         </footer>
@@ -66,10 +65,10 @@
           
           <br /><br />
           Die Liste wird bei diesem Algorithmus in einen sortierten Teil  -links-
-          und einen unsortierten -rechts- geteilt. Anfänglich ist die sortierte
-          Unterliste leer und die unsortierte ist die gesamte Liste. Dann sucht
+          und einen unsortierten -rechts- geteilt. Anfänglich gibt es eine sortierte
+          Unterliste (anfangs leer) und die unsortierte Hauptliste. Dann sucht
           der Algorithmus nach dem kleinsten Element in der unsortierten
-          Unterliste und tauscht es mit dem ganz linken unsortierten Element
+          Liste und tauscht es mit dem ganz linken unsortierten Element
           aus, wobei die Unterlistengrenzen um ein Element nach rechts
           verschoben werden. Wie Bubble Sort hat dieser Algorithmus eine
           quadratische Zeitkomplexität Ο(n^2), ist also auch eher für kleine
@@ -108,24 +107,21 @@
                
           <br /><br />
           Merge-Sort ist ein Sortieralgorithmus, der eine
-          Divide-and-conquer-Technik verwendet, um eine gegebene Liste zu
+          Divide- & Conquer-Technik verwendet, um eine gegebene Liste zu
           sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
           wird, um es einfacher zu lösen. Merge Sort beginnt mit dem Aufteilen
           der Liste in Hälften und fährt fort, diese Unterlisten aufzuteilen,
-          bis nur noch Unterlisten mit einem einzigen Element übrig sind. Dann
-          fügen Sie diese Unterlisten zu sortierten Unterlisten zusammen und
-          fahren Sie damit fort, bis Sie eine einzige sortierte Liste erhalten.
+          bis nur noch Unterlisten mit einem einzigen Element übrig sind. Dann werden die Unterlisten zu sortierten Unterlisten zusammengefügt unzwar solange, bis eine einzige sortierte Liste entsteht.
           <br /><br />
           Merge Sort wird in Bezug auf die Zeitkomplexität in O(n log n)
-          ausgeführt, seine Raumkomplexität beträgt O(n), da es Hilfsarrays
+          ausgeführt, seine Raumkomplexität beträgt O(n), da sie Hilfsarrays
           verwendet, um die Unterlisten zu speichern. Außerdem können wir
           Multithreading nutzen, um Merge Sort zu implementieren, indem wir
           beispielsweise jede Hälfte in getrennte Threads sortieren. Darüber
           hinaus können wir Merge Sort mit anderen Sortieralgorithmen
-          kombinieren, zum Beispiel, anstatt die Liste in
-          Einzelelement-Unterlisten aufzuteilen, könnten wir in kleine
-          Unterlisten mit wenigen Elementen aufteilen und diese mit Insertion
-          Sort sortieren.
+          kombinieren, zum Beispiel könnten wir, anstatt die Liste in
+          Einzelelement-Unterlisten aufzuteilen, sie in kleine
+          Unterlisten mit wenigen Elementen aufteilen und diese mit Insertion Sort sortieren.
         </footer>
           
           <footer class="major container medium videoWrapper">
@@ -141,11 +137,8 @@
               
           <br /><br />
           Quick Sort ist ein In-Place-Sortieralgorithmus, der eine
-          Divide-and-conquer-Technik verwendet, um eine gegebene Liste zu
-          sortieren, was bedeutet, dass ein Problem in kleinere Teile zerlegt
-          wird, um es einfacher zu lösen, und keine zusätzlichen Datenstrukturen
-          verwendet. Quick Sort beginnt mit der Auswahl eines Elements aus der
-          Liste als Pivot-Element, normalerweise das erste oder letzte Element.
+          Divide- &Conquer-Technik verwendet. Quick Sort beginnt mit der Auswahl eines Elements aus der
+          Liste als Pivot-Element, normalerweise ist es das erste oder letzte Element.
           Als Nächstes ordnen wir die anderen Elemente neu an, sodass alle
           Elemente, die kleiner als der Pivot sind, nach links und alle
           Elemente, die größer als der Pivot sind, nach rechts gehen. Der
@@ -159,41 +152,35 @@
           Raumkomplexität O(1) hat.
         </footer>
           <br /><br />
-          <h3>Non-Comparision Sort</h3><br />
+          <h3>Non-Comparision Sort</h3>
 
-          <br /><br />
-          Counting Sort ( O(n + k) , SPACE: O(k))<br />
+          <strong>Counting Sort ( O(n + k) , SPACE: O(k))</strong><br />
           Die Zählsortierung ist ein Algorithmus, mit dem wir in bestimmten
-          Fällen ein Array in linearer Zeit sortieren können. Um die zählende
-          Sortierung zu verwenden, darf unser Array nur Dezimalzahlen enthalten,
-          und es wird davon ausgegangen, dass wir die Min- und Max-Werte kennen.
-          Es funktioniert, indem es die Anzahl der Objekte zählt, die jeden
-          unterschiedlichen Schlüsselwert aufweisen, und anhand dieser Zählungen
-          arithmetisch verwendet wird, um die Positionen jedes Schlüsselwerts in
-          der Ausgabesequenz zu bestimmen. Seine Laufzeit ist linear in der
+          Fällen ein Array in linearer Zeit sortieren können. Um die Zählsortierung zu verwenden, darf unser Array nur Dezimalzahlen enthalten. Es wird davon ausgegangen, dass wir die Min- und Max-Werte kennen.
+          Counting Sort funktioniert, indem die Anzahl der Objekte gezählt werden. Jeder der
+          unterschiedlichen Schlüsselwerte wird anhand dieser Zählungen
+          arithmetisch verwendet, um die Positionen jedes Schlüsselwerts in der Ausgabesequenz zu bestimmen.
+          <br><br>
+          Die Laufzeit des Algorithmus ist linear in der
           Anzahl der Elemente und der Differenz zwischen den maximalen und
-          minimalen Schlüsselwerten, sodass es nur für den direkten Einsatz in
-          Situationen geeignet ist, in denen die Variation der Schlüssel nicht
-          wesentlich größer ist als die Anzahl der Elemente. Es wird jedoch oft
+          minimalen Schlüsselwerten. Deshalb ist der Algorithmus nur für den direkten Einsatz in
+          Situationen geeignet, in denen die Variation der Schlüssel nicht
+          wesentlich größer ist als die Anzahl der Elemente. Er wird jedoch oft
           als Unterprogramm in einem anderen Sortieralgorithmus (Radixsort),
           verwendet, der größere Schlüssel effizienter handhaben kann. Die
-          Zählsortierung funktioniert am besten, wenn der Zahlenbereich für
-          jedes Arrayelement sehr klein ist.
+          Zählsortierung funktioniert am besten, wenn der Zahlenbereich für jedes Arrayelement sehr klein ist.
 
           <br /><br />
-          Bucket Sort (O(n + k))<br />
-          Bucket Sort kann für viele der gleichen Aufgaben wie Zählsortierung
-          verwendet werden, mit einer ähnlichen Zeitanalyse. Im Vergleich zur
-          Counting Sort erfordert die Bucket-Sortierung jedoch verknüpfte
+          <strong>Bucket Sort (O(n + k))</strong><br />
+          Bucket Sort kann für viele der gleichen Aufgaben wie Counting Sort verwendet werden, mit einer ähnlichen Zeitanalyse. Im Vergleich zur Counting Sort erfordert die Bucket-Sortierung jedoch verknüpfte
           Listen, dynamische Arrays oder eine große Menge an vorab zugewiesenem
-          Speicher, um die Sätze von Elementen in jedem Bucket zu speichern,
-          während die Counting Sort stattdessen eine einzelne Zahl (die
-          Anzahl der Elemente) pro Bucket speichert.
+          Speicher, um die Sätze von Elementen in jedem Bucket zu speichern. Counting Sort speichert stattdessen eine einzelne Zahl (die
+          Anzahl der Elemente) pro Bucket.
           <br /><br />
-          Radix Sort (Best: O(n) , Worst: O(n^2)<br />
+          <strong>Radix Sort (Best: O(n) , Worst: O(n^2)</strong><br />
           In der Informatik ist Radixsort ein nicht vergleichender
           Dezimalzahl-Sortieralgorithmus, der Daten mit ganzzahligen Schlüsseln
-          sortiert, indem Schlüssel nach den einzelnen Ziffern gruppiert werden,
+          sortiert. Dies geschieht indem Schlüssel nach den einzelnen Ziffern gruppiert werden,
           die dieselbe signifikante Position und denselben Wert haben. Eine
           Positionsnotation ist erforderlich, aber da ganze Zahlen Zeichenfolgen
           (z. B. Namen oder Datumsangaben) und speziell formatierte
