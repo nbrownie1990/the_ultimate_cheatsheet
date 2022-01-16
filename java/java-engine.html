@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>The JavaScript-Engine</title>
+    <title>The Java-Engine</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -18,7 +18,7 @@
     <!-- Header -->
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
-      <h1>The JavaScript-Engine</h1>
+      <h1>The Java-Engine</h1>
     </div>
 
     <!-- Main -->
@@ -27,83 +27,103 @@
 						<h2>"Dann schauen wir dem Ding mal unter die Haube..."</h2>
 					</header>
 					<section>
-							<p> Natürlich ist es spannend, sich einmal genauer anzuschauen, was bei der Ausführung eines Codes eigentlich passiert. Die JS-Engine funktioniert wie folgt: In unserem HTML-Dokument ist ein JS-Script eingebettet. Sobald der HTML-Parser auf diesen &lt;script&gt;-Tag mit einer Quelle trifft, geht es los. 
-              Der Code aus der Quelle wird entweder aus dem Netzwerk, Cache oder einem
-               <a href="https://www.heise.de/developer/artikel/Progressive-Web-Apps-Teil-2-Die-Macht-des-Service-Worker-3740464.html">installierten Service Worker</a> geladen.
-                Die Antwort ist das angeforderte Script als ein "Stream of bytes"(Byte-Stream), um den sich im Folgenden der Byte-Stream-Decoder kümmert! 
+							<p> Natürlich ist es spannend, sich einmal genauer anzuschauen, was bei der Ausführung eines Codes eigentlich passiert. Die Java-Engine funktioniert wie folgt: 
+
+                https://dev.to/jing/core-java-java-theory-ge#variables-&-methods
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>Job of JS-Engine in one sentence</h3>
+							<h3>Write once Run anywhere</h3>
 						</header>
-						<blockquote> I take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it.</blockquote>
+						<blockquote> Java ist WORA (Write once Run anywhere). Java-Quellcode ist auf allen Betriebssystemen lauffähig.
+              Vom Javac-Compiler generierter Bytecode (.class) kann auf jedem Betriebssystem ausgeführt werden. Bytecode ist verständlich, wenn jede JVM auf jedem Betriebssystem installiert ist.</blockquote>
 					</section>
 					<section>
 						<header>
-							<h3>Der Byte-Stream-Decoder</h3>
+							<h3>JVM, JRE, JDK</h3>
 						</header>
             <hr />
-						<p> Der Byte-Stream-Decoder decodiert (wie der Name es schon vermuten lässt) den Byte-Stream, während dieser heruntergeladen wird.<br>
-             Der Byte-Stream-Decoder erstellt sogenannte Token aus dem decodierten Bytestream. 
-             Das reservierte Schlüsselwort „function“ entsteht(siehe Beispiel), ein Token wird erstellt und an den Parser und den Pre-Parser gesendet. 
-             Die Engine verwendet nämlich zwei Parser: den Pre-Parser und den Parser. 
-             Denn, um die Ladezeit einer Website zu verkürzen, versucht die Engine, das "Parsen" 
-             des nicht sofort benötigen Codes zu vermeiden. Der Pre-Parser verarbeitet Code,
-             der später verwendet werden kann, während der Parser den Code verarbeitet, der 
-             sofort benötigt wird. </p>
+						<p> 
+              JDK : Java-Entwicklungskit
+              -Softwareentwicklungsumgebung, die zum Erstellen von Applets und Java-Anwendungen verwendet wird.
+              
+              JRE + Compiler + Debugger JRE : Java Runtime Environment-Software, die entwickelt wurde, um andere Software auszuführen. Um Java auszuführen , benötigen Sie JRE . Es enthält Klassenbibliotheken, Ladeklassen und JVM.
+              JVM + Bibliotheken + andere Komponenten (zum Ausführen von Applets / Java-Anwendungen) JVM :
+              Virtuelle Maschine, auf der Java-Bytecode ausgeführt wird
+              macht java portabel
+              kommt mit JIT (Just-In-Time)-Compiler, der Java-Quellcode in Low-Level-Maschinensprache konvertiert.
+             </p>
 					</section>
-					<section>
-						<header>
-							<h3>Beispiel: decodierter Bytestream</h3>
-						</header>
-						<ul class="default">
-							<li>D0066 dekodiert in f</li>
-              <li>0075 in u</li> 
-              <li>006e in n</li> 
-              <li>0063 in c</li> 
-              <li>0074 in t</li> 
-              <li>0069 in i</li> 
-              <li>006f in o</li>
-              <li>006e in n</li>
-						</ul>
-            <p> Der Parser erstellt Knoten basierend auf den Token, die er vom
-              Byte-Stream-Decoder empfängt. Mit diesen Knoten erstellt er einen 
-               „abstract syntax tree“ (AST).
-            </p>
-					</section>
+				
           <section>
 						<header>
-							<h3>Der Interpreter</h3>
+							<h3>Die Java-JIT-Kompilierung</h3>
 						</header>
             <hr />
 						<p> Als Nächstes ist es Zeit für den Interpreter (Dolmetscher).  
             <br>
-              Der Interpreter, durchläuft den AST und generiert Bytecode basierend auf den Informationen, die der AST enthält. Sobald der
-              Bytecode vollständig generiert wurde, wird der AST gelöscht, 
-              wodurch Speicherplatz freigegeben wird. Der Bytecode versucht sich
-              mithilfe des "Optimizing Compilers" immer weiter zu verbessern/ zu verschnellern. 
-              Dazu werden, während der Bytecode ausgeführt wird, Informationen generiert.
-              Es wird bspw. erkannt, ob ein bestimmtes Verhalten häufig auftritt 
-              und welche Datentypen verwendet werden. Wenn bspw. eine Funktion 
-              schon viele Male aufgerufen wurde, wird sie wie folgt optimiert. 
+            
+            Just-In-Time (JIT)-Kompilierung, auch als dynamische Kompilierung bekannt .
+            Das Programm wird während der Laufzeit in nativen Code kompiliert, um die Leistung zu verbessern.
+            
+            Bei der JIT-Kompilierung übersetzt bytecode(.class) in Maschinencodeanweisungen von laufenden Maschinen
+            Der resultierende Maschinencode ist für die CPU-Architektur der laufenden Maschine optimiert
+            Die Kompilierung erfolgt zur Laufzeit des Programms (im Gegensatz zur Ausführung)
+            Da die Kompilierung zur Laufzeit erfolgt, hat der JIT-Compiler Zugriff auf dynamische Laufzeitinformationen, wodurch er bessere Optimierungen vornehmen kann
+            Die Hoffnung ist, dass die Effizienz der Ausführung von Maschinencode die Ineffizienz der Neukompilierung von Programmen bei jeder Ausführung überwindet.
+            
+            Optimierungen
+            JVM führt Bytecode aus und zählt, wie oft die Funktion ausgeführt wird
+            . Wenn die Anzahl das vordefinierte Limit überschreitet, kompiliert JIT Code in Maschinensprache, der direkt vom Prozessor ausgeführt werden kann.
+            
+            Beim nächsten Mal wird die Funktion berechnet, der kompilierte Code wird im Gegensatz zur normalen Interpretation erneut ausgeführt --> schnellere Ausführung
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>Der "optimizing Compiler"</h3>
+							<h3>Heap- und Stack-Speicher</h3>
 						</header>
             <hr />
-						<ol class="default">
-              <li> Dieser Compiler nimmt den Bytecode und das „Type-Feedback" und generiert daraus hochoptimierten Maschinencode. </li>
-              <li>Der Bytecode wird zusammen mit dem generierten „Type-Feedback“ an den „Optimizing Compiler" gesendet.</li>
-              <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
-              <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
-              <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „Optimizing Compiler" nur die Fälle,
-               die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
-               <li>Wenn wir einen bestimmten Codeabschnitt wiederholt verwendet haben, der immer wieder den gleichen Datentyp zurückgegeben hat, kann der optimierte Maschinencode einfach wiederverwendet werden, um die Dinge zu beschleunigen.</li>
-               <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird, anstelle des optimierten Maschinencodes, wieder der ursprüngliche Bytecode verwendet.</li>
-
+					
+<p>
+              Um die Anwendung optimal auszuführen, teilt JVM den Speicher in Stack & Heap-Speicher
+              Stack auf :
+              
+              wird für die Ausführung des Threads verwendet
+              Primitive Werte, die für eine Methode spezifisch sind
+              Verweise auf Objekte, die sich in einem Heap befinden, auf die von der Methode verwiesen wird.
+              thread-safe : eahc Thread wird in einem eigenen Stack betrieben Heap :
+              tatsächliche Objekte
+              dynamische Speicherzuweisung für Java-Objekte und JRE-Klassen zur Laufzeit
+              String-Pool
+              nicht Thread-sicher : muss durch ordnungsgemäß synchronisierenden Code geschützt werden
+              Neue Objekte werden immer im Heap-Space erstellt und die Referenzen auf diese Objekte werden im Stack-Speicher abgelegt. Wenn der Haufen voll ist, wird Müll gesammelt. So werden nicht mehr benötigte Gegenstände geräumt und so Platz für neue Objekte geschaffen.
+              
+              Haufen
+              Wird beim Start von JVM erstellt und kann während der Ausführung der Anwendung größer/kleiner werden
+              Wenn der Haufen voll ist, wird Müll gesammelt
+              Neue Objekte, die im Heap-Space erstellt wurden, verweisen auf Objekte, die im Stack-Speicher gespeichert sind
+              Objekte haben globalen Zugriff und können von überall in der Anwendung aufgerufen werden, nicht Thread-sicher
+              Zerlegt in 3 Teile
+              Junge Generation : Alle neuen Objekte werden zugewiesen und gealtert.
+              Old / Tenured Generation : lange überlebende Objekte gespeichert. Objekt gespeichert in Young Gen, Schwellenwert für sein Alter festgelegt. wenn die Schwelle erreicht ist. Objekt verschoben auf alte Gen
+              Permanente Generierung : JVM-Metadaten für Laufzeitklassen und Anwendungsmethoden.
+              Wenn der Haufen voll wird, wird Müll gesammelt
+              Stapel
+              in LIFO-Reihenfolge referenziert
+              Wenn eine neue Methode aufgerufen wird, wird ein neuer Block oben auf dem Stapel erstellt, der für diese Methode spezifische Werte enthält (z. B. primitive Variablen und Verweise auf Objekte).
+              Methode beendet Ausführung -> entsprechender Stapelrahmen wird geleert, Ablauf geht zurück zum Aufruf der Methode. Speicherplatz für die nächste Methode verfügbar
+            </p>
+              <ol class="default">
+              <li>Programm ausführen -> Laufzeitklassen in Heapspace laden</li>
+              <li>main()-Methode in Zeile 1 gefunden, erstellt zur Laufzeit Stack-Mem, das vom Thread der main()-Methode verwendet werden soll. Immer wenn ein neues Objekt erstellt wird,</li>
+              <li>im Heap-Speicher erstelltes Objekt</li>
+              <li>Stack-Speicher enthält die Referenz dafür.</li>
+              <li>wenn neue Methode aufgerufen wird -> neuer Block auf Stack erstellt (LIFO)</li>
+              <li>String, Referenz im Stapelspeicher -> Verweise auf den String-Pool im Heap-Space
+                <li>Wenn die Methode (foo()) beendet wird, wird der Stapel frei (der für die Funktion erstellte Stapelspeicher wird zerstört)</li>
+                <li>gehe zum nächsten Programm unten (main())</li>
 						</ol>
 					</section>
 					<section>
