@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>The JavaScript-Engine</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The JavaScript-Engine</h1>
+    </div>
+
+    <!-- Main -->
+    	<div class="box container">
+					<header>
+						<h2>"Dann schauen wir dem Ding mal unter die Haube..."</h2>
+					</header>
+					<section>
+							<p> Natürlich ist es spannend, sich einmal genauer anzuschauen, was bei der Ausführung eines Codes eigentlich passiert. Die JS-Engine funktioniert wie folgt: In unserem HTML-Dokument ist ein JS-Script eingebettet. Sobald der HTML-Parser auf diesen &lt;script&gt;-Tag mit einer Quelle trifft, geht es los. 
+              Der Code aus der Quelle wird entweder aus dem Netzwerk, Cache oder einem
+               <a href="https://www.heise.de/developer/artikel/Progressive-Web-Apps-Teil-2-Die-Macht-des-Service-Worker-3740464.html">installierten Service Worker</a> geladen.
+                Die Antwort ist das angeforderte Script als ein "Stream of bytes"(Byte-Stream), um den sich im Folgenden der Byte-Stream-Decoder kümmert! 
+            </p>
+					</section>
+					<section>
+						<header>
+							<h3>Job of JS-Engine in one sentence</h3>
+						</header>
+						<blockquote> I take your JS, parse it, turn that into an Abstract Syntax Tree, generate Bytecode, get feedback (for speculative optimizations), optimize and compile it.</blockquote>
+					</section>
+					<section>
+						<header>
+							<h3>Der Byte-Stream-Decoder</h3>
+						</header>
+            <hr />
+						<p> Der Byte-Stream-Decoder decodiert (wie der Name es schon vermuten lässt) den Byte-Stream, während dieser heruntergeladen wird.<br>
+             Der Byte-Stream-Decoder erstellt sogenannte Token aus dem decodierten Bytestream. 
+             Das reservierte Schlüsselwort „function“ entsteht(siehe Beispiel), ein Token wird erstellt und an den Parser und den Pre-Parser gesendet. 
+             Die Engine verwendet nämlich zwei Parser: den Pre-Parser und den Parser. 
+             Denn, um die Ladezeit einer Website zu verkürzen, versucht die Engine, das "Parsen" 
+             des nicht sofort benötigen Codes zu vermeiden. Der Pre-Parser verarbeitet Code,
+             der später verwendet werden kann, während der Parser den Code verarbeitet, der 
+             sofort benötigt wird. </p>
+					</section>
+					<section>
+						<header>
+							<h3>Beispiel: decodierter Bytestream</h3>
+						</header>
+						<ul class="default">
+							<li>D0066 dekodiert in f</li>
+              <li>0075 in u</li> 
+              <li>006e in n</li> 
+              <li>0063 in c</li> 
+              <li>0074 in t</li> 
+              <li>0069 in i</li> 
+              <li>006f in o</li>
+              <li>006e in n</li>
+						</ul>
+            <p> Der Parser erstellt Knoten basierend auf den Token, die er vom
+              Byte-Stream-Decoder empfängt. Mit diesen Knoten erstellt er einen 
+               „abstract syntax tree“ (AST).
+            </p>
+					</section>
+          <section>
+						<header>
+							<h3>Der Interpreter</h3>
+						</header>
+            <hr />
+						<p> Als Nächstes ist es Zeit für den Interpreter (Dolmetscher).  
+            <br>
+              Der Interpreter, durchläuft den AST und generiert Bytecode basierend auf den Informationen, die der AST enthält. Sobald der
+              Bytecode vollständig generiert wurde, wird der AST gelöscht, 
+              wodurch Speicherplatz freigegeben wird. Der Bytecode versucht sich
+              mithilfe des "Optimizing Compilers" immer weiter zu verbessern/ zu verschnellern. 
+              Dazu werden, während der Bytecode ausgeführt wird, Informationen generiert.
+              Es wird bspw. erkannt, ob ein bestimmtes Verhalten häufig auftritt 
+              und welche Datentypen verwendet werden. Wenn bspw. eine Funktion 
+              schon viele Male aufgerufen wurde, wird sie wie folgt optimiert. 
+            </p>
+					</section>
+					<section>
+						<header>
+							<h3>Der "optimizing Compiler"</h3>
+						</header>
+            <hr />
+						<ol class="default">
+              <li> Dieser Compiler nimmt den Bytecode und das „Type-Feedback" und generiert daraus hochoptimierten Maschinencode. </li>
+              <li>Der Bytecode wird zusammen mit dem generierten „Type-Feedback“ an den „Optimizing Compiler" gesendet.</li>
+              <li>JavaScript ist sehr dynamisch, was bedeutet, dass sich die Datentypen ständig ändern können. </li>
+              <li>Es wäre extrem langsam, wenn die JavaScript-Engine jedes Mal überprüfen müsste, welchen Datentyp ein bestimmter Wert hat.</li>
+              <li>Um die Zeit für die Interpretation des Codes zu verkürzen, behandelt der „Optimizing Compiler" nur die Fälle,
+               die die Engine zuvor beim Ausführen des Bytecodes gesehen hat. </li>
+               <li>Wenn wir einen bestimmten Codeabschnitt wiederholt verwendet haben, der immer wieder den gleichen Datentyp zurückgegeben hat, kann der optimierte Maschinencode einfach wiederverwendet werden, um die Dinge zu beschleunigen.</li>
+               <li>Da JavaScript jedoch dynamisch typisiert ist, kann es vorkommen, dass derselbe Code plötzlich einen anderen Datentyp zurückgibt. In diesem Fall wird, anstelle des optimierten Maschinencodes, wieder der ursprüngliche Bytecode verwendet.</li>
+
+						</ol>
+					</section>
+					<section>
+
+
+      <footer class="major container medium videoWrapper" >     
+        <h3>JS-Engine explained by Lydia Hallie</h3>
+         <iframe src="https://www.youtube.com/embed/xckH5s3UuX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine <a href="https://www.ninabraunger.de/#contact">Mail</a> schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

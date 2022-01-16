@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>The Scope</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <span class="logo icon fa-paper-plane"></span>
+      <h1>The Scope <br>(Der Gültigkeitsbereich)</h1>
+    </div>
+
+    <!-- Main -->
+    	<div class="box container">
+					<header>
+						<h2>Scope & Context in JavaScript</h2>
+					</header>
+					<section>
+						<header>
+							<h3>Der Gültigkeitsbereich in JavaScript... </h3>
+							<p>...bezieht sich auf den aktuellen Codekontext, der die Zugänglichkeit von Variablen für JavaScript bestimmt.</p>
+						</header>
+						<p> Der Scope ermöglicht es Variablen mit demselben Namen zu erstellen, ohne
+              dass sie miteinander kollidieren. Er verhindert zudem, dass äußere
+              Gültigkeitsbereiche auf innere Gültigkeitsbereiche zugreifen.
+            </p>
+					</section>
+					<section>
+						<header>
+							<h3>Zuerst: Was ist ein Lexical Environment?</h3>
+						</header>
+						<blockquote> Das Lexical Environment ist der lokale Speicher gebündelt mit dem Lexical Environment seines Parents.
+              Das bedeutet: Eine lexikalische Umgebung ist eine Datenstruktur, die eine Zuordnung von Kennungsvariablen enthält. 
+            </blockquote>
+					</section>
+ 
+         
+          <section>
+						<header>
+							<h3>Jedes Mal, wenn die JavaScript-Engine...</h3>
+						</header>
+						<p> ...einen Ausführungskontext zum Ausführen der Funktion oder 
+              des globalen Codes erstellt, erstellt sie auch eine neue lexikalische Umgebung. Dies geschieht, um die in dieser Funktion, während der Ausführung dieser Funktion, definierte Variable zu speichern.
+                           Eine lexikalische Umgebung besteht aus zwei Komponenten:<br>
+              <br>
+              <strong>Umgebungsdatensatz:</strong> <br>Dies ist der eigentliche Ort, an dem die Variablen- und Funktionsdeklarationen gespeichert werden.<br>
+              <br>
+              <strong>Verweis auf die äußere Umgebung: </strong> <br> Bedeutet, dass sie Zugriff auf ihre äußere (übergeordnete) lexikalische Umgebung hat.
+            </p>
+						<hr />
+           </section>
+
+           <section>
+						<header>
+							<h3>Die zwei Arten von Scopes</h3>
+						</header>
+            <p> In Javascript gibt es zwei Arten von Gültigkeitsbereichen: </p>
+						<ul class="default">
+							<li><strong>Global Scope:</strong> <br>
+              Der Standardbereich <br>
+              Es gibt nur einen globalen Geltungsbereich im Programm. 
+              Es ist der oberste Bereich, der den gesamten Code umfasst. 
+              Auf die Deklarationen in diesem Bereich kann überall im Code zugegriffen werden.
+              </li>
+              <br>
+              <li><strong>Local Scope:</strong> <br>
+                Der lokale Bereich <br>
+                Innerhalb einer Funktion definierte Variablen liegen im lokalen Gültigkeitsbereich
+                Jede Funktion, oder jeder Block der aufgerufen wird, erstellt einen neuen local Scope.
+                <ul class="default">
+                  <br>
+                  <li><strong>Function Scope:</strong> <br>
+                Erstellt durch einen Funktionsaufruf. 
+                Die Deklarationen innerhalb der Funktion sind nur dort zugänglich. (Übrigens: "var" ist function-scoped)
+                </li>    
+                <br>
+                <li> <strong>Block Scope:</strong> <br>
+                  Der Abstand zwischen zwei geschweiften Klammern({}) zum Beispiel bei If-Statements oder for-Loops. <br>
+                  (Übrigens: "let" und "const" sind block-scoped)
+                </li>
+              </ul>  
+
+              <p> 
+              Auch gibt es den Begriff <strong>  "Lexical/Static Scope"</strong> - Dieser bedeutet, dass in einer verschachtelten Gruppe von Funktionen, die inneren Funktionen 
+              Zugriff auf die Variablen (sowie andere Ressourcen) ihres übergeordneten Geltungsbereichs haben. Variablen und Objekte in inneren Bereichen sind also von äußeren Bereichen nicht zugänglich. 
+            </p>
+					</section>
+
+					<section>
+						<header>
+							<h3>Context in JavaScript</h3>
+						</header>
+						<p> Wenn der Code zum ersten Mal ausgeführt wird, wird Speicherplatz für verschiedene Kontexte eingerichtet.
+              Zum einen der globale Ausführungskontext. 
+              Der Ausführungskontext ist eine Umgebung, in der Javascript-Code ausgewertet
+               und ausgeführt wird. Zum anderen der Funktionsausführungskontext, welcher 
+               bei jedem Funktionsaufruf erstellt wird.
+            </p>
+						<hr />
+						<p>Jeder dieser Kontexte hat auch eine Scope-Chain(Gültigkeitsbereichskette). Die Scope-Chain ist im
+               Grunde eine "Kette von Verweisen" auf Objekte, die Verweise auf Werte 
+               (und andere Bereiche) enthalten, auf die in diesem Ausführungskontext 
+               verwiesen werden kann. 
+
+            </p>
+					</section>
+          
+					<section>
+						<header>
+							<h3>Wenn wir versuchen, auf eine Variablen in einer Funktion zuzugreifen,..</h3>
+						</header>
+						<ol class="default">
+            <li>...überprüft die JS-Engine zuerst die lokale Gültigkeitskette. </li>
+            <li>Wenn der Wert im lokalen Scope vorhanden ist, super!</li>
+            <li>Falls der Wert im lokalen Scope nicht vorhanden ist, "klettert" die Engine die Scope-Kette hinauf. </li>
+            <li>Sie sucht nun im äußeren Gültigkeitsbereich, auf den der lokale </li>
+            Gültigkeitsbereich eine Referenz hat, z.B. ein globales Objekt (node - global / browser - window).
+            <li> Man kann es vergleichen mit der Vererbung:
+             Auf die Werte, die im äußeren Scope liegen, kann man problemlos 
+             (ähnlich wie Parents) zugreifen, aber nicht auf die Werte der 
+             Inneren (Children) Scopes.
+						</ol>
+					</section>
+		
+      <footer class="major container medium videoWrapper">
+            <h3>Scope explained by Mosh Hamedani</h3>
+        <iframe src="https://www.youtube.com/embed/iJKkZA215tQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </footer>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container medium">
+        <header class="major last">
+          <h2>Questions or comments?</h2>
+        </header>
+
+        <p>
+          Einfach eine <a href="https://www.ninabraunger.de/#contact">Mail</a> schreiben.<br />
+        </p>
+
+        <ul class="copyright">
+          <li>&copy; 2021 Nina Braunger</li>
+          <li>
+            <a href="https://www.ninabraunger.de/impressum.html">Impressum</a>
+          </li>
+          <li>
+            <a href="https://www.ninabraunger.de/datenschutz.html"
+              >Datenschutz</a
+            >
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <br />
+          <br />
+          <li>
+            Structure of site is released for free under the
+            <a href="http://html5up.net/license">Creative Commons license</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
