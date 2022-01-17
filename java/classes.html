@@ -27,25 +27,63 @@
 						<h2>"Typen, Objekte und Klassen in Java"</h2>
 					</header>
 					<section>
-							<p> Datentypen, Objekte, Methoden, Variablen und Klassen. Zusammenfassend sind dies die Grundlagen von Java. Auf dieser Seite wird ein kurzer Überblick über diese Grundlagen gegeben.
+						<p> Datentypen, Objekte, Methoden, Variablen und Klassen. Zusammenfassend sind dies die Grundlagen von Java. Auf dieser Seite wird ein kurzer Überblick über diese Grundlagen gegeben.
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>....</h3>
+              <h3>....</h3>
 						</header>
-						<blockquote> ......</blockquote>
+						<blockquote>...</blockquote>
 					</section>
 					<section>
 						<header>
-							<h3>Datentypen</h3>
+						<h3>Datentypen</h3>
 						</header>
-            <hr />
+            <hr/>
 						<p> 
-              <strong>Überschrift </strong>
-              <br/>
+              <strong>Überschrift</strong>
+            <br/>
+            In Programmiersprachen haben wir verschiedene Arten von Daten mit denen gearbeitet wird.
+              <strong>Primitive Datentypen</strong>
+              Primitive Datentypen in Java werden von der Java-Sprache vordefiniert und als reservierte Schlüsselwörter benannt. Ein primitiver Datentyp teilt keinen Zustand mit anderen primitiven Werten.
+              Schauen wir uns alle 8 primitiven Datentypen an, die von Java unterstützt werden.
 
-              In Programmiersprachen haben wir  verschiedene Arten von Daten mit denen gearbeitet wird.
+              <ul class="default">   
+              <li>byte: (byte x=10;)</li>
+              <li>short: (short x=10;)</li>
+              <li>int : Wird zum Speichern von Ganzzahlen verwendet.(int x=10;)</li>
+              <li>long: Wird verwendet, um große ganzzahlige Werte zu speichern (long x=10000000;)</li>
+              <li>float: Wird zum Speichern von Dezimalzahlen verwendet (float x=10f;)</li>
+              <li>double: Wird verwendet, um große Dezimalzahlen zu speichern (double x=10.1010;)</li>
+              <li>boolean: Die Datentypen, die entweder true oder false Werte haben. (boolean x=1;) Dies ist sehr  nützlich beim Schreiben von bedingten Anweisungen.</li>
+              <li>char: Wird verwendet, um ein einzelnes Zeichen oder einen Buchstaben zu speichern (char c ='s';)</li>
+            </ul>
+
+            <strong>Nicht-primitive Datentypen</strong>
+            Nicht primitive Datentypen werden Referenztypen genannt, weil sie auf Objekte verweisen. Es gibt viele nicht primitive Datentypen in Java: Arrays, Strings , Klassen usw. Sehen wir uns an, wie man ein Array und einen String initialisiert.
+
+            <ul class="default">
+              <li>Array: Eine lineare Datenstruktur die Werte an zusammenhängenden Speicherorten speichert. (int[] array = new int[10];)</li>
+              <li>String: (String s = "hello world";)</li>
+            </ul>
+
+
+             literal: Dies sind die syntaktischen Darstellungen unserer Daten. In sehr einfacher Sprache sind dies die tatsächlichen Werte unserer Variablen
+
+            identifier: Name der Variablen, Klassen, Methoden, Funktion sind alle als Bezeichner bekannt. Wenn wir also eine Variable deklarieren, ist ein Variablenname ein Bezeichner
+            
+
+              <strong>Typkonvertierung & Casting</strong>
+              Wenn Sie versuchen, eine Dezimalzahl oder einen Gleitkommawert in eine String-Variable einzugeben, erhalten Sie eine Fehlermeldung und das Programm schlägt fehl. Dasselbe gilt, wenn Sie eine Gleitkommazahl in eine Variable vom Typ int eingeben. Wenn Sie andererseits eine Dezimalzahl für Float-Daten angeben, wird die Dezimalzahl automatisch in Float konvertiert.
+              <br/> <br/>
+              <strong> Bedingungen für die Typkonvertierung</strong>
+              Zwei Typen sollten kompatibel sein
+              char & String
+              int & float
+              Der Zieltyp sollte größer als der Quelltyp sein
+              <br/> <br/>
+              float ist größer als intweil sie neben ganzen Zahlen auch Dezimalzahlen enthält.
 
               Statisch typisiert
 
