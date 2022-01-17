@@ -22,150 +22,209 @@
     </div>
 
     <!-- Main -->
-    <div class="box container">
-      <header>
-        <h2>Diese Seite ist noch im Aufbau</h2>
-      </header>
-      <section>
-        <header>
-          <h3>Schau lieber auf den anderen Unterseiten vorbei...</h3>
-          <p>...denn hier gibt es noch viel zu tun</p>
-        </header>
-        <div style="text-align: center">
-          <img
-            src="../assets/css/images/buildingstatus.svg"
-            style="width: 60%"
-          />
-          <br />
-          <br />
-        </div>
-      </section>
-
-      <!-- Main -->
-
-      <!-- <div class="box container">
-        
-                https://dev.to/jing/core-java-java-theory-ge#variables-&-methods
+    	<div class="box container">
 					<header>
-						<h2>Scope & Context in JavaScript</h2>
+						<h2>"Typen, Objekte und Klassen in Java"</h2>
 					</header>
 					<section>
-						<header>
-							<h3>Der Gültigkeitsbereich in JavaScript... </h3>
-							<p>...bezieht sich auf den aktuellen Codekontext, der die Zugänglichkeit von Variablen für JavaScript bestimmt.</p>
-						</header>
-						<p> Der Scope ermöglicht es Variablen mit demselben Namen zu erstellen, ohne
-              dass sie miteinander kollidieren. Er verhindert zudem, dass äußere
-              Gültigkeitsbereiche auf innere Gültigkeitsbereiche zugreifen.
+							<p> ....
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>Zuerst: Was ist ein Lexical Environment?</h3>
+							<h3>....</h3>
 						</header>
-						<blockquote> Das Lexical Environment ist der lokale Speicher gebündelt mit dem Lexical Environment seines Parents.
-              Das bedeutet: Eine lexikalische Umgebung ist eine Datenstruktur, die eine Zuordnung von Kennungsvariablen enthält. 
-            </blockquote>
+						<blockquote> ......</blockquote>
 					</section>
- 
-         
+					<section>
+						<header>
+							<h3>Typen </h3>
+						</header>
+            <hr />
+						<p> 
+              <strong>Überschrift </strong>
+              <br/>
+              Statisch typisiert
+
+Führen Sie zur Kompilierungszeit eine Typprüfung durch
+bietet Typensicherheit
+Wenn Java-Code Fehler enthält, kann er nicht kompiliert werden, bis die Fehler behoben wurden
+deklarieren Sie Datentypen von Variablen, bevor Sie sie verwenden
+int num; num = 5; VS num =5
+erwartet, dass Variablen deklariert werden, bevor ihr ein Wert zugewiesen werden kann.
+Das Gegenteil von statisch typisiert ist dynamisch typisiert (z. B. Python)
+
+             </p>
+					</section>
+				
           <section>
 						<header>
-							<h3>Jedes Mal, wenn die JavaScript-Engine...</h3>
+							<h3>Objekte und Klassen</h3>
 						</header>
-						<p> ...einen Ausführungskontext zum Ausführen der Funktion oder 
-              des globalen Codes erstellt, erstellt sie auch eine neue lexikalische Umgebung. Dies geschieht, um die in dieser Funktion, während der Ausführung dieser Funktion, definierte Variable zu speichern.
-                           Eine lexikalische Umgebung besteht aus zwei Komponenten:<br>
-              <br>
-              <strong>Umgebungsdatensatz:</strong> <br>Dies ist der eigentliche Ort, an dem die Variablen- und Funktionsdeklarationen gespeichert werden.<br>
-              <br>
-              <strong>Verweis auf die äußere Umgebung: </strong> <br> Bedeutet, dass sie Zugriff auf ihre äußere (übergeordnete) lexikalische Umgebung hat.
-            </p>
-						<hr />
-           </section>
+            <hr />
+						<p> 
 
-           <section>
-						<header>
-							<h3>Die zwei Arten von Scopes</h3>
-						</header>
-            <p> In Javascript gibt es zwei Arten von Gültigkeitsbereichen: </p>
-						<ul class="default">
-							<li><strong>Global Scope:</strong> <br>
-              Der Standardbereich <br>
-              Es gibt nur einen globalen Geltungsbereich im Programm. 
-              Es ist der oberste Bereich, der den gesamten Code umfasst. 
-              Auf die Deklarationen in diesem Bereich kann überall im Code zugegriffen werden.
-              </li>
-              <br>
-              <li><strong>Local Scope:</strong> <br>
-                Der lokale Bereich <br>
-                Innerhalb einer Funktion definierte Variablen liegen im lokalen Gültigkeitsbereich
-                Jede Funktion, oder jeder Block der aufgerufen wird, erstellt einen neuen local Scope.
-                <ul class="default">
-                  <br>
-                  <li><strong>Function Scope:</strong> <br>
-                Erstellt durch einen Funktionsaufruf. 
-                Die Deklarationen innerhalb der Funktion sind nur dort zugänglich. (Übrigens: "var" ist function-scoped)
-                </li>    
-                <br>
-                <li> <strong>Block Scope:</strong> <br>
-                  Der Abstand zwischen zwei geschweiften Klammern({}) zum Beispiel bei If-Statements oder for-Loops. <br>
-                  (Übrigens: "let" und "const" sind block-scoped)
-                </li>
-              </ul>  
+              Java Was ist eine Klasse
+Vorlage zum Erstellen mehrerer Objekte.
+Es definiert:
 
-              <p> 
-              Auch gibt es den Begriff <strong>  "Lexical/Static Scope"</strong> - Dieser bedeutet, dass in einer verschachtelten Gruppe von Funktionen, die inneren Funktionen 
-              Zugriff auf die Variablen (sowie andere Ressourcen) ihres übergeordneten Geltungsbereichs haben. Variablen und Objekte in inneren Bereichen sind also von äußeren Bereichen nicht zugänglich. 
+Zustand
+Verhalten, das ein Objekt aufweisen kann
+Zustandswerte
+Objekt hat.
+In Java wären dies die Instanzvariablen des Objekts
+
+Verhaltensmethoden
+, die Teil der Klasse sind
+
+Der Zustand des Objekts kann sich mit der Zeit ändern, kann sich über Verhaltens- /Klassenmethoden ändern.
+
+
+              
+              Klasse : benutzerdefinierte blueprint, aus der das Objekt erstellt wird.
+              Objekt : Grundeinheit von OOP, Instanz einer Klasse.
+              
+              Objekte können über den Konstruktor aus der Klasse erstellt werden. Es gibt 2 Arten
+              
+              Default / nicht parametriert
+              0 Argumente
+              
+              Parametriert
+              Konstruktoren müssen eine bestimmte Anzahl von Argumenten übergeben
+              Konstruktor kann nicht abstrakt final oder statisch sein
+            <br/> <br/>
+
+            privat
+
+            privat Methode: Auf die private Methode kann außerhalb der aktuellen Klasse nicht zugegriffen werden
+untergeordnete Klassen können nicht auf private abstrakte Methoden zugreifen und sie nicht implementieren.
+privat Klasse: verschachtelte Klasse. alles innerhalb der Klasse kann auf eine verschachtelte private Klasse zugreifen
+kann ein SO-Beispiel einer verschachtelten privaten abstrakten Klasse haben
+
+<br/> <br/>
+Statisches Schlüsselwort
+für Variablen, Methoden, Blöcke, verschachtelte Klassen,
+die verwendet werden, um Klassenmitglieder unabhängig von Instanzen zu definieren
+
+statische Variable
+Eine einzelne Kopie der Variablen wird erstellt und von allen Objekten auf Klassenebene gemeinsam genutzt
+statische Methoden
+kann vor allen erstellten Objekten der Klasse und ohne Bezug auf ein Objekt zugegriffen werden.
+kann nur andere statische Methoden direkt aufrufen
+kann nur direkt auf statische Daten zugreifen
+kann mich nicht darauf beziehen oder super
+statische verschachtelte Klasse
+https://www.geeksforgeeks.org/static-class-in-java/
+statischer Block
+Führen Sie eine Berechnung durch, um statische Variablen zu initialisieren
+wird genau einmal ausgeführt - wenn die Klasse zum ersten Mal geladen wird.
+
+static
+
+Methode: Statische Methoden können ausgeblendet , aber nicht überschrieben werden
+abstrakte Methode muss überschrieben werden, um implementiert zu werden. Statische Methoden können nicht überschrieben werden, also können sie nicht abstrakt sein.
+<br/> <br/>
+final
+
+final Variable
+konstante Variable zu erstellen
+kann den Wert der letzten Variablen nicht ändern, sobald sie zugewiesen wurde. Es wird konstant sein.
+kann im Konstruktor initialisiert werden.
+
+final Methode
+Überschreiben der Methode verhindern
+kann vererbt, aber nicht überschrieben werden.
+Konstruktor kann nicht final gemacht werden . Der Konstruktor kann nicht vererbt werden, kann also nicht überschrieben werden und hat einen Kompilierzeitfehler.
+
+final class
+Erbe verhindern
+            <br/><br/>
+
+            <strong>Klassnbasierte Programmierung</strong><br/>
+            
+
+            Klassenbasierte Programmierung / Klassenorientierung ist ein Stil der objektorientierten Programmierung (OOP)
+            <br/><br/>
+            . Klassenbasiert : unterscheidet zwischen Objekten und Klassen.
+            Prototyp-basiert : keine Unterscheidung. Es hat Gegenstände. Beginnen Sie mit einer Instanz / einem Objekt und ändern Sie es.
+            <br/><br/>
+            Klasse definieren
+            <br/><br/>
+            Definieren Sie die Klasse in der Klassendefinition und geben Sie Methoden (Konstruktoren) an, um Instanzen der Klasse zu erstellen.
+            Prototyp : Klassendefinition nicht vom Konstruktor getrennt. Die Konstruktorfunktion erstellt ein Objekt mit einem anfänglichen Satz von Eigenschaften und Werten
+            <br/><br/>
+            Unterklasse / Vererbung
+            Erstellen Sie eine Hierarchie über die Klassendefinition Manager extends Employee
+            Prototyp : Objekt einer beliebigen Konstruktorfunktion zuordnen. (Aufruf eines anderen Objekts in der Konstruktorfunktion der Unterklasse)
+            Hinzufügen und Entfernen von Eigenschaften
+            Typ/Anzahl der Eigenschaften kann nach der Klassendefinition nicht geändert werden
+            zur Kompilierungszeit erstellte Klasse und zur Kompilierungs- oder Laufzeit instanziierte Objekte
+            <br/><br/>
+            Prototyp : Kann zur Laufzeit Eigenschaften von Objekten entfernen oder hinzufügen.
+            Das Gegenteil von klassenbasiert ist prototypbasiert / objektbasiert (z. B. Javascript)
             </p>
 					</section>
-
 					<section>
 						<header>
-							<h3>Context in JavaScript</h3>
+							<h3> Variablen und Methoden</h3>
 						</header>
-						<p> Wenn der Code zum ersten Mal ausgeführt wird, wird Speicherplatz für verschiedene Kontexte eingerichtet.
-              Zum einen der globale Ausführungskontext. 
-              Der Ausführungskontext ist eine Umgebung, in der Javascript-Code ausgewertet
-               und ausgeführt wird. Zum anderen der Funktionsausführungskontext, welcher 
-               bei jedem Funktionsaufruf erstellt wird.
-            </p>
-						<hr />
-						<p>Jeder dieser Kontexte hat auch eine Scope-Chain(Gültigkeitsbereichskette). Die Scope-Chain ist im
-               Grunde eine "Kette von Verweisen" auf Objekte, die Verweise auf Werte 
-               (und andere Bereiche) enthalten, auf die in diesem Ausführungskontext 
-               verwiesen werden kann. 
+            <hr />
+					<p>
 
-            </p>
-					</section>
-          
-					<section>
-						<header>
-							<h3>Wenn wir versuchen, auf eine Variablen in einer Funktion zuzugreifen,..</h3>
-						</header>
-						<ol class="default">
-            <li>...überprüft die JS-Engine zuerst die lokale Gültigkeitskette. </li>
-            <li>Wenn der Wert im lokalen Scope vorhanden ist, super!</li>
-            <li>Falls der Wert im lokalen Scope nicht vorhanden ist, "klettert" die Engine die Scope-Kette hinauf. </li>
-            <li>Sie sucht nun im äußeren Gültigkeitsbereich, auf den der lokale </li>
-            Gültigkeitsbereich eine Referenz hat, z.B. ein globales Objekt (node - global / browser - window).
-            <li> Man kann es vergleichen mit der Vererbung:
-             Auf die Werte, die im äußeren Scope liegen, kann man problemlos 
-             (ähnlich wie Parents) zugreifen, aber nicht auf die Werte der 
-             Inneren (Children) Scopes.
-						</ol>
-					</section> -->
+            Arten von Variablen
 
-      <footer class="major container medium videoWrapper">
-        <h3>Classes explained by ...</h3>
-        <iframe
-          src="https://www.youtube.com/embed/iJKkZA215tQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </footer>
+lokal
+Beispiel
+statisch
+Jedes Objekt hat eine eigene Kopie der Instanzvariablen, alle Objekte teilen sich jedoch nur eine Kopie der statischen Variablen
+
+Methoden
+Methoden bestehen aus
+
+Modifikator
+z.B. private Öffentlichkeit
+Rückgabetyp
+Methodenname
+Parameter
+Methodenkörper / Logik
+statische Methoden gehören zu einer Klasse, es muss kein Objekt instanziiert werden, um die Methode zu verwenden
+
+Methodensignatur
+Die Methodensignatur enthält NICHT<method name>()<argument types>)
+: Zugriffsmodifikator und Rückgabetyp
+
+In Java können Sie nicht >= 2 Methoden mit derselben Methodensignatur in derselben Klasse haben (selbst wenn Methoden unterschiedliche Rückgabetypen haben).
+
+ 
+            
+              <br/><br/>
+           
+              Abstrakte Klasse
+
+Objekt der abstrakten Klasse kann nicht erstellt/instanziiert werden
+Jede Unterklasse der abstrakten Klasse muss entweder alle abstrakten Methoden implementieren oder selbst als abstrakt deklariert werden.
+Aufgrund der teilweisen Implementierung von Klassen kann das Objekt nicht instanziiert werden.
+Die abstrakte Klasse hängt von der Unterklasse ab, um eine vollständige Implementierung bereitzustellen.
+Irgendein Sub
+
+Abstrakte Methode
+
+Abstrakte Methode enthält keinen Körper. Unterklassen werden sie implementieren
+Jede Klasse, die abstrakte Methoden enthält, muss abstarct sein
+Die folgenden Kombinationen von Modifikatoren können nicht mit abstract verwendet werden
+Finale (Klasse & Methode)
+privat (Methode)
+statisch (Methode)
+synchronisiert (Methode)
+native / strictfp
+    
+          </p>
+				</section>
+					
+          <footer class="major container medium videoWrapper">
+            <h3>Java-Engine</h3>
+            <img src="../images/matrix.gif"/ >
+          </footer>
     </div>
 
     <!-- Footer -->
@@ -176,9 +235,7 @@
         </header>
 
         <p>
-          Einfach eine
-          <a href="https://www.ninabraunger.de/#contact">Mail</a>
-          schreiben.<br />
+          Einfach eine <a href="https://www.ninabraunger.de/#contact">Mail</a> schreiben.<br />
         </p>
 
         <ul class="copyright">
@@ -194,6 +251,7 @@
           <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
           <br />
           <br />
+
           <li>
             Structure of site is released for free under the
             <a href="http://html5up.net/license">Creative Commons license</a>.
@@ -203,6 +261,7 @@
     </div>
 
     <!-- Scripts -->
+    <!-- Scripts -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
     <script src="../assets/js/breakpoints.min.js"></script>
@@ -210,3 +269,15 @@
     <script src="../assets/js/main.js"></script>
   </body>
 </html>
+      <!-- Main -->
+
+      <!-- <div class="box container">
+        
+
+
+        
+
+   
+   
+
+ 
