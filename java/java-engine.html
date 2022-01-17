@@ -28,8 +28,6 @@
 					</header>
 					<section>
 							<p> Natürlich ist es spannend, sich einmal genauer anzuschauen, was bei der Ausführung eines Codes eigentlich passiert. Die Java-Engine funktioniert wie folgt: 
-
-                https://dev.to/jing/core-java-java-theory-ge#variables-&-methods
             </p>
 					</section>
 					<section>
@@ -67,12 +65,11 @@
 							<h3>Die Java-JIT-Kompilierung</h3>
 						</header>
             <hr />
-						<p> Just-In-Time (JIT)-Kompilierung, auch als dynamische Kompilierung bekannt 
-            <br/>
+						<p> "Die Just-In-Time (JIT)-Kompilierung ist auch als dynamische Kompilierung bekannt."
+            <br/> <br/>
             Was läuft also "under the hood" bei der Kompilierung?
-            Das Programm wird während der Laufzeit in nativen Code kompiliert, um die Leistung zu verbessern.
             <br/><br/>
-            Bei der JIT-Kompilierung wird bytecode(.class) übersetzt in Maschinencodeanweisungen von laufenden Maschinen.
+            Das Programm wird während der Laufzeit in nativen Code kompiliert, um die Leistung zu verbessern. Bei der JIT-Kompilierung wird bytecode(.class) übersetzt in Maschinencodeanweisungen von laufenden Maschinen.
             <br/><br/>
             Der resultierende Maschinencode ist für die "Central Processing Unit(CPU/Hauptprozessor)-Architektur" der laufenden Maschine optimiert.
             Die Kompilierung erfolgt zur Laufzeit des Programms (im Gegensatz zur Ausführung).
@@ -113,13 +110,13 @@
               <li>Objekte können von überall in der Anwendung aufgerufen werden</li>
               
             </ul>
-              Der Heap zerlegt in 3 Teile
-              <br/><br/>
-              <strong>Junge Generation:</strong> Alle neuen Objekte werden hierhin zugewiesen.
-              <br/><br/>
+            <strong>Der Heap zerlegt in 3 Teile:</strong>
+              <br/>
+              <strong>Young Generation:</strong> Alle neuen Objekte werden hierhin zugewiesen.
+              <br/>
               <strong>Old / Tenured Generation:</strong> Für Objekte, die in der Young Gen gespeichert wurden, und einen gewissen Schwellenwert(vorab festgelegt) des Lagerns/Alterns überschritten haben. Sobald die Schwelle erreicht ist, werden diese Objekt in die Old Gen verschoben.
-              <br/><br/>
-              <strong>Permanente Generation:</strong> JVM-Metadaten für Laufzeitklassen und Anwendungsmethoden.
+              <br/>
+              <strong>Permanent Generation:</strong> JVM-Metadaten für Laufzeitklassen und Anwendungsmethoden.
               
               <br/><br/>
 
@@ -134,9 +131,8 @@
              <li> Wenn eine neue Methode aufgerufen wird, wird ein neuer Block oben auf dem Stapel erstellt, der für diese Methode spezifische Werte enthält (z. B. primitive Variablen und Verweise auf Objekte).</li>
              <li> Methode beendet die Ausführung -> entsprechender Stack wird geleert, Prozess geht zurück zum Aufruf der Methode. Nun ist wieder Speicherplatz für die nächste Methode verfügbar</li>
             </ul>
-            <br/>
-            </p>
-              <ol class="default"> Zusammenfassung
+           
+              <ol class="default"> <strong>Zusammenfassung</strong>
               <li>Programm wird ausgeführt und Laufzeitklassen in Heaps-Space geladen</li>
               <li>main()-Methode wird in Zeile 1 gefunden, erstellt zur Laufzeit den Stack-Speicher, der vom Thread der main()-Methode verwendet werden soll. </li>
               <li>Immer wenn ein neues Objekt erstellt wird, kommt der Heap-Speicher zum Einsatz</li>
@@ -146,11 +142,12 @@
                 <li>Wenn die Methode (foo()) beendet wird, wird der Stack wieder frei (der für die Funktion erstellte Stack-Speicher wird zerstört)</li>
                 <li>Geht den nächsten Schritt im nächsten Programm (von oben nach unten in der main())</li>
 						</ol>
+          </p>
 				</section>
 					
           <footer class="major container medium videoWrapper">
             <h3>Java-Engine</h3>
-            <img src="images/matrix.gif"/ >
+            <img src="../images/matrix.gif"/ >
           </footer>
     </div>
 
