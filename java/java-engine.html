@@ -36,23 +36,24 @@
 						<header>
 							<h3>Write once Run anywhere</h3>
 						</header>
-						<blockquote> Java ist WORA (Write once Run anywhere). Java-Quellcode ist auf allen Betriebssystemen lauffähig.
-              Vom Javac-Compiler generierter Bytecode (.class) kann auf jedem Betriebssystem ausgeführt werden. Bytecode ist verständlich, wenn jede JVM auf jedem Betriebssystem installiert ist.</blockquote>
+						<blockquote> Java ist WORA (Write once Run anywhere). Das bedeutet, der Java-Quellcode ist auf allen Betriebssystemen lauffähig. Der vom Javac-Compiler generierte Bytecode (.class) kann auf jedem Betriebssystem ausgeführt werden.</blockquote>
 					</section>
 					<section>
 						<header>
-							<h3>JVM, JRE, JDK</h3>
+							<h3>JDK, JVM, JRE? </h3>
 						</header>
             <hr />
 						<p> 
-              JDK : Java-Entwicklungskit
-              -Softwareentwicklungsumgebung, die zum Erstellen von Applets und Java-Anwendungen verwendet wird.
-              
-              JRE + Compiler + Debugger JRE : Java Runtime Environment-Software, die entwickelt wurde, um andere Software auszuführen. Um Java auszuführen , benötigen Sie JRE . Es enthält Klassenbibliotheken, Ladeklassen und JVM.
-              JVM + Bibliotheken + andere Komponenten (zum Ausführen von Applets / Java-Anwendungen) JVM :
-              Virtuelle Maschine, auf der Java-Bytecode ausgeführt wird
-              macht java portabel
-              kommt mit JIT (Just-In-Time)-Compiler, der Java-Quellcode in Low-Level-Maschinensprache konvertiert.
+              Java-Development-Kit (JDK) : Das Java-Entwicklungskit
+              <br/>
+              - Ein JDK ist eine Softwareentwicklungsumgebung, die zum Erstellen von Applets und Java-Anwendungen verwendet wird.
+              <br/><br/>
+              Java Runtime Environment-Software(JRE + Compiler + Debugger JRE): 
+              <br/>Die Java Runtime Environment-Software wurde entwickelt, um andere Software auszuführen. So benötigen wir die JRE auch um Java auszuführen. Die JRE enthält Klassenbibliotheken, Ladeklassen und andere Komponenten zum Ausführen von Applets / Java-Anwendungen. Dazu gehört auch die JVM.
+              <br/><br/>
+              Java Virtual Machine (JVM):
+              <br/>
+              Die virtuelle Maschine ist ein Teil der Java-Laufzeitumgebung(JRE), auf der der Java-Bytecode ausgeführt wird. Sie macht Java portabel. Die JVM kommt mit einem JIT (Just-In-Time)-Compiler, der Java-Quellcode in Low-Level-Maschinensprache konvertiert. Der Bytecode ist verständlich, sofern eine JVM auf einem Betriebssystem installiert ist.
              </p>
 					</section>
 				
@@ -61,78 +62,91 @@
 							<h3>Die Java-JIT-Kompilierung</h3>
 						</header>
             <hr />
-						<p> Als Nächstes ist es Zeit für den Interpreter (Dolmetscher).  
-            <br>
-            
-            Just-In-Time (JIT)-Kompilierung, auch als dynamische Kompilierung bekannt .
+						<p> Just-In-Time (JIT)-Kompilierung, auch als dynamische Kompilierung bekannt 
+            <br/>
+            Was läuft also "under the hood" bei der Kompilierung?
             Das Programm wird während der Laufzeit in nativen Code kompiliert, um die Leistung zu verbessern.
-            
-            Bei der JIT-Kompilierung übersetzt bytecode(.class) in Maschinencodeanweisungen von laufenden Maschinen
-            Der resultierende Maschinencode ist für die CPU-Architektur der laufenden Maschine optimiert
-            Die Kompilierung erfolgt zur Laufzeit des Programms (im Gegensatz zur Ausführung)
-            Da die Kompilierung zur Laufzeit erfolgt, hat der JIT-Compiler Zugriff auf dynamische Laufzeitinformationen, wodurch er bessere Optimierungen vornehmen kann
-            Die Hoffnung ist, dass die Effizienz der Ausführung von Maschinencode die Ineffizienz der Neukompilierung von Programmen bei jeder Ausführung überwindet.
-            
-            Optimierungen
-            JVM führt Bytecode aus und zählt, wie oft die Funktion ausgeführt wird
-            . Wenn die Anzahl das vordefinierte Limit überschreitet, kompiliert JIT Code in Maschinensprache, der direkt vom Prozessor ausgeführt werden kann.
-            
-            Beim nächsten Mal wird die Funktion berechnet, der kompilierte Code wird im Gegensatz zur normalen Interpretation erneut ausgeführt --> schnellere Ausführung
+            <br/><br/>
+            Bei der JIT-Kompilierung wird bytecode(.class) übersetzt in Maschinencodeanweisungen von laufenden Maschinen.
+            <br/><br/>
+            Der resultierende Maschinencode ist für die "Central Processing Unit(CPU/Hauptprozessor)-Architektur" der laufenden Maschine optimiert.
+            Die Kompilierung erfolgt zur Laufzeit des Programms (im Gegensatz zur Ausführung).
+            <br/><br/>
+            Da die Kompilierung zur Laufzeit erfolgt, hat der JIT-Compiler Zugriff auf dynamische Laufzeitinformationen, wodurch er bessere Optimierungen vornehmen kann. Dabei soll die Effizienz der Ausführung von Maschinencode, die Ineffizienz der Neukompilierung von Programmen bei jeder Ausführung überwinden.
+            <br/><br/>
+            Optimierungen<br/>
+            Die JVM führt den Bytecode aus und zählt, wie oft die Funktion ausgeführt wird. Wenn die Anzahl das vordefinierte Limit überschreitet, wird via JIT Code in Maschinensprache kompiliert, der direkt vom Prozessor ausgeführt werden kann.
+            <br/><br/>
+            Beim nächsten Mal wird die Funktion berechnet, der kompilierte Code wird im Gegensatz zur normalen Interpretation erneut ausgeführt. Das führt zu einer schnelleren Ausführung.
             </p>
 					</section>
 					<section>
 						<header>
-							<h3>Heap- und Stack-Speicher</h3>
+							<h3> Der Heap- und Stack-Speicher</h3>
 						</header>
             <hr />
-					
-<p>
-              Um die Anwendung optimal auszuführen, teilt JVM den Speicher in Stack & Heap-Speicher
-              Stack auf :
+					<p>
+             Um eine Anwendung optimal auszuführen, teilt die JVM den Speicher in Stack & Heap-Speicher auf. Stack und Heap sind Teile des Arbeitsspeichers und beide sehr unterschiedlich strukturiert. Du kannst dir den Heap tatsächlich als Haufen vorstellen, auf dem jede Menge Platz ist. Während der Stack von der Größe her stark begrenzt ist, kann der Heap anwachsen bis die Speichergrenze auf Prozessebene erreicht ist.
+              <br/><br/>
+              Dafür ist der Heap aber intern nicht so einfach zu verwalten, was ihn langsamer als den strukturierten und effizienten Stack macht. Auf dem Heap angelegter Speicher muss auch explizit wieder freigegeben werden (z.B. durch den Garbage Collector).
+              <br/><br/>
+              Um auf den Heap zuzugreifen, werden Referenzen verwendet also sozusagen Zeiger auf dem Stack, die auf Objekte verweisen, die auf dem Heap liegen. Neue Objekte werden immer im Heap-Space erstellt und die Referenzen auf diese Objekte werden im Stack-Speicher abgelegt.
+              Die Referenzen/Zeiger auf dem Stack, beinhalten anders beschrieben die Speicheradresse des Objektes.
+              <br/><br/>
+              Da auf dem Heap angelegte Objekte nicht auf den lokalen Sichtbarkeitsbereich beschränkt sind, kann global darauf zugegriffen werden (sofern ein Zeiger oder eine Referenz vorhanden ist).
+
+              <br/><br/>
               
-              wird für die Ausführung des Threads verwendet
-              Primitive Werte, die für eine Methode spezifisch sind
-              Verweise auf Objekte, die sich in einem Heap befinden, auf die von der Methode verwiesen wird.
-              thread-safe : eahc Thread wird in einem eigenen Stack betrieben Heap :
-              tatsächliche Objekte
-              dynamische Speicherzuweisung für Java-Objekte und JRE-Klassen zur Laufzeit
-              String-Pool
-              nicht Thread-sicher : muss durch ordnungsgemäß synchronisierenden Code geschützt werden
-              Neue Objekte werden immer im Heap-Space erstellt und die Referenzen auf diese Objekte werden im Stack-Speicher abgelegt. Wenn der Haufen voll ist, wird Müll gesammelt. So werden nicht mehr benötigte Gegenstände geräumt und so Platz für neue Objekte geschaffen.
+              <strong>Heap</strong>
+              <ul class="default">
+              <li>Führt tatsächliche Objekte</li>
+              <li>Hat eine dynamische Speicherzuweisung für Java-Objekte und JRE-Klassen zur Laufzeit</li> 
+              <li>Ist wie ein String-Pool</li>
+              <li>Ist nicht Thread-sicher: muss durch ordnungsgemäß synchronisierenden Code geschützt werden</li>
+             <li>Wird beim Start von JVM erstellt und kann während der Ausführung der Anwendung größer/kleiner werden.</li>
+             <li>Wenn der Heap voll ist, wird der Garbage Collector eingesetzt. So werden nicht mehr benötigte Gegenstände geräumt und so Platz für neue Objekte geschaffen.</li>
+              <li>Objekte können von überall in der Anwendung aufgerufen werden</li>
               
-              Haufen
-              Wird beim Start von JVM erstellt und kann während der Ausführung der Anwendung größer/kleiner werden
-              Wenn der Haufen voll ist, wird Müll gesammelt
-              Neue Objekte, die im Heap-Space erstellt wurden, verweisen auf Objekte, die im Stack-Speicher gespeichert sind
-              Objekte haben globalen Zugriff und können von überall in der Anwendung aufgerufen werden, nicht Thread-sicher
-              Zerlegt in 3 Teile
-              Junge Generation : Alle neuen Objekte werden zugewiesen und gealtert.
-              Old / Tenured Generation : lange überlebende Objekte gespeichert. Objekt gespeichert in Young Gen, Schwellenwert für sein Alter festgelegt. wenn die Schwelle erreicht ist. Objekt verschoben auf alte Gen
-              Permanente Generierung : JVM-Metadaten für Laufzeitklassen und Anwendungsmethoden.
-              Wenn der Haufen voll wird, wird Müll gesammelt
-              Stapel
-              in LIFO-Reihenfolge referenziert
-              Wenn eine neue Methode aufgerufen wird, wird ein neuer Block oben auf dem Stapel erstellt, der für diese Methode spezifische Werte enthält (z. B. primitive Variablen und Verweise auf Objekte).
-              Methode beendet Ausführung -> entsprechender Stapelrahmen wird geleert, Ablauf geht zurück zum Aufruf der Methode. Speicherplatz für die nächste Methode verfügbar
+            </ul>
+              Der Heap zerlegt in 3 Teile
+              <br/><br/>
+              <strong>Junge Generation:</strong> Alle neuen Objekte werden hierhin zugewiesen.
+              <br/><br/>
+              <strong>Old / Tenured Generation:</strong> Für Objekte, die in der Young Gen gespeichert wurden, und einen gewissen Schwellenwert(vorab festgelegt) des Lagerns/Alterns überschritten haben. Sobald die Schwelle erreicht ist, werden diese Objekt in die Old Gen verschoben.
+              <br/><br/>
+              <strong>Permanente Generierung:</strong> JVM-Metadaten für Laufzeitklassen und Anwendungsmethoden.
+              
+              <br/><br/>
+
+              <strong>Stack</strong>
+              <ul class="default">
+                <li>Der Stack wird für die Ausführung eines Threads verwendet</li>
+              <li>Führt primitive Werte, die für eine Methode spezifisch sind</li>
+              <li>Verweise aus Methoden auf Objekte, die sich im Heap befinden</li>
+             <li> thread-safe : jeder Thread wird in einem eigenen Stack betrieben 
+             </li>
+           <li>in LIFO-Reihenfolge ("last in - first out") referenziert</li>
+             <li> Wenn eine neue Methode aufgerufen wird, wird ein neuer Block oben auf dem Stapel erstellt, der für diese Methode spezifische Werte enthält (z. B. primitive Variablen und Verweise auf Objekte).</li>
+             <li> Methode beendet die Ausführung -> entsprechender Stack wird geleert, Prozess geht zurück zum Aufruf der Methode. Nun ist wieder Speicherplatz für die nächste Methode verfügbar</li>
+            </ul>
+            <br/>
             </p>
-              <ol class="default">
-              <li>Programm ausführen -> Laufzeitklassen in Heapspace laden</li>
-              <li>main()-Methode in Zeile 1 gefunden, erstellt zur Laufzeit Stack-Mem, das vom Thread der main()-Methode verwendet werden soll. Immer wenn ein neues Objekt erstellt wird,</li>
-              <li>im Heap-Speicher erstelltes Objekt</li>
-              <li>Stack-Speicher enthält die Referenz dafür.</li>
-              <li>wenn neue Methode aufgerufen wird -> neuer Block auf Stack erstellt (LIFO)</li>
-              <li>String, Referenz im Stapelspeicher -> Verweise auf den String-Pool im Heap-Space
-                <li>Wenn die Methode (foo()) beendet wird, wird der Stapel frei (der für die Funktion erstellte Stapelspeicher wird zerstört)</li>
-                <li>gehe zum nächsten Programm unten (main())</li>
+              <ol class="default"> Zusammenfassung
+              <li>Programm wird ausgeführt und Laufzeitklassen in Heaps-Space geladen</li>
+              <li>main()-Methode wird in Zeile 1 gefunden, erstellt zur Laufzeit den Stack-Speicher, der vom Thread der main()-Methode verwendet werden soll. </li>
+              <li>Immer wenn ein neues Objekt erstellt wird, kommt der Heap-Speicher zum Einsatz</li>
+              <li>Der Stack-Speicher enthält die Referenz für das neue Objekt.</li>
+              <li>Wenn eine neue Methode aufgerufen wird, wird ein neuer Block auf dem Stack erstellt (LIFO).</li>
+              <li>Eine String-Referenz im Stack-Speicher, die auf den String-Pool im Heap-Space verweist.</li>
+                <li>Wenn die Methode (foo()) beendet wird, wird der Stack wieder frei (der für die Funktion erstellte Stack-Speicher wird zerstört)</li>
+                <li>Geht den nächsten Schritt im nächsten Programm (von oben nach unten in der main())</li>
 						</ol>
-					</section>
-					<section>
-
-
-      <footer class="major container medium videoWrapper" >     
-        <h3>JS-Engine explained by Lydia Hallie</h3>
-         <iframe src="https://www.youtube.com/embed/xckH5s3UuX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       </footer>
+				</section>
+					
+          <footer class="major container medium videoWrapper">
+            <h3>Java-Engine</h3>
+            <img src="images/matrix.gif"/ >
+          </footer>
     </div>
 
     <!-- Footer -->
