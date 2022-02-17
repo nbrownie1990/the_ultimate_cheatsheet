@@ -89,21 +89,20 @@
 
             
             <strong>Typkonvertierung & Casting</strong> <br/>
-              Wenn wir versuchen, eine Dezimalzahl oder einen Gleitkommawert in eine String-Variable einzugeben, erhalten wir eine Fehlermeldung und das Programm schlägt fehl. Dasselbe gilt, wenn wir eine Gleitkommazahl in eine Variable vom Typ "int" eingeben. Wenn wir andererseits eine Dezimalzahl für Float-Daten angeben, wird die Dezimalzahl automatisch in Float konvertiert.
+              Wenn wir versuchen, eine Dezimalzahl oder einen Gleitkommawert in eine String-Variable einzugeben, erhalten wir eine Fehlermeldung. Dasselbe gilt, wenn wir eine Gleitkommazahl in eine Variable vom Typ "int" eingeben. Wenn wir andererseits eine Dezimalzahl für Float-Daten angeben, wird die Dezimalzahl automatisch in Float konvertiert.
               <br/> <br/>
               <strong> Bedingungen für die Typkonvertierung:</strong> <br/>
               Zwei Datentypen sollten für die Konvertierung kompatibel sein (z.B. char & String oder int & float).
-              Wichtig ist auch, dass der Zieltyp größer als der Quelltyp ist (zum Beispiel ist float größer als int).
+              Wichtig ist zudem, dass der Zieltyp größer als der Quelltyp ist (zum Beispiel ist float größer als int).
              </p>
 					</section>
-				
           
 					<section>
 						<header>
 							<h3> Variablen und Objekte</h3>
 						</header>
             <hr />
-					<p>
+				  	<p>
             <strong>Variablen</strong>
             <br/>
             Eine Variable ist ein Name für eine Speicherstelle im Hauptspeicher, die einen bestimmten Datentyp verwendet, um einen Wert zu erhalten. <br/>
@@ -121,10 +120,8 @@
             datentyp variable = wert; <br/>
             int myVariable = 5;
             <br/> <br/>
-
             Das Besondere an Variablen in Java, ist dass wir ihnen immer wieder einen neuen Wert zuweisen können. 
             <br/> <br/>
-
 
             <strong>Objekte</strong><br/>
 
@@ -139,9 +136,7 @@
               Konstruktoren müssen eine bestimmte Anzahl von Argumenten übergeben
               Ein Konstruktor kann nicht abstrakt final oder statisch sein
             <br/> <br/>      
-  
-
-        </p>
+          </p>
 				</section> 
 
 
@@ -153,13 +148,13 @@
           <p> 
             <strong>Klassen</strong><br/>
              Was ist eine Klasse? <br/>
-             Eine Vorlage(blueprint) zum Erstellen mehrerer Objekte.Sie definiert den Zustand des Objekts.<br/>
+             Eine Vorlage(blueprint)zum Erstellen mehrerer Objekte.Sie definiert den Zustand des Objekts.<br/>
              <br/><br/>
           Was ist ein Zustand/State?<br/>
           - Verhalten, das ein Objekt aufweisen kann. <br/>
           - Zustandswerte die ein Objekt hat. In Java wären dies die Instanzvariablen des Objekts 
           <br/>
-          - Verhaltensmethoden, die Teil der Klasse sind. Der Zustand des Objekts kann sich mit der Zeit ändern, kann sich über Verhaltens- /Klassenmethoden ändern.<br/>
+          - Verhaltensmethoden, die Teil der Klasse sind. Der Zustand des Objekts kann sich mit der Zeit/ über Verhaltens- /Klassenmethoden ändern.<br/>
 
          
           <strong>Methoden</strong><br/>
@@ -171,7 +166,7 @@
 
           <ul class="default">
             Methoden bestehen aus:
-            <li>Modifikator (z.B. private/ public) </li>
+            <li>Modifier (z.B. private/ public): Häufig wird einer der Modifier private, public, default oder protected in Java benutzt. </li>
             <li>Rückgabe-Datentyp</li>
             <li>Methodenname</li>
             <li>Parameter(-liste)</li> 
@@ -182,23 +177,28 @@
           
           <strong>Methodensignatur</strong><br/>
           Die Methodensignatur enthält einen Methodennamen(und die Argument-Datentypen)
-          : Zugriffsmodifikator und Rückgabetyp
+
+          Wir können Methoden überladen, indem wir den gleichen Methodennamen benutzen aber unterschiedliche Parameter. Zwei Methoden welche den gleichen Namen haben, müssen sich nämlich in der Signatur unterscheiden. Das heißt die Parameter dürfen nicht dieselben sein. Sonst kommt es zu einem Fehler.
+
+          <strong>Methodenaufruf</strong><br/>
+          1. Methode steht in derselben Klasse,
+          2. Methode eines Objekts aufrufen mit dem Punktoperator. Vor diesem steht das Objekt, auf das die Methode angewandt werden soll und nach ihm die Methode mit entsprechendem Parameter. Wichtig ist die Signatur der Methode. Diese darf pro Klasse nur einmalig sein, denn sonst findet das Programm die Methode nicht.
           <br/><br/>
-          In Java können wir nicht mehr als 2 Methoden mit derselben Methodensignatur in derselben Klasse haben (selbst wenn Methoden unterschiedliche Rückgabetypen haben).
-          <br/> <br/>
           
           <strong>Schlüsselbegriffe</strong><br/>
           Hier wird auf einige wichtige Schlüsselwörter der Java Syntax eingegangen
           <br/><br/>
 
-          <strong>private/public</strong>
+          <strong>private/public/protected</strong>
           <br/>
           <strong>private method:</strong>
           Auf die private Methode kann außerhalb der aktuellen Klasse nicht zugegriffen werden.
           Untergeordnete Klassen können nicht auf private abstrakte Methoden zugreifen und sie nicht implementieren. Auf public Methoden kann von überall aus zugegriffen werden.
           <br/>
           <strong>private class:</strong>
-          verschachtelte Klasse. Alles innerhalb der Klasse kann auf eine verschachtelte private Klasse zugreifen.
+          Nur innerhalb der Klasse kann auf eine verschachtelte private Klasse zugegriffen werden. 
+          <br/>
+          Bei protected können wir im selben Java Package oder einer Sub-Klasse darauf zugreifen.
           <br/> <br/>
 
           
@@ -222,19 +222,19 @@
           <strong>final</strong>
           <br/>
           <strong>final variable:</strong>
-          konstante Variable zu erstellen
-          kann den Wert der letzten Variablen nicht ändern, sobald sie zugewiesen wurde. Es wird konstant sein.
-          kann im Konstruktor initialisiert werden.
+          Um eine konstante Variable zu erstellen.<br/>
+          Wert kann nicht verändert werden.<br/>
+          Kann im Konstruktor initialisiert werden.
           <br/>
           <strong>final method:</strong>
           <br/>
-          Überschreiben der Methode verhindern
-          kann vererbt, aber nicht überschrieben werden.
-          Konstruktor kann nicht final gemacht werden . Der Konstruktor kann nicht vererbt werden, kann also nicht überschrieben werden und hat einen Kompilierzeitfehler.
+          Um das Überschreiben der Methode zu verhindern.<br/>
+          Kann vererbt, aber nicht überschrieben werden.<br/>
+          Ihr Konstruktor kann nicht vererbt, also auch nicht überschrieben werden und hat einen Kompilierzeitfehler.
           <br/>
           <strong>final class:</strong>
           <br/>        
-            Erbe verhindern
+            um Vererbung zu verhindern
           <br/><br/>
                   
           <strong>abstract</strong>
@@ -242,17 +242,17 @@
           <strong>abstract method:</strong>
           <br/>
           Eine abstrakte Methode enthält keinen Body. 
-          Unterklassen implementieren sie
-          Jede Klasse, die abstrakte Methoden enthält, muss als abstract deklariert werden
-          Die folgenden Kombinationen von Modifikatoren können nicht mit abstract verwendet werden:
-          - final (Klasse & Methode)
-          - private (Methode)
-          - static (Methode)
-          - synchronisiert (Methode)
-          - native / strictfp
+          Unterklassen implementieren sie.
+          Jede Klasse, die abstrakte Methoden enthält, muss als abstract deklariert werden.
+          Die folgenden Kombinationen von Modifikatoren können nicht mit abstract verwendet werden:<br/>
+          - final (Klasse & Methode)<br/>
+          - private (Methode)<br/>
+          - static (Methode)<br/>
+          - synchronisiert (Methode)<br/>
+          - native / strictfp<br/>
           <br/>
           <strong>abstract class:</strong><br/>
-          Objekt der abstrakten Klasse kann nicht erstellt/instanziiert werden
+          Objekt der abstrakten Klasse kann nicht erstellt/instanziiert werden.
           Jede Unterklasse der abstrakten Klasse muss entweder alle abstrakten Methoden implementieren oder selbst als abstrakt deklariert werden.
           Aufgrund der teilweisen Implementierung von Klassen kann das Objekt nicht instanziiert werden.
           Die abstrakte Klasse hängt von der Unterklasse ab, um eine vollständige Implementierung bereitzustellen.
