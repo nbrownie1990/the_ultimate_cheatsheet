@@ -21,37 +21,16 @@
       <h1>Types, Objects and Classes</h1>
     </div>
 
-    <!-- Main -->
-
-    <div class="box container">
-      <header>
-        <h2>Diese Seite ist noch im Aufbau</h2>
-      </header>
-      <section>
-        <header>
-          <h3>Schau lieber auf den anderen Unterseiten vorbei...</h3>
-          <p>...denn hier gibt es noch viel zu tun</p>
-        </header>
-        <div style="text-align: center">
-          <img
-            src="../assets/css/images/buildingstatus.svg"
-            style="width: 60%"
-          />
-          <br />
-          <br />
-        </div>
-      </section>
-
       <!-- Main -->
 
-      <!-- <div class="box container">
+      <div class="box container">
         
     	<div class="box container">
 					<header>
-						<h2>"Typen, Objekte und Klassen in Java"</h2>
+						<h2>"Datentypen, Objekte und Klassen in Java"</h2>
 					</header>
 					<section>
-						<p> Datentypen, Objekte, Methoden, Variablen und Klassen. Zusammenfassend sind dies die Grundlagen von Java. Auf dieser Seite wird ein kurzer Überblick über diese Grundlagen gegeben.
+						<p> Datentypen, Objekte, Methoden, Variablen und Klassen. Zusammenfassend sind dies die Grundlagen von Java. Auf dieser Seite wird ein kurzer Überblick zu diesen Grundlagen gegeben.
             </p>
 					</section>
 					<section>
@@ -66,59 +45,52 @@
 						</header>
             <hr/>
 						<p> 
-              <strong>Überschrift</strong>
+            In Programmiersprachen gibt es verschiedene Arten von Daten mit denen gearbeitet wird.
             <br/>
-            In Programmiersprachen haben wir verschiedene Arten von Daten mit denen gearbeitet wird.
-              <strong>Primitive Datentypen</strong>
-              Primitive Datentypen in Java werden von der Java-Sprache vordefiniert und als reservierte Schlüsselwörter benannt. Ein primitiver Datentyp teilt keinen Zustand mit anderen primitiven Werten.
+            <br/>
+              <strong>Primitive Datentypen (Primitives) </strong>
+               <br/>
+              Primitive Datentypen in Java werden von der Java-Sprache vordefiniert und als reservierte Schlüsselwörter benannt. Ein primitiver Datentyp teilt keinen Zustand (State) mit anderen primitiven Werten.<br/>
+              Man könnte sich eine Variable mit einem primitiven Datentyp als eine kleine, mit einem Namen versehene Box vorstellen. In dieser Box wird ein bestimmter Gegenstand einer vordefinierten Art eingelagert. Durch das Aufrufen des Namens der Box, können wir sehen, was sich in ihr befindet.
+
+              <br/><br/>
               Schauen wir uns alle 8 primitiven Datentypen an, die von Java unterstützt werden.
 
               <ul class="default">   
-              <li>byte: (byte x=10;)</li>
-              <li>short: (short x=10;)</li>
-              <li>int : Wird zum Speichern von Ganzzahlen verwendet.(int x=10;)</li>
-              <li>long: Wird verwendet, um große ganzzahlige Werte zu speichern (long x=10000000;)</li>
-              <li>float: Wird zum Speichern von Dezimalzahlen verwendet (float x=10f;)</li>
-              <li>double: Wird verwendet, um große Dezimalzahlen zu speichern (double x=10.1010;)</li>
-              <li>boolean: Die Datentypen, die entweder true oder false Werte haben. (boolean x=1;) Dies ist sehr  nützlich beim Schreiben von bedingten Anweisungen.</li>
-              <li>char: Wird verwendet, um ein einzelnes Zeichen oder einen Buchstaben zu speichern (char c ='s';)</li>
+              <li><strong>byte:</strong> (byte theByte=10;)</li>
+              <li><strong>short:</strong> (short theShort=10;)</li>
+              <li><strong>int:</strong> zum Speichern von Dezimalzahlen(int theInteger=10;)</li>
+              <li><strong>long:</strong> um große ganzzahlige Werte zu speichern (long theLong=5_000_000l;)</li>
+              <li><strong>float:</strong> zum Speichern von Dezimalzahlen (float theFloat=10f;)</li>
+              <li><strong>double:</strong> um große Dezimalzahlen zu speichern (double theDouble=10.1010;)</li>
+              <li><strong>boolean:</strong> entweder true oder false (boolean theBoolean=1;) nützlich für bedingte Anweisungen</li>
+              <li><strong>char:</strong> um ein einzelnes Zeichen oder einen Buchstaben zu speichern (char theChar ='s';)</li>
             </ul>
 
-            <strong>Nicht-primitive Datentypen</strong>
-            Nicht primitive Datentypen werden Referenztypen genannt, weil sie auf Objekte verweisen. Es gibt viele nicht primitive Datentypen in Java: Arrays, Strings , Klassen usw. Sehen wir uns an, wie man ein Array und einen String initialisiert.
+            <strong>Nicht-primitive Datentypen (References)</strong>
+            <br/>
+            Nicht primitive Datentypen werden Referenztypen genannt, weil sie Objekte referenzieren bzw. auf Objekte verweisen. 
+            Im Gegensatz zu primitiven Datentypen, die "by value" kopiert werden, verweist eine Kopie eines nicht-primitiven Datentyps immer auf dieselbe Addresse und deren Inhalt.
+            <br/> <br/>
+            Es gibt viele Referencetypes in Java: Strings, Arrays, Klassen usw. 
+            <br/>
+            Sehen wir uns an, wie man ein Array und einen String initialisiert.
 
             <ul class="default">
-              <li>Array: Eine lineare Datenstruktur die Werte an zusammenhängenden Speicherorten speichert. (int[] array = new int[10];)</li>
-              <li>String: Auch mit Text muss oft gearbeitet werden. Dazu gibt es diesen Datentyp (String s = "hello world";)</li>
+              <li><strong>Array:</strong> Eine lineare Datenstruktur die Werte an zusammenhängenden Speicherorten speichert. (int[] theArray = new int[10];)</li>
+              <li><strong>String:</strong> Der Datentyp zum Arbeiten mit Text (String theString = "hello world";)</li>
             </ul>
 
-
-             literal: Dies sind die syntaktischen Darstellungen unserer Daten. In sehr einfacher Sprache sind dies die tatsächlichen Werte unserer Variablen
-
-            identifier: Name der Variablen, Klassen, Methoden, Funktion sind alle als Bezeichner bekannt. Wenn wir also eine Variable deklarieren, ist ein Variablenname ein Bezeichner
-            
-
-              <strong>Typkonvertierung & Casting</strong>
-              Wenn Sie versuchen, eine Dezimalzahl oder einen Gleitkommawert in eine String-Variable einzugeben, erhalten Sie eine Fehlermeldung und das Programm schlägt fehl. Dasselbe gilt, wenn Sie eine Gleitkommazahl in eine Variable vom Typ int eingeben. Wenn Sie andererseits eine Dezimalzahl für Float-Daten angeben, wird die Dezimalzahl automatisch in Float konvertiert.
+            <strong>identifier:</strong> Name der Variablen, Klassen, Methoden, Funktion - dies sind alle sogenannte "Bezeichner". Wenn wir also eine Variable deklarieren, ist ein Variablenname ein Bezeichner/identifier.
+            <br> <br>
+            <strong>literal:</strong> Dies sind die syntaktischen Darstellungen unserer Daten. Einfach gesagt, sind dies die tatsächlichen Werte unserer Variablen.
+            <br> <br>
+            <strong>Typkonvertierung & Casting</strong> <br/>
+              Wenn wir versuchen, eine Dezimalzahl oder einen Gleitkommawert in eine String-Variable einzugeben, erhalten wir eine Fehlermeldung und das Programm schlägt fehl. Dasselbe gilt, wenn wir eine Gleitkommazahl in eine Variable vom Typ "int" eingeben. Wenn wir andererseits eine Dezimalzahl für Float-Daten angeben, wird die Dezimalzahl automatisch in Float konvertiert.
               <br/> <br/>
-              <strong> Bedingungen für die Typkonvertierung</strong>
-              Zwei Typen sollten kompatibel sein
-              char & String
-              int & float
-              Der Zieltyp sollte größer als der Quelltyp sein
-              <br/> <br/>
-              float ist größer als intweil sie neben ganzen Zahlen auch Dezimalzahlen enthält.
-
-              Statisch typisiert
-
-Führen Sie zur Kompilierungszeit eine Typprüfung durch
-bietet Typensicherheit
-Wenn Java-Code Fehler enthält, kann er nicht kompiliert werden, bis die Fehler behoben wurden
-deklarieren Sie Datentypen von Variablen, bevor Sie sie verwenden
-int num; num = 5; VS num =5
-erwartet, dass Variablen deklariert werden, bevor ihr ein Wert zugewiesen werden kann.
-Das Gegenteil von statisch typisiert ist dynamisch typisiert (z. B. Python)
-
+              <strong> Bedingungen für die Typkonvertierung:</strong> <br/>
+              Zwei Datentypen sollten für die Konvertierung kompatibel sein (z.B. char & String oder int & float).
+              Wichtig ist auch, dass der Zieltyp größer als der Quelltyp ist (zum Beispiel ist float größer als int).
              </p>
 					</section>
 				
@@ -284,7 +256,7 @@ synchronisiert (Methode)
 native / strictfp
     
           </p>
-				</section> -->
+				</section> 
 
       <footer class="major container medium videoWrapper">
         <h3>Rekursion...auch spannend!</h3>
